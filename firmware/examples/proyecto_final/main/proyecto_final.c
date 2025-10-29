@@ -48,11 +48,11 @@ float nivel_agua_cm = 0.0;   // última medición del nivel (cm)
 /*--- Nuevo: estado del tanque ---*/
 typedef enum {
     NIVEL_BAJO,
-    LLENANDO,
+    NIVEL_ESTABLE,
     TANQUE_LLENO
 } estado_tanque_t;
 
-estado_tanque_t estado_tanque = LLENANDO;  // estado inicial
+estado_tanque_t estado_tanque = TANQUE_LLENO;  // estado inicial
 
 /*==================[internal functions declaration]=========================*/
 void TimerNivelHandler(void *param);
@@ -80,7 +80,7 @@ void TimerLCDHandler(void *param) {
 void MedirNivelTask(void *pvParameter) {
     uint16_t distancia_cm;
     float nivel_cm;
-    float umbral = 13.0;
+    float umbral = 12.0;
     float nivel_cm_min = umbral- 2.0;
     float nivel_cm_max = umbral + 2.0;
 
@@ -107,26 +107,31 @@ void MedirNivelTask(void *pvParameter) {
         if (nivel_agua_cm < nivel_cm_min) {
             LedOn(LED_1);   // nivel bajo
             LedOff(LED_2);
+            LedOff(LED_3);
+
             estado_tanque = NIVEL_BAJO;
 
         } else if (nivel_agua_cm > nivel_cm_max) {
             LedOn(LED_2);   // tanque lleno
             LedOff(LED_1);
+            LedOff(LED_3);
+
             estado_tanque = TANQUE_LLENO;
 
         } else {
             LedOff(LED_1);
             LedOff(LED_2);
-            estado_tanque = LLENANDO;
+            LedOn(LED_3);
+            estado_tanque = NIVEL_ESTABLE;
         }
         UartSendString(UART_PC, " cm | Estado: ");
 
         switch (estado_tanque) {
             case NIVEL_BAJO:
-                UartSendString(UART_PC, "Nivel bajo\r\n");
+                UartSendString(UART_PC, "Nivel bajo, llenando\r\n");
                 break;
-            case LLENANDO:
-                UartSendString(UART_PC, "Llenando\r\n");
+            case NIVEL_ESTABLE:
+                UartSendString(UART_PC, "Nivel estable\r\n");
                 break;
             case TANQUE_LLENO:
                 UartSendString(UART_PC, "Tanque lleno\r\n");

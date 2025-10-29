@@ -39,7 +39,6 @@
 /*==================[macros and definitions]=================================*/
 #define ALTURA_TANQUE_CM   17.0        // altura total del tanque (cm)
 #define REFRESH_PERIOD_US  1000000      // 1 s
-#define LCD_REFRESH_US     1000000 
 #define UART_BAUDRATE      115200
 #define CONTROL_PERIOD_US  1000000 
 #define NIVEL_MIN_CM      10.0
@@ -47,7 +46,6 @@
 
 /*==================[internal data definition]===============================*/
 TaskHandle_t medir_task_handle = NULL;
-TaskHandle_t lcd_task_handle = NULL;
 TaskHandle_t control_task_handle = NULL;
 float nivel_agua_cm = 0.0;   // última medición del nivel (cm)
 /*--- Nuevo: estado del tanque ---*/
@@ -61,8 +59,6 @@ estado_tanque_t estado_tanque = TANQUE_LLENO;  // estado inicial
 
 /*==================[internal functions declaration]=========================*/
 void TimerNivelHandler(void *param);
-void TimerLCDHandler(void *param);
-void TimerNivelHandler(void *param);
 void MedirNivelTask(void *pvParameter);
 void TimerControlHandler(void *param);
 void ControlNivelTask(void *pvParameter);
@@ -74,17 +70,15 @@ void ControlNivelTask(void *pvParameter);
 void TimerNivelHandler(void *param) {
     vTaskNotifyGiveFromISR(medir_task_handle, pdFALSE);
 }
-/**
- * @brief Callback del timer: despierta la tarea de LCD cada 1 s
- */
-void TimerLCDHandler(void *param) {
-    vTaskNotifyGiveFromISR(lcd_task_handle, pdFALSE);
-}
 
 void TimerControlHandler(void *param) {
     vTaskNotifyGiveFromISR(control_task_handle, pdFALSE);
 }
 
+
+/**
+ * @brief Tarea que controla el estado del tanque/bomba y lo envía por UART
+ */
 void ControlNivelTask(void *pvParameter) {
     bool bomba_activada = false;
     
@@ -110,7 +104,7 @@ void ControlNivelTask(void *pvParameter) {
             estado_tanque = NIVEL_ESTABLE;
         }
 
-        UartSendString(UART_PC, "Estado:\r\n");
+        UartSendString(UART_PC, "Estado: ");
 
          switch (estado_tanque) {
             case NIVEL_BAJO:
@@ -132,12 +126,6 @@ void ControlNivelTask(void *pvParameter) {
 void MedirNivelTask(void *pvParameter) {
     uint16_t distancia_cm;
     float nivel_cm;
-<<<<<<< HEAD
-=======
-    float umbral = 12.0;
-    float nivel_cm_min = umbral- 2.0;
-    float nivel_cm_max = umbral + 2.0;
->>>>>>> 8bd69840af701bf26a3e3737be8cd488fbec125c
 
     while (true) {
         /* Espera la notificación del timer */
@@ -157,56 +145,8 @@ void MedirNivelTask(void *pvParameter) {
         /* Enviar por UART */
         UartSendString(UART_PC, "Nivel de agua: ");
         UartSendString(UART_PC, (char *)UartItoa((uint32_t)nivel_agua_cm, 10));
-<<<<<<< HEAD
         UartSendString(UART_PC, " cm\r\n");
-=======
-
-        /* Solo esta para prueba hasta que codifiquemos la tarea para controlar*/
-        if (nivel_agua_cm < nivel_cm_min) {
-            LedOn(LED_1);   // nivel bajo
-            LedOff(LED_2);
-            LedOff(LED_3);
-
-            estado_tanque = NIVEL_BAJO;
-
-        } else if (nivel_agua_cm > nivel_cm_max) {
-            LedOn(LED_2);   // tanque lleno
-            LedOff(LED_1);
-            LedOff(LED_3);
-
-            estado_tanque = TANQUE_LLENO;
-
-        } else {
-            LedOff(LED_1);
-            LedOff(LED_2);
-            LedOn(LED_3);
-            estado_tanque = NIVEL_ESTABLE;
-        }
-        UartSendString(UART_PC, " cm | Estado: ");
-
-        switch (estado_tanque) {
-            case NIVEL_BAJO:
-                UartSendString(UART_PC, "Nivel bajo, llenando\r\n");
-                break;
-            case NIVEL_ESTABLE:
-                UartSendString(UART_PC, "Nivel estable\r\n");
-                break;
-            case TANQUE_LLENO:
-                UartSendString(UART_PC, "Tanque lleno\r\n");
-                break;
-        }
-
->>>>>>> 8bd69840af701bf26a3e3737be8cd488fbec125c
-    }
-}
-/**
- * @brief Tarea que muestra el nivel en el display LCD cada 1 s
- */
-void MostrarLCDTask(void *pvParameter) {
-    while (true) {
-        /* Espera notificación del timer */
-        ulTaskNotifyTake(pdTRUE, portMAX_DELAY);
-
+        //Muestra el nivel en el display LCD
         uint8_t nivel_entero = (uint8_t)nivel_agua_cm;
         LcdItsE0803Write(nivel_entero);
         /* Opcional para mostrar porcentaje, aca podriamos usar una 
@@ -215,6 +155,7 @@ void MostrarLCDTask(void *pvParameter) {
         // LcdItsE0803Write(porcentaje);
     }
 }
+
 
 /*==================[external functions definition]==========================*/
 void app_main(void) {
@@ -239,16 +180,7 @@ void app_main(void) {
     };
     TimerInit(&timer_nivel);
 
-    /* Configuración del timer de LCD */
-    timer_config_t timer_lcd = {
-        .timer   = TIMER_B,
-        .period  = LCD_REFRESH_US,
-        .func_p  = TimerLCDHandler,
-        .param_p = NULL
-    };
-    TimerInit(&timer_lcd);
-
-      /* Configurar timer para control de nivel (cada 0,5 s) */
+    /* Configurar timer para control de nivel (cada 0,5 s) */
     timer_config_t timer_control = {
         .timer   = TIMER_C,
         .period  = CONTROL_PERIOD_US,
@@ -257,15 +189,13 @@ void app_main(void) {
     };
     TimerInit(&timer_control);
 
-    /* Crear tarea */
+   /* Crear tareas */
     xTaskCreate(&MedirNivelTask, "NivelTask", 512, NULL, 5, &medir_task_handle);
-    xTaskCreate(&MostrarLCDTask, "LCDTask", 512, NULL, 4, &lcd_task_handle);
     xTaskCreate(&ControlNivelTask, "ControlTask", 512, NULL, 4, &control_task_handle);
 
-
+   
     /* Iniciar timer */
     TimerStart(timer_nivel.timer);
-    TimerStart(timer_lcd.timer);
     TimerStart(timer_control.timer);
 }
 

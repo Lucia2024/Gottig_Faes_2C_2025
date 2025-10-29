@@ -40,7 +40,7 @@
 #define ALTURA_TANQUE_CM   17.0        // altura total del tanque (cm)
 #define REFRESH_PERIOD_US  1000000      // 1 s
 #define UART_BAUDRATE      115200
-#define CONTROL_PERIOD_US  1000000 
+#define CONTROL_PERIOD_US  500000 
 #define NIVEL_MIN_CM      10.0
 #define NIVEL_MAX_CM      14.0
 
@@ -55,7 +55,7 @@ typedef enum {
     TANQUE_LLENO
 } estado_tanque_t;
 
-estado_tanque_t estado_tanque = TANQUE_LLENO;  // estado inicial
+volatile estado_tanque_t estado_tanque = TANQUE_LLENO;  // estado inicial
 
 /*==================[internal functions declaration]=========================*/
 void TimerNivelHandler(void *param);
@@ -117,6 +117,8 @@ void ControlNivelTask(void *pvParameter) {
                 UartSendString(UART_PC, "Tanque lleno, desactivando bomba\r\n");
                 break;
         }
+
+        vTaskDelay(pdMS_TO_TICKS(50)); // pequeña pausa
     }
 }
 

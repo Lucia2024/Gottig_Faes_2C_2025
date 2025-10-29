@@ -36,17 +36,18 @@
 #include "led.h"
 #include "lcditse0803.h"
 #include <string.h>
+#include "switch.h"
 /*==================[macros and definitions]=================================*/
-#define ALTURA_TANQUE_CM   17.0        // altura total del tanque (cm)
-#define REFRESH_PERIOD_US  1000000      // 1 s
+#define ALTURA_TANQUE_CM   17.0        // Altura total del tanque (cm)
+#define REFRESH_PERIOD_US  1000000     // 1 s
 #define UART_BAUDRATE      115200
 #define CONTROL_PERIOD_US  500000 
 #define NIVEL_MIN_CM      10.0
 #define NIVEL_MAX_CM      14.0
-
 /*==================[internal data definition]===============================*/
 TaskHandle_t medir_task_handle = NULL;
 TaskHandle_t control_task_handle = NULL;
+TaskHandle_t control_manual_task_handle = NULL;
 float nivel_agua_cm = 0.0;   // última medición del nivel (cm)
 /*--- Nuevo: estado del tanque ---*/
 typedef enum {
@@ -62,6 +63,7 @@ void TimerNivelHandler(void *param);
 void MedirNivelTask(void *pvParameter);
 void TimerControlHandler(void *param);
 void ControlNivelTask(void *pvParameter);
+void TimerManualHandler(void *param);
 /*==================[internal functions definition]==========================*/
 
 /**
@@ -75,6 +77,9 @@ void TimerControlHandler(void *param) {
     vTaskNotifyGiveFromISR(control_task_handle, pdFALSE);
 }
 
+void TimerManualHandler(void *param) {
+    vTaskNotifyGiveFromISR(control_manual_task_handle, pdFALSE);
+}
 
 /**
  * @brief Tarea que controla el estado del tanque/bomba y lo envía por UART
@@ -158,12 +163,36 @@ void MedirNivelTask(void *pvParameter) {
     }
 }
 
+/**
+ * @brief Tarea de control manual.
+ * Verifica si el pulsador está presionado, y si lo está,
+ * detiene la bomba y muestra un mensaje por UART.
+ */
+void ControlManualTask(void *pvParameter) {
+    while (true) {
+        /* Espera la notificación del timer */
+        ulTaskNotifyTake(pdTRUE, portMAX_DELAY);
+
+        /* Leer estado de los switches */
+        int8_t estado_switch = SwitchesRead();
+
+        if (estado_switch | SWITCH_1) {
+            // Detener la bomba
+            GPIOOff(GPIO_18);
+            estado_tanque = NIVEL_ESTABLE;
+
+            // Mostrar mensaje por UART
+            UartSendString(UART_PC, "\r\n[CONTROL MANUAL] Botón presionado: bomba detenida\r\n");
+        }
+    }
+}
 
 /*==================[external functions definition]==========================*/
 void app_main(void) {
     //LedsInit();
     HcSr04Init(GPIO_3, GPIO_2); 
     LcdItsE0803Init();   
+    SwitchesInit();   // Inicializa los pulsadores de la placa
 
     serial_config_t uart_cfg = {
         .port      = UART_PC,
@@ -191,15 +220,24 @@ void app_main(void) {
     };
     TimerInit(&timer_control);
 
+    /* Configuración del timer de control manual */
+    timer_config_t timer_manual = {
+        .timer   = TIMER_B,           
+        .period  = 500000,
+        .func_p  = TimerManualHandler,
+        .param_p = NULL
+    };
+    TimerInit(&timer_manual);
+
    /* Crear tareas */
     xTaskCreate(&MedirNivelTask, "NivelTask", 512, NULL, 5, &medir_task_handle);
     xTaskCreate(&ControlNivelTask, "ControlTask", 512, NULL, 4, &control_task_handle);
-
+    xTaskCreate(&ControlManualTask, "ControlManualTask", 512, NULL, 3, &control_manual_task_handle);
    
     /* Iniciar timer */
     TimerStart(timer_nivel.timer);
     TimerStart(timer_control.timer);
+    TimerStart(timer_manual.timer);
 }
 
 /*==================[end of file]============================================*/
-

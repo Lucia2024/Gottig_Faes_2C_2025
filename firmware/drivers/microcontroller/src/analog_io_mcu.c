@@ -18,7 +18,7 @@
 #include "esp_adc/adc_continuous.h"
 /*==================[macros and definitions]=================================*/
 #define ADC_BITWIDTH 		SOC_ADC_DIGI_MAX_BITWIDTH	// 12 bit resolution
-#define ADC_ATTENUATION		ADC_ATTEN_DB_12				// 12dB attenuation (for 0-3,3V ADC range)
+#define ADC_ATTENUATION		ADC_ATTEN_DB_11				// 12dB attenuation (for 0-3,3V ADC range)
 /*==================[internal data declaration]==============================*/
 adc_cali_handle_t adc_calibration_single_0, adc_calibration_single_1, adc_calibration_single_2, adc_calibration_single_3;
 adc_oneshot_unit_handle_t adc1_single; 

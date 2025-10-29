@@ -34,16 +34,24 @@
 #include "uart_mcu.h"
 #include "gpio_mcu.h"
 #include "led.h"
+#include "lcditse0803.h"
+#include <string.h>
 /*==================[macros and definitions]=================================*/
 #define ALTURA_TANQUE_CM   17.0        // altura total del tanque (cm)
 #define REFRESH_PERIOD_US  1000000      // 1 s
+#define LCD_REFRESH_US     1000000 
 #define UART_BAUDRATE      115200
 
 /*==================[internal data definition]===============================*/
 TaskHandle_t medir_task_handle = NULL;
-float nivel_agua_cm = 0.0f;   // última medición del nivel (cm)
+TaskHandle_t lcd_task_handle = NULL;
+float nivel_agua_cm = 0.0;   // última medición del nivel (cm)
+char estado_tanque[20] = "Desconocido";   // variable global con el estado actual
+
 
 /*==================[internal functions declaration]=========================*/
+void TimerNivelHandler(void *param);
+void TimerLCDHandler(void *param);
 void TimerNivelHandler(void *param);
 void MedirNivelTask(void *pvParameter);
 
@@ -54,6 +62,12 @@ void MedirNivelTask(void *pvParameter);
  */
 void TimerNivelHandler(void *param) {
     vTaskNotifyGiveFromISR(medir_task_handle, pdFALSE);
+}
+/**
+ * @brief Callback del timer: despierta la tarea de LCD cada 1 s
+ */
+void TimerLCDHandler(void *param) {
+    vTaskNotifyGiveFromISR(lcd_task_handle, pdFALSE);
 }
 
 /**
@@ -82,23 +96,57 @@ void MedirNivelTask(void *pvParameter) {
         /* Guardar el valor global */
         nivel_agua_cm = nivel_cm;
 
-        if (nivel_agua_cm<nivel_cm_min){
-            LedOn(LED_1);}
-        else if (nivel_agua_cm>nivel_cm_max){
-            LedOn(LED_2);
+        /* Solo esta para prueba*/
+        if (nivel_agua_cm < nivel_cm_min) {
+            LedOn(LED_1);   
+            LedOff(LED_2);
+            strcpy(estado_tanque, "Nivel bajo");
+        } 
+        else if (nivel_agua_cm > nivel_cm_max) {
+            LedOn(LED_2);   
+            LedOff(LED_1);
+            strcpy(estado_tanque, "Tanque lleno");
+        } 
+        else {
+            LedOn(LED_3);
+            LedOff(LED_2);
+            LedOff(LED_1);
+            strcpy(estado_tanque, "Llenando");
         }
+
         /* Enviar por UART */
         UartSendString(UART_PC, "Nivel de agua: ");
         UartSendString(UART_PC, (char *)UartItoa((uint32_t)nivel_agua_cm, 10));
         UartSendString(UART_PC, " cm\r\n");
+        /*De prueba antes de hacer la tarea del control de estado*/
+        UartSendString(UART_PC, estado_tanque);
+        UartSendString(UART_PC, "\r\n");
     }
 }
+/**
+ * @brief Tarea que muestra el nivel en el display LCD cada 1 s
+ */
+void MostrarLCDTask(void *pvParameter) {
+    while (true) {
+        /* Espera notificación del timer */
+        ulTaskNotifyTake(pdTRUE, portMAX_DELAY);
 
+        /* Mostrar el nivel en el display (valor entero) */
+        uint8_t nivel_entero = (uint8_t)nivel_agua_cm;
+        LcdItsE0803Write(nivel_entero);   // muestra en cm
+
+        /* Opcional para mostrar porcentaje, aca podriamos usar una 
+        tecla o mostrar directamente en porcentaje ya que es mas intuitivo*/
+        // uint8_t porcentaje = (nivel_agua_cm / ALTURA_TANQUE_CM) * 100;
+        // LcdItsE0803Write(porcentaje);
+    }
+}
 /*==================[external functions definition]==========================*/
 void app_main(void) {
     LedsInit();
-    /* Inicialización de periféricos */
-    HcSr04Init(GPIO_3, GPIO_2);   // ajustar pines según conexión
+    HcSr04Init(GPIO_3, GPIO_2); 
+    LcdItsE0803Init();   
+
     serial_config_t uart_cfg = {
         .port      = UART_PC,
         .baud_rate = UART_BAUDRATE,
@@ -116,11 +164,23 @@ void app_main(void) {
     };
     TimerInit(&timer_nivel);
 
+    /* Configuración del timer de LCD */
+    timer_config_t timer_lcd = {
+        .timer   = TIMER_B,
+        .period  = LCD_REFRESH_US,
+        .func_p  = TimerLCDHandler,
+        .param_p = NULL
+    };
+    TimerInit(&timer_lcd);
+
     /* Crear tarea */
     xTaskCreate(&MedirNivelTask, "NivelTask", 512, NULL, 5, &medir_task_handle);
+    xTaskCreate(&MostrarLCDTask, "LCDTask", 512, NULL, 4, &lcd_task_handle);
+
 
     /* Iniciar timer */
     TimerStart(timer_nivel.timer);
+    TimerStart(timer_lcd.timer);
 }
 
 /*==================[end of file]============================================*/

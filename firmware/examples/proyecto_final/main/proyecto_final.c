@@ -37,17 +37,17 @@
 #include "lcditse0803.h"
 #include <string.h>
 /*==================[macros and definitions]=================================*/
-#define ALTURA_TANQUE_CM   17.0        // altura total del tanque (cm)
+#define ALTURA_TANQUE_CM   17      // altura total del tanque (cm)
 #define REFRESH_PERIOD_US  1000000      // 1 s
 #define UART_BAUDRATE      115200
 #define CONTROL_PERIOD_US  500000 
-#define NIVEL_MIN_CM      10.0
-#define NIVEL_MAX_CM      14.0
+#define NIVEL_MIN_CM      10
+#define NIVEL_MAX_CM      14
 
 /*==================[internal data definition]===============================*/
 TaskHandle_t medir_task_handle = NULL;
 TaskHandle_t control_task_handle = NULL;
-float nivel_agua_cm = 0.0;   // última medición del nivel (cm)
+uint8_t nivel_agua_cm = 0;   // última medición del nivel (cm)
 /*--- Nuevo: estado del tanque ---*/
 typedef enum {
     NIVEL_BAJO,
@@ -138,7 +138,7 @@ void MedirNivelTask(void *pvParameter) {
 
         /* Calcular nivel (altura - distancia) */
         if (distancia_cm >= ALTURA_TANQUE_CM)
-            nivel_cm = 0.0;
+            nivel_cm = 0;
         else
             nivel_cm = ALTURA_TANQUE_CM - (float)distancia_cm;
 
@@ -148,9 +148,10 @@ void MedirNivelTask(void *pvParameter) {
         UartSendString(UART_PC, "Nivel de agua: ");
         UartSendString(UART_PC, (char *)UartItoa((uint32_t)nivel_agua_cm, 10));
         UartSendString(UART_PC, " cm\r\n");
+        
         //Muestra el nivel en el display LCD
-        uint8_t nivel_entero = (uint8_t)nivel_agua_cm;
-        LcdItsE0803Write(nivel_entero);
+        ;
+        LcdItsE0803Write(nivel_agua_cm);
         /* Opcional para mostrar porcentaje, aca podriamos usar una 
         tecla o mostrar directamente en porcentaje ya que es mas intuitivo*/
         // uint8_t porcentaje = (nivel_agua_cm / ALTURA_TANQUE_CM) * 100;
@@ -163,7 +164,8 @@ void MedirNivelTask(void *pvParameter) {
 void app_main(void) {
     //LedsInit();
     HcSr04Init(GPIO_3, GPIO_2); 
-    LcdItsE0803Init();   
+    LcdItsE0803Init();
+    LcdItsE0803Write(5);
 
     serial_config_t uart_cfg = {
         .port      = UART_PC,

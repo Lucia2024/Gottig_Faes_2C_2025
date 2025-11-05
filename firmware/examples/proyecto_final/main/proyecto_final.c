@@ -39,7 +39,7 @@
 #include "switch.h"
 /*==================[macros and definitions]=================================*/
 #define ALTURA_TANQUE_CM   17      // altura total del tanque (cm)
-#define REFRESH_PERIOD_US  1000000      // 1 s
+#define REFRESH_PERIOD_US  100000   // 100 ms
 #define UART_BAUDRATE      115200
 #define CONTROL_PERIOD_US  500000 
 #define NIVEL_MIN_CM      10
@@ -48,6 +48,8 @@
 /*==================[internal data definition]===============================*/
 TaskHandle_t medir_task_handle = NULL;
 TaskHandle_t control_task_handle = NULL;
+TaskHandle_t control_manual_task_handle = NULL;
+
 uint8_t nivel_agua_cm = 0;   // última medición del nivel (cm)
 /*--- Nuevo: estado del tanque ---*/
 typedef enum {
@@ -57,13 +59,13 @@ typedef enum {
 } estado_tanque_t;
 
 volatile estado_tanque_t estado_tanque = TANQUE_LLENO;  // estado inicial
+volatile bool control_manual_activo = false;
 
 /*==================[internal functions declaration]=========================*/
 void TimerNivelHandler(void *param);
 void MedirNivelTask(void *pvParameter);
 void TimerControlHandler(void *param);
 void ControlNivelTask(void *pvParameter);
-void TimerManualHandler(void *param);
 /*==================[internal functions definition]==========================*/
 
 /**
@@ -77,9 +79,6 @@ void TimerControlHandler(void *param) {
     vTaskNotifyGiveFromISR(control_task_handle, pdFALSE);
 }
 
-void TimerManualHandler(void *param) {
-    vTaskNotifyGiveFromISR(control_manual_task_handle, pdFALSE);
-}
 
 /**
  * @brief Tarea que controla el estado del tanque/bomba y lo envía por UART
@@ -91,16 +90,21 @@ void ControlNivelTask(void *pvParameter) {
         /* Esperar notificación del timer */
         ulTaskNotifyTake(pdTRUE, portMAX_DELAY);
 
+        // Si está activo el control manual, salteamos el control automático
+        if (control_manual_activo) {
+            continue;
+        }
+
         if (nivel_agua_cm < NIVEL_MIN_CM) {
             // Activar bomba (rele y LED)
-            GPIOOn(GPIO_18);   // ejemplo: relé en GPIO_18
+            GPIOOff(GPIO_6);   // ejemplo: relé en GPIO_6
             //LedOn(LED_1);      // LED indica bomba activa
             bomba_activada = true;
             estado_tanque = NIVEL_BAJO;
 
         } else if (nivel_agua_cm > NIVEL_MAX_CM) {
             // Apagar bomba (rele y LED)
-            GPIOOff(GPIO_18);
+            GPIOOn(GPIO_6);
             //LedOff(LED_1);
             bomba_activada = false;
             estado_tanque = TANQUE_LLENO;
@@ -132,7 +136,7 @@ void ControlNivelTask(void *pvParameter) {
  */
 void MedirNivelTask(void *pvParameter) {
     uint16_t distancia_cm;
-    float nivel_cm;
+    uint16_t nivel_cm;
 
     while (true) {
         /* Espera la notificación del timer */
@@ -145,7 +149,7 @@ void MedirNivelTask(void *pvParameter) {
         if (distancia_cm >= ALTURA_TANQUE_CM)
             nivel_cm = 0;
         else
-            nivel_cm = ALTURA_TANQUE_CM - (float)distancia_cm;
+            nivel_cm = ALTURA_TANQUE_CM - distancia_cm;
 
         /* Guardar el valor global */
         nivel_agua_cm = nivel_cm;
@@ -157,10 +161,7 @@ void MedirNivelTask(void *pvParameter) {
         //Muestra el nivel en el display LCD
         ;
         LcdItsE0803Write(nivel_agua_cm);
-        /* Opcional para mostrar porcentaje, aca podriamos usar una 
-        tecla o mostrar directamente en porcentaje ya que es mas intuitivo*/
-        // uint8_t porcentaje = (nivel_agua_cm / ALTURA_TANQUE_CM) * 100;
-        // LcdItsE0803Write(porcentaje);
+
     }
 }
 
@@ -169,31 +170,53 @@ void MedirNivelTask(void *pvParameter) {
  * Verifica si el pulsador está presionado, y si lo está,
  * detiene la bomba y muestra un mensaje por UART.
  */
+
 void ControlManualTask(void *pvParameter) {
-    while (true) {
-        /* Espera la notificación del timer */
-        ulTaskNotifyTake(pdTRUE, portMAX_DELAY);
 
-        /* Leer estado de los switches */
-        int8_t estado_switch = SwitchesRead();
+while (1) {
+    int8_t estado_switch = SwitchesRead();
 
-        if (estado_switch | SWITCH_1) {
-            // Detener la bomba
-            GPIOOff(GPIO_18);
-            estado_tanque = NIVEL_ESTABLE;
+    /* Si el usuario presiona el SWITCH_1, alterna entre modo manual y automático */
+    if (estado_switch == SWITCH_1) {
+        if (control_manual_activo) {
+            // Si ya estaba en modo manual → volver a automático
+            control_manual_activo = false;
+            UartSendString(UART_PC, "\r\n[CONTROL MANUAL] Desactivado, vuelve a control automático\r\n");
 
-            // Mostrar mensaje por UART
-            UartSendString(UART_PC, "\r\n[CONTROL MANUAL] Botón presionado: bomba detenida\r\n");
+        } else {
+            // Si estaba en automático → pasar a manual y apagar bomba
+            GPIOOn(GPIO_6);   // apagar bomba
+            LedOn(LED_1);
+            control_manual_activo = true;
+            UartSendString(UART_PC, "\r\n[CONTROL MANUAL] Activado: bomba detenida manualmente\r\n");
         }
     }
+
+    /* SWITCH_2: controla la válvula de desagote */
+    else if (estado_switch == SWITCH_2) {
+        GPIOOff(GPIO_7);  // activar válvula
+        LedOn(LED_2);
+        UartSendString(UART_PC, "\r\n[CONTROL MANUAL] Tanque en desagote\r\n");
+    }
+
+    vTaskDelay(pdMS_TO_TICKS(100)); // pequeño retardo para evitar rebotes
 }
+}
+
 
 /*==================[external functions definition]==========================*/
 void app_main(void) {
-    //LedsInit();
+    LedsInit();
     HcSr04Init(GPIO_3, GPIO_2); 
     LcdItsE0803Init();
-    LcdItsE0803Write(5);
+    SwitchesInit();
+    //BOMBA
+    GPIOInit(GPIO_6, GPIO_OUTPUT);
+    GPIOOn(GPIO_6);
+    //VALVULA
+    GPIOInit(GPIO_7, GPIO_OUTPUT);
+    GPIOOn(GPIO_7);
+
 
     serial_config_t uart_cfg = {
         .port      = UART_PC,
@@ -203,7 +226,7 @@ void app_main(void) {
     };
     UartInit(&uart_cfg);
 
-    /* Configuración del timer: 1 s */
+    /* Configuración del timer: 100 ms */
     timer_config_t timer_nivel = {
         .timer   = TIMER_A,
         .period  = REFRESH_PERIOD_US,
@@ -221,24 +244,15 @@ void app_main(void) {
     };
     TimerInit(&timer_control);
 
-    /* Configuración del timer de control manual */
-    timer_config_t timer_manual = {
-        .timer   = TIMER_B,           
-        .period  = 500000,
-        .func_p  = TimerManualHandler,
-        .param_p = NULL
-    };
-    TimerInit(&timer_manual);
 
    /* Crear tareas */
     xTaskCreate(&MedirNivelTask, "NivelTask", 512, NULL, 5, &medir_task_handle);
-    xTaskCreate(&ControlNivelTask, "ControlTask", 512, NULL, 4, &control_task_handle);
-    xTaskCreate(&ControlManualTask, "ControlManualTask", 512, NULL, 3, &control_manual_task_handle);
+    xTaskCreate(&ControlNivelTask, "ControlTask", 512, NULL, 5, &control_task_handle);
+    xTaskCreate(&ControlManualTask, "ControlManualTask", 512, NULL, 5, &control_manual_task_handle);
    
     /* Iniciar timer */
     TimerStart(timer_nivel.timer);
     TimerStart(timer_control.timer);
-    TimerStart(timer_manual.timer);
 }
 
 /*==================[end of file]============================================*/

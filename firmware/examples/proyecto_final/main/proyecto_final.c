@@ -42,8 +42,8 @@
 #define REFRESH_PERIOD_US  100000   // 100 ms
 #define UART_BAUDRATE      115200
 #define CONTROL_PERIOD_US  500000 
-#define NIVEL_MIN_CM      10
-#define NIVEL_MAX_CM      14
+#define NIVEL_MIN_CM      11
+#define NIVEL_MAX_CM      13
 
 /*==================[internal data definition]===============================*/
 TaskHandle_t medir_task_handle = NULL;
@@ -60,12 +60,15 @@ typedef enum {
 
 volatile estado_tanque_t estado_tanque = TANQUE_LLENO;  // estado inicial
 volatile bool control_manual_activo = false;
+volatile bool control_valvula_manual = false;
+
 
 /*==================[internal functions declaration]=========================*/
 void TimerNivelHandler(void *param);
 void MedirNivelTask(void *pvParameter);
 void TimerControlHandler(void *param);
 void ControlNivelTask(void *pvParameter);
+
 /*==================[internal functions definition]==========================*/
 
 /**
@@ -159,8 +162,17 @@ void MedirNivelTask(void *pvParameter) {
         UartSendString(UART_PC, " cm\r\n");
         
         //Muestra el nivel en el display LCD
-        ;
         LcdItsE0803Write(nivel_agua_cm);
+
+        // ---------- Envío para el Serial Plotter ----------
+        char mensaje[30];
+        char *valor_str = (char *)UartItoa((uint32_t)nivel_agua_cm, 10);
+        strcpy(mensaje, ">brightness:");
+        strcat(mensaje, valor_str);
+        strcat(mensaje, "\r\n");
+        UartSendString(UART_PC, mensaje);
+
+
 
     }
 }
@@ -180,6 +192,7 @@ while (1) {
     if (estado_switch == SWITCH_1) {
         if (control_manual_activo) {
             // Si ya estaba en modo manual → volver a automático
+            LedOff(LED_1);
             control_manual_activo = false;
             UartSendString(UART_PC, "\r\n[CONTROL MANUAL] Desactivado, vuelve a control automático\r\n");
 
@@ -192,13 +205,22 @@ while (1) {
         }
     }
 
-    /* SWITCH_2: controla la válvula de desagote */
+   /* SWITCH_2: alterna modo manual de válvula */
     else if (estado_switch == SWITCH_2) {
-        GPIOOff(GPIO_7);  // activar válvula
-        LedOn(LED_2);
-        UartSendString(UART_PC, "\r\n[CONTROL MANUAL] Tanque en desagote\r\n");
+        if (control_valvula_manual) {
+            // Estaba activada manualmente → apagar válvula
+            control_valvula_manual = false;
+            GPIOOn(GPIO_7);   // cerrar válvula
+            LedOff(LED_2);
+            UartSendString(UART_PC, "\r\n[CONTROL MANUAL] Válvula cerrada\r\n");
+        } else {
+            // Estaba apagada → activar manualmente
+            control_valvula_manual = true;
+            GPIOOff(GPIO_7);  // abrir válvula
+            LedOn(LED_2);
+            UartSendString(UART_PC, "\r\n[CONTROL MANUAL] Válvula en desagote manual\r\n");
+        }
     }
-
     vTaskDelay(pdMS_TO_TICKS(100)); // pequeño retardo para evitar rebotes
 }
 }
@@ -249,6 +271,7 @@ void app_main(void) {
     xTaskCreate(&MedirNivelTask, "NivelTask", 512, NULL, 5, &medir_task_handle);
     xTaskCreate(&ControlNivelTask, "ControlTask", 512, NULL, 5, &control_task_handle);
     xTaskCreate(&ControlManualTask, "ControlManualTask", 512, NULL, 5, &control_manual_task_handle);
+
    
     /* Iniciar timer */
     TimerStart(timer_nivel.timer);

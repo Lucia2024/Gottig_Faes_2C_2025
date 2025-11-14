@@ -1,5 +1,6 @@
 var group___drivers___devices =
 [
+    [ "ADXL335", "group___a_d_x_l335.html", "group___a_d_x_l335" ],
     [ "Buzzer", "group___b_u_z_z_e_r.html", "group___b_u_z_z_e_r" ],
     [ "Buzzer Melodies", "group___b_u_z_z_e_r___m_e_l_o_d_i_e_s.html", "group___b_u_z_z_e_r___m_e_l_o_d_i_e_s" ],
     [ "Icons", "group___i_c_o_n_s.html", "group___i_c_o_n_s" ],
@@ -12,6 +13,7 @@ var group___drivers___devices =
     [ "MPU6050", "group___m_p_u6050.html", "group___m_p_u6050" ],
     [ "NeoPixel_Stripe", "group___neo_pixel___stripe.html", "group___neo_pixel___stripe" ],
     [ "Servo", "group___s_e_r_v_o.html", "group___s_e_r_v_o" ],
+    [ "Sensor Temperatura y Humedad", "group___sensor___ty_h.html", "group___sensor___ty_h" ],
     [ "Switch", "group___switch.html", "group___switch" ],
     [ "WS2812B", "group___w_s2812_b.html", "group___w_s2812_b" ],
     [ "HX711_get_units", "group___drivers___devices.html#ga04c53a9e98f8bef16ddc84b341f375cc", null ],

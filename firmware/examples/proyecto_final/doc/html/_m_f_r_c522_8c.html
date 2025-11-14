@@ -1,0 +1,2127 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.14.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Proyecto integrador: Referencia del archivo C:/Repositorios/Gottig_Faes_2C_2025/firmware/drivers/devices/src/MFRC522.c</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+  $(function() { init_search(); });
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectlogo"><img alt="Logo" src="fiuner.png"/></td>
+  <td id="projectalign">
+   <div id="projectname">Proyecto integrador<span id="projectnumber">&#160;1.0</span>
+   </div>
+   <div id="projectbrief">Control automatico del nivel de agua</div>
+  </td>
+    <td>        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <span id="MSearchSelect" class="search-icon" onmouseover="return searchBox.OnSearchSelectShow()" onmouseout="return searchBox.OnSearchSelectHide()"><span class="search-icon-dropdown"></span></span>
+          <input type="text" id="MSearchField" value="" placeholder="Buscar" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><div id="MSearchCloseImg" class="close-icon"></div></a>
+          </span>
+        </div>
+</td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Generado por Doxygen 1.14.0 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+</script>
+<script type="text/javascript">
+$(function() { codefold.init(); });
+</script>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(function(){initNavTree('_m_f_r_c522_8c.html','',''); });
+</script>
+<div id="container">
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Cargando...</div>
+<div class="SRStatus" id="Searching">Buscando...</div>
+<div class="SRStatus" id="NoMatches">Nada coincide</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">Referencia del archivo MFRC522.c</div></div>
+</div><!--header-->
+<div class="contents">
+<div class="textblock"><code>#include &quot;<a class="el" href="_m_f_r_c522_8h_source.html">MFRC522.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="gpio__mcu_8h_source.html">gpio_mcu.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="delay__mcu_8h_source.html">delay_mcu.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="uart__mcu_8h_source.html">uart_mcu.h</a>&quot;</code><br />
+</div>
+<p><a href="_m_f_r_c522_8c_source.html">Ir al código fuente de este archivo.</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-define-members" class="groupheader"><a id="define-members" name="define-members"></a>
+defines</h2></td></tr>
+<tr class="memitem:a5a96556b55f3bf5350e836859a37280d" id="r_a5a96556b55f3bf5350e836859a37280d"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a5a96556b55f3bf5350e836859a37280d">SPI_BR</a>&#160;&#160;&#160;4000000</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-func-members" class="groupheader"><a id="func-members" name="func-members"></a>
+Funciones</h2></td></tr>
+<tr class="memitem:a93854fc0889104f59b72f7b595111452" id="r_a93854fc0889104f59b72f7b595111452"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_m_f_r_c522_8h.html#a08c3a10bca51453a3ef3bf91aca43aaa">MFRC522Ptr_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a93854fc0889104f59b72f7b595111452">MFRC522_Init</a> ()</td></tr>
+<tr class="memitem:af12d4652b1c770c2b1bf1e24017da784" id="r_af12d4652b1c770c2b1bf1e24017da784"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af12d4652b1c770c2b1bf1e24017da784">PCD_WriteRegister</a> (<a class="el" href="_m_f_r_c522_8h.html#a08c3a10bca51453a3ef3bf91aca43aaa">MFRC522Ptr_t</a> mfrc, uint8_t reg, uint8_t value)</td></tr>
+<tr class="memitem:a6dec618235abd59764302dd5c9dc48ac" id="r_a6dec618235abd59764302dd5c9dc48ac"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a6dec618235abd59764302dd5c9dc48ac">PCD_WriteNRegister</a> (<a class="el" href="_m_f_r_c522_8h.html#a08c3a10bca51453a3ef3bf91aca43aaa">MFRC522Ptr_t</a> mfrc, uint8_t reg, uint8_t count, uint8_t *values)</td></tr>
+<tr class="memitem:a36b15d86f0b4515756941de3690a5d0f" id="r_a36b15d86f0b4515756941de3690a5d0f"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a36b15d86f0b4515756941de3690a5d0f">PCD_ReadRegister</a> (<a class="el" href="_m_f_r_c522_8h.html#a08c3a10bca51453a3ef3bf91aca43aaa">MFRC522Ptr_t</a> mfrc, uint8_t reg)</td></tr>
+<tr class="memitem:adfaf0cdae99cae2744afeb8fe01a8445" id="r_adfaf0cdae99cae2744afeb8fe01a8445"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#adfaf0cdae99cae2744afeb8fe01a8445">PCD_ReadNRegister</a> (<a class="el" href="_m_f_r_c522_8h.html#a08c3a10bca51453a3ef3bf91aca43aaa">MFRC522Ptr_t</a> mfrc, uint8_t reg, uint8_t count, uint8_t *values, uint8_t rxAlign)</td></tr>
+<tr class="memitem:adb83d5ff6c6a2f6c463e128c624ce609" id="r_adb83d5ff6c6a2f6c463e128c624ce609"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#adb83d5ff6c6a2f6c463e128c624ce609">PCD_SetRegisterBitMask</a> (<a class="el" href="_m_f_r_c522_8h.html#a08c3a10bca51453a3ef3bf91aca43aaa">MFRC522Ptr_t</a> mfrc, uint8_t reg, uint8_t mask)</td></tr>
+<tr class="memitem:af42cc441e932799b08b9afa103249e0d" id="r_af42cc441e932799b08b9afa103249e0d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af42cc441e932799b08b9afa103249e0d">PCD_ClearRegisterBitMask</a> (<a class="el" href="_m_f_r_c522_8h.html#a08c3a10bca51453a3ef3bf91aca43aaa">MFRC522Ptr_t</a> mfrc, uint8_t reg, uint8_t mask)</td></tr>
+<tr class="memitem:a1408bbf72a6c703bc63713d8e6a5116b" id="r_a1408bbf72a6c703bc63713d8e6a5116b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_m_f_r_c522_8h.html#a5f21394f47e041c904141d6d8c684a12">StatusCode</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a1408bbf72a6c703bc63713d8e6a5116b">PCD_CalculateCRC</a> (<a class="el" href="_m_f_r_c522_8h.html#a08c3a10bca51453a3ef3bf91aca43aaa">MFRC522Ptr_t</a> mfrc, uint8_t *data, uint8_t length, uint8_t *result)</td></tr>
+<tr class="memitem:a343d4273077d3467214046a01f742abc" id="r_a343d4273077d3467214046a01f742abc"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a343d4273077d3467214046a01f742abc">PCD_Init</a> (<a class="el" href="_m_f_r_c522_8h.html#a08c3a10bca51453a3ef3bf91aca43aaa">MFRC522Ptr_t</a> mfrc)</td></tr>
+<tr class="memitem:a825cd02bc06960ca66fb1eaf6c5ea3c4" id="r_a825cd02bc06960ca66fb1eaf6c5ea3c4"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a825cd02bc06960ca66fb1eaf6c5ea3c4">PCD_Reset</a> (<a class="el" href="_m_f_r_c522_8h.html#a08c3a10bca51453a3ef3bf91aca43aaa">MFRC522Ptr_t</a> mfrc)</td></tr>
+<tr class="memitem:abc0aa4e70dcad5458b58eb3fc05d8828" id="r_abc0aa4e70dcad5458b58eb3fc05d8828"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#abc0aa4e70dcad5458b58eb3fc05d8828">PCD_AntennaOn</a> (<a class="el" href="_m_f_r_c522_8h.html#a08c3a10bca51453a3ef3bf91aca43aaa">MFRC522Ptr_t</a> mfrc)</td></tr>
+<tr class="memitem:a1696e6d20160cf14021dc560b9b7d76e" id="r_a1696e6d20160cf14021dc560b9b7d76e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a1696e6d20160cf14021dc560b9b7d76e">PCD_AntennaOff</a> (<a class="el" href="_m_f_r_c522_8h.html#a08c3a10bca51453a3ef3bf91aca43aaa">MFRC522Ptr_t</a> mfrc)</td></tr>
+<tr class="memitem:adfa089e6b24d306d435af00073a8d91e" id="r_adfa089e6b24d306d435af00073a8d91e"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#adfa089e6b24d306d435af00073a8d91e">PCD_GetAntennaGain</a> (<a class="el" href="_m_f_r_c522_8h.html#a08c3a10bca51453a3ef3bf91aca43aaa">MFRC522Ptr_t</a> mfrc)</td></tr>
+<tr class="memitem:ace321399bb0cf49bc3e8eeee8f7e7409" id="r_ace321399bb0cf49bc3e8eeee8f7e7409"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ace321399bb0cf49bc3e8eeee8f7e7409">PCD_SetAntennaGain</a> (<a class="el" href="_m_f_r_c522_8h.html#a08c3a10bca51453a3ef3bf91aca43aaa">MFRC522Ptr_t</a> mfrc, uint8_t mask)</td></tr>
+<tr class="memitem:ad016750b47137c2dda72d0399370f906" id="r_ad016750b47137c2dda72d0399370f906"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_m_f_r_c522_8h.html#a5f21394f47e041c904141d6d8c684a12">StatusCode</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad016750b47137c2dda72d0399370f906">PCD_TransceiveData</a> (<a class="el" href="_m_f_r_c522_8h.html#a08c3a10bca51453a3ef3bf91aca43aaa">MFRC522Ptr_t</a> mfrc, uint8_t *sendData, uint8_t sendLen, uint8_t *backData, uint8_t *backLen, uint8_t *validBits, uint8_t rxAlign, bool checkCRC)</td></tr>
+<tr class="memitem:ae19fa8c89f09966fe6d1224fa67878c4" id="r_ae19fa8c89f09966fe6d1224fa67878c4"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_m_f_r_c522_8h.html#a5f21394f47e041c904141d6d8c684a12">StatusCode</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae19fa8c89f09966fe6d1224fa67878c4">PCD_CommunicateWithPICC</a> (<a class="el" href="_m_f_r_c522_8h.html#a08c3a10bca51453a3ef3bf91aca43aaa">MFRC522Ptr_t</a> mfrc, uint8_t command, uint8_t waitIRq, uint8_t *sendData, uint8_t sendLen, uint8_t *backData, uint8_t *backLen, uint8_t *validBits, uint8_t rxAlign, bool checkCRC)</td></tr>
+<tr class="memitem:adde9796abdc412301c431f9eb062b014" id="r_adde9796abdc412301c431f9eb062b014"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_m_f_r_c522_8h.html#a5f21394f47e041c904141d6d8c684a12">StatusCode</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#adde9796abdc412301c431f9eb062b014">PICC_RequestA</a> (<a class="el" href="_m_f_r_c522_8h.html#a08c3a10bca51453a3ef3bf91aca43aaa">MFRC522Ptr_t</a> mfrc, uint8_t *bufferATQA, uint8_t *bufferSize)</td></tr>
+<tr class="memitem:aaec5eecc625edced74e35217e2c68672" id="r_aaec5eecc625edced74e35217e2c68672"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_m_f_r_c522_8h.html#a5f21394f47e041c904141d6d8c684a12">StatusCode</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aaec5eecc625edced74e35217e2c68672">PICC_WakeupA</a> (<a class="el" href="_m_f_r_c522_8h.html#a08c3a10bca51453a3ef3bf91aca43aaa">MFRC522Ptr_t</a> mfrc, uint8_t *bufferATQA, uint8_t *bufferSize)</td></tr>
+<tr class="memitem:afcdab74a88c7ea6667b0a37c5772430d" id="r_afcdab74a88c7ea6667b0a37c5772430d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_m_f_r_c522_8h.html#a5f21394f47e041c904141d6d8c684a12">StatusCode</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#afcdab74a88c7ea6667b0a37c5772430d">PICC_REQA_or_WUPA</a> (<a class="el" href="_m_f_r_c522_8h.html#a08c3a10bca51453a3ef3bf91aca43aaa">MFRC522Ptr_t</a> mfrc, uint8_t command, uint8_t *bufferATQA, uint8_t *bufferSize)</td></tr>
+<tr class="memitem:a9b4c2fa0c12d6aced842df016c763556" id="r_a9b4c2fa0c12d6aced842df016c763556"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_m_f_r_c522_8h.html#a5f21394f47e041c904141d6d8c684a12">StatusCode</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a9b4c2fa0c12d6aced842df016c763556">PICC_Select</a> (<a class="el" href="_m_f_r_c522_8h.html#a08c3a10bca51453a3ef3bf91aca43aaa">MFRC522Ptr_t</a> mfrc, <a class="el" href="struct_uid.html">Uid</a> *uid, uint8_t validBits)</td></tr>
+<tr class="memitem:aca5bc6619b9d67851b9e6d52ffd9e2fd" id="r_aca5bc6619b9d67851b9e6d52ffd9e2fd"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_m_f_r_c522_8h.html#a5f21394f47e041c904141d6d8c684a12">StatusCode</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aca5bc6619b9d67851b9e6d52ffd9e2fd">PICC_HaltA</a> (<a class="el" href="_m_f_r_c522_8h.html#a08c3a10bca51453a3ef3bf91aca43aaa">MFRC522Ptr_t</a> mfrc)</td></tr>
+<tr class="memitem:ae5b8405e265828180d3f8ca74eac2b93" id="r_ae5b8405e265828180d3f8ca74eac2b93"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_m_f_r_c522_8h.html#a5f21394f47e041c904141d6d8c684a12">StatusCode</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae5b8405e265828180d3f8ca74eac2b93">PCD_Authenticate</a> (<a class="el" href="_m_f_r_c522_8h.html#a08c3a10bca51453a3ef3bf91aca43aaa">MFRC522Ptr_t</a> mfrc, uint8_t command, uint8_t blockAddr, <a class="el" href="struct_m_i_f_a_r_e___key.html">MIFARE_Key</a> *key, <a class="el" href="struct_uid.html">Uid</a> *uid)</td></tr>
+<tr class="memitem:a0baa1dfc44e5c9762fb52c86456007a4" id="r_a0baa1dfc44e5c9762fb52c86456007a4"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a0baa1dfc44e5c9762fb52c86456007a4">PCD_StopCrypto1</a> (<a class="el" href="_m_f_r_c522_8h.html#a08c3a10bca51453a3ef3bf91aca43aaa">MFRC522Ptr_t</a> mfrc)</td></tr>
+<tr class="memitem:a50bcb471e3b85fb703b33707316ed6b9" id="r_a50bcb471e3b85fb703b33707316ed6b9"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_m_f_r_c522_8h.html#a5f21394f47e041c904141d6d8c684a12">StatusCode</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a50bcb471e3b85fb703b33707316ed6b9">MIFARE_Read</a> (<a class="el" href="_m_f_r_c522_8h.html#a08c3a10bca51453a3ef3bf91aca43aaa">MFRC522Ptr_t</a> mfrc, uint8_t blockAddr, uint8_t *<a class="el" href="mpu6050_8c.html#a174887a700c9f9e196a6504506d757e7">buffer</a>, uint8_t *bufferSize)</td></tr>
+<tr class="memitem:aae1bde0137920a2a3cdcf4744b6739b9" id="r_aae1bde0137920a2a3cdcf4744b6739b9"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_m_f_r_c522_8h.html#a5f21394f47e041c904141d6d8c684a12">StatusCode</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aae1bde0137920a2a3cdcf4744b6739b9">MIFARE_Write</a> (<a class="el" href="_m_f_r_c522_8h.html#a08c3a10bca51453a3ef3bf91aca43aaa">MFRC522Ptr_t</a> mfrc, uint8_t blockAddr, uint8_t *<a class="el" href="mpu6050_8c.html#a174887a700c9f9e196a6504506d757e7">buffer</a>, uint8_t bufferSize)</td></tr>
+<tr class="memitem:a56c4b9401115cb621d8287f6efbcc752" id="r_a56c4b9401115cb621d8287f6efbcc752"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_m_f_r_c522_8h.html#a5f21394f47e041c904141d6d8c684a12">StatusCode</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a56c4b9401115cb621d8287f6efbcc752">MIFARE_Ultralight_Write</a> (<a class="el" href="_m_f_r_c522_8h.html#a08c3a10bca51453a3ef3bf91aca43aaa">MFRC522Ptr_t</a> mfrc, uint8_t page, uint8_t *<a class="el" href="mpu6050_8c.html#a174887a700c9f9e196a6504506d757e7">buffer</a>, uint8_t bufferSize)</td></tr>
+<tr class="memitem:ac1cb24340d1861c220f6303a1779ea0d" id="r_ac1cb24340d1861c220f6303a1779ea0d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_m_f_r_c522_8h.html#a5f21394f47e041c904141d6d8c684a12">StatusCode</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac1cb24340d1861c220f6303a1779ea0d">MIFARE_Decrement</a> (<a class="el" href="_m_f_r_c522_8h.html#a08c3a10bca51453a3ef3bf91aca43aaa">MFRC522Ptr_t</a> mfrc, uint8_t blockAddr, long delta)</td></tr>
+<tr class="memitem:a33f794f4d99b7aa7fa1eb881be6a4f0f" id="r_a33f794f4d99b7aa7fa1eb881be6a4f0f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_m_f_r_c522_8h.html#a5f21394f47e041c904141d6d8c684a12">StatusCode</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a33f794f4d99b7aa7fa1eb881be6a4f0f">MIFARE_Increment</a> (<a class="el" href="_m_f_r_c522_8h.html#a08c3a10bca51453a3ef3bf91aca43aaa">MFRC522Ptr_t</a> mfrc, uint8_t blockAddr, long delta)</td></tr>
+<tr class="memitem:afb6a911130370684433e184b84515bd9" id="r_afb6a911130370684433e184b84515bd9"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_m_f_r_c522_8h.html#a5f21394f47e041c904141d6d8c684a12">StatusCode</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#afb6a911130370684433e184b84515bd9">MIFARE_Restore</a> (<a class="el" href="_m_f_r_c522_8h.html#a08c3a10bca51453a3ef3bf91aca43aaa">MFRC522Ptr_t</a> mfrc, uint8_t blockAddr)</td></tr>
+<tr class="memitem:ad2156bbcb8f7ed354a4ab1e26615d703" id="r_ad2156bbcb8f7ed354a4ab1e26615d703"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_m_f_r_c522_8h.html#a5f21394f47e041c904141d6d8c684a12">StatusCode</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad2156bbcb8f7ed354a4ab1e26615d703">MIFARE_TwoStepHelper</a> (<a class="el" href="_m_f_r_c522_8h.html#a08c3a10bca51453a3ef3bf91aca43aaa">MFRC522Ptr_t</a> mfrc, uint8_t command, uint8_t blockAddr, long data)</td></tr>
+<tr class="memitem:aab1837802b7de7697e6c6b63fdc4a571" id="r_aab1837802b7de7697e6c6b63fdc4a571"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_m_f_r_c522_8h.html#a5f21394f47e041c904141d6d8c684a12">StatusCode</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aab1837802b7de7697e6c6b63fdc4a571">MIFARE_Transfer</a> (<a class="el" href="_m_f_r_c522_8h.html#a08c3a10bca51453a3ef3bf91aca43aaa">MFRC522Ptr_t</a> mfrc, uint8_t blockAddr)</td></tr>
+<tr class="memitem:adc82e3fd2274353622db0f692288442e" id="r_adc82e3fd2274353622db0f692288442e"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_m_f_r_c522_8h.html#a5f21394f47e041c904141d6d8c684a12">StatusCode</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#adc82e3fd2274353622db0f692288442e">MIFARE_GetValue</a> (<a class="el" href="_m_f_r_c522_8h.html#a08c3a10bca51453a3ef3bf91aca43aaa">MFRC522Ptr_t</a> mfrc, uint8_t blockAddr, long *value)</td></tr>
+<tr class="memitem:aff0c0a5b6668f94b906a8319c4e4214e" id="r_aff0c0a5b6668f94b906a8319c4e4214e"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_m_f_r_c522_8h.html#a5f21394f47e041c904141d6d8c684a12">StatusCode</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aff0c0a5b6668f94b906a8319c4e4214e">MIFARE_SetValue</a> (<a class="el" href="_m_f_r_c522_8h.html#a08c3a10bca51453a3ef3bf91aca43aaa">MFRC522Ptr_t</a> mfrc, uint8_t blockAddr, long value)</td></tr>
+<tr class="memitem:a922d95c3bca282386cd90b9a5e20833f" id="r_a922d95c3bca282386cd90b9a5e20833f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_m_f_r_c522_8h.html#a5f21394f47e041c904141d6d8c684a12">StatusCode</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a922d95c3bca282386cd90b9a5e20833f">PCD_NTAG216_AUTH</a> (<a class="el" href="_m_f_r_c522_8h.html#a08c3a10bca51453a3ef3bf91aca43aaa">MFRC522Ptr_t</a> mfrc, uint8_t *passWord, uint8_t pACK[])</td></tr>
+<tr class="memitem:a407c314a79ea36e16d42ab5bb08bf727" id="r_a407c314a79ea36e16d42ab5bb08bf727"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_m_f_r_c522_8h.html#a5f21394f47e041c904141d6d8c684a12">StatusCode</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a407c314a79ea36e16d42ab5bb08bf727">PCD_MIFARE_Transceive</a> (<a class="el" href="_m_f_r_c522_8h.html#a08c3a10bca51453a3ef3bf91aca43aaa">MFRC522Ptr_t</a> mfrc, uint8_t *sendData, uint8_t sendLen, bool acceptTimeout)</td></tr>
+<tr class="memitem:a314835da0d39d791b6dc7e51fddb2997" id="r_a314835da0d39d791b6dc7e51fddb2997"><td class="memItemLeft" align="right" valign="top">const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a314835da0d39d791b6dc7e51fddb2997">GetStatusCodeName</a> (<a class="el" href="_m_f_r_c522_8h.html#a5f21394f47e041c904141d6d8c684a12">StatusCode</a> code)</td></tr>
+<tr class="memitem:a9208cafa971ea937514e22aa2912f34c" id="r_a9208cafa971ea937514e22aa2912f34c"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_m_f_r_c522_8h.html#a44a705567f16f88fb19ed57faf327140">PICC_Type</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a9208cafa971ea937514e22aa2912f34c">PICC_GetType</a> (uint8_t sak)</td></tr>
+<tr class="memitem:aa7f44169a793f4e3be931addbc1e7b7d" id="r_aa7f44169a793f4e3be931addbc1e7b7d"><td class="memItemLeft" align="right" valign="top">const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa7f44169a793f4e3be931addbc1e7b7d">PICC_GetTypeName</a> (<a class="el" href="_m_f_r_c522_8h.html#a44a705567f16f88fb19ed57faf327140">PICC_Type</a> piccType)</td></tr>
+<tr class="memitem:ae225bdf31bcac91a48fabe3d7ebe1de4" id="r_ae225bdf31bcac91a48fabe3d7ebe1de4"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae225bdf31bcac91a48fabe3d7ebe1de4">PCD_DumpVersionToSerial</a> (<a class="el" href="_m_f_r_c522_8h.html#a08c3a10bca51453a3ef3bf91aca43aaa">MFRC522Ptr_t</a> mfrc)</td></tr>
+<tr class="memitem:ab4b1689db50116ae0fc884aa03851ab8" id="r_ab4b1689db50116ae0fc884aa03851ab8"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab4b1689db50116ae0fc884aa03851ab8">PICC_DumpToSerial</a> (<a class="el" href="_m_f_r_c522_8h.html#a08c3a10bca51453a3ef3bf91aca43aaa">MFRC522Ptr_t</a> mfrc, <a class="el" href="struct_uid.html">Uid</a> *uid)</td></tr>
+<tr class="memitem:af1214335c8e4e9ca2bada4e285a90c00" id="r_af1214335c8e4e9ca2bada4e285a90c00"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af1214335c8e4e9ca2bada4e285a90c00">PICC_DumpDetailsToSerial</a> (<a class="el" href="struct_uid.html">Uid</a> *uid)</td></tr>
+<tr class="memitem:ab365ce740ca8192702711ba0072ecb36" id="r_ab365ce740ca8192702711ba0072ecb36"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab365ce740ca8192702711ba0072ecb36">PICC_DumpMifareClassicToSerial</a> (<a class="el" href="_m_f_r_c522_8h.html#a08c3a10bca51453a3ef3bf91aca43aaa">MFRC522Ptr_t</a> mfrc, <a class="el" href="struct_uid.html">Uid</a> *uid, <a class="el" href="_m_f_r_c522_8h.html#a44a705567f16f88fb19ed57faf327140">PICC_Type</a> piccType, <a class="el" href="struct_m_i_f_a_r_e___key.html">MIFARE_Key</a> *key)</td></tr>
+<tr class="memitem:a50acc80c8a42e25423e6a48fc167f392" id="r_a50acc80c8a42e25423e6a48fc167f392"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a50acc80c8a42e25423e6a48fc167f392">PICC_DumpMifareClassicSectorToSerial</a> (<a class="el" href="_m_f_r_c522_8h.html#a08c3a10bca51453a3ef3bf91aca43aaa">MFRC522Ptr_t</a> mfrc, <a class="el" href="struct_uid.html">Uid</a> *uid, <a class="el" href="struct_m_i_f_a_r_e___key.html">MIFARE_Key</a> *key, uint8_t sector)</td></tr>
+<tr class="memitem:adf26ead16a345287a914ac2c81777f5c" id="r_adf26ead16a345287a914ac2c81777f5c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#adf26ead16a345287a914ac2c81777f5c">PICC_DumpMifareUltralightToSerial</a> (<a class="el" href="_m_f_r_c522_8h.html#a08c3a10bca51453a3ef3bf91aca43aaa">MFRC522Ptr_t</a> mfrc)</td></tr>
+<tr class="memitem:aabff6be3fa4127b6a61959917a8d3b05" id="r_aabff6be3fa4127b6a61959917a8d3b05"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aabff6be3fa4127b6a61959917a8d3b05">MIFARE_SetAccessBits</a> (uint8_t *accessBitBuffer, uint8_t g0, uint8_t g1, uint8_t g2, uint8_t g3)</td></tr>
+<tr class="memitem:aae366e82e716d96e7ddbdf73bbf1a754" id="r_aae366e82e716d96e7ddbdf73bbf1a754"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aae366e82e716d96e7ddbdf73bbf1a754">MIFARE_OpenUidBackdoor</a> (<a class="el" href="_m_f_r_c522_8h.html#a08c3a10bca51453a3ef3bf91aca43aaa">MFRC522Ptr_t</a> mfrc, bool logErrors)</td></tr>
+<tr class="memitem:a927c56cd7e97d943be78e035de3c451f" id="r_a927c56cd7e97d943be78e035de3c451f"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a927c56cd7e97d943be78e035de3c451f">MIFARE_SetUid</a> (<a class="el" href="_m_f_r_c522_8h.html#a08c3a10bca51453a3ef3bf91aca43aaa">MFRC522Ptr_t</a> mfrc, uint8_t *newUid, uint8_t uidSize, bool logErrors)</td></tr>
+<tr class="memitem:a31a9676f18b0f9e67c1fc2af1557b64a" id="r_a31a9676f18b0f9e67c1fc2af1557b64a"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a31a9676f18b0f9e67c1fc2af1557b64a">MIFARE_UnbrickUidSector</a> (<a class="el" href="_m_f_r_c522_8h.html#a08c3a10bca51453a3ef3bf91aca43aaa">MFRC522Ptr_t</a> mfrc, bool logErrors)</td></tr>
+<tr class="memitem:aa3d2eff160fe9cef4e97a46f4a308be9" id="r_aa3d2eff160fe9cef4e97a46f4a308be9"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa3d2eff160fe9cef4e97a46f4a308be9">PICC_IsNewCardPresent</a> (<a class="el" href="_m_f_r_c522_8h.html#a08c3a10bca51453a3ef3bf91aca43aaa">MFRC522Ptr_t</a> mfrc)</td></tr>
+<tr class="memitem:ad3fd50cb601e53c67552f1697744f6b3" id="r_ad3fd50cb601e53c67552f1697744f6b3"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad3fd50cb601e53c67552f1697744f6b3">PICC_ReadCardSerial</a> (<a class="el" href="_m_f_r_c522_8h.html#a08c3a10bca51453a3ef3bf91aca43aaa">MFRC522Ptr_t</a> mfrc)</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-var-members" class="groupheader"><a id="var-members" name="var-members"></a>
+Variables</h2></td></tr>
+<tr class="memitem:aa7f1bcccbdc2615169d9c57878b037a0" id="r_aa7f1bcccbdc2615169d9c57878b037a0"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structspi__mcu__config__t.html">spi_mcu_config_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa7f1bcccbdc2615169d9c57878b037a0">spi_conf</a></td></tr>
+</table>
+<a name="doc-define-members" id="doc-define-members"></a><h2 id="header-doc-define-members" class="groupheader">Documentación de «define»</h2>
+<a id="a5a96556b55f3bf5350e836859a37280d" name="a5a96556b55f3bf5350e836859a37280d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5a96556b55f3bf5350e836859a37280d">&#9670;&#160;</a></span>SPI_BR</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define SPI_BR&#160;&#160;&#160;4000000</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Frequency of sck for SPI communication </p>
+
+<p class="definition">Definición en la línea <a class="el" href="_m_f_r_c522_8c_source.html#l00014">14</a> del archivo <a class="el" href="_m_f_r_c522_8c_source.html">MFRC522.c</a>.</p>
+
+</div>
+</div>
+<a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Documentación de funciones</h2>
+<a id="a314835da0d39d791b6dc7e51fddb2997" name="a314835da0d39d791b6dc7e51fddb2997"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a314835da0d39d791b6dc7e51fddb2997">&#9670;&#160;</a></span>GetStatusCodeName()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const char * GetStatusCodeName </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="_m_f_r_c522_8h.html#a5f21394f47e041c904141d6d8c684a12">StatusCode</a></td>          <td class="paramname"><span class="paramname"><em>code</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Returns const char pointer to a status code name.</p>
+<dl class="section return"><dt>Devuelve</dt><dd>const char * </dd></dl>
+<dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">code</td><td>One of theStatusCode enums. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definición en la línea <a class="el" href="_m_f_r_c522_8c_source.html#l01513">1513</a> del archivo <a class="el" href="_m_f_r_c522_8c_source.html">MFRC522.c</a>.</p>
+
+<p class="reference">Hace referencia a <a class="el" href="_m_f_r_c522_8h_source.html#l00257">STATUS_COLLISION</a>, <a class="el" href="_m_f_r_c522_8h_source.html#l00262">STATUS_CRC_WRONG</a>, <a class="el" href="_m_f_r_c522_8h_source.html#l00256">STATUS_ERROR</a>, <a class="el" href="_m_f_r_c522_8h_source.html#l00260">STATUS_INTERNAL_ERROR</a>, <a class="el" href="_m_f_r_c522_8h_source.html#l00261">STATUS_INVALID</a>, <a class="el" href="_m_f_r_c522_8h_source.html#l00263">STATUS_MIFARE_NACK</a>, <a class="el" href="_m_f_r_c522_8h_source.html#l00259">STATUS_NO_ROOM</a>, <a class="el" href="_m_f_r_c522_8h_source.html#l00255">STATUS_OK</a> y <a class="el" href="_m_f_r_c522_8h_source.html#l00258">STATUS_TIMEOUT</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="_m_f_r_c522_8c_source.html#l02062">MIFARE_OpenUidBackdoor()</a>, <a class="el" href="_m_f_r_c522_8c_source.html#l02147">MIFARE_SetUid()</a>, <a class="el" href="_m_f_r_c522_8c_source.html#l02257">MIFARE_UnbrickUidSector()</a>, <a class="el" href="_m_f_r_c522_8c_source.html#l01784">PICC_DumpMifareClassicSectorToSerial()</a> y <a class="el" href="_m_f_r_c522_8c_source.html#l01974">PICC_DumpMifareUltralightToSerial()</a>.</p>
+
+</div>
+</div>
+<a id="a93854fc0889104f59b72f7b595111452" name="a93854fc0889104f59b72f7b595111452"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a93854fc0889104f59b72f7b595111452">&#9670;&#160;</a></span>MFRC522_Init()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="_m_f_r_c522_8h.html#a08c3a10bca51453a3ef3bf91aca43aaa">MFRC522Ptr_t</a> MFRC522_Init </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Set up the data structures of an MFRC522 ADT object and return a pointer </p>
+
+<p class="definition">Definición en la línea <a class="el" href="_m_f_r_c522_8c_source.html#l00038">38</a> del archivo <a class="el" href="_m_f_r_c522_8c_source.html">MFRC522.c</a>.</p>
+
+<p class="reference">Hace referencia a <a class="el" href="_m_f_r_c522_8h_source.html#l00032">BUFFER_SIZE</a>, <a class="el" href="_m_f_r_c522_8h_source.html#l00036">MFRC_MAX_INSTANCES</a>, <a class="el" href="_m_f_r_c522_8h_source.html#l00298">MFRC522_T::Rx_Buf</a> y <a class="el" href="_m_f_r_c522_8h_source.html#l00297">MFRC522_T::Tx_Buf</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="rfid__utils_8c_source.html#l00115">setupRFID()</a>.</p>
+
+</div>
+</div>
+<a id="ac1cb24340d1861c220f6303a1779ea0d" name="ac1cb24340d1861c220f6303a1779ea0d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac1cb24340d1861c220f6303a1779ea0d">&#9670;&#160;</a></span>MIFARE_Decrement()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="_m_f_r_c522_8h.html#a5f21394f47e041c904141d6d8c684a12">StatusCode</a> MIFARE_Decrement </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="_m_f_r_c522_8h.html#a08c3a10bca51453a3ef3bf91aca43aaa">MFRC522Ptr_t</a></td>          <td class="paramname"><span class="paramname"><em>mfrc</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint8_t</td>          <td class="paramname"><span class="paramname"><em>blockAddr</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">long</td>          <td class="paramname"><span class="paramname"><em>delta</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>MIFARE Decrement subtracts the delta from the value of the addressed block, and stores the result in a volatile memory. For MIFARE Classic only. The sector containing the block must be authenticated before calling this function. Only for blocks in "value block" mode, ie with access bits [C1 C2 C3] = [110] or [001]. Use <a class="el" href="#aab1837802b7de7697e6c6b63fdc4a571">MIFARE_Transfer()</a> to store the result in a block.</p>
+<dl class="section return"><dt>Devuelve</dt><dd>STATUS_OK on success, STATUS_??? otherwise. </dd></dl>
+<dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">blockAddr</td><td>The block (0-0xff) number.  </td></tr>
+    <tr><td class="paramname">delta</td><td>This number is subtracted from the value of block blockAddr. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definición en la línea <a class="el" href="_m_f_r_c522_8c_source.html#l01225">1225</a> del archivo <a class="el" href="_m_f_r_c522_8c_source.html">MFRC522.c</a>.</p>
+
+<p class="reference">Hace referencia a <a class="el" href="_m_f_r_c522_8c_source.html#l01280">MIFARE_TwoStepHelper()</a> y <a class="el" href="_m_f_r_c522_8h_source.html#l00208">PICC_CMD_MF_DECREMENT</a>.</p>
+
+</div>
+</div>
+<a id="adc82e3fd2274353622db0f692288442e" name="adc82e3fd2274353622db0f692288442e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adc82e3fd2274353622db0f692288442e">&#9670;&#160;</a></span>MIFARE_GetValue()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="_m_f_r_c522_8h.html#a5f21394f47e041c904141d6d8c684a12">StatusCode</a> MIFARE_GetValue </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="_m_f_r_c522_8h.html#a08c3a10bca51453a3ef3bf91aca43aaa">MFRC522Ptr_t</a></td>          <td class="paramname"><span class="paramname"><em>mfrc</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint8_t</td>          <td class="paramname"><span class="paramname"><em>blockAddr</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">long *</td>          <td class="paramname"><span class="paramname"><em>value</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Helper routine to read the current value from a Value Block.</p>
+<p>Only for MIFARE Classic and only for blocks in "value block" mode, that is: with access bits [C1 C2 C3] = [110] or [001]. The sector containing the block must be authenticated before calling this function.</p>
+<dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">blockAddr</td><td>The block (0x00-0xff) number. </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">value</td><td>Current value of the Value Block. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Devuelve</dt><dd>STATUS_OK on success, STATUS_??? otherwise. </dd></dl>
+
+<p class="definition">Definición en la línea <a class="el" href="_m_f_r_c522_8c_source.html#l01348">1348</a> del archivo <a class="el" href="_m_f_r_c522_8c_source.html">MFRC522.c</a>.</p>
+
+<p class="reference">Hace referencia a <a class="el" href="mpu6050_8c_source.html#l00021">buffer</a>, <a class="el" href="_m_f_r_c522_8c_source.html#l01096">MIFARE_Read()</a> y <a class="el" href="_m_f_r_c522_8h_source.html#l00255">STATUS_OK</a>.</p>
+
+</div>
+</div>
+<a id="a33f794f4d99b7aa7fa1eb881be6a4f0f" name="a33f794f4d99b7aa7fa1eb881be6a4f0f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a33f794f4d99b7aa7fa1eb881be6a4f0f">&#9670;&#160;</a></span>MIFARE_Increment()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="_m_f_r_c522_8h.html#a5f21394f47e041c904141d6d8c684a12">StatusCode</a> MIFARE_Increment </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="_m_f_r_c522_8h.html#a08c3a10bca51453a3ef3bf91aca43aaa">MFRC522Ptr_t</a></td>          <td class="paramname"><span class="paramname"><em>mfrc</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint8_t</td>          <td class="paramname"><span class="paramname"><em>blockAddr</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">long</td>          <td class="paramname"><span class="paramname"><em>delta</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>MIFARE Increment adds the delta to the value of the addressed block, and stores the result in a volatile memory. For MIFARE Classic only. The sector containing the block must be authenticated before calling this function. Only for blocks in "value block" mode, ie with access bits [C1 C2 C3] = [110] or [001]. Use <a class="el" href="#aab1837802b7de7697e6c6b63fdc4a571">MIFARE_Transfer()</a> to store the result in a block.</p>
+<dl class="section return"><dt>Devuelve</dt><dd>STATUS_OK on success, STATUS_??? otherwise. </dd></dl>
+<dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">blockAddr</td><td>The block (0-0xff) number.  </td></tr>
+    <tr><td class="paramname">delta</td><td>This number is added to the value of block blockAddr. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definición en la línea <a class="el" href="_m_f_r_c522_8c_source.html#l01244">1244</a> del archivo <a class="el" href="_m_f_r_c522_8c_source.html">MFRC522.c</a>.</p>
+
+<p class="reference">Hace referencia a <a class="el" href="_m_f_r_c522_8c_source.html#l01280">MIFARE_TwoStepHelper()</a> y <a class="el" href="_m_f_r_c522_8h_source.html#l00211">PICC_CMD_MF_INCREMENT</a>.</p>
+
+</div>
+</div>
+<a id="aae366e82e716d96e7ddbdf73bbf1a754" name="aae366e82e716d96e7ddbdf73bbf1a754"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aae366e82e716d96e7ddbdf73bbf1a754">&#9670;&#160;</a></span>MIFARE_OpenUidBackdoor()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool MIFARE_OpenUidBackdoor </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="_m_f_r_c522_8h.html#a08c3a10bca51453a3ef3bf91aca43aaa">MFRC522Ptr_t</a></td>          <td class="paramname"><span class="paramname"><em>mfrc</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool</td>          <td class="paramname"><span class="paramname"><em>logErrors</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Performs the "magic sequence" needed to get Chinese UID changeable Mifare cards to allow writing to sector 0, where the card UID is stored.</p>
+<p>Note that you do not need to have selected the card through REQA or WUPA, this sequence works immediately when the card is in the reader vicinity. This means you can use this method even on "bricked" cards that your reader does not recognise anymore (see MIFARE_UnbrickUidSector).</p>
+<p>Of course with non-bricked devices, you're free to select them before calling this function. </p>
+
+<p class="definition">Definición en la línea <a class="el" href="_m_f_r_c522_8c_source.html#l02062">2062</a> del archivo <a class="el" href="_m_f_r_c522_8c_source.html">MFRC522.c</a>.</p>
+
+<p class="reference">Hace referencia a <a class="el" href="bootloader-cfgcmd_8txt_source.html#l00001">cmd</a>, <a class="el" href="_m_f_r_c522_8c_source.html#l01513">GetStatusCodeName()</a>, <a class="el" href="_m_f_r_c522_8c_source.html#l00446">PCD_TransceiveData()</a>, <a class="el" href="_m_f_r_c522_8c_source.html#l00983">PICC_HaltA()</a>, <a class="el" href="_m_f_r_c522_8h_source.html#l00255">STATUS_OK</a>, <a class="el" href="uart__mcu_8h_source.html#l00032">UART_PC</a> y <a class="el" href="uart__mcu_8c_source.html#l00193">UartSendString()</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="_m_f_r_c522_8c_source.html#l02147">MIFARE_SetUid()</a> y <a class="el" href="_m_f_r_c522_8c_source.html#l02257">MIFARE_UnbrickUidSector()</a>.</p>
+
+</div>
+</div>
+<a id="a50bcb471e3b85fb703b33707316ed6b9" name="a50bcb471e3b85fb703b33707316ed6b9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a50bcb471e3b85fb703b33707316ed6b9">&#9670;&#160;</a></span>MIFARE_Read()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="_m_f_r_c522_8h.html#a5f21394f47e041c904141d6d8c684a12">StatusCode</a> MIFARE_Read </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="_m_f_r_c522_8h.html#a08c3a10bca51453a3ef3bf91aca43aaa">MFRC522Ptr_t</a></td>          <td class="paramname"><span class="paramname"><em>mfrc</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint8_t</td>          <td class="paramname"><span class="paramname"><em>blockAddr</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint8_t *</td>          <td class="paramname"><span class="paramname"><em>buffer</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint8_t *</td>          <td class="paramname"><span class="paramname"><em>bufferSize</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Reads 16 uint8_ts (+ 2 uint8_ts CRC_A) from the active PICC.</p>
+<p>For MIFARE Classic the sector containing the block must be authenticated before calling this function.</p>
+<p>For MIFARE Ultralight only addresses 00h to 0Fh are decoded. The MF0ICU1 returns a NAK for higher addresses. The MF0ICU1 responds to the READ command by sending 16 uint8_ts starting from the page address defined by the command argument. For example; if blockAddr is 03h then pages 03h, 04h, 05h, 06h are returned. A roll-back is implemented: If blockAddr is 0Eh, then the contents of pages 0Eh, 0Fh, 00h and 01h are returned.</p>
+<p>The buffer must be at least 18 uint8_ts because a CRC_A is also returned. Checks the CRC_A before returning STATUS_OK.</p>
+<dl class="section return"><dt>Devuelve</dt><dd>STATUS_OK on success, STATUS_??? otherwise. </dd></dl>
+<dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">blockAddr</td><td>MIFARE Classic: The block (0-0xff) number. MIFARE Ultralight: The first page to return data from.  </td></tr>
+    <tr><td class="paramname">buffer</td><td>The buffer to store the data in  </td></tr>
+    <tr><td class="paramname">bufferSize</td><td>Buffer size, at least 18 uint8_ts. Also number of uint8_ts returned if STATUS_OK. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definición en la línea <a class="el" href="_m_f_r_c522_8c_source.html#l01096">1096</a> del archivo <a class="el" href="_m_f_r_c522_8c_source.html">MFRC522.c</a>.</p>
+
+<p class="reference">Hace referencia a <a class="el" href="mpu6050_8c_source.html#l00021">buffer</a>, <a class="el" href="ili9341_8c_source.html#l00019">NULL</a>, <a class="el" href="_m_f_r_c522_8c_source.html#l00264">PCD_CalculateCRC()</a>, <a class="el" href="_m_f_r_c522_8c_source.html#l00446">PCD_TransceiveData()</a>, <a class="el" href="_m_f_r_c522_8h_source.html#l00202">PICC_CMD_MF_READ</a>, <a class="el" href="_m_f_r_c522_8h_source.html#l00259">STATUS_NO_ROOM</a> y <a class="el" href="_m_f_r_c522_8h_source.html#l00255">STATUS_OK</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="_m_f_r_c522_8c_source.html#l01348">MIFARE_GetValue()</a>, <a class="el" href="_m_f_r_c522_8c_source.html#l02147">MIFARE_SetUid()</a>, <a class="el" href="_m_f_r_c522_8c_source.html#l01784">PICC_DumpMifareClassicSectorToSerial()</a> y <a class="el" href="_m_f_r_c522_8c_source.html#l01974">PICC_DumpMifareUltralightToSerial()</a>.</p>
+
+</div>
+</div>
+<a id="afb6a911130370684433e184b84515bd9" name="afb6a911130370684433e184b84515bd9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afb6a911130370684433e184b84515bd9">&#9670;&#160;</a></span>MIFARE_Restore()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="_m_f_r_c522_8h.html#a5f21394f47e041c904141d6d8c684a12">StatusCode</a> MIFARE_Restore </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="_m_f_r_c522_8h.html#a08c3a10bca51453a3ef3bf91aca43aaa">MFRC522Ptr_t</a></td>          <td class="paramname"><span class="paramname"><em>mfrc</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint8_t</td>          <td class="paramname"><span class="paramname"><em>blockAddr</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>MIFARE Restore copies the value of the addressed block into a volatile memory. For MIFARE Classic only. The sector containing the block must be authenticated before calling this function. Only for blocks in "value block" mode, ie with access bits [C1 C2 C3] = [110] or [001]. Use <a class="el" href="#aab1837802b7de7697e6c6b63fdc4a571">MIFARE_Transfer()</a> to store the result in a block.</p>
+<dl class="section return"><dt>Devuelve</dt><dd>STATUS_OK on success, STATUS_??? otherwise. </dd></dl>
+<dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">blockAddr</td><td>The block (0-0xff) number. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definición en la línea <a class="el" href="_m_f_r_c522_8c_source.html#l01263">1263</a> del archivo <a class="el" href="_m_f_r_c522_8c_source.html">MFRC522.c</a>.</p>
+
+<p class="reference">Hace referencia a <a class="el" href="_m_f_r_c522_8c_source.html#l01280">MIFARE_TwoStepHelper()</a> y <a class="el" href="_m_f_r_c522_8h_source.html#l00214">PICC_CMD_MF_RESTORE</a>.</p>
+
+</div>
+</div>
+<a id="aabff6be3fa4127b6a61959917a8d3b05" name="aabff6be3fa4127b6a61959917a8d3b05"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aabff6be3fa4127b6a61959917a8d3b05">&#9670;&#160;</a></span>MIFARE_SetAccessBits()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void MIFARE_SetAccessBits </td>
+          <td>(</td>
+          <td class="paramtype">uint8_t *</td>          <td class="paramname"><span class="paramname"><em>accessBitBuffer</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint8_t</td>          <td class="paramname"><span class="paramname"><em>g0</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint8_t</td>          <td class="paramname"><span class="paramname"><em>g1</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint8_t</td>          <td class="paramname"><span class="paramname"><em>g2</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint8_t</td>          <td class="paramname"><span class="paramname"><em>g3</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Calculates the bit pattern needed for the specified access bits. In the [C1 C2 C3] tuples C1 is MSB (=4) and C3 is LSB (=1). </p>
+<dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">accessBitBuffer</td><td>Pointer to uint8_t 6, 7 and 8 in the sector trailer. uint8_ts [0..2] will be set.  </td></tr>
+    <tr><td class="paramname">g0</td><td>Access bits [C1 C2 C3] for block 0 (for sectors 0-31) or blocks 0-4 (for sectors 32-39)  </td></tr>
+    <tr><td class="paramname">g1</td><td>Access bits C1 C2 C3] for block 1 (for sectors 0-31) or blocks 5-9 (for sectors 32-39)  </td></tr>
+    <tr><td class="paramname">g2</td><td>Access bits C1 C2 C3] for block 2 (for sectors 0-31) or blocks 10-14 (for sectors 32-39)  </td></tr>
+    <tr><td class="paramname">g3</td><td>Access bits C1 C2 C3] for the sector trailer, block 3 (for sectors 0-31) or block 15 (for sectors 32-39) </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definición en la línea <a class="el" href="_m_f_r_c522_8c_source.html#l02025">2025</a> del archivo <a class="el" href="_m_f_r_c522_8c_source.html">MFRC522.c</a>.</p>
+
+</div>
+</div>
+<a id="a927c56cd7e97d943be78e035de3c451f" name="a927c56cd7e97d943be78e035de3c451f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a927c56cd7e97d943be78e035de3c451f">&#9670;&#160;</a></span>MIFARE_SetUid()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool MIFARE_SetUid </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="_m_f_r_c522_8h.html#a08c3a10bca51453a3ef3bf91aca43aaa">MFRC522Ptr_t</a></td>          <td class="paramname"><span class="paramname"><em>mfrc</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint8_t *</td>          <td class="paramname"><span class="paramname"><em>newUid</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint8_t</td>          <td class="paramname"><span class="paramname"><em>uidSize</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool</td>          <td class="paramname"><span class="paramname"><em>logErrors</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Reads entire block 0, including all manufacturer data, and overwrites that block with the new UID, a freshly calculated BCC, and the original manufacturer data.</p>
+<p>It assumes a default KEY A of 0xFFFFFFFFFFFF. Make sure to have selected the card before this function is called. </p>
+
+<p class="definition">Definición en la línea <a class="el" href="_m_f_r_c522_8c_source.html#l02147">2147</a> del archivo <a class="el" href="_m_f_r_c522_8c_source.html">MFRC522.c</a>.</p>
+
+<p class="reference">Hace referencia a <a class="el" href="_m_f_r_c522_8c_source.html#l01513">GetStatusCodeName()</a>, <a class="el" href="_m_f_r_c522_8c_source.html#l02062">MIFARE_OpenUidBackdoor()</a>, <a class="el" href="_m_f_r_c522_8c_source.html#l01096">MIFARE_Read()</a>, <a class="el" href="_m_f_r_c522_8c_source.html#l01141">MIFARE_Write()</a>, <a class="el" href="_m_f_r_c522_8c_source.html#l01035">PCD_Authenticate()</a>, <a class="el" href="_m_f_r_c522_8c_source.html#l01068">PCD_StopCrypto1()</a>, <a class="el" href="_m_f_r_c522_8h_source.html#l00200">PICC_CMD_MF_AUTH_KEY_A</a>, <a class="el" href="_m_f_r_c522_8c_source.html#l02287">PICC_IsNewCardPresent()</a>, <a class="el" href="_m_f_r_c522_8c_source.html#l02303">PICC_ReadCardSerial()</a>, <a class="el" href="_m_f_r_c522_8c_source.html#l00636">PICC_WakeupA()</a>, <a class="el" href="_m_f_r_c522_8h_source.html#l00255">STATUS_OK</a>, <a class="el" href="_m_f_r_c522_8h_source.html#l00258">STATUS_TIMEOUT</a>, <a class="el" href="uart__mcu_8h_source.html#l00032">UART_PC</a>, <a class="el" href="uart__mcu_8c_source.html#l00193">UartSendString()</a> y <a class="el" href="_m_f_r_c522_8h_source.html#l00290">MFRC522_T::uid</a>.</p>
+
+</div>
+</div>
+<a id="aff0c0a5b6668f94b906a8319c4e4214e" name="aff0c0a5b6668f94b906a8319c4e4214e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aff0c0a5b6668f94b906a8319c4e4214e">&#9670;&#160;</a></span>MIFARE_SetValue()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="_m_f_r_c522_8h.html#a5f21394f47e041c904141d6d8c684a12">StatusCode</a> MIFARE_SetValue </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="_m_f_r_c522_8h.html#a08c3a10bca51453a3ef3bf91aca43aaa">MFRC522Ptr_t</a></td>          <td class="paramname"><span class="paramname"><em>mfrc</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint8_t</td>          <td class="paramname"><span class="paramname"><em>blockAddr</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">long</td>          <td class="paramname"><span class="paramname"><em>value</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Helper routine to write a specific value into a Value Block.</p>
+<p>Only for MIFARE Classic and only for blocks in "value block" mode, that is: with access bits [C1 C2 C3] = [110] or [001]. The sector containing the block must be authenticated before calling this function.</p>
+<dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">blockAddr</td><td>The block (0x00-0xff) number. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">value</td><td>New value of the Value Block. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Devuelve</dt><dd>STATUS_OK on success, STATUS_??? otherwise. </dd></dl>
+
+<p class="definition">Definición en la línea <a class="el" href="_m_f_r_c522_8c_source.html#l01381">1381</a> del archivo <a class="el" href="_m_f_r_c522_8c_source.html">MFRC522.c</a>.</p>
+
+<p class="reference">Hace referencia a <a class="el" href="mpu6050_8c_source.html#l00021">buffer</a> y <a class="el" href="_m_f_r_c522_8c_source.html#l01141">MIFARE_Write()</a>.</p>
+
+</div>
+</div>
+<a id="aab1837802b7de7697e6c6b63fdc4a571" name="aab1837802b7de7697e6c6b63fdc4a571"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aab1837802b7de7697e6c6b63fdc4a571">&#9670;&#160;</a></span>MIFARE_Transfer()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="_m_f_r_c522_8h.html#a5f21394f47e041c904141d6d8c684a12">StatusCode</a> MIFARE_Transfer </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="_m_f_r_c522_8h.html#a08c3a10bca51453a3ef3bf91aca43aaa">MFRC522Ptr_t</a></td>          <td class="paramname"><span class="paramname"><em>mfrc</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint8_t</td>          <td class="paramname"><span class="paramname"><em>blockAddr</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>MIFARE Transfer writes the value stored in the volatile memory into one MIFARE Classic block. For MIFARE Classic only. The sector containing the block must be authenticated before calling this function. Only for blocks in "value block" mode, ie with access bits [C1 C2 C3] = [110] or [001].</p>
+<dl class="section return"><dt>Devuelve</dt><dd>STATUS_OK on success, STATUS_??? otherwise. </dd></dl>
+<dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">blockAddr</td><td>The block (0-0xff) number. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definición en la línea <a class="el" href="_m_f_r_c522_8c_source.html#l01319">1319</a> del archivo <a class="el" href="_m_f_r_c522_8c_source.html">MFRC522.c</a>.</p>
+
+<p class="reference">Hace referencia a <a class="el" href="_m_f_r_c522_8c_source.html#l01460">PCD_MIFARE_Transceive()</a>, <a class="el" href="_m_f_r_c522_8h_source.html#l00216">PICC_CMD_MF_TRANSFER</a> y <a class="el" href="_m_f_r_c522_8h_source.html#l00255">STATUS_OK</a>.</p>
+
+</div>
+</div>
+<a id="ad2156bbcb8f7ed354a4ab1e26615d703" name="ad2156bbcb8f7ed354a4ab1e26615d703"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad2156bbcb8f7ed354a4ab1e26615d703">&#9670;&#160;</a></span>MIFARE_TwoStepHelper()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="_m_f_r_c522_8h.html#a5f21394f47e041c904141d6d8c684a12">StatusCode</a> MIFARE_TwoStepHelper </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="_m_f_r_c522_8h.html#a08c3a10bca51453a3ef3bf91aca43aaa">MFRC522Ptr_t</a></td>          <td class="paramname"><span class="paramname"><em>mfrc</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint8_t</td>          <td class="paramname"><span class="paramname"><em>command</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint8_t</td>          <td class="paramname"><span class="paramname"><em>blockAddr</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">long</td>          <td class="paramname"><span class="paramname"><em>data</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Helper function for the two-step MIFARE Classic protocol operations Decrement, Increment and Restore.</p>
+<dl class="section return"><dt>Devuelve</dt><dd>STATUS_OK on success, STATUS_??? otherwise. </dd></dl>
+<dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">command</td><td>The command to use  </td></tr>
+    <tr><td class="paramname">blockAddr</td><td>The block (0-0xff) number.  </td></tr>
+    <tr><td class="paramname">data</td><td>The data to transfer in step 2 </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definición en la línea <a class="el" href="_m_f_r_c522_8c_source.html#l01280">1280</a> del archivo <a class="el" href="_m_f_r_c522_8c_source.html">MFRC522.c</a>.</p>
+
+<p class="reference">Hace referencia a <a class="el" href="_m_f_r_c522_8c_source.html#l01460">PCD_MIFARE_Transceive()</a> y <a class="el" href="_m_f_r_c522_8h_source.html#l00255">STATUS_OK</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="_m_f_r_c522_8c_source.html#l01225">MIFARE_Decrement()</a>, <a class="el" href="_m_f_r_c522_8c_source.html#l01244">MIFARE_Increment()</a> y <a class="el" href="_m_f_r_c522_8c_source.html#l01263">MIFARE_Restore()</a>.</p>
+
+</div>
+</div>
+<a id="a56c4b9401115cb621d8287f6efbcc752" name="a56c4b9401115cb621d8287f6efbcc752"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a56c4b9401115cb621d8287f6efbcc752">&#9670;&#160;</a></span>MIFARE_Ultralight_Write()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="_m_f_r_c522_8h.html#a5f21394f47e041c904141d6d8c684a12">StatusCode</a> MIFARE_Ultralight_Write </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="_m_f_r_c522_8h.html#a08c3a10bca51453a3ef3bf91aca43aaa">MFRC522Ptr_t</a></td>          <td class="paramname"><span class="paramname"><em>mfrc</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint8_t</td>          <td class="paramname"><span class="paramname"><em>page</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint8_t *</td>          <td class="paramname"><span class="paramname"><em>buffer</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint8_t</td>          <td class="paramname"><span class="paramname"><em>bufferSize</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Writes a 4 uint8_t page to the active MIFARE Ultralight PICC.</p>
+<dl class="section return"><dt>Devuelve</dt><dd>STATUS_OK on success, STATUS_??? otherwise. </dd></dl>
+<dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">page</td><td>The page (2-15) to write to.  </td></tr>
+    <tr><td class="paramname">buffer</td><td>The 4 uint8_ts to write to the PICC  </td></tr>
+    <tr><td class="paramname">bufferSize</td><td>Buffer size, must be at least 4 uint8_ts. Exactly 4 uint8_ts are written. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definición en la línea <a class="el" href="_m_f_r_c522_8c_source.html#l01184">1184</a> del archivo <a class="el" href="_m_f_r_c522_8c_source.html">MFRC522.c</a>.</p>
+
+<p class="reference">Hace referencia a <a class="el" href="mpu6050_8c_source.html#l00021">buffer</a>, <a class="el" href="ili9341_8c_source.html#l00019">NULL</a>, <a class="el" href="_m_f_r_c522_8c_source.html#l01460">PCD_MIFARE_Transceive()</a>, <a class="el" href="_m_f_r_c522_8h_source.html#l00222">PICC_CMD_UL_WRITE</a>, <a class="el" href="_m_f_r_c522_8h_source.html#l00261">STATUS_INVALID</a> y <a class="el" href="_m_f_r_c522_8h_source.html#l00255">STATUS_OK</a>.</p>
+
+</div>
+</div>
+<a id="a31a9676f18b0f9e67c1fc2af1557b64a" name="a31a9676f18b0f9e67c1fc2af1557b64a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a31a9676f18b0f9e67c1fc2af1557b64a">&#9670;&#160;</a></span>MIFARE_UnbrickUidSector()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool MIFARE_UnbrickUidSector </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="_m_f_r_c522_8h.html#a08c3a10bca51453a3ef3bf91aca43aaa">MFRC522Ptr_t</a></td>          <td class="paramname"><span class="paramname"><em>mfrc</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool</td>          <td class="paramname"><span class="paramname"><em>logErrors</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Resets entire sector 0 to zeroes, so the card can be read again by readers. </p>
+
+<p class="definition">Definición en la línea <a class="el" href="_m_f_r_c522_8c_source.html#l02257">2257</a> del archivo <a class="el" href="_m_f_r_c522_8c_source.html">MFRC522.c</a>.</p>
+
+<p class="reference">Hace referencia a <a class="el" href="_m_f_r_c522_8c_source.html#l01513">GetStatusCodeName()</a>, <a class="el" href="_m_f_r_c522_8c_source.html#l02062">MIFARE_OpenUidBackdoor()</a>, <a class="el" href="_m_f_r_c522_8c_source.html#l01141">MIFARE_Write()</a>, <a class="el" href="_m_f_r_c522_8h_source.html#l00255">STATUS_OK</a>, <a class="el" href="uart__mcu_8h_source.html#l00032">UART_PC</a> y <a class="el" href="uart__mcu_8c_source.html#l00193">UartSendString()</a>.</p>
+
+</div>
+</div>
+<a id="aae1bde0137920a2a3cdcf4744b6739b9" name="aae1bde0137920a2a3cdcf4744b6739b9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aae1bde0137920a2a3cdcf4744b6739b9">&#9670;&#160;</a></span>MIFARE_Write()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="_m_f_r_c522_8h.html#a5f21394f47e041c904141d6d8c684a12">StatusCode</a> MIFARE_Write </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="_m_f_r_c522_8h.html#a08c3a10bca51453a3ef3bf91aca43aaa">MFRC522Ptr_t</a></td>          <td class="paramname"><span class="paramname"><em>mfrc</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint8_t</td>          <td class="paramname"><span class="paramname"><em>blockAddr</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint8_t *</td>          <td class="paramname"><span class="paramname"><em>buffer</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint8_t</td>          <td class="paramname"><span class="paramname"><em>bufferSize</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Writes 16 uint8_ts to the active PICC.</p>
+<p>For MIFARE Classic the sector containing the block must be authenticated before calling this function.</p>
+<p>For MIFARE Ultralight the operation is called "COMPATIBILITY WRITE". Even though 16 uint8_ts are transferred to the Ultralight PICC, only the least significant 4 uint8_ts (uint8_ts 0 to 3) are written to the specified address. It is recommended to set the remaining uint8_ts 04h to 0Fh to all logic 0.</p><ul>
+<li><dl class="section return"><dt>Devuelve</dt><dd>STATUS_OK on success, STATUS_??? otherwise. </dd></dl>
+</li>
+</ul>
+<dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">blockAddr</td><td>MIFARE Classic: The block (0-0xff) number. MIFARE Ultralight: The page (2-15) to write to.  </td></tr>
+    <tr><td class="paramname">buffer</td><td>The 16 uint8_ts to write to the PICC  </td></tr>
+    <tr><td class="paramname">bufferSize</td><td>Buffer size, must be at least 16 uint8_ts. Exactly 16 uint8_ts are written. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definición en la línea <a class="el" href="_m_f_r_c522_8c_source.html#l01141">1141</a> del archivo <a class="el" href="_m_f_r_c522_8c_source.html">MFRC522.c</a>.</p>
+
+<p class="reference">Hace referencia a <a class="el" href="mpu6050_8c_source.html#l00021">buffer</a>, <a class="el" href="ili9341_8c_source.html#l00019">NULL</a>, <a class="el" href="_m_f_r_c522_8c_source.html#l01460">PCD_MIFARE_Transceive()</a>, <a class="el" href="_m_f_r_c522_8h_source.html#l00205">PICC_CMD_MF_WRITE</a>, <a class="el" href="_m_f_r_c522_8h_source.html#l00261">STATUS_INVALID</a> y <a class="el" href="_m_f_r_c522_8h_source.html#l00255">STATUS_OK</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="_m_f_r_c522_8c_source.html#l02147">MIFARE_SetUid()</a>, <a class="el" href="_m_f_r_c522_8c_source.html#l01381">MIFARE_SetValue()</a> y <a class="el" href="_m_f_r_c522_8c_source.html#l02257">MIFARE_UnbrickUidSector()</a>.</p>
+
+</div>
+</div>
+<a id="a1696e6d20160cf14021dc560b9b7d76e" name="a1696e6d20160cf14021dc560b9b7d76e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1696e6d20160cf14021dc560b9b7d76e">&#9670;&#160;</a></span>PCD_AntennaOff()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void PCD_AntennaOff </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="_m_f_r_c522_8h.html#a08c3a10bca51453a3ef3bf91aca43aaa">MFRC522Ptr_t</a></td>          <td class="paramname"><span class="paramname"><em>mfrc</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Turns the antenna off by disabling pins TX1 and TX2. </p>
+
+<p class="definition">Definición en la línea <a class="el" href="_m_f_r_c522_8c_source.html#l00406">406</a> del archivo <a class="el" href="_m_f_r_c522_8c_source.html">MFRC522.c</a>.</p>
+
+<p class="reference">Hace referencia a <a class="el" href="_m_f_r_c522_8c_source.html#l00248">PCD_ClearRegisterBitMask()</a> y <a class="el" href="_m_f_r_c522_8h_source.html#l00071">TxControlReg</a>.</p>
+
+</div>
+</div>
+<a id="abc0aa4e70dcad5458b58eb3fc05d8828" name="abc0aa4e70dcad5458b58eb3fc05d8828"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abc0aa4e70dcad5458b58eb3fc05d8828">&#9670;&#160;</a></span>PCD_AntennaOn()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void PCD_AntennaOn </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="_m_f_r_c522_8h.html#a08c3a10bca51453a3ef3bf91aca43aaa">MFRC522Ptr_t</a></td>          <td class="paramname"><span class="paramname"><em>mfrc</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Turns the antenna on by enabling pins TX1 and TX2. After a reset these pins are disabled. </p>
+
+<p class="definition">Definición en la línea <a class="el" href="_m_f_r_c522_8c_source.html#l00396">396</a> del archivo <a class="el" href="_m_f_r_c522_8c_source.html">MFRC522.c</a>.</p>
+
+<p class="reference">Hace referencia a <a class="el" href="_m_f_r_c522_8c_source.html#l00127">PCD_ReadRegister()</a>, <a class="el" href="_m_f_r_c522_8c_source.html#l00068">PCD_WriteRegister()</a> y <a class="el" href="_m_f_r_c522_8h_source.html#l00071">TxControlReg</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="_m_f_r_c522_8c_source.html#l00315">PCD_Init()</a>.</p>
+
+</div>
+</div>
+<a id="ae5b8405e265828180d3f8ca74eac2b93" name="ae5b8405e265828180d3f8ca74eac2b93"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae5b8405e265828180d3f8ca74eac2b93">&#9670;&#160;</a></span>PCD_Authenticate()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="_m_f_r_c522_8h.html#a5f21394f47e041c904141d6d8c684a12">StatusCode</a> PCD_Authenticate </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="_m_f_r_c522_8h.html#a08c3a10bca51453a3ef3bf91aca43aaa">MFRC522Ptr_t</a></td>          <td class="paramname"><span class="paramname"><em>mfrc</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint8_t</td>          <td class="paramname"><span class="paramname"><em>command</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint8_t</td>          <td class="paramname"><span class="paramname"><em>blockAddr</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="struct_m_i_f_a_r_e___key.html">MIFARE_Key</a> *</td>          <td class="paramname"><span class="paramname"><em>key</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="struct_uid.html">Uid</a> *</td>          <td class="paramname"><span class="paramname"><em>uid</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Executes the MFRC522 MFAuthent command. This command manages MIFARE authentication to enable a secure communication to any MIFARE Mini, MIFARE 1K and MIFARE 4K card. The authentication is described in the MFRC522 datasheet section 10.3.1.9 and <a href="http://www.nxp.com/documents/data_sheet/MF1S503x.pdf">http://www.nxp.com/documents/data_sheet/MF1S503x.pdf</a> section 10.1. For use with MIFARE Classic PICCs. The PICC must be selected - ie in state ACTIVE(*) - before calling this function. Remember to call <a class="el" href="#a0baa1dfc44e5c9762fb52c86456007a4">PCD_StopCrypto1()</a> after communicating with the authenticated PICC - otherwise no new communications can start.</p>
+<p>All keys are set to FFFFFFFFFFFFh at chip delivery.</p>
+<dl class="section return"><dt>Devuelve</dt><dd>STATUS_OK on success, STATUS_??? otherwise. Probably STATUS_TIMEOUT if you supply the wrong key. </dd></dl>
+<dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">command</td><td>PICC_CMD_MF_AUTH_KEY_A or PICC_CMD_MF_AUTH_KEY_B  </td></tr>
+    <tr><td class="paramname">blockAddr</td><td>The block number. See numbering in the comments in the .h file.  </td></tr>
+    <tr><td class="paramname">key</td><td>Pointer to the Crypteo1 key to use (6 uint8_ts)  </td></tr>
+    <tr><td class="paramname">uid</td><td>Pointer to <a class="el" href="struct_uid.html">Uid</a> struct. The first 4 uint8_ts of the UID is used. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definición en la línea <a class="el" href="_m_f_r_c522_8c_source.html#l01035">1035</a> del archivo <a class="el" href="_m_f_r_c522_8c_source.html">MFRC522.c</a>.</p>
+
+<p class="reference">Hace referencia a <a class="el" href="_m_f_r_c522_8h_source.html#l00275">MIFARE_Key::keybyte</a>, <a class="el" href="_m_f_r_c522_8h_source.html#l00229">MF_KEY_SIZE</a>, <a class="el" href="ili9341_8c_source.html#l00019">NULL</a>, <a class="el" href="_m_f_r_c522_8c_source.html#l00478">PCD_CommunicateWithPICC()</a>, <a class="el" href="_m_f_r_c522_8h_source.html#l00148">PCD_MFAuthent</a>, <a class="el" href="_m_f_r_c522_8h_source.html#l00290">MFRC522_T::uid</a> y <a class="el" href="_m_f_r_c522_8h_source.html#l00269">Uid::uidByte</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="_m_f_r_c522_8c_source.html#l02147">MIFARE_SetUid()</a> y <a class="el" href="_m_f_r_c522_8c_source.html#l01784">PICC_DumpMifareClassicSectorToSerial()</a>.</p>
+
+</div>
+</div>
+<a id="a1408bbf72a6c703bc63713d8e6a5116b" name="a1408bbf72a6c703bc63713d8e6a5116b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1408bbf72a6c703bc63713d8e6a5116b">&#9670;&#160;</a></span>PCD_CalculateCRC()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="_m_f_r_c522_8h.html#a5f21394f47e041c904141d6d8c684a12">StatusCode</a> PCD_CalculateCRC </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="_m_f_r_c522_8h.html#a08c3a10bca51453a3ef3bf91aca43aaa">MFRC522Ptr_t</a></td>          <td class="paramname"><span class="paramname"><em>mfrc</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint8_t *</td>          <td class="paramname"><span class="paramname"><em>data</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint8_t</td>          <td class="paramname"><span class="paramname"><em>length</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint8_t *</td>          <td class="paramname"><span class="paramname"><em>result</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Use the CRC coprocessor in the MFRC522 to calculate a CRC_A.</p>
+<dl class="section return"><dt>Devuelve</dt><dd>STATUS_OK on success, STATUS_??? otherwise. </dd></dl>
+<dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">data</td><td>In: Pointer to the data to transfer to the FIFO for CRC calculation.  </td></tr>
+    <tr><td class="paramname">length</td><td>In: The number of uint8_ts to transfer.  </td></tr>
+    <tr><td class="paramname">result</td><td>Out: Pointer to result buffer. Result is written to result[0..1], low uint8_t first. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definición en la línea <a class="el" href="_m_f_r_c522_8c_source.html#l00264">264</a> del archivo <a class="el" href="_m_f_r_c522_8c_source.html">MFRC522.c</a>.</p>
+
+<p class="reference">Hace referencia a <a class="el" href="_m_f_r_c522_8h_source.html#l00048">CommandReg</a>, <a class="el" href="_m_f_r_c522_8h_source.html#l00090">CRCResultRegH</a>, <a class="el" href="_m_f_r_c522_8h_source.html#l00092">CRCResultRegL</a>, <a class="el" href="_m_f_r_c522_8h_source.html#l00052">DivIrqReg</a>, <a class="el" href="_m_f_r_c522_8h_source.html#l00057">FIFODataReg</a>, <a class="el" href="_m_f_r_c522_8h_source.html#l00058">FIFOLevelReg</a>, <a class="el" href="_m_f_r_c522_8h_source.html#l00139">PCD_CalcCRC</a>, <a class="el" href="_m_f_r_c522_8h_source.html#l00136">PCD_Idle</a>, <a class="el" href="_m_f_r_c522_8c_source.html#l00127">PCD_ReadRegister()</a>, <a class="el" href="_m_f_r_c522_8c_source.html#l00235">PCD_SetRegisterBitMask()</a>, <a class="el" href="_m_f_r_c522_8c_source.html#l00098">PCD_WriteNRegister()</a>, <a class="el" href="_m_f_r_c522_8c_source.html#l00068">PCD_WriteRegister()</a>, <a class="el" href="_m_f_r_c522_8h_source.html#l00255">STATUS_OK</a> y <a class="el" href="_m_f_r_c522_8h_source.html#l00258">STATUS_TIMEOUT</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="_m_f_r_c522_8c_source.html#l01096">MIFARE_Read()</a>, <a class="el" href="_m_f_r_c522_8c_source.html#l00478">PCD_CommunicateWithPICC()</a>, <a class="el" href="_m_f_r_c522_8c_source.html#l01460">PCD_MIFARE_Transceive()</a>, <a class="el" href="_m_f_r_c522_8c_source.html#l01411">PCD_NTAG216_AUTH()</a>, <a class="el" href="_m_f_r_c522_8c_source.html#l00983">PICC_HaltA()</a> y <a class="el" href="_m_f_r_c522_8c_source.html#l00710">PICC_Select()</a>.</p>
+
+</div>
+</div>
+<a id="af42cc441e932799b08b9afa103249e0d" name="af42cc441e932799b08b9afa103249e0d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af42cc441e932799b08b9afa103249e0d">&#9670;&#160;</a></span>PCD_ClearRegisterBitMask()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void PCD_ClearRegisterBitMask </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="_m_f_r_c522_8h.html#a08c3a10bca51453a3ef3bf91aca43aaa">MFRC522Ptr_t</a></td>          <td class="paramname"><span class="paramname"><em>mfrc</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint8_t</td>          <td class="paramname"><span class="paramname"><em>reg</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint8_t</td>          <td class="paramname"><span class="paramname"><em>mask</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Clears the bits given in mask from register reg. </p>
+<dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">reg</td><td>The register to update. One of the <a class="el" href="_m_f_r_c522_8h.html#a7380aa98144f0d378c6ec0c5af89203a">PCD_Register</a> enums.  </td></tr>
+    <tr><td class="paramname">mask</td><td>The bits to clear. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definición en la línea <a class="el" href="_m_f_r_c522_8c_source.html#l00248">248</a> del archivo <a class="el" href="_m_f_r_c522_8c_source.html">MFRC522.c</a>.</p>
+
+<p class="reference">Hace referencia a <a class="el" href="_m_f_r_c522_8c_source.html#l00127">PCD_ReadRegister()</a> y <a class="el" href="_m_f_r_c522_8c_source.html#l00068">PCD_WriteRegister()</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="_m_f_r_c522_8c_source.html#l00406">PCD_AntennaOff()</a>, <a class="el" href="_m_f_r_c522_8c_source.html#l00428">PCD_SetAntennaGain()</a>, <a class="el" href="_m_f_r_c522_8c_source.html#l01068">PCD_StopCrypto1()</a>, <a class="el" href="_m_f_r_c522_8c_source.html#l00653">PICC_REQA_or_WUPA()</a> y <a class="el" href="_m_f_r_c522_8c_source.html#l00710">PICC_Select()</a>.</p>
+
+</div>
+</div>
+<a id="ae19fa8c89f09966fe6d1224fa67878c4" name="ae19fa8c89f09966fe6d1224fa67878c4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae19fa8c89f09966fe6d1224fa67878c4">&#9670;&#160;</a></span>PCD_CommunicateWithPICC()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="_m_f_r_c522_8h.html#a5f21394f47e041c904141d6d8c684a12">StatusCode</a> PCD_CommunicateWithPICC </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="_m_f_r_c522_8h.html#a08c3a10bca51453a3ef3bf91aca43aaa">MFRC522Ptr_t</a></td>          <td class="paramname"><span class="paramname"><em>mfrc</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint8_t</td>          <td class="paramname"><span class="paramname"><em>command</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint8_t</td>          <td class="paramname"><span class="paramname"><em>waitIRq</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint8_t *</td>          <td class="paramname"><span class="paramname"><em>sendData</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint8_t</td>          <td class="paramname"><span class="paramname"><em>sendLen</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint8_t *</td>          <td class="paramname"><span class="paramname"><em>backData</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint8_t *</td>          <td class="paramname"><span class="paramname"><em>backLen</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint8_t *</td>          <td class="paramname"><span class="paramname"><em>validBits</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint8_t</td>          <td class="paramname"><span class="paramname"><em>rxAlign</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool</td>          <td class="paramname"><span class="paramname"><em>checkCRC</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Transfers data to the MFRC522 FIFO, executes a command, waits for completion and transfers data back from the FIFO. CRC validation can only be done if backData and backLen are specified.</p>
+<dl class="section return"><dt>Devuelve</dt><dd>STATUS_OK on success, STATUS_??? otherwise. </dd></dl>
+<dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">command</td><td>The command to execute. One of the <a class="el" href="_m_f_r_c522_8h.html#a617683bfa818f4980ae8caeb0860b78d">PCD_Command</a> enums.  </td></tr>
+    <tr><td class="paramname">waitIRq</td><td>The bits in the ComIrqReg register that signals successful completion of the command.  </td></tr>
+    <tr><td class="paramname">sendData</td><td>Pointer to the data to transfer to the FIFO.  </td></tr>
+    <tr><td class="paramname">sendLen</td><td>Number of uint8_ts to transfer to the FIFO.  </td></tr>
+    <tr><td class="paramname">backData</td><td>NULL or pointer to buffer if data should be read back after executing the command.  </td></tr>
+    <tr><td class="paramname">backLen</td><td>In: Max number of uint8_ts to write to *backData. Out: The number of uint8_ts returned.  </td></tr>
+    <tr><td class="paramname">validBits</td><td>In/Out: The number of valid bits in the last uint8_t. 0 for 8 valid bits.  </td></tr>
+    <tr><td class="paramname">rxAlign</td><td>In: Defines the bit position in backData[0] for the first bit received. Default 0.  </td></tr>
+    <tr><td class="paramname">checkCRC</td><td>In: True =&gt; The last two uint8_ts of the response is assumed to be a CRC_A that must be validated. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definición en la línea <a class="el" href="_m_f_r_c522_8c_source.html#l00478">478</a> del archivo <a class="el" href="_m_f_r_c522_8c_source.html">MFRC522.c</a>.</p>
+
+<p class="reference">Hace referencia a <a class="el" href="_m_f_r_c522_8h_source.html#l00061">BitFramingReg</a>, <a class="el" href="_m_f_r_c522_8h_source.html#l00051">ComIrqReg</a>, <a class="el" href="_m_f_r_c522_8h_source.html#l00048">CommandReg</a>, <a class="el" href="_m_f_r_c522_8h_source.html#l00060">ControlReg</a>, <a class="el" href="_m_f_r_c522_8h_source.html#l00053">ErrorReg</a>, <a class="el" href="_m_f_r_c522_8h_source.html#l00057">FIFODataReg</a>, <a class="el" href="_m_f_r_c522_8h_source.html#l00058">FIFOLevelReg</a>, <a class="el" href="_m_f_r_c522_8c_source.html#l00264">PCD_CalculateCRC()</a>, <a class="el" href="_m_f_r_c522_8h_source.html#l00136">PCD_Idle</a>, <a class="el" href="_m_f_r_c522_8c_source.html#l00160">PCD_ReadNRegister()</a>, <a class="el" href="_m_f_r_c522_8c_source.html#l00127">PCD_ReadRegister()</a>, <a class="el" href="_m_f_r_c522_8c_source.html#l00235">PCD_SetRegisterBitMask()</a>, <a class="el" href="_m_f_r_c522_8h_source.html#l00145">PCD_Transceive</a>, <a class="el" href="_m_f_r_c522_8c_source.html#l00098">PCD_WriteNRegister()</a>, <a class="el" href="_m_f_r_c522_8c_source.html#l00068">PCD_WriteRegister()</a>, <a class="el" href="_m_f_r_c522_8h_source.html#l00257">STATUS_COLLISION</a>, <a class="el" href="_m_f_r_c522_8h_source.html#l00262">STATUS_CRC_WRONG</a>, <a class="el" href="_m_f_r_c522_8h_source.html#l00256">STATUS_ERROR</a>, <a class="el" href="_m_f_r_c522_8h_source.html#l00263">STATUS_MIFARE_NACK</a>, <a class="el" href="_m_f_r_c522_8h_source.html#l00259">STATUS_NO_ROOM</a>, <a class="el" href="_m_f_r_c522_8h_source.html#l00255">STATUS_OK</a> y <a class="el" href="_m_f_r_c522_8h_source.html#l00258">STATUS_TIMEOUT</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="_m_f_r_c522_8c_source.html#l01035">PCD_Authenticate()</a>, <a class="el" href="_m_f_r_c522_8c_source.html#l01460">PCD_MIFARE_Transceive()</a>, <a class="el" href="_m_f_r_c522_8c_source.html#l01411">PCD_NTAG216_AUTH()</a> y <a class="el" href="_m_f_r_c522_8c_source.html#l00446">PCD_TransceiveData()</a>.</p>
+
+</div>
+</div>
+<a id="ae225bdf31bcac91a48fabe3d7ebe1de4" name="ae225bdf31bcac91a48fabe3d7ebe1de4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae225bdf31bcac91a48fabe3d7ebe1de4">&#9670;&#160;</a></span>PCD_DumpVersionToSerial()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void PCD_DumpVersionToSerial </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="_m_f_r_c522_8h.html#a08c3a10bca51453a3ef3bf91aca43aaa">MFRC522Ptr_t</a></td>          <td class="paramname"><span class="paramname"><em>mfrc</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Dumps debug info about the connected PCD to Serial. Shows all known firmware versions </p>
+
+<p class="definition">Definición en la línea <a class="el" href="_m_f_r_c522_8c_source.html#l01614">1614</a> del archivo <a class="el" href="_m_f_r_c522_8c_source.html">MFRC522.c</a>.</p>
+
+<p class="reference">Hace referencia a <a class="el" href="_m_f_r_c522_8c_source.html#l00127">PCD_ReadRegister()</a>, <a class="el" href="uart__mcu_8h_source.html#l00032">UART_PC</a>, <a class="el" href="uart__mcu_8c_source.html#l00193">UartSendString()</a> y <a class="el" href="_m_f_r_c522_8h_source.html#l00121">VersionReg</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="rfid__utils_8c_source.html#l00115">setupRFID()</a>.</p>
+
+</div>
+</div>
+<a id="adfa089e6b24d306d435af00073a8d91e" name="adfa089e6b24d306d435af00073a8d91e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adfa089e6b24d306d435af00073a8d91e">&#9670;&#160;</a></span>PCD_GetAntennaGain()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint8_t PCD_GetAntennaGain </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="_m_f_r_c522_8h.html#a08c3a10bca51453a3ef3bf91aca43aaa">MFRC522Ptr_t</a></td>          <td class="paramname"><span class="paramname"><em>mfrc</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Get the current MFRC522 Receiver Gain (RxGain[2:0]) value. See 9.3.3.6 / table 98 in <a href="http://www.nxp.com/documents/data_sheet/MFRC522.pdf">http://www.nxp.com/documents/data_sheet/MFRC522.pdf</a> NOTE: Return value scrubbed with (0x07&lt;&lt;4)=01110000b as RCFfgReg may use reserved bits.</p>
+<dl class="section return"><dt>Devuelve</dt><dd>Value of the RxGain, scrubbed to the 3 bits used. </dd></dl>
+
+<p class="definition">Definición en la línea <a class="el" href="_m_f_r_c522_8c_source.html#l00418">418</a> del archivo <a class="el" href="_m_f_r_c522_8c_source.html">MFRC522.c</a>.</p>
+
+<p class="reference">Hace referencia a <a class="el" href="_m_f_r_c522_8c_source.html#l00127">PCD_ReadRegister()</a> y <a class="el" href="_m_f_r_c522_8h_source.html#l00096">RFCfgReg</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="_m_f_r_c522_8c_source.html#l00428">PCD_SetAntennaGain()</a>.</p>
+
+</div>
+</div>
+<a id="a343d4273077d3467214046a01f742abc" name="a343d4273077d3467214046a01f742abc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a343d4273077d3467214046a01f742abc">&#9670;&#160;</a></span>PCD_Init()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void PCD_Init </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="_m_f_r_c522_8h.html#a08c3a10bca51453a3ef3bf91aca43aaa">MFRC522Ptr_t</a></td>          <td class="paramname"><span class="paramname"><em>mfrc</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Initializes the MFRC522 chip. </p>
+
+<p class="definition">Definición en la línea <a class="el" href="_m_f_r_c522_8c_source.html#l00315">315</a> del archivo <a class="el" href="_m_f_r_c522_8c_source.html">MFRC522.c</a>.</p>
+
+<p class="reference">Hace referencia a <a class="el" href="_m_f_r_c522_8h_source.html#l00294">MFRC522_T::_chipSelectPin</a>, <a class="el" href="_m_f_r_c522_8h_source.html#l00296">MFRC522_T::_resetPowerDownPin</a>, <a class="el" href="delay__mcu_8c_source.html#l00080">DelayUs()</a>, <a class="el" href="gpio__mcu_8h_source.html#l00044">GPIO_OUTPUT</a>, <a class="el" href="gpio__mcu_8c_source.html#l00067">GPIOInit()</a>, <a class="el" href="gpio__mcu_8c_source.html#l00081">GPIOOn()</a>, <a class="el" href="gpio__mcu_8c_source.html#l00101">GPIORead()</a>, <a class="el" href="_m_f_r_c522_8h_source.html#l00068">ModeReg</a>, <a class="el" href="_m_f_r_c522_8c_source.html#l00396">PCD_AntennaOn()</a>, <a class="el" href="_m_f_r_c522_8c_source.html#l00373">PCD_Reset()</a>, <a class="el" href="_m_f_r_c522_8c_source.html#l00068">PCD_WriteRegister()</a>, <a class="el" href="ili9341_8c_source.html#l00177">spi_conf</a>, <a class="el" href="_m_f_r_c522_8h_source.html#l00292">MFRC522_T::spi_dev</a>, <a class="el" href="_m_f_r_c522_8h_source.html#l00103">TModeReg</a>, <a class="el" href="_m_f_r_c522_8h_source.html#l00104">TPrescalerReg</a>, <a class="el" href="_m_f_r_c522_8h_source.html#l00106">TReloadRegH</a>, <a class="el" href="_m_f_r_c522_8h_source.html#l00107">TReloadRegL</a> y <a class="el" href="_m_f_r_c522_8h_source.html#l00073">TxASKReg</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="rfid__utils_8c_source.html#l00115">setupRFID()</a>.</p>
+
+</div>
+</div>
+<a id="a407c314a79ea36e16d42ab5bb08bf727" name="a407c314a79ea36e16d42ab5bb08bf727"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a407c314a79ea36e16d42ab5bb08bf727">&#9670;&#160;</a></span>PCD_MIFARE_Transceive()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="_m_f_r_c522_8h.html#a5f21394f47e041c904141d6d8c684a12">StatusCode</a> PCD_MIFARE_Transceive </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="_m_f_r_c522_8h.html#a08c3a10bca51453a3ef3bf91aca43aaa">MFRC522Ptr_t</a></td>          <td class="paramname"><span class="paramname"><em>mfrc</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint8_t *</td>          <td class="paramname"><span class="paramname"><em>sendData</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint8_t</td>          <td class="paramname"><span class="paramname"><em>sendLen</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool</td>          <td class="paramname"><span class="paramname"><em>acceptTimeout</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Wrapper for MIFARE protocol communication. Adds CRC_A, executes the Transceive command and checks that the response is MF_ACK or a timeout.</p>
+<dl class="section return"><dt>Devuelve</dt><dd>STATUS_OK on success, STATUS_??? otherwise. </dd></dl>
+<dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">sendData</td><td>Pointer to the data to transfer to the FIFO. Do NOT include the CRC_A.  </td></tr>
+    <tr><td class="paramname">sendLen</td><td>Number of uint8_ts in sendData.  </td></tr>
+    <tr><td class="paramname">acceptTimeout</td><td>True =&gt; A timeout is also success </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definición en la línea <a class="el" href="_m_f_r_c522_8c_source.html#l01460">1460</a> del archivo <a class="el" href="_m_f_r_c522_8c_source.html">MFRC522.c</a>.</p>
+
+<p class="reference">Hace referencia a <a class="el" href="_m_f_r_c522_8h_source.html#l00227">MF_ACK</a>, <a class="el" href="ili9341_8c_source.html#l00019">NULL</a>, <a class="el" href="_m_f_r_c522_8c_source.html#l00264">PCD_CalculateCRC()</a>, <a class="el" href="_m_f_r_c522_8c_source.html#l00478">PCD_CommunicateWithPICC()</a>, <a class="el" href="_m_f_r_c522_8h_source.html#l00145">PCD_Transceive</a>, <a class="el" href="_m_f_r_c522_8h_source.html#l00256">STATUS_ERROR</a>, <a class="el" href="_m_f_r_c522_8h_source.html#l00261">STATUS_INVALID</a>, <a class="el" href="_m_f_r_c522_8h_source.html#l00263">STATUS_MIFARE_NACK</a>, <a class="el" href="_m_f_r_c522_8h_source.html#l00255">STATUS_OK</a> y <a class="el" href="_m_f_r_c522_8h_source.html#l00258">STATUS_TIMEOUT</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="_m_f_r_c522_8c_source.html#l01319">MIFARE_Transfer()</a>, <a class="el" href="_m_f_r_c522_8c_source.html#l01280">MIFARE_TwoStepHelper()</a>, <a class="el" href="_m_f_r_c522_8c_source.html#l01184">MIFARE_Ultralight_Write()</a> y <a class="el" href="_m_f_r_c522_8c_source.html#l01141">MIFARE_Write()</a>.</p>
+
+</div>
+</div>
+<a id="a922d95c3bca282386cd90b9a5e20833f" name="a922d95c3bca282386cd90b9a5e20833f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a922d95c3bca282386cd90b9a5e20833f">&#9670;&#160;</a></span>PCD_NTAG216_AUTH()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="_m_f_r_c522_8h.html#a5f21394f47e041c904141d6d8c684a12">StatusCode</a> PCD_NTAG216_AUTH </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="_m_f_r_c522_8h.html#a08c3a10bca51453a3ef3bf91aca43aaa">MFRC522Ptr_t</a></td>          <td class="paramname"><span class="paramname"><em>mfrc</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint8_t *</td>          <td class="paramname"><span class="paramname"><em>passWord</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint8_t</td>          <td class="paramname"><span class="paramname"><em>pACK</em></span>[]&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Authenticate with a NTAG216.</p>
+<p>Only for NTAG216. First implemented by Gargantuanman.</p>
+<dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">passWord</td><td>password. </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">pACK</td><td>result success???. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Devuelve</dt><dd>STATUS_OK on success, STATUS_??? otherwise. </dd></dl>
+
+<p class="definition">Definición en la línea <a class="el" href="_m_f_r_c522_8c_source.html#l01411">1411</a> del archivo <a class="el" href="_m_f_r_c522_8c_source.html">MFRC522.c</a>.</p>
+
+<p class="reference">Hace referencia a <a class="el" href="_m_f_r_c522_8c_source.html#l00264">PCD_CalculateCRC()</a>, <a class="el" href="_m_f_r_c522_8c_source.html#l00478">PCD_CommunicateWithPICC()</a>, <a class="el" href="_m_f_r_c522_8h_source.html#l00145">PCD_Transceive</a> y <a class="el" href="_m_f_r_c522_8h_source.html#l00255">STATUS_OK</a>.</p>
+
+</div>
+</div>
+<a id="adfaf0cdae99cae2744afeb8fe01a8445" name="adfaf0cdae99cae2744afeb8fe01a8445"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adfaf0cdae99cae2744afeb8fe01a8445">&#9670;&#160;</a></span>PCD_ReadNRegister()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void PCD_ReadNRegister </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="_m_f_r_c522_8h.html#a08c3a10bca51453a3ef3bf91aca43aaa">MFRC522Ptr_t</a></td>          <td class="paramname"><span class="paramname"><em>mfrc</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint8_t</td>          <td class="paramname"><span class="paramname"><em>reg</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint8_t</td>          <td class="paramname"><span class="paramname"><em>count</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint8_t *</td>          <td class="paramname"><span class="paramname"><em>values</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint8_t</td>          <td class="paramname"><span class="paramname"><em>rxAlign</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Reads a number of uint8_ts from the specified register in the MFRC522 chip. The interface is described in the datasheet section 8.1.2. </p>
+<dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">reg</td><td>The register to read from. One of the <a class="el" href="_m_f_r_c522_8h.html#a7380aa98144f0d378c6ec0c5af89203a">PCD_Register</a> enums.  </td></tr>
+    <tr><td class="paramname">count</td><td>The number of uint8_ts to read  </td></tr>
+    <tr><td class="paramname">values</td><td>uint8_t array to store the values in.  </td></tr>
+    <tr><td class="paramname">rxAlign</td><td>Only bit positions rxAlign..7 in values[0] are updated. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definición en la línea <a class="el" href="_m_f_r_c522_8c_source.html#l00160">160</a> del archivo <a class="el" href="_m_f_r_c522_8c_source.html">MFRC522.c</a>.</p>
+
+<p class="reference">Hace referencia a <a class="el" href="gpio__mcu_8c_source.html#l00086">GPIOOff()</a>, <a class="el" href="gpio__mcu_8c_source.html#l00081">GPIOOn()</a>, <a class="el" href="_m_f_r_c522_8h_source.html#l00298">MFRC522_T::Rx_Buf</a>, <a class="el" href="ili9341_8c_source.html#l00177">spi_conf</a>, <a class="el" href="spi__mcu_8c_source.html#l00059">SpiInit()</a>, <a class="el" href="spi__mcu_8c_source.html#l00184">SpiReadWrite()</a>, <a class="el" href="spi__mcu_8c_source.html#l00145">SpiWrite()</a> y <a class="el" href="_m_f_r_c522_8h_source.html#l00297">MFRC522_T::Tx_Buf</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="_m_f_r_c522_8c_source.html#l00478">PCD_CommunicateWithPICC()</a>.</p>
+
+</div>
+</div>
+<a id="a36b15d86f0b4515756941de3690a5d0f" name="a36b15d86f0b4515756941de3690a5d0f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a36b15d86f0b4515756941de3690a5d0f">&#9670;&#160;</a></span>PCD_ReadRegister()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint8_t PCD_ReadRegister </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="_m_f_r_c522_8h.html#a08c3a10bca51453a3ef3bf91aca43aaa">MFRC522Ptr_t</a></td>          <td class="paramname"><span class="paramname"><em>mfrc</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint8_t</td>          <td class="paramname"><span class="paramname"><em>reg</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Reads a uint8_t from the specified register in the MFRC522 chip. The interface is described in the datasheet section 8.1.2. </p>
+<dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">reg</td><td>The register to read from. One of the <a class="el" href="_m_f_r_c522_8h.html#a7380aa98144f0d378c6ec0c5af89203a">PCD_Register</a> enums. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definición en la línea <a class="el" href="_m_f_r_c522_8c_source.html#l00127">127</a> del archivo <a class="el" href="_m_f_r_c522_8c_source.html">MFRC522.c</a>.</p>
+
+<p class="reference">Hace referencia a <a class="el" href="gpio__mcu_8c_source.html#l00086">GPIOOff()</a>, <a class="el" href="gpio__mcu_8c_source.html#l00081">GPIOOn()</a>, <a class="el" href="_m_f_r_c522_8h_source.html#l00298">MFRC522_T::Rx_Buf</a>, <a class="el" href="ili9341_8c_source.html#l00177">spi_conf</a>, <a class="el" href="spi__mcu_8c_source.html#l00059">SpiInit()</a>, <a class="el" href="spi__mcu_8c_source.html#l00184">SpiReadWrite()</a>, <a class="el" href="spi__mcu_8c_source.html#l00145">SpiWrite()</a> y <a class="el" href="_m_f_r_c522_8h_source.html#l00297">MFRC522_T::Tx_Buf</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="_m_f_r_c522_8c_source.html#l00396">PCD_AntennaOn()</a>, <a class="el" href="_m_f_r_c522_8c_source.html#l00264">PCD_CalculateCRC()</a>, <a class="el" href="_m_f_r_c522_8c_source.html#l00248">PCD_ClearRegisterBitMask()</a>, <a class="el" href="_m_f_r_c522_8c_source.html#l00478">PCD_CommunicateWithPICC()</a>, <a class="el" href="_m_f_r_c522_8c_source.html#l01614">PCD_DumpVersionToSerial()</a>, <a class="el" href="_m_f_r_c522_8c_source.html#l00418">PCD_GetAntennaGain()</a>, <a class="el" href="_m_f_r_c522_8c_source.html#l00373">PCD_Reset()</a>, <a class="el" href="_m_f_r_c522_8c_source.html#l00235">PCD_SetRegisterBitMask()</a> y <a class="el" href="_m_f_r_c522_8c_source.html#l00710">PICC_Select()</a>.</p>
+
+</div>
+</div>
+<a id="a825cd02bc06960ca66fb1eaf6c5ea3c4" name="a825cd02bc06960ca66fb1eaf6c5ea3c4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a825cd02bc06960ca66fb1eaf6c5ea3c4">&#9670;&#160;</a></span>PCD_Reset()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void PCD_Reset </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="_m_f_r_c522_8h.html#a08c3a10bca51453a3ef3bf91aca43aaa">MFRC522Ptr_t</a></td>          <td class="paramname"><span class="paramname"><em>mfrc</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Performs a soft reset on the MFRC522 chip and waits for it to be ready again. </p>
+
+<p class="definition">Definición en la línea <a class="el" href="_m_f_r_c522_8c_source.html#l00373">373</a> del archivo <a class="el" href="_m_f_r_c522_8c_source.html">MFRC522.c</a>.</p>
+
+<p class="reference">Hace referencia a <a class="el" href="_m_f_r_c522_8h_source.html#l00048">CommandReg</a>, <a class="el" href="_m_f_r_c522_8c_source.html#l00127">PCD_ReadRegister()</a>, <a class="el" href="_m_f_r_c522_8h_source.html#l00150">PCD_SoftReset</a> y <a class="el" href="_m_f_r_c522_8c_source.html#l00068">PCD_WriteRegister()</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="_m_f_r_c522_8c_source.html#l00315">PCD_Init()</a>.</p>
+
+</div>
+</div>
+<a id="ace321399bb0cf49bc3e8eeee8f7e7409" name="ace321399bb0cf49bc3e8eeee8f7e7409"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ace321399bb0cf49bc3e8eeee8f7e7409">&#9670;&#160;</a></span>PCD_SetAntennaGain()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void PCD_SetAntennaGain </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="_m_f_r_c522_8h.html#a08c3a10bca51453a3ef3bf91aca43aaa">MFRC522Ptr_t</a></td>          <td class="paramname"><span class="paramname"><em>mfrc</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint8_t</td>          <td class="paramname"><span class="paramname"><em>mask</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Set the MFRC522 Receiver Gain (RxGain) to value specified by given mask. See 9.3.3.6 / table 98 in <a href="http://www.nxp.com/documents/data_sheet/MFRC522.pdf">http://www.nxp.com/documents/data_sheet/MFRC522.pdf</a> NOTE: Given mask is scrubbed with (0x07&lt;&lt;4)=01110000b as RCFfgReg may use reserved bits. </p>
+
+<p class="definition">Definición en la línea <a class="el" href="_m_f_r_c522_8c_source.html#l00428">428</a> del archivo <a class="el" href="_m_f_r_c522_8c_source.html">MFRC522.c</a>.</p>
+
+<p class="reference">Hace referencia a <a class="el" href="_m_f_r_c522_8c_source.html#l00248">PCD_ClearRegisterBitMask()</a>, <a class="el" href="_m_f_r_c522_8c_source.html#l00418">PCD_GetAntennaGain()</a>, <a class="el" href="_m_f_r_c522_8c_source.html#l00235">PCD_SetRegisterBitMask()</a> y <a class="el" href="_m_f_r_c522_8h_source.html#l00096">RFCfgReg</a>.</p>
+
+</div>
+</div>
+<a id="adb83d5ff6c6a2f6c463e128c624ce609" name="adb83d5ff6c6a2f6c463e128c624ce609"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adb83d5ff6c6a2f6c463e128c624ce609">&#9670;&#160;</a></span>PCD_SetRegisterBitMask()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void PCD_SetRegisterBitMask </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="_m_f_r_c522_8h.html#a08c3a10bca51453a3ef3bf91aca43aaa">MFRC522Ptr_t</a></td>          <td class="paramname"><span class="paramname"><em>mfrc</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint8_t</td>          <td class="paramname"><span class="paramname"><em>reg</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint8_t</td>          <td class="paramname"><span class="paramname"><em>mask</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Sets the bits given in mask in register reg. </p>
+<dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">reg</td><td>The register to update. One of the <a class="el" href="_m_f_r_c522_8h.html#a7380aa98144f0d378c6ec0c5af89203a">PCD_Register</a> enums.  </td></tr>
+    <tr><td class="paramname">mask</td><td>The bits to set. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definición en la línea <a class="el" href="_m_f_r_c522_8c_source.html#l00235">235</a> del archivo <a class="el" href="_m_f_r_c522_8c_source.html">MFRC522.c</a>.</p>
+
+<p class="reference">Hace referencia a <a class="el" href="_m_f_r_c522_8c_source.html#l00127">PCD_ReadRegister()</a> y <a class="el" href="_m_f_r_c522_8c_source.html#l00068">PCD_WriteRegister()</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="_m_f_r_c522_8c_source.html#l00264">PCD_CalculateCRC()</a>, <a class="el" href="_m_f_r_c522_8c_source.html#l00478">PCD_CommunicateWithPICC()</a> y <a class="el" href="_m_f_r_c522_8c_source.html#l00428">PCD_SetAntennaGain()</a>.</p>
+
+</div>
+</div>
+<a id="a0baa1dfc44e5c9762fb52c86456007a4" name="a0baa1dfc44e5c9762fb52c86456007a4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0baa1dfc44e5c9762fb52c86456007a4">&#9670;&#160;</a></span>PCD_StopCrypto1()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void PCD_StopCrypto1 </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="_m_f_r_c522_8h.html#a08c3a10bca51453a3ef3bf91aca43aaa">MFRC522Ptr_t</a></td>          <td class="paramname"><span class="paramname"><em>mfrc</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Used to exit the PCD from its authenticated state. Remember to call this function after communicating with an authenticated PICC</p><ul>
+<li>otherwise no new communications can start. </li>
+</ul>
+
+<p class="definition">Definición en la línea <a class="el" href="_m_f_r_c522_8c_source.html#l01068">1068</a> del archivo <a class="el" href="_m_f_r_c522_8c_source.html">MFRC522.c</a>.</p>
+
+<p class="reference">Hace referencia a <a class="el" href="_m_f_r_c522_8c_source.html#l00248">PCD_ClearRegisterBitMask()</a> y <a class="el" href="_m_f_r_c522_8h_source.html#l00056">Status2Reg</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="_m_f_r_c522_8c_source.html#l02147">MIFARE_SetUid()</a> y <a class="el" href="_m_f_r_c522_8c_source.html#l01736">PICC_DumpMifareClassicToSerial()</a>.</p>
+
+</div>
+</div>
+<a id="ad016750b47137c2dda72d0399370f906" name="ad016750b47137c2dda72d0399370f906"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad016750b47137c2dda72d0399370f906">&#9670;&#160;</a></span>PCD_TransceiveData()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="_m_f_r_c522_8h.html#a5f21394f47e041c904141d6d8c684a12">StatusCode</a> PCD_TransceiveData </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="_m_f_r_c522_8h.html#a08c3a10bca51453a3ef3bf91aca43aaa">MFRC522Ptr_t</a></td>          <td class="paramname"><span class="paramname"><em>mfrc</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint8_t *</td>          <td class="paramname"><span class="paramname"><em>sendData</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint8_t</td>          <td class="paramname"><span class="paramname"><em>sendLen</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint8_t *</td>          <td class="paramname"><span class="paramname"><em>backData</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint8_t *</td>          <td class="paramname"><span class="paramname"><em>backLen</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint8_t *</td>          <td class="paramname"><span class="paramname"><em>validBits</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint8_t</td>          <td class="paramname"><span class="paramname"><em>rxAlign</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool</td>          <td class="paramname"><span class="paramname"><em>checkCRC</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Executes the Transceive command. CRC validation can only be done if backData and backLen are specified.</p>
+<dl class="section return"><dt>Devuelve</dt><dd>STATUS_OK on success, STATUS_??? otherwise. </dd></dl>
+<dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">sendData</td><td>Pointer to the data to transfer to the FIFO.  </td></tr>
+    <tr><td class="paramname">sendLen</td><td>Number of uint8_ts to transfer to the FIFO.  </td></tr>
+    <tr><td class="paramname">backData</td><td>NULL or pointer to buffer if data should be read back after executing the command.  </td></tr>
+    <tr><td class="paramname">backLen</td><td>In: Max number of uint8_ts to write to *backData. Out: The number of uint8_ts returned.  </td></tr>
+    <tr><td class="paramname">validBits</td><td>In/Out: The number of valid bits in the last uint8_t. 0 for 8 valid bits. Default NULL.  </td></tr>
+    <tr><td class="paramname">rxAlign</td><td>In: Defines the bit position in backData[0] for the first bit received. Default 0.  </td></tr>
+    <tr><td class="paramname">checkCRC</td><td>In: True =&gt; The last two uint8_ts of the response is assumed to be a CRC_A that must be validated. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definición en la línea <a class="el" href="_m_f_r_c522_8c_source.html#l00446">446</a> del archivo <a class="el" href="_m_f_r_c522_8c_source.html">MFRC522.c</a>.</p>
+
+<p class="reference">Hace referencia a <a class="el" href="_m_f_r_c522_8c_source.html#l00478">PCD_CommunicateWithPICC()</a> y <a class="el" href="_m_f_r_c522_8h_source.html#l00145">PCD_Transceive</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="_m_f_r_c522_8c_source.html#l02062">MIFARE_OpenUidBackdoor()</a>, <a class="el" href="_m_f_r_c522_8c_source.html#l01096">MIFARE_Read()</a>, <a class="el" href="_m_f_r_c522_8c_source.html#l00983">PICC_HaltA()</a>, <a class="el" href="_m_f_r_c522_8c_source.html#l00653">PICC_REQA_or_WUPA()</a> y <a class="el" href="_m_f_r_c522_8c_source.html#l00710">PICC_Select()</a>.</p>
+
+</div>
+</div>
+<a id="a6dec618235abd59764302dd5c9dc48ac" name="a6dec618235abd59764302dd5c9dc48ac"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6dec618235abd59764302dd5c9dc48ac">&#9670;&#160;</a></span>PCD_WriteNRegister()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void PCD_WriteNRegister </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="_m_f_r_c522_8h.html#a08c3a10bca51453a3ef3bf91aca43aaa">MFRC522Ptr_t</a></td>          <td class="paramname"><span class="paramname"><em>mfrc</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint8_t</td>          <td class="paramname"><span class="paramname"><em>reg</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint8_t</td>          <td class="paramname"><span class="paramname"><em>count</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint8_t *</td>          <td class="paramname"><span class="paramname"><em>values</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Writes a number of uint8_ts to the specified register in the MFRC522 chip. The interface is described in the datasheet section 8.1.2. </p>
+<dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">reg</td><td>The register to write to. One of the <a class="el" href="_m_f_r_c522_8h.html#a7380aa98144f0d378c6ec0c5af89203a">PCD_Register</a> enums.  </td></tr>
+    <tr><td class="paramname">count</td><td>The number of uint8_ts to write to the register  </td></tr>
+    <tr><td class="paramname">values</td><td>The values to write. uint8_t array. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definición en la línea <a class="el" href="_m_f_r_c522_8c_source.html#l00098">98</a> del archivo <a class="el" href="_m_f_r_c522_8c_source.html">MFRC522.c</a>.</p>
+
+<p class="reference">Hace referencia a <a class="el" href="gpio__mcu_8c_source.html#l00086">GPIOOff()</a>, <a class="el" href="gpio__mcu_8c_source.html#l00081">GPIOOn()</a>, <a class="el" href="ili9341_8c_source.html#l00177">spi_conf</a>, <a class="el" href="spi__mcu_8c_source.html#l00059">SpiInit()</a>, <a class="el" href="spi__mcu_8c_source.html#l00145">SpiWrite()</a> y <a class="el" href="_m_f_r_c522_8h_source.html#l00297">MFRC522_T::Tx_Buf</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="_m_f_r_c522_8c_source.html#l00264">PCD_CalculateCRC()</a> y <a class="el" href="_m_f_r_c522_8c_source.html#l00478">PCD_CommunicateWithPICC()</a>.</p>
+
+</div>
+</div>
+<a id="af12d4652b1c770c2b1bf1e24017da784" name="af12d4652b1c770c2b1bf1e24017da784"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af12d4652b1c770c2b1bf1e24017da784">&#9670;&#160;</a></span>PCD_WriteRegister()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void PCD_WriteRegister </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="_m_f_r_c522_8h.html#a08c3a10bca51453a3ef3bf91aca43aaa">MFRC522Ptr_t</a></td>          <td class="paramname"><span class="paramname"><em>mfrc</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint8_t</td>          <td class="paramname"><span class="paramname"><em>reg</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint8_t</td>          <td class="paramname"><span class="paramname"><em>value</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Writes a uint8_t to the specified register in the MFRC522 chip. The interface is described in the datasheet section 8.1.2. </p>
+<dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">reg</td><td>The register to write to. One of the <a class="el" href="_m_f_r_c522_8h.html#a7380aa98144f0d378c6ec0c5af89203a">PCD_Register</a> enums.  </td></tr>
+    <tr><td class="paramname">value</td><td>The value to write. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definición en la línea <a class="el" href="_m_f_r_c522_8c_source.html#l00068">68</a> del archivo <a class="el" href="_m_f_r_c522_8c_source.html">MFRC522.c</a>.</p>
+
+<p class="reference">Hace referencia a <a class="el" href="gpio__mcu_8c_source.html#l00086">GPIOOff()</a>, <a class="el" href="gpio__mcu_8c_source.html#l00081">GPIOOn()</a>, <a class="el" href="ili9341_8c_source.html#l00177">spi_conf</a>, <a class="el" href="spi__mcu_8c_source.html#l00059">SpiInit()</a>, <a class="el" href="spi__mcu_8c_source.html#l00145">SpiWrite()</a> y <a class="el" href="_m_f_r_c522_8h_source.html#l00297">MFRC522_T::Tx_Buf</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="_m_f_r_c522_8c_source.html#l00396">PCD_AntennaOn()</a>, <a class="el" href="_m_f_r_c522_8c_source.html#l00264">PCD_CalculateCRC()</a>, <a class="el" href="_m_f_r_c522_8c_source.html#l00248">PCD_ClearRegisterBitMask()</a>, <a class="el" href="_m_f_r_c522_8c_source.html#l00478">PCD_CommunicateWithPICC()</a>, <a class="el" href="_m_f_r_c522_8c_source.html#l00315">PCD_Init()</a>, <a class="el" href="_m_f_r_c522_8c_source.html#l00373">PCD_Reset()</a>, <a class="el" href="_m_f_r_c522_8c_source.html#l00235">PCD_SetRegisterBitMask()</a> y <a class="el" href="_m_f_r_c522_8c_source.html#l00710">PICC_Select()</a>.</p>
+
+</div>
+</div>
+<a id="af1214335c8e4e9ca2bada4e285a90c00" name="af1214335c8e4e9ca2bada4e285a90c00"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af1214335c8e4e9ca2bada4e285a90c00">&#9670;&#160;</a></span>PICC_DumpDetailsToSerial()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void PICC_DumpDetailsToSerial </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="struct_uid.html">Uid</a> *</td>          <td class="paramname"><span class="paramname"><em>uid</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Dumps card info (UID,SAK,Type) about the selected PICC to Serial. </p>
+<dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">uid</td><td>Pointer to <a class="el" href="struct_uid.html">Uid</a> struct returned from a successful <a class="el" href="#a9b4c2fa0c12d6aced842df016c763556">PICC_Select()</a>. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definición en la línea <a class="el" href="_m_f_r_c522_8c_source.html#l01698">1698</a> del archivo <a class="el" href="_m_f_r_c522_8c_source.html">MFRC522.c</a>.</p>
+
+<p class="reference">Hace referencia a <a class="el" href="_m_f_r_c522_8c_source.html#l01545">PICC_GetType()</a>, <a class="el" href="_m_f_r_c522_8c_source.html#l01583">PICC_GetTypeName()</a>, <a class="el" href="_m_f_r_c522_8h_source.html#l00270">Uid::sak</a>, <a class="el" href="_m_f_r_c522_8h_source.html#l00268">Uid::size</a>, <a class="el" href="uart__mcu_8h_source.html#l00032">UART_PC</a>, <a class="el" href="uart__mcu_8c_source.html#l00193">UartSendString()</a>, <a class="el" href="_m_f_r_c522_8h_source.html#l00290">MFRC522_T::uid</a> y <a class="el" href="_m_f_r_c522_8h_source.html#l00269">Uid::uidByte</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="_m_f_r_c522_8c_source.html#l01650">PICC_DumpToSerial()</a>.</p>
+
+</div>
+</div>
+<a id="a50acc80c8a42e25423e6a48fc167f392" name="a50acc80c8a42e25423e6a48fc167f392"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a50acc80c8a42e25423e6a48fc167f392">&#9670;&#160;</a></span>PICC_DumpMifareClassicSectorToSerial()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void PICC_DumpMifareClassicSectorToSerial </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="_m_f_r_c522_8h.html#a08c3a10bca51453a3ef3bf91aca43aaa">MFRC522Ptr_t</a></td>          <td class="paramname"><span class="paramname"><em>mfrc</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="struct_uid.html">Uid</a> *</td>          <td class="paramname"><span class="paramname"><em>uid</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="struct_m_i_f_a_r_e___key.html">MIFARE_Key</a> *</td>          <td class="paramname"><span class="paramname"><em>key</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint8_t</td>          <td class="paramname"><span class="paramname"><em>sector</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Dumps memory contents of a sector of a MIFARE Classic PICC. Uses <a class="el" href="#ae5b8405e265828180d3f8ca74eac2b93">PCD_Authenticate()</a>, <a class="el" href="#a50bcb471e3b85fb703b33707316ed6b9">MIFARE_Read()</a> and PCD_StopCrypto1. Always uses PICC_CMD_MF_AUTH_KEY_A because only Key A can always read the sector trailer access bits. </p>
+<dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">uid</td><td>Pointer to <a class="el" href="struct_uid.html">Uid</a> struct returned from a successful <a class="el" href="#a9b4c2fa0c12d6aced842df016c763556">PICC_Select()</a>.  </td></tr>
+    <tr><td class="paramname">key</td><td>Key A for the sector.  </td></tr>
+    <tr><td class="paramname">sector</td><td>The sector to dump, 0..39. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definición en la línea <a class="el" href="_m_f_r_c522_8c_source.html#l01784">1784</a> del archivo <a class="el" href="_m_f_r_c522_8c_source.html">MFRC522.c</a>.</p>
+
+<p class="reference">Hace referencia a <a class="el" href="mpu6050_8c_source.html#l00021">buffer</a>, <a class="el" href="_m_f_r_c522_8c_source.html#l01513">GetStatusCodeName()</a>, <a class="el" href="_m_f_r_c522_8c_source.html#l01096">MIFARE_Read()</a>, <a class="el" href="_m_f_r_c522_8c_source.html#l01035">PCD_Authenticate()</a>, <a class="el" href="_m_f_r_c522_8h_source.html#l00200">PICC_CMD_MF_AUTH_KEY_A</a>, <a class="el" href="_m_f_r_c522_8h_source.html#l00255">STATUS_OK</a>, <a class="el" href="uart__mcu_8h_source.html#l00032">UART_PC</a>, <a class="el" href="uart__mcu_8c_source.html#l00193">UartSendString()</a> y <a class="el" href="_m_f_r_c522_8h_source.html#l00290">MFRC522_T::uid</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="_m_f_r_c522_8c_source.html#l01736">PICC_DumpMifareClassicToSerial()</a>.</p>
+
+</div>
+</div>
+<a id="ab365ce740ca8192702711ba0072ecb36" name="ab365ce740ca8192702711ba0072ecb36"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab365ce740ca8192702711ba0072ecb36">&#9670;&#160;</a></span>PICC_DumpMifareClassicToSerial()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void PICC_DumpMifareClassicToSerial </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="_m_f_r_c522_8h.html#a08c3a10bca51453a3ef3bf91aca43aaa">MFRC522Ptr_t</a></td>          <td class="paramname"><span class="paramname"><em>mfrc</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="struct_uid.html">Uid</a> *</td>          <td class="paramname"><span class="paramname"><em>uid</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="_m_f_r_c522_8h.html#a44a705567f16f88fb19ed57faf327140">PICC_Type</a></td>          <td class="paramname"><span class="paramname"><em>piccType</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="struct_m_i_f_a_r_e___key.html">MIFARE_Key</a> *</td>          <td class="paramname"><span class="paramname"><em>key</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Dumps memory contents of a MIFARE Classic PICC. On success the PICC is halted after dumping the data. </p>
+<dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">uid</td><td>Pointer to <a class="el" href="struct_uid.html">Uid</a> struct returned from a successful <a class="el" href="#a9b4c2fa0c12d6aced842df016c763556">PICC_Select()</a>.  </td></tr>
+    <tr><td class="paramname">piccType</td><td>One of the <a class="el" href="_m_f_r_c522_8h.html#a44a705567f16f88fb19ed57faf327140">PICC_Type</a> enums.  </td></tr>
+    <tr><td class="paramname">key</td><td>Key A used for all sectors. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definición en la línea <a class="el" href="_m_f_r_c522_8c_source.html#l01736">1736</a> del archivo <a class="el" href="_m_f_r_c522_8c_source.html">MFRC522.c</a>.</p>
+
+<p class="reference">Hace referencia a <a class="el" href="_m_f_r_c522_8c_source.html#l01068">PCD_StopCrypto1()</a>, <a class="el" href="_m_f_r_c522_8c_source.html#l01784">PICC_DumpMifareClassicSectorToSerial()</a>, <a class="el" href="_m_f_r_c522_8c_source.html#l00983">PICC_HaltA()</a>, <a class="el" href="_m_f_r_c522_8h_source.html#l00241">PICC_TYPE_MIFARE_1K</a>, <a class="el" href="_m_f_r_c522_8h_source.html#l00242">PICC_TYPE_MIFARE_4K</a>, <a class="el" href="_m_f_r_c522_8h_source.html#l00240">PICC_TYPE_MIFARE_MINI</a>, <a class="el" href="uart__mcu_8h_source.html#l00032">UART_PC</a>, <a class="el" href="uart__mcu_8c_source.html#l00193">UartSendString()</a> y <a class="el" href="_m_f_r_c522_8h_source.html#l00290">MFRC522_T::uid</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="_m_f_r_c522_8c_source.html#l01650">PICC_DumpToSerial()</a>.</p>
+
+</div>
+</div>
+<a id="adf26ead16a345287a914ac2c81777f5c" name="adf26ead16a345287a914ac2c81777f5c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adf26ead16a345287a914ac2c81777f5c">&#9670;&#160;</a></span>PICC_DumpMifareUltralightToSerial()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void PICC_DumpMifareUltralightToSerial </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="_m_f_r_c522_8h.html#a08c3a10bca51453a3ef3bf91aca43aaa">MFRC522Ptr_t</a></td>          <td class="paramname"><span class="paramname"><em>mfrc</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Dumps memory contents of a MIFARE Ultralight PICC. </p>
+
+<p class="definition">Definición en la línea <a class="el" href="_m_f_r_c522_8c_source.html#l01974">1974</a> del archivo <a class="el" href="_m_f_r_c522_8c_source.html">MFRC522.c</a>.</p>
+
+<p class="reference">Hace referencia a <a class="el" href="mpu6050_8c_source.html#l00021">buffer</a>, <a class="el" href="_m_f_r_c522_8c_source.html#l01513">GetStatusCodeName()</a>, <a class="el" href="_m_f_r_c522_8c_source.html#l01096">MIFARE_Read()</a>, <a class="el" href="heart_rate_8c_source.html#l00070">offset</a>, <a class="el" href="_m_f_r_c522_8h_source.html#l00255">STATUS_OK</a>, <a class="el" href="uart__mcu_8h_source.html#l00032">UART_PC</a> y <a class="el" href="uart__mcu_8c_source.html#l00193">UartSendString()</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="_m_f_r_c522_8c_source.html#l01650">PICC_DumpToSerial()</a>.</p>
+
+</div>
+</div>
+<a id="ab4b1689db50116ae0fc884aa03851ab8" name="ab4b1689db50116ae0fc884aa03851ab8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab4b1689db50116ae0fc884aa03851ab8">&#9670;&#160;</a></span>PICC_DumpToSerial()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void PICC_DumpToSerial </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="_m_f_r_c522_8h.html#a08c3a10bca51453a3ef3bf91aca43aaa">MFRC522Ptr_t</a></td>          <td class="paramname"><span class="paramname"><em>mfrc</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="struct_uid.html">Uid</a> *</td>          <td class="paramname"><span class="paramname"><em>uid</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Dumps debug info about the selected PICC to Serial. On success the PICC is halted after dumping the data. For MIFARE Classic the factory default key of 0xFFFFFFFFFFFF is tried. </p>
+<dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">uid</td><td>Pointer to <a class="el" href="struct_uid.html">Uid</a> struct returned from a successful <a class="el" href="#a9b4c2fa0c12d6aced842df016c763556">PICC_Select()</a>. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definición en la línea <a class="el" href="_m_f_r_c522_8c_source.html#l01650">1650</a> del archivo <a class="el" href="_m_f_r_c522_8c_source.html">MFRC522.c</a>.</p>
+
+<p class="reference">Hace referencia a <a class="el" href="_m_f_r_c522_8h_source.html#l00275">MIFARE_Key::keybyte</a>, <a class="el" href="_m_f_r_c522_8c_source.html#l01698">PICC_DumpDetailsToSerial()</a>, <a class="el" href="_m_f_r_c522_8c_source.html#l01736">PICC_DumpMifareClassicToSerial()</a>, <a class="el" href="_m_f_r_c522_8c_source.html#l01974">PICC_DumpMifareUltralightToSerial()</a>, <a class="el" href="_m_f_r_c522_8c_source.html#l01545">PICC_GetType()</a>, <a class="el" href="_m_f_r_c522_8c_source.html#l00983">PICC_HaltA()</a>, <a class="el" href="_m_f_r_c522_8h_source.html#l00238">PICC_TYPE_ISO_14443_4</a>, <a class="el" href="_m_f_r_c522_8h_source.html#l00239">PICC_TYPE_ISO_18092</a>, <a class="el" href="_m_f_r_c522_8h_source.html#l00241">PICC_TYPE_MIFARE_1K</a>, <a class="el" href="_m_f_r_c522_8h_source.html#l00242">PICC_TYPE_MIFARE_4K</a>, <a class="el" href="_m_f_r_c522_8h_source.html#l00240">PICC_TYPE_MIFARE_MINI</a>, <a class="el" href="_m_f_r_c522_8h_source.html#l00244">PICC_TYPE_MIFARE_PLUS</a>, <a class="el" href="_m_f_r_c522_8h_source.html#l00243">PICC_TYPE_MIFARE_UL</a>, <a class="el" href="_m_f_r_c522_8h_source.html#l00247">PICC_TYPE_NOT_COMPLETE</a>, <a class="el" href="_m_f_r_c522_8h_source.html#l00245">PICC_TYPE_TNP3XXX</a>, <a class="el" href="_m_f_r_c522_8h_source.html#l00237">PICC_TYPE_UNKNOWN</a>, <a class="el" href="_m_f_r_c522_8h_source.html#l00270">Uid::sak</a>, <a class="el" href="uart__mcu_8h_source.html#l00032">UART_PC</a>, <a class="el" href="uart__mcu_8c_source.html#l00193">UartSendString()</a> y <a class="el" href="_m_f_r_c522_8h_source.html#l00290">MFRC522_T::uid</a>.</p>
+
+</div>
+</div>
+<a id="a9208cafa971ea937514e22aa2912f34c" name="a9208cafa971ea937514e22aa2912f34c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9208cafa971ea937514e22aa2912f34c">&#9670;&#160;</a></span>PICC_GetType()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="_m_f_r_c522_8h.html#a44a705567f16f88fb19ed57faf327140">PICC_Type</a> PICC_GetType </td>
+          <td>(</td>
+          <td class="paramtype">uint8_t</td>          <td class="paramname"><span class="paramname"><em>sak</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Translates the SAK (Select Acknowledge) to a PICC type.</p>
+<dl class="section return"><dt>Devuelve</dt><dd><a class="el" href="_m_f_r_c522_8h.html#a44a705567f16f88fb19ed57faf327140">PICC_Type</a> </dd></dl>
+<dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">sak</td><td>The SAK uint8_t returned from <a class="el" href="#a9b4c2fa0c12d6aced842df016c763556">PICC_Select()</a>. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definición en la línea <a class="el" href="_m_f_r_c522_8c_source.html#l01545">1545</a> del archivo <a class="el" href="_m_f_r_c522_8c_source.html">MFRC522.c</a>.</p>
+
+<p class="reference">Hace referencia a <a class="el" href="_m_f_r_c522_8h_source.html#l00238">PICC_TYPE_ISO_14443_4</a>, <a class="el" href="_m_f_r_c522_8h_source.html#l00239">PICC_TYPE_ISO_18092</a>, <a class="el" href="_m_f_r_c522_8h_source.html#l00241">PICC_TYPE_MIFARE_1K</a>, <a class="el" href="_m_f_r_c522_8h_source.html#l00242">PICC_TYPE_MIFARE_4K</a>, <a class="el" href="_m_f_r_c522_8h_source.html#l00240">PICC_TYPE_MIFARE_MINI</a>, <a class="el" href="_m_f_r_c522_8h_source.html#l00244">PICC_TYPE_MIFARE_PLUS</a>, <a class="el" href="_m_f_r_c522_8h_source.html#l00243">PICC_TYPE_MIFARE_UL</a>, <a class="el" href="_m_f_r_c522_8h_source.html#l00247">PICC_TYPE_NOT_COMPLETE</a>, <a class="el" href="_m_f_r_c522_8h_source.html#l00245">PICC_TYPE_TNP3XXX</a> y <a class="el" href="_m_f_r_c522_8h_source.html#l00237">PICC_TYPE_UNKNOWN</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="_m_f_r_c522_8c_source.html#l01698">PICC_DumpDetailsToSerial()</a> y <a class="el" href="_m_f_r_c522_8c_source.html#l01650">PICC_DumpToSerial()</a>.</p>
+
+</div>
+</div>
+<a id="aa7f44169a793f4e3be931addbc1e7b7d" name="aa7f44169a793f4e3be931addbc1e7b7d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa7f44169a793f4e3be931addbc1e7b7d">&#9670;&#160;</a></span>PICC_GetTypeName()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">const char * PICC_GetTypeName </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="_m_f_r_c522_8h.html#a44a705567f16f88fb19ed57faf327140">PICC_Type</a></td>          <td class="paramname"><span class="paramname"><em>piccType</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Returns const char pointer to the PICC type name.</p>
+<dl class="section return"><dt>Devuelve</dt><dd>const char * </dd></dl>
+<dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">piccType</td><td>One of the <a class="el" href="_m_f_r_c522_8h.html#a44a705567f16f88fb19ed57faf327140">PICC_Type</a> enums. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definición en la línea <a class="el" href="_m_f_r_c522_8c_source.html#l01583">1583</a> del archivo <a class="el" href="_m_f_r_c522_8c_source.html">MFRC522.c</a>.</p>
+
+<p class="reference">Hace referencia a <a class="el" href="_m_f_r_c522_8h_source.html#l00238">PICC_TYPE_ISO_14443_4</a>, <a class="el" href="_m_f_r_c522_8h_source.html#l00239">PICC_TYPE_ISO_18092</a>, <a class="el" href="_m_f_r_c522_8h_source.html#l00241">PICC_TYPE_MIFARE_1K</a>, <a class="el" href="_m_f_r_c522_8h_source.html#l00242">PICC_TYPE_MIFARE_4K</a>, <a class="el" href="_m_f_r_c522_8h_source.html#l00240">PICC_TYPE_MIFARE_MINI</a>, <a class="el" href="_m_f_r_c522_8h_source.html#l00244">PICC_TYPE_MIFARE_PLUS</a>, <a class="el" href="_m_f_r_c522_8h_source.html#l00243">PICC_TYPE_MIFARE_UL</a>, <a class="el" href="_m_f_r_c522_8h_source.html#l00247">PICC_TYPE_NOT_COMPLETE</a>, <a class="el" href="_m_f_r_c522_8h_source.html#l00245">PICC_TYPE_TNP3XXX</a> y <a class="el" href="_m_f_r_c522_8h_source.html#l00237">PICC_TYPE_UNKNOWN</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="_m_f_r_c522_8c_source.html#l01698">PICC_DumpDetailsToSerial()</a>.</p>
+
+</div>
+</div>
+<a id="aca5bc6619b9d67851b9e6d52ffd9e2fd" name="aca5bc6619b9d67851b9e6d52ffd9e2fd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aca5bc6619b9d67851b9e6d52ffd9e2fd">&#9670;&#160;</a></span>PICC_HaltA()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="_m_f_r_c522_8h.html#a5f21394f47e041c904141d6d8c684a12">StatusCode</a> PICC_HaltA </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="_m_f_r_c522_8h.html#a08c3a10bca51453a3ef3bf91aca43aaa">MFRC522Ptr_t</a></td>          <td class="paramname"><span class="paramname"><em>mfrc</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Instructs a PICC in state ACTIVE(*) to go to state HALT.</p>
+<dl class="section return"><dt>Devuelve</dt><dd>STATUS_OK on success, STATUS_??? otherwise. </dd></dl>
+
+<p class="definition">Definición en la línea <a class="el" href="_m_f_r_c522_8c_source.html#l00983">983</a> del archivo <a class="el" href="_m_f_r_c522_8c_source.html">MFRC522.c</a>.</p>
+
+<p class="reference">Hace referencia a <a class="el" href="mpu6050_8c_source.html#l00021">buffer</a>, <a class="el" href="ili9341_8c_source.html#l00019">NULL</a>, <a class="el" href="_m_f_r_c522_8c_source.html#l00264">PCD_CalculateCRC()</a>, <a class="el" href="_m_f_r_c522_8c_source.html#l00446">PCD_TransceiveData()</a>, <a class="el" href="_m_f_r_c522_8h_source.html#l00193">PICC_CMD_HLTA</a>, <a class="el" href="_m_f_r_c522_8h_source.html#l00256">STATUS_ERROR</a>, <a class="el" href="_m_f_r_c522_8h_source.html#l00255">STATUS_OK</a> y <a class="el" href="_m_f_r_c522_8h_source.html#l00258">STATUS_TIMEOUT</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="_m_f_r_c522_8c_source.html#l02062">MIFARE_OpenUidBackdoor()</a>, <a class="el" href="_m_f_r_c522_8c_source.html#l01736">PICC_DumpMifareClassicToSerial()</a> y <a class="el" href="_m_f_r_c522_8c_source.html#l01650">PICC_DumpToSerial()</a>.</p>
+
+</div>
+</div>
+<a id="aa3d2eff160fe9cef4e97a46f4a308be9" name="aa3d2eff160fe9cef4e97a46f4a308be9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa3d2eff160fe9cef4e97a46f4a308be9">&#9670;&#160;</a></span>PICC_IsNewCardPresent()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool PICC_IsNewCardPresent </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="_m_f_r_c522_8h.html#a08c3a10bca51453a3ef3bf91aca43aaa">MFRC522Ptr_t</a></td>          <td class="paramname"><span class="paramname"><em>mfrc</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Returns true if a PICC responds to PICC_CMD_REQA. Only "new" cards in state IDLE are invited. Sleeping cards in state HALT are ignored.</p>
+<dl class="section return"><dt>Devuelve</dt><dd>bool </dd></dl>
+
+<p class="definition">Definición en la línea <a class="el" href="_m_f_r_c522_8c_source.html#l02287">2287</a> del archivo <a class="el" href="_m_f_r_c522_8c_source.html">MFRC522.c</a>.</p>
+
+<p class="reference">Hace referencia a <a class="el" href="_m_f_r_c522_8c_source.html#l00618">PICC_RequestA()</a>, <a class="el" href="_m_f_r_c522_8h_source.html#l00257">STATUS_COLLISION</a> y <a class="el" href="_m_f_r_c522_8h_source.html#l00255">STATUS_OK</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="_m_f_r_c522_8c_source.html#l02147">MIFARE_SetUid()</a>.</p>
+
+</div>
+</div>
+<a id="ad3fd50cb601e53c67552f1697744f6b3" name="ad3fd50cb601e53c67552f1697744f6b3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad3fd50cb601e53c67552f1697744f6b3">&#9670;&#160;</a></span>PICC_ReadCardSerial()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool PICC_ReadCardSerial </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="_m_f_r_c522_8h.html#a08c3a10bca51453a3ef3bf91aca43aaa">MFRC522Ptr_t</a></td>          <td class="paramname"><span class="paramname"><em>mfrc</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Simple wrapper around PICC_Select. Returns true if a UID could be read. Remember to call <a class="el" href="#aa3d2eff160fe9cef4e97a46f4a308be9">PICC_IsNewCardPresent()</a>, <a class="el" href="#adde9796abdc412301c431f9eb062b014">PICC_RequestA()</a> or <a class="el" href="#aaec5eecc625edced74e35217e2c68672">PICC_WakeupA()</a> first. The read UID is available in the class variable uid.</p>
+<dl class="section return"><dt>Devuelve</dt><dd>bool </dd></dl>
+
+<p class="definition">Definición en la línea <a class="el" href="_m_f_r_c522_8c_source.html#l02303">2303</a> del archivo <a class="el" href="_m_f_r_c522_8c_source.html">MFRC522.c</a>.</p>
+
+<p class="reference">Hace referencia a <a class="el" href="_m_f_r_c522_8c_source.html#l00710">PICC_Select()</a>, <a class="el" href="_m_f_r_c522_8h_source.html#l00255">STATUS_OK</a> y <a class="el" href="_m_f_r_c522_8h_source.html#l00290">MFRC522_T::uid</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="_m_f_r_c522_8c_source.html#l02147">MIFARE_SetUid()</a>.</p>
+
+</div>
+</div>
+<a id="afcdab74a88c7ea6667b0a37c5772430d" name="afcdab74a88c7ea6667b0a37c5772430d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afcdab74a88c7ea6667b0a37c5772430d">&#9670;&#160;</a></span>PICC_REQA_or_WUPA()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="_m_f_r_c522_8h.html#a5f21394f47e041c904141d6d8c684a12">StatusCode</a> PICC_REQA_or_WUPA </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="_m_f_r_c522_8h.html#a08c3a10bca51453a3ef3bf91aca43aaa">MFRC522Ptr_t</a></td>          <td class="paramname"><span class="paramname"><em>mfrc</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint8_t</td>          <td class="paramname"><span class="paramname"><em>command</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint8_t *</td>          <td class="paramname"><span class="paramname"><em>bufferATQA</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint8_t *</td>          <td class="paramname"><span class="paramname"><em>bufferSize</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Transmits REQA or WUPA commands. Beware: When two PICCs are in the field at the same time I often get STATUS_TIMEOUT - probably due do bad antenna design.</p>
+<dl class="section return"><dt>Devuelve</dt><dd>STATUS_OK on success, STATUS_??? otherwise. </dd></dl>
+<dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">command</td><td>The command to send - PICC_CMD_REQA or PICC_CMD_WUPA  </td></tr>
+    <tr><td class="paramname">bufferATQA</td><td>The buffer to store the ATQA (Answer to request) in  </td></tr>
+    <tr><td class="paramname">bufferSize</td><td>Buffer size, at least two uint8_ts. Also number of uint8_ts returned if STATUS_OK. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definición en la línea <a class="el" href="_m_f_r_c522_8c_source.html#l00653">653</a> del archivo <a class="el" href="_m_f_r_c522_8c_source.html">MFRC522.c</a>.</p>
+
+<p class="reference">Hace referencia a <a class="el" href="_m_f_r_c522_8h_source.html#l00062">CollReg</a>, <a class="el" href="ili9341_8c_source.html#l00019">NULL</a>, <a class="el" href="_m_f_r_c522_8c_source.html#l00248">PCD_ClearRegisterBitMask()</a>, <a class="el" href="_m_f_r_c522_8c_source.html#l00446">PCD_TransceiveData()</a>, <a class="el" href="_m_f_r_c522_8h_source.html#l00256">STATUS_ERROR</a>, <a class="el" href="_m_f_r_c522_8h_source.html#l00259">STATUS_NO_ROOM</a> y <a class="el" href="_m_f_r_c522_8h_source.html#l00255">STATUS_OK</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="_m_f_r_c522_8c_source.html#l00618">PICC_RequestA()</a> y <a class="el" href="_m_f_r_c522_8c_source.html#l00636">PICC_WakeupA()</a>.</p>
+
+</div>
+</div>
+<a id="adde9796abdc412301c431f9eb062b014" name="adde9796abdc412301c431f9eb062b014"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adde9796abdc412301c431f9eb062b014">&#9670;&#160;</a></span>PICC_RequestA()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="_m_f_r_c522_8h.html#a5f21394f47e041c904141d6d8c684a12">StatusCode</a> PICC_RequestA </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="_m_f_r_c522_8h.html#a08c3a10bca51453a3ef3bf91aca43aaa">MFRC522Ptr_t</a></td>          <td class="paramname"><span class="paramname"><em>mfrc</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint8_t *</td>          <td class="paramname"><span class="paramname"><em>bufferATQA</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint8_t *</td>          <td class="paramname"><span class="paramname"><em>bufferSize</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Transmits a REQuest command, Type A. Invites PICCs in state IDLE to go to READY and prepare for anticollision or selection. 7 bit frame. Beware: When two PICCs are in the field at the same time I often get STATUS_TIMEOUT - probably due do bad antenna design.</p>
+<dl class="section return"><dt>Devuelve</dt><dd>STATUS_OK on success, STATUS_??? otherwise. </dd></dl>
+<dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">bufferATQA</td><td>The buffer to store the ATQA (Answer to request) in  </td></tr>
+    <tr><td class="paramname">bufferSize</td><td>Buffer size, at least two uint8_ts. Also number of uint8_ts returned if STATUS_OK. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definición en la línea <a class="el" href="_m_f_r_c522_8c_source.html#l00618">618</a> del archivo <a class="el" href="_m_f_r_c522_8c_source.html">MFRC522.c</a>.</p>
+
+<p class="reference">Hace referencia a <a class="el" href="_m_f_r_c522_8h_source.html#l00182">PICC_CMD_REQA</a> y <a class="el" href="_m_f_r_c522_8c_source.html#l00653">PICC_REQA_or_WUPA()</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="_m_f_r_c522_8c_source.html#l02287">PICC_IsNewCardPresent()</a>.</p>
+
+</div>
+</div>
+<a id="a9b4c2fa0c12d6aced842df016c763556" name="a9b4c2fa0c12d6aced842df016c763556"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9b4c2fa0c12d6aced842df016c763556">&#9670;&#160;</a></span>PICC_Select()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="_m_f_r_c522_8h.html#a5f21394f47e041c904141d6d8c684a12">StatusCode</a> PICC_Select </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="_m_f_r_c522_8h.html#a08c3a10bca51453a3ef3bf91aca43aaa">MFRC522Ptr_t</a></td>          <td class="paramname"><span class="paramname"><em>mfrc</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="struct_uid.html">Uid</a> *</td>          <td class="paramname"><span class="paramname"><em>uid</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint8_t</td>          <td class="paramname"><span class="paramname"><em>validBits</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Transmits SELECT/ANTICOLLISION commands to select a single PICC. Before calling this function the PICCs must be placed in the READY(*) state by calling <a class="el" href="#adde9796abdc412301c431f9eb062b014">PICC_RequestA()</a> or <a class="el" href="#aaec5eecc625edced74e35217e2c68672">PICC_WakeupA()</a>. On success:</p><ul>
+<li>The chosen PICC is in state ACTIVE(*) and all other PICCs have returned to state IDLE/HALT. (Figure 7 of the ISO/IEC 14443-3 draft.)</li>
+<li>The UID size and value of the chosen PICC is returned in *uid along with the SAK.</li>
+</ul>
+<p>A PICC UID consists of 4, 7 or 10 uint8_ts. Only 4 uint8_ts can be specified in a SELECT command, so for the longer UIDs two or three iterations are used: UID size Number of UID uint8_ts Cascade levels Example of PICC ======== =================== ============== =============== single 4 1 MIFARE Classic double 7 2 MIFARE Ultralight triple 10 3 Not currently in use?</p>
+<dl class="section return"><dt>Devuelve</dt><dd>STATUS_OK on success, STATUS_??? otherwise. </dd></dl>
+<dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">uid</td><td>Pointer to <a class="el" href="struct_uid.html">Uid</a> struct. Normally output, but can also be used to supply a known UID.  </td></tr>
+    <tr><td class="paramname">validBits</td><td>The number of known UID bits supplied in *uid. Normally 0. If set you must also supply uid-&gt;size. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definición en la línea <a class="el" href="_m_f_r_c522_8c_source.html#l00710">710</a> del archivo <a class="el" href="_m_f_r_c522_8c_source.html">MFRC522.c</a>.</p>
+
+<p class="reference">Hace referencia a <a class="el" href="_m_f_r_c522_8h_source.html#l00061">BitFramingReg</a>, <a class="el" href="mpu6050_8c_source.html#l00021">buffer</a>, <a class="el" href="_m_f_r_c522_8h_source.html#l00062">CollReg</a>, <a class="el" href="_m_f_r_c522_8c_source.html#l00264">PCD_CalculateCRC()</a>, <a class="el" href="_m_f_r_c522_8c_source.html#l00248">PCD_ClearRegisterBitMask()</a>, <a class="el" href="_m_f_r_c522_8c_source.html#l00127">PCD_ReadRegister()</a>, <a class="el" href="_m_f_r_c522_8c_source.html#l00446">PCD_TransceiveData()</a>, <a class="el" href="_m_f_r_c522_8c_source.html#l00068">PCD_WriteRegister()</a>, <a class="el" href="_m_f_r_c522_8h_source.html#l00188">PICC_CMD_CT</a>, <a class="el" href="_m_f_r_c522_8h_source.html#l00190">PICC_CMD_SEL_CL1</a>, <a class="el" href="_m_f_r_c522_8h_source.html#l00191">PICC_CMD_SEL_CL2</a>, <a class="el" href="_m_f_r_c522_8h_source.html#l00192">PICC_CMD_SEL_CL3</a>, <a class="el" href="_m_f_r_c522_8h_source.html#l00270">Uid::sak</a>, <a class="el" href="_m_f_r_c522_8h_source.html#l00268">Uid::size</a>, <a class="el" href="_m_f_r_c522_8h_source.html#l00257">STATUS_COLLISION</a>, <a class="el" href="_m_f_r_c522_8h_source.html#l00262">STATUS_CRC_WRONG</a>, <a class="el" href="_m_f_r_c522_8h_source.html#l00256">STATUS_ERROR</a>, <a class="el" href="_m_f_r_c522_8h_source.html#l00260">STATUS_INTERNAL_ERROR</a>, <a class="el" href="_m_f_r_c522_8h_source.html#l00261">STATUS_INVALID</a>, <a class="el" href="_m_f_r_c522_8h_source.html#l00255">STATUS_OK</a>, <a class="el" href="_m_f_r_c522_8h_source.html#l00290">MFRC522_T::uid</a> y <a class="el" href="_m_f_r_c522_8h_source.html#l00269">Uid::uidByte</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="_m_f_r_c522_8c_source.html#l02303">PICC_ReadCardSerial()</a>.</p>
+
+</div>
+</div>
+<a id="aaec5eecc625edced74e35217e2c68672" name="aaec5eecc625edced74e35217e2c68672"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aaec5eecc625edced74e35217e2c68672">&#9670;&#160;</a></span>PICC_WakeupA()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="_m_f_r_c522_8h.html#a5f21394f47e041c904141d6d8c684a12">StatusCode</a> PICC_WakeupA </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="_m_f_r_c522_8h.html#a08c3a10bca51453a3ef3bf91aca43aaa">MFRC522Ptr_t</a></td>          <td class="paramname"><span class="paramname"><em>mfrc</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint8_t *</td>          <td class="paramname"><span class="paramname"><em>bufferATQA</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint8_t *</td>          <td class="paramname"><span class="paramname"><em>bufferSize</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Transmits a Wake-UP command, Type A. Invites PICCs in state IDLE and HALT to go to READY(*) and prepare for anticollision or selection. 7 bit frame. Beware: When two PICCs are in the field at the same time I often get STATUS_TIMEOUT - probably due do bad antenna design.</p>
+<dl class="section return"><dt>Devuelve</dt><dd>STATUS_OK on success, STATUS_??? otherwise. </dd></dl>
+<dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">bufferATQA</td><td>The buffer to store the ATQA (Answer to request) in  </td></tr>
+    <tr><td class="paramname">bufferSize</td><td>Buffer size, at least two uint8_ts. Also number of uint8_ts returned if STATUS_OK. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definición en la línea <a class="el" href="_m_f_r_c522_8c_source.html#l00636">636</a> del archivo <a class="el" href="_m_f_r_c522_8c_source.html">MFRC522.c</a>.</p>
+
+<p class="reference">Hace referencia a <a class="el" href="_m_f_r_c522_8h_source.html#l00185">PICC_CMD_WUPA</a> y <a class="el" href="_m_f_r_c522_8c_source.html#l00653">PICC_REQA_or_WUPA()</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="_m_f_r_c522_8c_source.html#l02147">MIFARE_SetUid()</a>.</p>
+
+</div>
+</div>
+<a name="doc-var-members" id="doc-var-members"></a><h2 id="header-doc-var-members" class="groupheader">Documentación de variables</h2>
+<a id="aa7f1bcccbdc2615169d9c57878b037a0" name="aa7f1bcccbdc2615169d9c57878b037a0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa7f1bcccbdc2615169d9c57878b037a0">&#9670;&#160;</a></span>spi_conf</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structspi__mcu__config__t.html">spi_mcu_config_t</a> spi_conf</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>Valor inicial:</b><div class="fragment"><div class="line">= {</div>
+<div class="line">    .device = 0,</div>
+<div class="line">    .clk_mode = <a class="code hl_enumvalue" href="group___s_p_i.html#gga7ddb86ccba25a168f889234061e21692a8c818ffe07c247353de39ebce7a017c2">MODE0</a>, </div>
+<div class="line">    .bitrate = <a class="code hl_define" href="ili9341_8c.html#a5a96556b55f3bf5350e836859a37280d">SPI_BR</a>, </div>
+<div class="line">    .transfer_mode = <a class="code hl_enumvalue" href="group___s_p_i.html#ggadfb7c2a6a73bfdf993e50505aa92992fa0cb4f6c37501162dcdcd5686e2efea9a">SPI_POLLING</a>, </div>
+<div class="line">    .func_p = <a class="code hl_define" href="ili9341_8c.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>,</div>
+<div class="line">    .param_p = <a class="code hl_define" href="ili9341_8c.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a> }</div>
+<div class="ttc" id="agroup___s_p_i_html_gga7ddb86ccba25a168f889234061e21692a8c818ffe07c247353de39ebce7a017c2"><div class="ttname"><a href="group___s_p_i.html#gga7ddb86ccba25a168f889234061e21692a8c818ffe07c247353de39ebce7a017c2">MODE0</a></div><div class="ttdeci">@ MODE0</div><div class="ttdef"><b>Definition</b> <a href="spi__mcu_8h_source.html#l00047">spi_mcu.h:47</a></div></div>
+<div class="ttc" id="agroup___s_p_i_html_ggadfb7c2a6a73bfdf993e50505aa92992fa0cb4f6c37501162dcdcd5686e2efea9a"><div class="ttname"><a href="group___s_p_i.html#ggadfb7c2a6a73bfdf993e50505aa92992fa0cb4f6c37501162dcdcd5686e2efea9a">SPI_POLLING</a></div><div class="ttdeci">@ SPI_POLLING</div><div class="ttdef"><b>Definition</b> <a href="spi__mcu_8h_source.html#l00057">spi_mcu.h:57</a></div></div>
+<div class="ttc" id="aili9341_8c_html_a070d2ce7b6bb7e5c05602aa8c308d0c4"><div class="ttname"><a href="ili9341_8c.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a></div><div class="ttdeci">#define NULL</div><div class="ttdef"><b>Definition</b> <a href="ili9341_8c_source.html#l00019">ili9341.c:19</a></div></div>
+<div class="ttc" id="aili9341_8c_html_a5a96556b55f3bf5350e836859a37280d"><div class="ttname"><a href="ili9341_8c.html#a5a96556b55f3bf5350e836859a37280d">SPI_BR</a></div><div class="ttdeci">#define SPI_BR</div><div class="ttdef"><b>Definition</b> <a href="ili9341_8c_source.html#l00021">ili9341.c:21</a></div></div>
+</div><!-- fragment -->
+<p class="definition">Definición en la línea <a class="el" href="_m_f_r_c522_8c_source.html#l00023">23</a> del archivo <a class="el" href="_m_f_r_c522_8c_source.html">MFRC522.c</a>.</p>
+
+</div>
+</div>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<div id="page-nav" class="page-nav-panel">
+<div id="page-nav-resize-handle"></div>
+<div id="page-nav-tree">
+<div id="page-nav-contents">
+</div><!-- page-nav-contents -->
+</div><!-- page-nav-tree -->
+</div><!-- page-nav -->
+</div><!-- container -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a href="dir_d9edf6c004b4a7ff14fe9ae7a92214ee.html">firmware</a></li><li class="navelem"><a href="dir_4774754e228843183aac8de48667fdde.html">drivers</a></li><li class="navelem"><a href="dir_01f3b75bad316aed7476a5f4cbb25c84.html">devices</a></li><li class="navelem"><a href="dir_2602097dce81420f4880be8af28b7cd8.html">src</a></li><li class="navelem"><a href="_m_f_r_c522_8c.html">MFRC522.c</a></li>
+    <li class="footer">Generado por <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.14.0 </li>
+  </ul>
+</div>
+</body>
+</html>

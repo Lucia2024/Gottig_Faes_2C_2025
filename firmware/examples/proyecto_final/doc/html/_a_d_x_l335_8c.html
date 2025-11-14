@@ -1,0 +1,400 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.14.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Proyecto integrador: Referencia del archivo C:/Repositorios/Gottig_Faes_2C_2025/firmware/drivers/devices/src/ADXL335.c</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+  $(function() { init_search(); });
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectlogo"><img alt="Logo" src="fiuner.png"/></td>
+  <td id="projectalign">
+   <div id="projectname">Proyecto integrador<span id="projectnumber">&#160;1.0</span>
+   </div>
+   <div id="projectbrief">Control automatico del nivel de agua</div>
+  </td>
+    <td>        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <span id="MSearchSelect" class="search-icon" onmouseover="return searchBox.OnSearchSelectShow()" onmouseout="return searchBox.OnSearchSelectHide()"><span class="search-icon-dropdown"></span></span>
+          <input type="text" id="MSearchField" value="" placeholder="Buscar" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><div id="MSearchCloseImg" class="close-icon"></div></a>
+          </span>
+        </div>
+</td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Generado por Doxygen 1.14.0 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+</script>
+<script type="text/javascript">
+$(function() { codefold.init(); });
+</script>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(function(){initNavTree('_a_d_x_l335_8c.html','',''); });
+</script>
+<div id="container">
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Cargando...</div>
+<div class="SRStatus" id="Searching">Buscando...</div>
+<div class="SRStatus" id="NoMatches">Nada coincide</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">Referencia del archivo ADXL335.c</div></div>
+</div><!--header-->
+<div class="contents">
+<div class="textblock"><code>#include &quot;<a class="el" href="_a_d_x_l335_8h_source.html">ADXL335.h</a>&quot;</code><br />
+</div>
+<p><a href="_a_d_x_l335_8c_source.html">Ir al código fuente de este archivo.</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-define-members" class="groupheader"><a id="define-members" name="define-members"></a>
+defines</h2></td></tr>
+<tr class="memitem:a0637861f9419cef73e2e7e6210280e4e" id="r_a0637861f9419cef73e2e7e6210280e4e"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a0637861f9419cef73e2e7e6210280e4e">MAX_VOLTAGE</a>&#160;&#160;&#160;3300</td></tr>
+<tr class="memdesc:a0637861f9419cef73e2e7e6210280e4e"><td class="mdescLeft">&#160;</td><td class="mdescRight">driver que maneja la lectura de datos obtenida a partir de un acelerómetro.  <br /></td></tr>
+<tr class="memitem:a4ce3e2af80a76d816ab7f8567ec4a65a" id="r_a4ce3e2af80a76d816ab7f8567ec4a65a"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a4ce3e2af80a76d816ab7f8567ec4a65a">MAX_VALUE</a>&#160;&#160;&#160;1024</td></tr>
+<tr class="memdesc:a4ce3e2af80a76d816ab7f8567ec4a65a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Máximo valor de bits.  <br /></td></tr>
+<tr class="memitem:a21005f9f4e2ce7597c5eb4351816d7e2" id="r_a21005f9f4e2ce7597c5eb4351816d7e2"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a21005f9f4e2ce7597c5eb4351816d7e2">OFFSET</a>&#160;&#160;&#160;3300.0/2.0</td></tr>
+<tr class="memdesc:a21005f9f4e2ce7597c5eb4351816d7e2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Mitad del valor máximo de voltaje correspondiente en bits.  <br /></td></tr>
+<tr class="memitem:aa6ac8087ed34271031291f59014fe310" id="r_aa6ac8087ed34271031291f59014fe310"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa6ac8087ed34271031291f59014fe310">SENSITIVITY</a>&#160;&#160;&#160;300.0</td></tr>
+<tr class="memdesc:aa6ac8087ed34271031291f59014fe310"><td class="mdescLeft">&#160;</td><td class="mdescRight">Valor de la sensibilidad dado por el driver.  <br /></td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-func-members" class="groupheader"><a id="func-members" name="func-members"></a>
+Funciones</h2></td></tr>
+<tr class="memitem:a3512d44496e0aea11d08f85c219b4074" id="r_a3512d44496e0aea11d08f85c219b4074"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a3512d44496e0aea11d08f85c219b4074">UnitConvert</a> (uint16_t value)</td></tr>
+<tr class="memdesc:a3512d44496e0aea11d08f85c219b4074"><td class="mdescLeft">&#160;</td><td class="mdescRight">Función que convierte el valor leído en unidades de gravedad.  <br /></td></tr>
+<tr class="memitem:ga211e2099d68d50da5c6e2aa1e3bc958a" id="r_ga211e2099d68d50da5c6e2aa1e3bc958a"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___a_d_x_l335.html#ga211e2099d68d50da5c6e2aa1e3bc958a">ADXL335Init</a> ()</td></tr>
+<tr class="memdesc:ga211e2099d68d50da5c6e2aa1e3bc958a"><td class="mdescLeft">&#160;</td><td class="mdescRight">driver que maneja la lectura de datos obtenida a partir de un acelerómetro.  <br /></td></tr>
+<tr class="memitem:ga49f0de5ca002527c9e5b84c5bc8ef4ab" id="r_ga49f0de5ca002527c9e5b84c5bc8ef4ab"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___a_d_x_l335.html#ga49f0de5ca002527c9e5b84c5bc8ef4ab">ReadXValueInt</a> ()</td></tr>
+<tr class="memitem:gac62564c41a96ceca5b38d6b73ef4c6f9" id="r_gac62564c41a96ceca5b38d6b73ef4c6f9"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___a_d_x_l335.html#gac62564c41a96ceca5b38d6b73ef4c6f9">ReadXValue</a> ()</td></tr>
+<tr class="memdesc:gac62564c41a96ceca5b38d6b73ef4c6f9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Función que lee el pin x del driver y devuelve el valor convertido de analógico a digital en unidades de gravedad.  <br /></td></tr>
+<tr class="memitem:ga6a3b0bb40402200bd34edb61487d38f4" id="r_ga6a3b0bb40402200bd34edb61487d38f4"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___a_d_x_l335.html#ga6a3b0bb40402200bd34edb61487d38f4">ReadYValueInt</a> ()</td></tr>
+<tr class="memitem:ga25995f82b10255c8466cbb01308ae375" id="r_ga25995f82b10255c8466cbb01308ae375"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___a_d_x_l335.html#ga25995f82b10255c8466cbb01308ae375">ReadYValue</a> ()</td></tr>
+<tr class="memdesc:ga25995f82b10255c8466cbb01308ae375"><td class="mdescLeft">&#160;</td><td class="mdescRight">Función que lee el pin y del driver y devuelve el valor convertido de analógico a digital en unidades de gravedad.  <br /></td></tr>
+<tr class="memitem:ga86201b6c6a037fa4d755d924221db52f" id="r_ga86201b6c6a037fa4d755d924221db52f"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___a_d_x_l335.html#ga86201b6c6a037fa4d755d924221db52f">ReadZValueInt</a> ()</td></tr>
+<tr class="memitem:gace645c520fdd92b45b72c711e26fe9e0" id="r_gace645c520fdd92b45b72c711e26fe9e0"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___a_d_x_l335.html#gace645c520fdd92b45b72c711e26fe9e0">ReadZValue</a> ()</td></tr>
+<tr class="memdesc:gace645c520fdd92b45b72c711e26fe9e0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Función que lee el pin z del driver y devuelve el valor convertido de analógico a digital en unidades de gravedad.  <br /></td></tr>
+<tr class="memitem:a4aa223bf8916fae4a03467cd4a65458e" id="r_a4aa223bf8916fae4a03467cd4a65458e"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a4aa223bf8916fae4a03467cd4a65458e">ADXL335DeInit</a> (<a class="el" href="group___g_i_o_p.html#gac6f7bd4f7ee306a4519f04641cbf2d67">gpio_t</a> gSelect1, <a class="el" href="group___g_i_o_p.html#gac6f7bd4f7ee306a4519f04641cbf2d67">gpio_t</a> gSelect2)</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-var-members" class="groupheader"><a id="var-members" name="var-members"></a>
+Variables</h2></td></tr>
+<tr class="memitem:a7fbb6f80b04507a51d3dcb3283913db6" id="r_a7fbb6f80b04507a51d3dcb3283913db6"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a7fbb6f80b04507a51d3dcb3283913db6">conversion</a></td></tr>
+<tr class="memitem:a6555bc6e0e12aed1d6d19dcd2128e508" id="r_a6555bc6e0e12aed1d6d19dcd2128e508"><td class="memItemLeft" align="right" valign="top">uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a6555bc6e0e12aed1d6d19dcd2128e508">valor</a></td></tr>
+<tr class="memitem:a5825c2ddd7aa9484e989c4e864d2ac95" id="r_a5825c2ddd7aa9484e989c4e864d2ac95"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a5825c2ddd7aa9484e989c4e864d2ac95">canal</a></td></tr>
+<tr class="memitem:a209669fbff866b238040eb14df41501d" id="r_a209669fbff866b238040eb14df41501d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structanalog__input__config__t.html">analog_input_config_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a209669fbff866b238040eb14df41501d">my_ad_x</a> = {<a class="el" href="group___analog___i_o.html#gga4ebdf50515e5d73c58c24fd1491770dca703cf81b7a9530ba8650e0ee2f29d68e">CH1</a>,<a class="el" href="group___analog___i_o.html#gga51acd785c14953090a3507d4fa8e5939a3b0a8cf9a7759ea8b7c9494eb7fb3dd4">ADC_SINGLE</a>}</td></tr>
+<tr class="memitem:afd2d040077c6ce377b2bb89ce5720d5e" id="r_afd2d040077c6ce377b2bb89ce5720d5e"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structanalog__input__config__t.html">analog_input_config_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#afd2d040077c6ce377b2bb89ce5720d5e">my_ad_y</a> = {<a class="el" href="group___analog___i_o.html#gga4ebdf50515e5d73c58c24fd1491770dcae574b39c34bd88c27ea641014831e53a">CH2</a>,<a class="el" href="group___analog___i_o.html#gga51acd785c14953090a3507d4fa8e5939a3b0a8cf9a7759ea8b7c9494eb7fb3dd4">ADC_SINGLE</a>}</td></tr>
+<tr class="memitem:a6778905988ec70236d52d30564c6c767" id="r_a6778905988ec70236d52d30564c6c767"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structanalog__input__config__t.html">analog_input_config_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a6778905988ec70236d52d30564c6c767">my_ad_z</a> = {<a class="el" href="group___analog___i_o.html#gga4ebdf50515e5d73c58c24fd1491770dcaaee6d12bf63ae430250764aa97e9e429">CH3</a>,<a class="el" href="group___analog___i_o.html#gga51acd785c14953090a3507d4fa8e5939a3b0a8cf9a7759ea8b7c9494eb7fb3dd4">ADC_SINGLE</a>}</td></tr>
+</table>
+<a name="doc-define-members" id="doc-define-members"></a><h2 id="header-doc-define-members" class="groupheader">Documentación de «define»</h2>
+<a id="a4ce3e2af80a76d816ab7f8567ec4a65a" name="a4ce3e2af80a76d816ab7f8567ec4a65a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4ce3e2af80a76d816ab7f8567ec4a65a">&#9670;&#160;</a></span>MAX_VALUE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define MAX_VALUE&#160;&#160;&#160;1024</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Máximo valor de bits. </p>
+
+<p class="definition">Definición en la línea <a class="el" href="_a_d_x_l335_8c_source.html#l00028">28</a> del archivo <a class="el" href="_a_d_x_l335_8c_source.html">ADXL335.c</a>.</p>
+
+</div>
+</div>
+<a id="a0637861f9419cef73e2e7e6210280e4e" name="a0637861f9419cef73e2e7e6210280e4e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0637861f9419cef73e2e7e6210280e4e">&#9670;&#160;</a></span>MAX_VOLTAGE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define MAX_VOLTAGE&#160;&#160;&#160;3300</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>driver que maneja la lectura de datos obtenida a partir de un acelerómetro. </p>
+<p>Máximo valor de voltaje en mV que puede medir el driver </p>
+
+<p class="definition">Definición en la línea <a class="el" href="_a_d_x_l335_8c_source.html#l00024">24</a> del archivo <a class="el" href="_a_d_x_l335_8c_source.html">ADXL335.c</a>.</p>
+
+</div>
+</div>
+<a id="a21005f9f4e2ce7597c5eb4351816d7e2" name="a21005f9f4e2ce7597c5eb4351816d7e2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a21005f9f4e2ce7597c5eb4351816d7e2">&#9670;&#160;</a></span>OFFSET</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define OFFSET&#160;&#160;&#160;3300.0/2.0</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Mitad del valor máximo de voltaje correspondiente en bits. </p>
+
+<p class="definition">Definición en la línea <a class="el" href="_a_d_x_l335_8c_source.html#l00032">32</a> del archivo <a class="el" href="_a_d_x_l335_8c_source.html">ADXL335.c</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="hx711_8c_source.html#l00159">HX711_getOffset()</a>, <a class="el" href="hx711_8c_source.html#l00128">HX711_getValue()</a>, <a class="el" href="hx711_8c_source.html#l00154">HX711_setOffset()</a> y <a class="el" href="_a_d_x_l335_8c_source.html#l00064">UnitConvert()</a>.</p>
+
+</div>
+</div>
+<a id="aa6ac8087ed34271031291f59014fe310" name="aa6ac8087ed34271031291f59014fe310"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa6ac8087ed34271031291f59014fe310">&#9670;&#160;</a></span>SENSITIVITY</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define SENSITIVITY&#160;&#160;&#160;300.0</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Valor de la sensibilidad dado por el driver. </p>
+
+<p class="definition">Definición en la línea <a class="el" href="_a_d_x_l335_8c_source.html#l00036">36</a> del archivo <a class="el" href="_a_d_x_l335_8c_source.html">ADXL335.c</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="_a_d_x_l335_8c_source.html#l00064">UnitConvert()</a>.</p>
+
+</div>
+</div>
+<a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Documentación de funciones</h2>
+<a id="a4aa223bf8916fae4a03467cd4a65458e" name="a4aa223bf8916fae4a03467cd4a65458e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4aa223bf8916fae4a03467cd4a65458e">&#9670;&#160;</a></span>ADXL335DeInit()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool ADXL335DeInit </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="group___g_i_o_p.html#gac6f7bd4f7ee306a4519f04641cbf2d67">gpio_t</a></td>          <td class="paramname"><span class="paramname"><em>gSelect1</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="group___g_i_o_p.html#gac6f7bd4f7ee306a4519f04641cbf2d67">gpio_t</a></td>          <td class="paramname"><span class="paramname"><em>gSelect2</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="_a_d_x_l335_8c_source.html#l00113">113</a> del archivo <a class="el" href="_a_d_x_l335_8c_source.html">ADXL335.c</a>.</p>
+
+</div>
+</div>
+<a id="a3512d44496e0aea11d08f85c219b4074" name="a3512d44496e0aea11d08f85c219b4074"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3512d44496e0aea11d08f85c219b4074">&#9670;&#160;</a></span>UnitConvert()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">float UnitConvert </td>
+          <td>(</td>
+          <td class="paramtype">uint16_t</td>          <td class="paramname"><span class="paramname"><em>value</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Función que convierte el valor leído en unidades de gravedad. </p>
+<dl class="section return"><dt>Devuelve</dt><dd>valor convertido </dd></dl>
+
+<p class="definition">Definición en la línea <a class="el" href="_a_d_x_l335_8c_source.html#l00064">64</a> del archivo <a class="el" href="_a_d_x_l335_8c_source.html">ADXL335.c</a>.</p>
+
+<p class="reference">Hace referencia a <a class="el" href="_a_d_x_l335_8c_source.html#l00032">OFFSET</a> y <a class="el" href="_a_d_x_l335_8c_source.html#l00036">SENSITIVITY</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="_a_d_x_l335_8c_source.html#l00088">ReadXValue()</a>, <a class="el" href="_a_d_x_l335_8c_source.html#l00098">ReadYValue()</a> y <a class="el" href="_a_d_x_l335_8c_source.html#l00108">ReadZValue()</a>.</p>
+
+</div>
+</div>
+<a name="doc-var-members" id="doc-var-members"></a><h2 id="header-doc-var-members" class="groupheader">Documentación de variables</h2>
+<a id="a5825c2ddd7aa9484e989c4e864d2ac95" name="a5825c2ddd7aa9484e989c4e864d2ac95"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5825c2ddd7aa9484e989c4e864d2ac95">&#9670;&#160;</a></span>canal</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint8_t canal</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Canal de la placa </p>
+
+<p class="definition">Definición en la línea <a class="el" href="_a_d_x_l335_8c_source.html#l00042">42</a> del archivo <a class="el" href="_a_d_x_l335_8c_source.html">ADXL335.c</a>.</p>
+
+</div>
+</div>
+<a id="a7fbb6f80b04507a51d3dcb3283913db6" name="a7fbb6f80b04507a51d3dcb3283913db6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7fbb6f80b04507a51d3dcb3283913db6">&#9670;&#160;</a></span>conversion</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool conversion</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>booleando si realiza o no la conversión </p>
+
+<p class="definition">Definición en la línea <a class="el" href="_a_d_x_l335_8c_source.html#l00040">40</a> del archivo <a class="el" href="_a_d_x_l335_8c_source.html">ADXL335.c</a>.</p>
+
+</div>
+</div>
+<a id="a209669fbff866b238040eb14df41501d" name="a209669fbff866b238040eb14df41501d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a209669fbff866b238040eb14df41501d">&#9670;&#160;</a></span>my_ad_x</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structanalog__input__config__t.html">analog_input_config_t</a> my_ad_x = {<a class="el" href="group___analog___i_o.html#gga4ebdf50515e5d73c58c24fd1491770dca703cf81b7a9530ba8650e0ee2f29d68e">CH1</a>,<a class="el" href="group___analog___i_o.html#gga51acd785c14953090a3507d4fa8e5939a3b0a8cf9a7759ea8b7c9494eb7fb3dd4">ADC_SINGLE</a>}</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Typedef configuración puerto analógico/digital canal x </p>
+
+<p class="definition">Definición en la línea <a class="el" href="_a_d_x_l335_8c_source.html#l00058">58</a> del archivo <a class="el" href="_a_d_x_l335_8c_source.html">ADXL335.c</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="_a_d_x_l335_8c_source.html#l00076">ADXL335Init()</a>, <a class="el" href="_a_d_x_l335_8c_source.html#l00088">ReadXValue()</a> y <a class="el" href="_a_d_x_l335_8c_source.html#l00083">ReadXValueInt()</a>.</p>
+
+</div>
+</div>
+<a id="afd2d040077c6ce377b2bb89ce5720d5e" name="afd2d040077c6ce377b2bb89ce5720d5e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afd2d040077c6ce377b2bb89ce5720d5e">&#9670;&#160;</a></span>my_ad_y</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structanalog__input__config__t.html">analog_input_config_t</a> my_ad_y = {<a class="el" href="group___analog___i_o.html#gga4ebdf50515e5d73c58c24fd1491770dcae574b39c34bd88c27ea641014831e53a">CH2</a>,<a class="el" href="group___analog___i_o.html#gga51acd785c14953090a3507d4fa8e5939a3b0a8cf9a7759ea8b7c9494eb7fb3dd4">ADC_SINGLE</a>}</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Typedef configuración puerto analógico/digital canal y </p>
+
+<p class="definition">Definición en la línea <a class="el" href="_a_d_x_l335_8c_source.html#l00059">59</a> del archivo <a class="el" href="_a_d_x_l335_8c_source.html">ADXL335.c</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="_a_d_x_l335_8c_source.html#l00076">ADXL335Init()</a>, <a class="el" href="_a_d_x_l335_8c_source.html#l00098">ReadYValue()</a> y <a class="el" href="_a_d_x_l335_8c_source.html#l00093">ReadYValueInt()</a>.</p>
+
+</div>
+</div>
+<a id="a6778905988ec70236d52d30564c6c767" name="a6778905988ec70236d52d30564c6c767"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6778905988ec70236d52d30564c6c767">&#9670;&#160;</a></span>my_ad_z</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structanalog__input__config__t.html">analog_input_config_t</a> my_ad_z = {<a class="el" href="group___analog___i_o.html#gga4ebdf50515e5d73c58c24fd1491770dcaaee6d12bf63ae430250764aa97e9e429">CH3</a>,<a class="el" href="group___analog___i_o.html#gga51acd785c14953090a3507d4fa8e5939a3b0a8cf9a7759ea8b7c9494eb7fb3dd4">ADC_SINGLE</a>}</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Typedef configuración puerto analógico/digital canal z </p>
+
+<p class="definition">Definición en la línea <a class="el" href="_a_d_x_l335_8c_source.html#l00060">60</a> del archivo <a class="el" href="_a_d_x_l335_8c_source.html">ADXL335.c</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="_a_d_x_l335_8c_source.html#l00076">ADXL335Init()</a>, <a class="el" href="_a_d_x_l335_8c_source.html#l00108">ReadZValue()</a> y <a class="el" href="_a_d_x_l335_8c_source.html#l00103">ReadZValueInt()</a>.</p>
+
+</div>
+</div>
+<a id="a6555bc6e0e12aed1d6d19dcd2128e508" name="a6555bc6e0e12aed1d6d19dcd2128e508"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6555bc6e0e12aed1d6d19dcd2128e508">&#9670;&#160;</a></span>valor</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint16_t valor</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Valor convertido </p>
+
+<p class="definition">Definición en la línea <a class="el" href="_a_d_x_l335_8c_source.html#l00041">41</a> del archivo <a class="el" href="_a_d_x_l335_8c_source.html">ADXL335.c</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="_a_d_x_l335_8c_source.html#l00088">ReadXValue()</a>, <a class="el" href="_a_d_x_l335_8c_source.html#l00083">ReadXValueInt()</a>, <a class="el" href="_a_d_x_l335_8c_source.html#l00098">ReadYValue()</a>, <a class="el" href="_a_d_x_l335_8c_source.html#l00093">ReadYValueInt()</a>, <a class="el" href="_a_d_x_l335_8c_source.html#l00108">ReadZValue()</a>, <a class="el" href="_a_d_x_l335_8c_source.html#l00103">ReadZValueInt()</a>, <a class="el" href="_si7007_8c_source.html#l00112">Si7007MeasureHumidity()</a> y <a class="el" href="_si7007_8c_source.html#l00099">Si7007MeasureTemperature()</a>.</p>
+
+</div>
+</div>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<div id="page-nav" class="page-nav-panel">
+<div id="page-nav-resize-handle"></div>
+<div id="page-nav-tree">
+<div id="page-nav-contents">
+</div><!-- page-nav-contents -->
+</div><!-- page-nav-tree -->
+</div><!-- page-nav -->
+</div><!-- container -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a href="dir_d9edf6c004b4a7ff14fe9ae7a92214ee.html">firmware</a></li><li class="navelem"><a href="dir_4774754e228843183aac8de48667fdde.html">drivers</a></li><li class="navelem"><a href="dir_01f3b75bad316aed7476a5f4cbb25c84.html">devices</a></li><li class="navelem"><a href="dir_2602097dce81420f4880be8af28b7cd8.html">src</a></li><li class="navelem"><a href="_a_d_x_l335_8c.html">ADXL335.c</a></li>
+    <li class="footer">Generado por <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.14.0 </li>
+  </ul>
+</div>
+</body>
+</html>

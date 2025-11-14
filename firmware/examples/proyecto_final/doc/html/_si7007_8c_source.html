@@ -1,0 +1,268 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.14.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Proyecto integrador: Archivo de código fuente C:/Repositorios/Gottig_Faes_2C_2025/firmware/drivers/devices/src/Si7007.c</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+  $(function() { init_search(); });
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectlogo"><img alt="Logo" src="fiuner.png"/></td>
+  <td id="projectalign">
+   <div id="projectname">Proyecto integrador<span id="projectnumber">&#160;1.0</span>
+   </div>
+   <div id="projectbrief">Control automatico del nivel de agua</div>
+  </td>
+    <td>        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <span id="MSearchSelect" class="search-icon" onmouseover="return searchBox.OnSearchSelectShow()" onmouseout="return searchBox.OnSearchSelectHide()"><span class="search-icon-dropdown"></span></span>
+          <input type="text" id="MSearchField" value="" placeholder="Buscar" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><div id="MSearchCloseImg" class="close-icon"></div></a>
+          </span>
+        </div>
+</td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Generado por Doxygen 1.14.0 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+</script>
+<script type="text/javascript">
+$(function() { codefold.init(); });
+</script>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(function(){initNavTree('_si7007_8c_source.html','',''); });
+</script>
+<div id="container">
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Cargando...</div>
+<div class="SRStatus" id="Searching">Buscando...</div>
+<div class="SRStatus" id="NoMatches">Nada coincide</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">Si7007.c</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="_si7007_8c.html">Ir a la documentación de este archivo.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="comment">/* Copyright 2021,</span></div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="comment"> * Maria Casablanca</span></div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="comment"> * mariacasabla@hotmail.com</span></div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="comment"> * Facultad de Ingeniería</span></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="comment"> * Universidad Nacional de Entre Ríos</span></div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="comment"> * Argentina</span></div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="comment"> *</span></div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="comment"> * All rights reserved.</span></div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="comment"> *</span></div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="comment"> * Redistribution and use in source and binary forms, with or without</span></div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="comment"> * modification, are permitted provided that the following conditions are met:</span></div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="comment"> *</span></div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="comment"> * 1. Redistributions of source code must retain the above copyright notice,</span></div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="comment"> *    this list of conditions and the following disclaimer.</span></div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="comment"> *</span></div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span><span class="comment"> * 2. Redistributions in binary form must reproduce the above copyright notice,</span></div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span><span class="comment"> *    this list of conditions and the following disclaimer in the documentation</span></div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span><span class="comment"> *    and/or other materials provided with the distribution.</span></div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span><span class="comment"> *</span></div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span><span class="comment"> * 3. Neither the name of the copyright holder nor the names of its</span></div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span><span class="comment"> *    contributors may be used to endorse or promote products derived from this</span></div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span><span class="comment"> *    software without specific prior written permission.</span></div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span><span class="comment"> *</span></div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span><span class="comment"> * THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS &quot;AS IS&quot;</span></div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span><span class="comment"> * AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE</span></div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span><span class="comment"> * IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE</span></div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span><span class="comment"> * ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE</span></div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span><span class="comment"> * LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR</span></div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span><span class="comment"> * CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF</span></div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span><span class="comment"> * SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS</span></div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span><span class="comment"> * INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN</span></div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span><span class="comment"> * CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE)</span></div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span><span class="comment"> * ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE</span></div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span><span class="comment"> * POSSIBILITY OF SUCH DAMAGE.</span></div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span><span class="comment"> *</span></div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span><span class="comment"> */</span></div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span></div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span> </div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span><span class="comment">/*</span></div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span><span class="comment"> * Initials     Name</span></div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span><span class="comment"> * ---------------------------</span></div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span><span class="comment"> *  MC         Maria Casablanca</span></div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span><span class="comment"> */</span></div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span> </div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span><span class="comment">/*</span></div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span><span class="comment"> * modification history (new versions first)</span></div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span><span class="comment"> * -----------------------------------------------------------</span></div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span><span class="comment"> * 20210901 v0.1 initials initial version Maria Casablanca</span></div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span><span class="comment"> * 20242703 v1.1 converted to ESP IDF by JC</span></div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span><span class="comment"> */</span></div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span> </div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span><span class="comment">/*==================[inclusions]=============================================*/</span></div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span><span class="preprocessor">#include &quot;<a class="code" href="_si7007_8h.html">Si7007.h</a>&quot;</span></div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span> </div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span><span class="preprocessor">#include &quot;<a class="code" href="gpio__mcu_8h.html">gpio_mcu.h</a>&quot;</span></div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span><span class="preprocessor">#include &lt;stdio.h&gt;</span></div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span><span class="preprocessor">#include &lt;stdint.h&gt;</span></div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span> </div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span><span class="comment">/*==================[macros and definitions]=================================*/</span></div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span> </div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno"><a class="line" href="_si7007_8c.html#a78bd16b40e563713bb92b7a7d0f10b98">   64</a></span><span class="preprocessor">#define V_REF 3.3                </span><span class="preprocessor"></span></div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno"><a class="line" href="_si7007_8c.html#a32f09dc6ffd60fee4ba2e4aef1564505">   65</a></span><span class="preprocessor">#define TOTAL_BITS 1024          </span><span class="preprocessor"></span></div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span> </div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span><span class="comment">/*==================[internal data declaration]==============================*/</span></div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span> </div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno"><a class="line" href="_si7007_8c.html#a686c98b1bf6adde51e96cc0c3910060b">   69</a></span><a class="code hl_struct" href="structanalog__input__config__t.html">analog_input_config_t</a> <a class="code hl_variable" href="_si7007_8c.html#a686c98b1bf6adde51e96cc0c3910060b">temp_config</a>;</div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno"><a class="line" href="_si7007_8c.html#abc0ae5c416dacc9d8d4d4a114e95421c">   70</a></span><a class="code hl_struct" href="structanalog__input__config__t.html">analog_input_config_t</a> <a class="code hl_variable" href="_si7007_8c.html#abc0ae5c416dacc9d8d4d4a114e95421c">hum_config</a>;</div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span> </div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span><span class="comment">/*==================[internal functions declaration]=========================*/</span></div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span> </div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span><span class="comment">/*==================[internal data definition]===============================*/</span></div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span> </div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span><span class="comment">/*==================[external data definition]===============================*/</span></div>
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span> </div>
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span><span class="comment">/*==================[internal functions definition]==========================*/</span></div>
+<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span> </div>
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span><span class="comment">/*==================[external functions definition]==========================*/</span></div>
+<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span> </div>
+<div class="foldopen" id="foldopen00082" data-start="{" data-end="}">
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno"><a class="line" href="group___sensor___ty_h.html#ga8692b210349b0b2b7fd2ef2ccc4c526a">   82</a></span><span class="keywordtype">bool</span> <a class="code hl_function" href="group___sensor___ty_h.html#ga8692b210349b0b2b7fd2ef2ccc4c526a">Si7007Init</a>(<a class="code hl_struct" href="struct_si7007__config.html">Si7007_config</a> *pins){</div>
+<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span> </div>
+<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span> </div>
+<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span>    <a class="code hl_function" href="group___g_i_o_p.html#ga10240d283f64bd1b09fca664fda27964">GPIOInit</a>(pins-&gt;<a class="code hl_variable" href="struct_si7007__config.html#af1c3639b354ee311e2f77d199e3f3e6b">select</a>, <a class="code hl_enumvalue" href="group___g_i_o_p.html#gga423620ef7d69894833f70cfc395caaa9aa248e73c1faee9c6f072fd91569cf516">GPIO_OUTPUT</a>);</div>
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>    <a class="code hl_function" href="group___g_i_o_p.html#gaba62250f2b0e73a98b6f35fb6078fdb1">GPIOOn</a>(pins-&gt;<a class="code hl_variable" href="struct_si7007__config.html#af1c3639b354ee311e2f77d199e3f3e6b">select</a>); <span class="comment">//Lo pongo en 1 para que PWM 2 sea temperatura y PWM 1 humedad.</span></div>
+<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span> </div>
+<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span>    <a class="code hl_variable" href="_si7007_8c.html#a686c98b1bf6adde51e96cc0c3910060b">temp_config</a>.input = pins-&gt;<a class="code hl_variable" href="struct_si7007__config.html#a3015ae3ce1a4917c388a25c190a3f5f7">PWM_2</a>;;</div>
+<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span>    <a class="code hl_variable" href="_si7007_8c.html#a686c98b1bf6adde51e96cc0c3910060b">temp_config</a>.mode = <a class="code hl_enumvalue" href="group___analog___i_o.html#gga51acd785c14953090a3507d4fa8e5939a3b0a8cf9a7759ea8b7c9494eb7fb3dd4">ADC_SINGLE</a>;</div>
+<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span> </div>
+<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span>    <a class="code hl_variable" href="_si7007_8c.html#abc0ae5c416dacc9d8d4d4a114e95421c">hum_config</a>.input = pins-&gt;<a class="code hl_variable" href="struct_si7007__config.html#a85e5a7db7fa7b9ae7428be7f1d2e5d90">PWM_1</a>;</div>
+<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span>    <a class="code hl_variable" href="_si7007_8c.html#abc0ae5c416dacc9d8d4d4a114e95421c">hum_config</a>.mode = <a class="code hl_enumvalue" href="group___analog___i_o.html#gga51acd785c14953090a3507d4fa8e5939a3b0a8cf9a7759ea8b7c9494eb7fb3dd4">ADC_SINGLE</a>;</div>
+<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span> </div>
+<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span>    <a class="code hl_function" href="group___analog___i_o.html#ga24ce5556aa4682468220b982f151cdfe">AnalogInputInit</a>(&amp;<a class="code hl_variable" href="_si7007_8c.html#a686c98b1bf6adde51e96cc0c3910060b">temp_config</a>);  </div>
+<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span>    <a class="code hl_function" href="group___analog___i_o.html#ga24ce5556aa4682468220b982f151cdfe">AnalogInputInit</a>(&amp;<a class="code hl_variable" href="_si7007_8c.html#abc0ae5c416dacc9d8d4d4a114e95421c">hum_config</a>);</div>
+<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span>    <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span>}</div>
+</div>
+<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span> </div>
+<div class="foldopen" id="foldopen00099" data-start="{" data-end="}">
+<div class="line"><a id="l00099" name="l00099"></a><span class="lineno"><a class="line" href="group___sensor___ty_h.html#gaf9633c44a37586283e7630ff73977403">   99</a></span><span class="keywordtype">float</span> <a class="code hl_function" href="group___sensor___ty_h.html#gaf9633c44a37586283e7630ff73977403">Si7007MeasureTemperature</a>(<span class="keywordtype">void</span>){</div>
+<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span> </div>
+<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span>    uint16_t value;</div>
+<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span>    <span class="keywordtype">float</span> temperature = 0;</div>
+<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span>    <span class="keywordtype">float</span> <a class="code hl_variable" href="_a_d_x_l335_8c.html#a6555bc6e0e12aed1d6d19dcd2128e508">valor</a> = 0;</div>
+<div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span>    </div>
+<div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span>    <a class="code hl_function" href="group___analog___i_o.html#gab5ae00a35744f407072230979e593fd9">AnalogInputReadSingle</a>(<a class="code hl_variable" href="_si7007_8c.html#a686c98b1bf6adde51e96cc0c3910060b">temp_config</a>.input, &amp;value);</div>
+<div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span>    <a class="code hl_variable" href="_a_d_x_l335_8c.html#a6555bc6e0e12aed1d6d19dcd2128e508">valor</a> = (value/1000.0)/<a class="code hl_define" href="_si7007_8c.html#a78bd16b40e563713bb92b7a7d0f10b98">V_REF</a>;</div>
+<div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span>    temperature = -46.85 + (<a class="code hl_variable" href="_a_d_x_l335_8c.html#a6555bc6e0e12aed1d6d19dcd2128e508">valor</a>*175.71);</div>
+<div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span>    <span class="keywordflow">return</span> temperature;</div>
+<div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span> </div>
+<div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span>}</div>
+</div>
+<div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span> </div>
+<div class="foldopen" id="foldopen00112" data-start="{" data-end="}">
+<div class="line"><a id="l00112" name="l00112"></a><span class="lineno"><a class="line" href="group___sensor___ty_h.html#ga408546f0da31f8f7513276786cf0c615">  112</a></span><span class="keywordtype">float</span> <a class="code hl_function" href="group___sensor___ty_h.html#ga408546f0da31f8f7513276786cf0c615">Si7007MeasureHumidity</a>(<span class="keywordtype">void</span>){</div>
+<div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span> </div>
+<div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span>    uint16_t value;</div>
+<div class="line"><a id="l00115" name="l00115"></a><span class="lineno">  115</span>    <span class="keywordtype">float</span> humidity = 0;</div>
+<div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span>    <span class="keywordtype">float</span> <a class="code hl_variable" href="_a_d_x_l335_8c.html#a6555bc6e0e12aed1d6d19dcd2128e508">valor</a> = 0;</div>
+<div class="line"><a id="l00117" name="l00117"></a><span class="lineno">  117</span>    </div>
+<div class="line"><a id="l00118" name="l00118"></a><span class="lineno">  118</span>    <a class="code hl_function" href="group___analog___i_o.html#gab5ae00a35744f407072230979e593fd9">AnalogInputReadSingle</a>(<a class="code hl_variable" href="_si7007_8c.html#abc0ae5c416dacc9d8d4d4a114e95421c">hum_config</a>.input, &amp;value);</div>
+<div class="line"><a id="l00119" name="l00119"></a><span class="lineno">  119</span>    <a class="code hl_variable" href="_a_d_x_l335_8c.html#a6555bc6e0e12aed1d6d19dcd2128e508">valor</a> = (value/1000.0)/<a class="code hl_define" href="_si7007_8c.html#a78bd16b40e563713bb92b7a7d0f10b98">V_REF</a>;</div>
+<div class="line"><a id="l00120" name="l00120"></a><span class="lineno">  120</span>    humidity = -6 + (<a class="code hl_variable" href="_a_d_x_l335_8c.html#a6555bc6e0e12aed1d6d19dcd2128e508">valor</a>*125);</div>
+<div class="line"><a id="l00121" name="l00121"></a><span class="lineno">  121</span>    <span class="keywordflow">return</span> humidity;</div>
+<div class="line"><a id="l00122" name="l00122"></a><span class="lineno">  122</span>}</div>
+</div>
+<div class="line"><a id="l00123" name="l00123"></a><span class="lineno">  123</span> </div>
+<div class="foldopen" id="foldopen00124" data-start="{" data-end="}">
+<div class="line"><a id="l00124" name="l00124"></a><span class="lineno"><a class="line" href="group___sensor___ty_h.html#gadea4f1714669ec6892709c21fd62cae6">  124</a></span><span class="keywordtype">bool</span> <a class="code hl_function" href="group___sensor___ty_h.html#gadea4f1714669ec6892709c21fd62cae6">Si7007Deinit</a>(<a class="code hl_struct" href="struct_si7007__config.html">Si7007_config</a> *pins){</div>
+<div class="line"><a id="l00125" name="l00125"></a><span class="lineno">  125</span>    <span class="keywordflow">return</span> <span class="keyword">true</span>;</div>
+<div class="line"><a id="l00126" name="l00126"></a><span class="lineno">  126</span>}</div>
+</div>
+<div class="line"><a id="l00127" name="l00127"></a><span class="lineno">  127</span> </div>
+<div class="line"><a id="l00128" name="l00128"></a><span class="lineno">  128</span> </div>
+<div class="line"><a id="l00129" name="l00129"></a><span class="lineno">  129</span><span class="comment">/*==================[end of file]============================================*/</span></div>
+<div class="ttc" id="a_a_d_x_l335_8c_html_a6555bc6e0e12aed1d6d19dcd2128e508"><div class="ttname"><a href="_a_d_x_l335_8c.html#a6555bc6e0e12aed1d6d19dcd2128e508">valor</a></div><div class="ttdeci">uint16_t valor</div><div class="ttdef"><b>Definition</b> <a href="_a_d_x_l335_8c_source.html#l00041">ADXL335.c:41</a></div></div>
+<div class="ttc" id="a_si7007_8c_html_a686c98b1bf6adde51e96cc0c3910060b"><div class="ttname"><a href="_si7007_8c.html#a686c98b1bf6adde51e96cc0c3910060b">temp_config</a></div><div class="ttdeci">analog_input_config_t temp_config</div><div class="ttdef"><b>Definition</b> <a href="#l00069">Si7007.c:69</a></div></div>
+<div class="ttc" id="a_si7007_8c_html_a78bd16b40e563713bb92b7a7d0f10b98"><div class="ttname"><a href="_si7007_8c.html#a78bd16b40e563713bb92b7a7d0f10b98">V_REF</a></div><div class="ttdeci">#define V_REF</div><div class="ttdoc">Driver for SI7007 H/T sensor.</div><div class="ttdef"><b>Definition</b> <a href="#l00064">Si7007.c:64</a></div></div>
+<div class="ttc" id="a_si7007_8c_html_abc0ae5c416dacc9d8d4d4a114e95421c"><div class="ttname"><a href="_si7007_8c.html#abc0ae5c416dacc9d8d4d4a114e95421c">hum_config</a></div><div class="ttdeci">analog_input_config_t hum_config</div><div class="ttdef"><b>Definition</b> <a href="#l00070">Si7007.c:70</a></div></div>
+<div class="ttc" id="a_si7007_8h_html"><div class="ttname"><a href="_si7007_8h.html">Si7007.h</a></div></div>
+<div class="ttc" id="agpio__mcu_8h_html"><div class="ttname"><a href="gpio__mcu_8h.html">gpio_mcu.h</a></div></div>
+<div class="ttc" id="agroup___analog___i_o_html_ga24ce5556aa4682468220b982f151cdfe"><div class="ttname"><a href="group___analog___i_o.html#ga24ce5556aa4682468220b982f151cdfe">AnalogInputInit</a></div><div class="ttdeci">void AnalogInputInit(analog_input_config_t *config)</div><div class="ttdoc">Analog input initialization.</div><div class="ttdef"><b>Definition</b> <a href="analog__io__mcu_8c_source.html#l00045">analog_io_mcu.c:45</a></div></div>
+<div class="ttc" id="agroup___analog___i_o_html_gab5ae00a35744f407072230979e593fd9"><div class="ttname"><a href="group___analog___i_o.html#gab5ae00a35744f407072230979e593fd9">AnalogInputReadSingle</a></div><div class="ttdeci">void AnalogInputReadSingle(adc_ch_t channel, uint16_t *value)</div><div class="ttdoc">Read single channel.</div><div class="ttdef"><b>Definition</b> <a href="analog__io__mcu_8c_source.html#l00130">analog_io_mcu.c:130</a></div></div>
+<div class="ttc" id="agroup___analog___i_o_html_gga51acd785c14953090a3507d4fa8e5939a3b0a8cf9a7759ea8b7c9494eb7fb3dd4"><div class="ttname"><a href="group___analog___i_o.html#gga51acd785c14953090a3507d4fa8e5939a3b0a8cf9a7759ea8b7c9494eb7fb3dd4">ADC_SINGLE</a></div><div class="ttdeci">@ ADC_SINGLE</div><div class="ttdef"><b>Definition</b> <a href="analog__io__mcu_8h_source.html#l00038">analog_io_mcu.h:38</a></div></div>
+<div class="ttc" id="agroup___g_i_o_p_html_ga10240d283f64bd1b09fca664fda27964"><div class="ttname"><a href="group___g_i_o_p.html#ga10240d283f64bd1b09fca664fda27964">GPIOInit</a></div><div class="ttdeci">void GPIOInit(gpio_t pin, io_t io)</div><div class="ttdoc">GPIO initialization.</div><div class="ttdef"><b>Definition</b> <a href="gpio__mcu_8c_source.html#l00067">gpio_mcu.c:67</a></div></div>
+<div class="ttc" id="agroup___g_i_o_p_html_gaba62250f2b0e73a98b6f35fb6078fdb1"><div class="ttname"><a href="group___g_i_o_p.html#gaba62250f2b0e73a98b6f35fb6078fdb1">GPIOOn</a></div><div class="ttdeci">void GPIOOn(gpio_t pin)</div><div class="ttdoc">Change GPIO state to high.</div><div class="ttdef"><b>Definition</b> <a href="gpio__mcu_8c_source.html#l00081">gpio_mcu.c:81</a></div></div>
+<div class="ttc" id="agroup___g_i_o_p_html_gga423620ef7d69894833f70cfc395caaa9aa248e73c1faee9c6f072fd91569cf516"><div class="ttname"><a href="group___g_i_o_p.html#gga423620ef7d69894833f70cfc395caaa9aa248e73c1faee9c6f072fd91569cf516">GPIO_OUTPUT</a></div><div class="ttdeci">@ GPIO_OUTPUT</div><div class="ttdef"><b>Definition</b> <a href="gpio__mcu_8h_source.html#l00044">gpio_mcu.h:44</a></div></div>
+<div class="ttc" id="agroup___sensor___ty_h_html_ga408546f0da31f8f7513276786cf0c615"><div class="ttname"><a href="group___sensor___ty_h.html#ga408546f0da31f8f7513276786cf0c615">Si7007MeasureHumidity</a></div><div class="ttdeci">float Si7007MeasureHumidity(void)</div><div class="ttdoc">Measures the current relative humidity.</div><div class="ttdef"><b>Definition</b> <a href="#l00112">Si7007.c:112</a></div></div>
+<div class="ttc" id="agroup___sensor___ty_h_html_ga8692b210349b0b2b7fd2ef2ccc4c526a"><div class="ttname"><a href="group___sensor___ty_h.html#ga8692b210349b0b2b7fd2ef2ccc4c526a">Si7007Init</a></div><div class="ttdeci">bool Si7007Init(Si7007_config *pins)</div><div class="ttdoc">Initialization function of Si7007.</div><div class="ttdef"><b>Definition</b> <a href="#l00082">Si7007.c:82</a></div></div>
+<div class="ttc" id="agroup___sensor___ty_h_html_gadea4f1714669ec6892709c21fd62cae6"><div class="ttname"><a href="group___sensor___ty_h.html#gadea4f1714669ec6892709c21fd62cae6">Si7007Deinit</a></div><div class="ttdeci">bool Si7007Deinit(Si7007_config *pins)</div><div class="ttdef"><b>Definition</b> <a href="#l00124">Si7007.c:124</a></div></div>
+<div class="ttc" id="agroup___sensor___ty_h_html_gaf9633c44a37586283e7630ff73977403"><div class="ttname"><a href="group___sensor___ty_h.html#gaf9633c44a37586283e7630ff73977403">Si7007MeasureTemperature</a></div><div class="ttdeci">float Si7007MeasureTemperature(void)</div><div class="ttdoc">Measures the current temperature.</div><div class="ttdef"><b>Definition</b> <a href="#l00099">Si7007.c:99</a></div></div>
+<div class="ttc" id="astruct_si7007__config_html"><div class="ttname"><a href="struct_si7007__config.html">Si7007_config</a></div><div class="ttdoc">Bare Metal header for Si7007.</div><div class="ttdef"><b>Definition</b> <a href="_si7007_8h_source.html#l00038">Si7007.h:38</a></div></div>
+<div class="ttc" id="astruct_si7007__config_html_a3015ae3ce1a4917c388a25c190a3f5f7"><div class="ttname"><a href="struct_si7007__config.html#a3015ae3ce1a4917c388a25c190a3f5f7">Si7007_config::PWM_2</a></div><div class="ttdeci">uint8_t PWM_2</div><div class="ttdef"><b>Definition</b> <a href="_si7007_8h_source.html#l00041">Si7007.h:41</a></div></div>
+<div class="ttc" id="astruct_si7007__config_html_a85e5a7db7fa7b9ae7428be7f1d2e5d90"><div class="ttname"><a href="struct_si7007__config.html#a85e5a7db7fa7b9ae7428be7f1d2e5d90">Si7007_config::PWM_1</a></div><div class="ttdeci">uint8_t PWM_1</div><div class="ttdef"><b>Definition</b> <a href="_si7007_8h_source.html#l00040">Si7007.h:40</a></div></div>
+<div class="ttc" id="astruct_si7007__config_html_af1c3639b354ee311e2f77d199e3f3e6b"><div class="ttname"><a href="struct_si7007__config.html#af1c3639b354ee311e2f77d199e3f3e6b">Si7007_config::select</a></div><div class="ttdeci">gpio_t select</div><div class="ttdef"><b>Definition</b> <a href="_si7007_8h_source.html#l00039">Si7007.h:39</a></div></div>
+<div class="ttc" id="astructanalog__input__config__t_html"><div class="ttname"><a href="structanalog__input__config__t.html">analog_input_config_t</a></div><div class="ttdoc">Analog inputs config structure.</div><div class="ttdef"><b>Definition</b> <a href="analog__io__mcu_8h_source.html#l00048">analog_io_mcu.h:48</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+</div><!-- container -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a href="dir_d9edf6c004b4a7ff14fe9ae7a92214ee.html">firmware</a></li><li class="navelem"><a href="dir_4774754e228843183aac8de48667fdde.html">drivers</a></li><li class="navelem"><a href="dir_01f3b75bad316aed7476a5f4cbb25c84.html">devices</a></li><li class="navelem"><a href="dir_2602097dce81420f4880be8af28b7cd8.html">src</a></li><li class="navelem"><a href="_si7007_8c.html">Si7007.c</a></li>
+    <li class="footer">Generado por <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.14.0 </li>
+  </ul>
+</div>
+</body>
+</html>

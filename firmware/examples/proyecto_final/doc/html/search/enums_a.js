@@ -1,6 +1,5 @@
 var searchData=
 [
-  ['servo_5fout_0',['servo_out',['../group___s_e_r_v_o.html#ga7d2476d006aaacd66b6795d84541a02f',1,'servo_sg90.h']]],
-  ['spi_5fdevices_1',['spi_devices',['../group___s_p_i.html#ga919e4040af605e210f6c5f4c6fe13a12',1,'spi_mcu.h']]],
-  ['switches_2',['switches',['../group___switch.html#ga8caa2df6d25fea5a14eb4533df1d5cfa',1,'switch.h']]]
+  ['pcd_5fregister_0',['PCD_Register',['../_m_f_r_c522_8h.html#a7380aa98144f0d378c6ec0c5af89203a',1,'MFRC522.h']]],
+  ['pwm_5fout_1',['pwm_out',['../group___p_w_m.html#ga5800a2bada92ba802e1cbdb0307f0c7b',1,'pwm_mcu.h']]]
 ];

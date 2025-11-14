@@ -14,10 +14,12 @@ var group___i2_c =
     [ "I2C_readByte", "group___i2_c.html#ga0d0c191057f18dab8738b3c5f523cb01", null ],
     [ "I2C_readBytes", "group___i2_c.html#ga1a538e675a9e424dcd26b26c9aef3a00", null ],
     [ "I2C_readWord", "group___i2_c.html#ga94f7abf82855002808a338891ee76d13", null ],
+    [ "I2C_requestBytes", "group___i2_c.html#gae4af263a288d563e3cc3b0d581f3cd11", null ],
     [ "I2C_SelectRegister", "group___i2_c.html#ga3cc36e317364b108dc5c2614ddd6bb1a", null ],
     [ "I2C_writeBit", "group___i2_c.html#gab63835618b4d5f656d425d11a3187c11", null ],
     [ "I2C_writeBits", "group___i2_c.html#ga9b2cf38ef7155fdd7cc00407f4ff954a", null ],
     [ "I2C_writeByte", "group___i2_c.html#ga01d5214376094baa433844c6914c1609", null ],
     [ "I2C_writeBytes", "group___i2_c.html#ga24241da9fe8968b78ecdff0d4700d5f1", null ],
+    [ "I2C_writeREG", "group___i2_c.html#ga1f7c9137015f1b63b267aac510616207", null ],
     [ "I2C_writeWord", "group___i2_c.html#gabfa0fda26a1a14f65a058f8d6dc2b55b", null ]
 ];

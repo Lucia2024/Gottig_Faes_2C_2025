@@ -47,5 +47,6 @@ var searchData=
   ['length_44',['length',['../structesp__hidd__cb__param__t_1_1hidd__vendor__write__evt__param.html#a1892eba2086d12ac2b09005aeb09ea3b',1,'esp_hidd_cb_param_t::hidd_vendor_write_evt_param::length'],['../structesp__hidd__cb__param__t_1_1hidd__led__write__evt__param.html#ab2b3adeb2a67e656ff030b56727fd0ac',1,'esp_hidd_cb_param_t::hidd_led_write_evt_param::length'],['../struct_c_m_d__t.html#ae809d5359ac030c60a30a8f0b2294b82',1,'CMD_t::length']]],
   ['lo_5fuint16_45',['LO_UINT16',['../ble__hid__mcu_8c.html#ab2b94e11f455d94fd743666d4f1364d7',1,'ble_hid_mcu.c']]],
   ['low_20energy_46',['Bluetooth Low Energy',['../group___b_l_e.html',1,'']]],
-  ['lowbyte_47',['LowByte',['../ili9341_8c.html#aa9fad731fc07b249db66376d062050cd',1,'ili9341.c']]]
+  ['lowbyte_47',['LowByte',['../ili9341_8c.html#aa9fad731fc07b249db66376d062050cd',1,'ili9341.c']]],
+  ['lowpassfirfilter_48',['lowPassFIRFilter',['../heart_rate_8h.html#a6cedece0bbb86fa19985f9ea4b3927f2',1,'lowPassFIRFilter(int16_t din):&#160;heartRate.c'],['../heart_rate_8c.html#a6cedece0bbb86fa19985f9ea4b3927f2',1,'lowPassFIRFilter(int16_t din):&#160;heartRate.c']]]
 ];

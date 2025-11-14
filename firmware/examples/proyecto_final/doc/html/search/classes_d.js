@@ -1,5 +1,6 @@
 var searchData=
 [
-  ['serial_5fconfig_5ft_0',['serial_config_t',['../structserial__config__t.html',1,'']]],
-  ['spi_5fmcu_5fconfig_5ft_1',['spi_mcu_config_t',['../structspi__mcu__config__t.html',1,'']]]
+  ['record_0',['Record',['../struct_record.html',1,'']]],
+  ['rgb_5fled_1',['rgb_led',['../structrgb__led.html',1,'']]],
+  ['rtc_5ft_2',['rtc_t',['../structrtc__t.html',1,'']]]
 ];

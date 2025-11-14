@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['rgb_5fled_0',['rgb_led',['../structrgb__led.html',1,'']]],
-  ['rtc_5ft_1',['rtc_t',['../structrtc__t.html',1,'']]]
+  ['prf_5fchar_5fpres_5ffmt_0',['prf_char_pres_fmt',['../structprf__char__pres__fmt.html',1,'']]]
 ];

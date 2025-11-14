@@ -22,10 +22,15 @@ var searchData=
   ['uartsendbuffer_19',['UartSendBuffer',['../group___u_a_r_t.html#ga81fce0b6465799566af3cc8cc896c45e',1,'UartSendBuffer(uart_mcu_port_t port, const char *data, uint8_t nbytes):&#160;uart_mcu.c'],['../group___u_a_r_t.html#ga81fce0b6465799566af3cc8cc896c45e',1,'UartSendBuffer(uart_mcu_port_t port, const char *data, uint8_t nbytes):&#160;uart_mcu.c']]],
   ['uartsendbyte_20',['UartSendByte',['../group___u_a_r_t.html#gaeb142fa2425b80bddba60121b1cf13f2',1,'UartSendByte(uart_mcu_port_t port, const char *data):&#160;uart_mcu.c'],['../group___u_a_r_t.html#gaeb142fa2425b80bddba60121b1cf13f2',1,'UartSendByte(uart_mcu_port_t port, const char *data):&#160;uart_mcu.c']]],
   ['uartsendstring_21',['UartSendString',['../group___u_a_r_t.html#ga60db217694ea24ad75fcedda3336a3a8',1,'UartSendString(uart_mcu_port_t port, const char *msg):&#160;uart_mcu.c'],['../group___u_a_r_t.html#ga60db217694ea24ad75fcedda3336a3a8',1,'UartSendString(uart_mcu_port_t port, const char *msg):&#160;uart_mcu.c']]],
-  ['unit_22',['unit',['../structprf__char__pres__fmt.html#a1e8ce93d382bc1a38b1d49f70acf0d24',1,'prf_char_pres_fmt']]],
-  ['up_23',['UP',['../ili9341_8c.html#a1965eaca47dbf3f87acdafc2208f04eb',1,'ili9341.c']]],
-  ['us2cm_24',['US2CM',['../hc__sr04_8c.html#a5e52844206c91ee47dcdf1697595b43a',1,'hc_sr04.c']]],
-  ['us2inch_25',['US2INCH',['../hc__sr04_8c.html#a34f3975d94758e78ddea4f3bcac2398b',1,'hc_sr04.c']]],
-  ['us_5fresolution_5fhz_26',['US_RESOLUTION_HZ',['../delay__mcu_8c.html#a0084affffdb426de14a2629cfe92c652',1,'US_RESOLUTION_HZ:&#160;delay_mcu.c'],['../timer__mcu_8c.html#a0084affffdb426de14a2629cfe92c652',1,'US_RESOLUTION_HZ:&#160;timer_mcu.c']]],
-  ['usar_20el_20ejemplo_27',['Cómo usar el ejemplo',['../C:/Repositorios/Gottig_Faes_2C_2025/firmware/examples/proyecto_final/README.md#autotoc_md1',1,'']]]
+  ['uch_5fspo2_5ftable_22',['uch_spo2_table',['../spo2__algorithm_8c.html#adfeeb6b08271807492803acc50347108',1,'spo2_algorithm.c']]],
+  ['uid_23',['Uid',['../struct_uid.html',1,'']]],
+  ['uid_24',['uid',['../struct_m_f_r_c522___t.html#ad21d7964ad3cdee8b176103c96068ce3',1,'MFRC522_T']]],
+  ['uidbyte_25',['uidByte',['../struct_uid.html#aafb8e9739bf46524e7aae2e6242c341e',1,'Uid']]],
+  ['unit_26',['unit',['../structprf__char__pres__fmt.html#a1e8ce93d382bc1a38b1d49f70acf0d24',1,'prf_char_pres_fmt']]],
+  ['unitconvert_27',['UnitConvert',['../_a_d_x_l335_8c.html#a3512d44496e0aea11d08f85c219b4074',1,'ADXL335.c']]],
+  ['up_28',['UP',['../ili9341_8c.html#a1965eaca47dbf3f87acdafc2208f04eb',1,'ili9341.c']]],
+  ['us2cm_29',['US2CM',['../hc__sr04_8c.html#a5e52844206c91ee47dcdf1697595b43a',1,'hc_sr04.c']]],
+  ['us2inch_30',['US2INCH',['../hc__sr04_8c.html#a34f3975d94758e78ddea4f3bcac2398b',1,'hc_sr04.c']]],
+  ['us_5fresolution_5fhz_31',['US_RESOLUTION_HZ',['../delay__mcu_8c.html#a0084affffdb426de14a2629cfe92c652',1,'US_RESOLUTION_HZ:&#160;delay_mcu.c'],['../timer__mcu_8c.html#a0084affffdb426de14a2629cfe92c652',1,'US_RESOLUTION_HZ:&#160;timer_mcu.c']]],
+  ['usar_20el_20ejemplo_32',['Cómo usar el ejemplo',['../C:/Repositorios/Gottig_Faes_2C_2025/firmware/examples/proyecto_final/README.md#autotoc_md1',1,'']]]
 ];

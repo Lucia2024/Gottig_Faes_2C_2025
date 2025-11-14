@@ -1,0 +1,320 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.14.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Proyecto integrador: Archivo de código fuente C:/Repositorios/Gottig_Faes_2C_2025/firmware/drivers/devices/inc/max3010x.h</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+  $(function() { init_search(); });
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectlogo"><img alt="Logo" src="fiuner.png"/></td>
+  <td id="projectalign">
+   <div id="projectname">Proyecto integrador<span id="projectnumber">&#160;1.0</span>
+   </div>
+   <div id="projectbrief">Control automatico del nivel de agua</div>
+  </td>
+    <td>        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <span id="MSearchSelect" class="search-icon" onmouseover="return searchBox.OnSearchSelectShow()" onmouseout="return searchBox.OnSearchSelectHide()"><span class="search-icon-dropdown"></span></span>
+          <input type="text" id="MSearchField" value="" placeholder="Buscar" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><div id="MSearchCloseImg" class="close-icon"></div></a>
+          </span>
+        </div>
+</td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Generado por Doxygen 1.14.0 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+</script>
+<script type="text/javascript">
+$(function() { codefold.init(); });
+</script>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(function(){initNavTree('max3010x_8h_source.html','',''); });
+</script>
+<div id="container">
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Cargando...</div>
+<div class="SRStatus" id="Searching">Buscando...</div>
+<div class="SRStatus" id="NoMatches">Nada coincide</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">max3010x.h</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="max3010x_8h.html">Ir a la documentación de este archivo.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="comment">/***************************************************</span></div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="comment"> This is a library written for the Maxim MAX30105 Optical Smoke Detector</span></div>
+<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="comment"> It should also work with the MAX30102. However, the MAX30102 does not have a Green LED.</span></div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="comment"> These sensors use I2C to communicate, as well as a single (optional)</span></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="comment"> interrupt line that is not currently supported in this driver.</span></div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="comment"></span> </div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="comment"> Written by Peter Jansen and Nathan Seidle (SparkFun)</span></div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="comment"> BSD license, all text above must be included in any redistribution.</span></div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="comment"> *****************************************************/</span></div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span> </div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="preprocessor">#ifndef _DRIVERS_DEVICES_INC_MAX3010X_H_</span></div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="preprocessor">#define _DRIVERS_DEVICES_INC_MAX3010X_H_</span></div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span> </div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="preprocessor">#include &lt;stdbool.h&gt;</span></div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="preprocessor">#include &lt;stdint.h&gt;</span></div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span> </div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno"><a class="line" href="max3010x_8h.html#acb8783512e3bd21bdb6a294d026e6405">   17</a></span><span class="preprocessor">#define MAX30105_ADDRESS          0x57 </span><span class="comment">//7-bit I2C Address</span></div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span><span class="comment">//Note that MAX30102 has the same I2C address and Part ID</span></div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span> </div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno"><a class="line" href="max3010x_8h.html#a5ca8c5fbb2caa99ab0b7007ce2c11633">   20</a></span><span class="preprocessor">#define I2C_SPEED_STANDARD        100000</span></div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno"><a class="line" href="max3010x_8h.html#aef9d097ed2b58676498a33f3cf76f38d">   21</a></span><span class="preprocessor">#define I2C_SPEED_FAST            400000</span></div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span> </div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span><span class="comment">//Define the size of the I2C buffer based on the platform the user has</span></div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span><span class="preprocessor">#if defined(__AVR_ATmega328P__) || defined(__AVR_ATmega168__)</span></div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span> </div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>  <span class="comment">//I2C_BUFFER_LENGTH is defined in Wire.H</span></div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span><span class="preprocessor">  #define I2C_BUFFER_LENGTH BUFFER_LENGTH</span></div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span> </div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span><span class="preprocessor">#elif defined(__SAMD21G18A__)</span></div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span> </div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>  <span class="comment">//SAMD21 uses RingBuffer.h</span></div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span><span class="preprocessor">  #define I2C_BUFFER_LENGTH SERIAL_BUFFER_SIZE</span></div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span> </div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span><span class="preprocessor">#else</span></div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span> </div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>  <span class="comment">//The catch-all default is 32</span></div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno"><a class="line" href="max3010x_8h.html#aab040ced3ff06bdd71655d55a5f8db14">   37</a></span><span class="preprocessor">  #define I2C_BUFFER_LENGTH 32</span></div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span> </div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span> </div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span> </div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>  <span class="keywordtype">bool</span> <a class="code hl_function" href="max3010x_8h.html#a9aab81f7765d532a90b95e314acd29c4">MAX3010X_begin</a>(<span class="keywordtype">void</span>);</div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span> </div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>  uint32_t <a class="code hl_function" href="max3010x_8h.html#af2bd5eaa729562edf7b0bde30d602da2">MAX3010X_getRed</a>(<span class="keywordtype">void</span>); <span class="comment">//Returns immediate red value</span></div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>  uint32_t <a class="code hl_function" href="max3010x_8h.html#a4c944a4e457d22f2867f7e12e5218189">MAX3010X_getIR</a>(<span class="keywordtype">void</span>); <span class="comment">//Returns immediate IR value</span></div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>  uint32_t <a class="code hl_function" href="max3010x_8h.html#ae8e253b0e5a46a7a2cfe92a62da81d4b">MAX3010X_getGreen</a>(<span class="keywordtype">void</span>); <span class="comment">//Returns immediate green value</span></div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>  <span class="keywordtype">bool</span> <a class="code hl_function" href="max3010x_8h.html#a9215027c1930212055c4de492cda22a9">MAX3010X_safeCheck</a>(uint8_t maxTimeToCheck); <span class="comment">//Given a max amount of time, check for new data</span></div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span> </div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>  <span class="comment">// Configuration</span></div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>  <span class="keywordtype">void</span> <a class="code hl_function" href="max3010x_8h.html#a80847524dd49016138fd873b255f6b27">MAX3010X_softReset</a>();</div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>  <span class="keywordtype">void</span> <a class="code hl_function" href="max3010x_8h.html#a466ff5ee5a54301fda2dde3f296d1c21">MAX3010X_shutDown</a>();</div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>  <span class="keywordtype">void</span> <a class="code hl_function" href="max3010x_8h.html#a2c2082b2db9e222ae57966e209b36d79">MAX3010X_wakeUp</a>();</div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span> </div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>  <span class="keywordtype">void</span> <a class="code hl_function" href="max3010x_8h.html#a464dfe3a91e1439c6c07ce790e01885a">MAX3010X_setLEDMode</a>(uint8_t mode);</div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span> </div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>  <span class="keywordtype">void</span> <a class="code hl_function" href="max3010x_8h.html#aa7b0e8671e6e46943619e2eed237137c">MAX3010X_setADCRange</a>(uint8_t adcRange);</div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>  <span class="keywordtype">void</span> <a class="code hl_function" href="max3010x_8h.html#a2bca36e18f2eca31d31f0c3449b794e9">MAX3010X_setSampleRate</a>(uint8_t sampleRate);</div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>  <span class="keywordtype">void</span> <a class="code hl_function" href="max3010x_8h.html#a286ed555baddfc6df05cbad1d1d32f30">MAX3010X_setPulseWidth</a>(uint8_t pulseWidth);</div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span> </div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>  <span class="keywordtype">void</span> <a class="code hl_function" href="max3010x_8h.html#a52d119dda3fc73da7515d8b666f4fa09">MAX3010X_setPulseAmplitudeRed</a>(uint8_t value);</div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>  <span class="keywordtype">void</span> <a class="code hl_function" href="max3010x_8h.html#a0e0597f6bca8f6394ef4ac5ba880626b">MAX3010X_setPulseAmplitudeIR</a>(uint8_t value);</div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>  <span class="keywordtype">void</span> <a class="code hl_function" href="max3010x_8h.html#ab83d69391585b658ff328ef89fd5a995">MAX3010X_setPulseAmplitudeGreen</a>(uint8_t value);</div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>  <span class="keywordtype">void</span> <a class="code hl_function" href="max3010x_8h.html#af10e5123ca0eb777e2dcd175bb28b636">MAX3010X_setPulseAmplitudeProximity</a>(uint8_t value);</div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span> </div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>  <span class="keywordtype">void</span> <a class="code hl_function" href="max3010x_8h.html#a76f1d1d04c23cea0162bce04ead1cbd1">MAX3010X_setProximityThreshold</a>(uint8_t threshMSB);</div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span> </div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>  <span class="comment">//Multi-led configuration mode (page 22)</span></div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>  <span class="keywordtype">void</span> <a class="code hl_function" href="max3010x_8h.html#a0184a5c705122869241b6c0c6f1ccb5f">MAX3010X_enableSlot</a>(uint8_t slotNumber, uint8_t device); <span class="comment">//Given slot number, assign a device to slot</span></div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>  <span class="keywordtype">void</span> <a class="code hl_function" href="max3010x_8h.html#ac87169587925e648fb47d74c17be7d68">MAX3010X_disableSlots</a>(<span class="keywordtype">void</span>);</div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span> </div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>  <span class="comment">// Data Collection</span></div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span> </div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>  <span class="comment">//Interrupts (page 13, 14)</span></div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>  uint8_t <a class="code hl_function" href="max3010x_8h.html#ad8ac3c2fc255e619949e4169b49882dd">MAX3010X_getINT1</a>(<span class="keywordtype">void</span>); <span class="comment">//Returns the main interrupt group</span></div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>  uint8_t <a class="code hl_function" href="max3010x_8h.html#aa8e10ac90229e437cc2adb608d0199ff">MAX3010X_getINT2</a>(<span class="keywordtype">void</span>); <span class="comment">//Returns the temp ready interrupt</span></div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>  <span class="keywordtype">void</span> <a class="code hl_function" href="max3010x_8h.html#acf3d4dd9fc543625cd2d9756c92581b9">MAX3010X_enableAFULL</a>(<span class="keywordtype">void</span>); <span class="comment">//Enable/disable individual interrupts</span></div>
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span>  <span class="keywordtype">void</span> <a class="code hl_function" href="max3010x_8h.html#a8e3d1ebcbaf380199e1fe34d96a5f300">MAX3010X_disableAFULL</a>(<span class="keywordtype">void</span>);</div>
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>  <span class="keywordtype">void</span> <a class="code hl_function" href="max3010x_8h.html#acee21bd5781c1c190fe4e895c7c3efd1">MAX3010X_enableDATARDY</a>(<span class="keywordtype">void</span>);</div>
+<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span>  <span class="keywordtype">void</span> <a class="code hl_function" href="max3010x_8h.html#a86b2d8dbaecb8db766526b25cef1ef64">MAX3010X_disableDATARDY</a>(<span class="keywordtype">void</span>);</div>
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>  <span class="keywordtype">void</span> <a class="code hl_function" href="max3010x_8h.html#aa0a5edc420d1a89d033be0d2e0772d1b">MAX3010X_enableALCOVF</a>(<span class="keywordtype">void</span>);</div>
+<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span>  <span class="keywordtype">void</span> <a class="code hl_function" href="max3010x_8h.html#ac70938cd57048c76b16cbffbc810ab6a">MAX3010X_disableALCOVF</a>(<span class="keywordtype">void</span>);</div>
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span>  <span class="keywordtype">void</span> <a class="code hl_function" href="max3010x_8h.html#a7ca206e02ae772e8aae03fc65b5a2ceb">MAX3010X_enablePROXINT</a>(<span class="keywordtype">void</span>);</div>
+<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span>  <span class="keywordtype">void</span> <a class="code hl_function" href="max3010x_8h.html#a75fe08dec5a0acf78bc259453d0802a2">MAX3010X_disablePROXINT</a>(<span class="keywordtype">void</span>);</div>
+<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span>  <span class="keywordtype">void</span> <a class="code hl_function" href="max3010x_8h.html#ae0f57acc5b712aabd117ec2dbd33be30">MAX3010X_enableDIETEMPRDY</a>(<span class="keywordtype">void</span>);</div>
+<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span>  <span class="keywordtype">void</span> <a class="code hl_function" href="max3010x_8h.html#a1e47d02b72e306ada26eaad4ff12db1d">MAX3010X_disableDIETEMPRDY</a>(<span class="keywordtype">void</span>);</div>
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span> </div>
+<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span>  <span class="comment">//FIFO Configuration (page 18)</span></div>
+<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span>  <span class="keywordtype">void</span> <a class="code hl_function" href="max3010x_8h.html#af242d9dfc4bed6b1f3e35abb89f0ba28">MAX3010X_setFIFOAverage</a>(uint8_t samples);</div>
+<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span>  <span class="keywordtype">void</span> <a class="code hl_function" href="max3010x_8h.html#a73b964d134ce1944454a345d98bf7eb5">MAX3010X_enableFIFORollover</a>();</div>
+<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span>  <span class="keywordtype">void</span> <a class="code hl_function" href="max3010x_8h.html#a5d282ad4bbdef6f7b2d4da8ccecb75e7">MAX3010X_disableFIFORollover</a>();</div>
+<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span>  <span class="keywordtype">void</span> <a class="code hl_function" href="max3010x_8h.html#ac6e98d8af25d0623de0bc6b5ecaef91f">MAX3010X_setFIFOAlmostFull</a>(uint8_t samples);</div>
+<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span> </div>
+<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span>  <span class="comment">//FIFO Reading</span></div>
+<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span>  uint16_t <a class="code hl_function" href="max3010x_8h.html#a4558222ee9ecc75364a383c1a0448b7d">MAX3010X_check</a>(<span class="keywordtype">void</span>); <span class="comment">//Checks for new data and fills FIFO</span></div>
+<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span>  uint8_t <a class="code hl_function" href="max3010x_8h.html#ae71f70f9490a744e9851030def9dc4cc">MAX3010X_available</a>(<span class="keywordtype">void</span>); <span class="comment">//Tells caller how many new samples are available (head - tail)</span></div>
+<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span>  <span class="keywordtype">void</span> <a class="code hl_function" href="max3010x_8h.html#aee7cfd7c2c415d8e264feba33840efbf">MAX3010X_nextSample</a>(<span class="keywordtype">void</span>); <span class="comment">//Advances the tail of the sense array</span></div>
+<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span>  uint32_t <a class="code hl_function" href="max3010x_8h.html#a743dd4bec2a54bf5f1ac589cc6f93155">MAX3010X_getFIFORed</a>(<span class="keywordtype">void</span>); <span class="comment">//Returns the FIFO sample pointed to by tail</span></div>
+<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span>  uint32_t <a class="code hl_function" href="max3010x_8h.html#a585d5cb37ed73956e568b6a4c5798d33">MAX3010X_getFIFOIR</a>(<span class="keywordtype">void</span>); <span class="comment">//Returns the FIFO sample pointed to by tail</span></div>
+<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span>  uint32_t <a class="code hl_function" href="max3010x_8h.html#ac3b47b79533483a47434c199b9425712">MAX3010X_getFIFOGreen</a>(<span class="keywordtype">void</span>); <span class="comment">//Returns the FIFO sample pointed to by tail</span></div>
+<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span> </div>
+<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span>  uint8_t <a class="code hl_function" href="max3010x_8h.html#ad511bdce8d26e32849b2be0e2ec8f349">MAX3010X_getWritePointer</a>(<span class="keywordtype">void</span>);</div>
+<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span>  uint8_t <a class="code hl_function" href="max3010x_8h.html#a192dbcaa97c95a0006b0a2d0bd81ebaa">MAX3010X_getReadPointer</a>(<span class="keywordtype">void</span>);</div>
+<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span>  <span class="keywordtype">void</span> <a class="code hl_function" href="max3010x_8h.html#af9b723a77725080806abc6568f9a07e3">MAX3010X_clearFIFO</a>(<span class="keywordtype">void</span>); <span class="comment">//Sets the read/write pointers to zero</span></div>
+<div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span> </div>
+<div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span>  <span class="comment">//Proximity Mode Interrupt Threshold</span></div>
+<div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span>  <span class="keywordtype">void</span> <a class="code hl_function" href="max3010x_8h.html#aeec237d2b0574bdda373947e90ae37d6">MAX3010X_setPROXINTTHRESH</a>(uint8_t val);</div>
+<div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span> </div>
+<div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span>  <span class="comment">// Die Temperature</span></div>
+<div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span>  <span class="keywordtype">float</span> <a class="code hl_function" href="max3010x_8h.html#ad94aafb6787510970bc34c6dc4068abf">MAX3010X_readTemperature</a>();</div>
+<div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span>  <span class="keywordtype">float</span> <a class="code hl_function" href="max3010x_8h.html#a90d51ff789f8a60c1d37732affda93b4">MAX3010X_readTemperatureF</a>();</div>
+<div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span> </div>
+<div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span>  <span class="comment">// Detecting ID/Revision</span></div>
+<div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span>  uint8_t <a class="code hl_function" href="max3010x_8h.html#aa64ce295ffbdba116a76e3547e8955d9">MAX3010X_getRevisionID</a>();</div>
+<div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span>  uint8_t <a class="code hl_function" href="max3010x_8h.html#a3de26f777ee424df832edb07c618e6d8">MAX3010X_readPartID</a>();</div>
+<div class="line"><a id="l00115" name="l00115"></a><span class="lineno">  115</span> </div>
+<div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span>  <span class="comment">// Setup the IC with user selectable settings</span></div>
+<div class="line"><a id="l00117" name="l00117"></a><span class="lineno">  117</span>  <span class="comment">//void MAX3010X_setup(byte powerLevel = 0x1F, byte sampleAverage = 4, byte ledMode = 3, int sampleRate = 400, int pulseWidth = 411, int adcRange = 4096);</span></div>
+<div class="line"><a id="l00118" name="l00118"></a><span class="lineno">  118</span>  <span class="keywordtype">void</span> <a class="code hl_function" href="max3010x_8h.html#a810938b66a38deb1986aa104b9024b5f">MAX3010X_setup</a>(uint8_t powerLevel, uint8_t sampleAverage, uint8_t ledMode, <span class="keywordtype">int</span> sampleRate , <span class="keywordtype">int</span> pulseWidth, <span class="keywordtype">int</span> adcRange);</div>
+<div class="line"><a id="l00119" name="l00119"></a><span class="lineno">  119</span> </div>
+<div class="line"><a id="l00120" name="l00120"></a><span class="lineno">  120</span>  <span class="comment">// Low-level I2C communication</span></div>
+<div class="line"><a id="l00121" name="l00121"></a><span class="lineno">  121</span>  uint8_t <a class="code hl_function" href="max3010x_8h.html#a8061018a8acd7cce9315a71dbec8eaac">readRegister8</a>( uint8_t reg);</div>
+<div class="line"><a id="l00122" name="l00122"></a><span class="lineno">  122</span>  <span class="keywordtype">void</span> <a class="code hl_function" href="max3010x_8h.html#a876fb0b0088af54570b2a99f1a7fe911">writeRegister8</a>(uint8_t reg, uint8_t value);</div>
+<div class="line"><a id="l00123" name="l00123"></a><span class="lineno">  123</span> </div>
+<div class="line"><a id="l00124" name="l00124"></a><span class="lineno">  124</span>  <span class="comment">//activeLEDs is the number of channels turned on, and can be 1 to 3. 2 is common for Red+IR.</span></div>
+<div class="line"><a id="l00125" name="l00125"></a><span class="lineno">  125</span>  </div>
+<div class="line"><a id="l00126" name="l00126"></a><span class="lineno">  126</span> </div>
+<div class="line"><a id="l00127" name="l00127"></a><span class="lineno">  127</span>  <span class="keywordtype">void</span> <a class="code hl_function" href="max3010x_8h.html#a32b7b5df839848f2c7b212aa595b927a">MAX3010X_readRevisionID</a>();</div>
+<div class="line"><a id="l00128" name="l00128"></a><span class="lineno">  128</span> </div>
+<div class="line"><a id="l00129" name="l00129"></a><span class="lineno">  129</span>  <span class="keywordtype">void</span> <a class="code hl_function" href="max3010x_8h.html#a0e7a0342c7cf44e17aabe430e8fdd3b7">bitMask</a>(uint8_t reg, uint8_t mask, uint8_t thing);</div>
+<div class="line"><a id="l00130" name="l00130"></a><span class="lineno">  130</span> </div>
+<div class="line"><a id="l00131" name="l00131"></a><span class="lineno"><a class="line" href="max3010x_8h.html#a8d6f782ffe53d87f0fd0327d4b09352c">  131</a></span><span class="preprocessor">   #define STORAGE_SIZE 4 </span><span class="comment">//Each long is 4 bytes so limit this to fit on your micro</span></div>
+<div class="foldopen" id="foldopen00132" data-start="{" data-end="};">
+<div class="line"><a id="l00132" name="l00132"></a><span class="lineno"><a class="line" href="struct_record.html">  132</a></span>  <span class="keyword">typedef</span> <span class="keyword">struct </span><a class="code hl_struct" href="struct_record.html">Record</a></div>
+<div class="line"><a id="l00133" name="l00133"></a><span class="lineno">  133</span>  {</div>
+<div class="line"><a id="l00134" name="l00134"></a><span class="lineno"><a class="line" href="struct_record.html#a8a757f720536d0e604f1c503bf7d4f59">  134</a></span>    uint32_t <a class="code hl_variable" href="struct_record.html#a8a757f720536d0e604f1c503bf7d4f59">red</a>[<a class="code hl_define" href="max3010x_8h.html#a8d6f782ffe53d87f0fd0327d4b09352c">STORAGE_SIZE</a>];</div>
+<div class="line"><a id="l00135" name="l00135"></a><span class="lineno"><a class="line" href="struct_record.html#a91c5d49248572d5cdbc0aad0a230fedc">  135</a></span>    uint32_t <a class="code hl_variable" href="struct_record.html#a91c5d49248572d5cdbc0aad0a230fedc">IR</a>[<a class="code hl_define" href="max3010x_8h.html#a8d6f782ffe53d87f0fd0327d4b09352c">STORAGE_SIZE</a>];</div>
+<div class="line"><a id="l00136" name="l00136"></a><span class="lineno"><a class="line" href="struct_record.html#a283f2011e4e0f3f561fd51f486e0e372">  136</a></span>    uint32_t <a class="code hl_variable" href="struct_record.html#a283f2011e4e0f3f561fd51f486e0e372">green</a>[<a class="code hl_define" href="max3010x_8h.html#a8d6f782ffe53d87f0fd0327d4b09352c">STORAGE_SIZE</a>];</div>
+<div class="line"><a id="l00137" name="l00137"></a><span class="lineno"><a class="line" href="struct_record.html#a9794c0e61506b826b49b458708ae2489">  137</a></span>    uint8_t <a class="code hl_variable" href="struct_record.html#a9794c0e61506b826b49b458708ae2489">head</a>;</div>
+<div class="line"><a id="l00138" name="l00138"></a><span class="lineno"><a class="line" href="struct_record.html#a8db7f977b77e4e4d588ef0d3e04ada16">  138</a></span>    uint8_t <a class="code hl_variable" href="struct_record.html#a8db7f977b77e4e4d588ef0d3e04ada16">tail</a>;</div>
+<div class="line"><a id="l00139" name="l00139"></a><span class="lineno"><a class="line" href="max3010x_8h.html#a2000f49e8fdcbbce71dea5f5d15b930b">  139</a></span>  } <a class="code hl_typedef" href="max3010x_8h.html#a2000f49e8fdcbbce71dea5f5d15b930b">sense_struct</a>; <span class="comment">//This is our circular buffer of readings from the sensor</span></div>
+</div>
+<div class="line"><a id="l00140" name="l00140"></a><span class="lineno">  140</span> </div>
+<div class="line"><a id="l00141" name="l00141"></a><span class="lineno">  141</span>  </div>
+<div class="line"><a id="l00142" name="l00142"></a><span class="lineno">  142</span> </div>
+<div class="line"><a id="l00143" name="l00143"></a><span class="lineno">  143</span><span class="preprocessor">#endif </span><span class="comment">/* _DRIVERS_DEVICES_INC_MAX3010X_H_ */</span><span class="preprocessor"></span></div>
+<div class="ttc" id="amax3010x_8h_html_a0184a5c705122869241b6c0c6f1ccb5f"><div class="ttname"><a href="max3010x_8h.html#a0184a5c705122869241b6c0c6f1ccb5f">MAX3010X_enableSlot</a></div><div class="ttdeci">void MAX3010X_enableSlot(uint8_t slotNumber, uint8_t device)</div><div class="ttdef"><b>Definition</b> <a href="max3010x_8c_source.html#l00293">max3010x.c:293</a></div></div>
+<div class="ttc" id="amax3010x_8h_html_a0e0597f6bca8f6394ef4ac5ba880626b"><div class="ttname"><a href="max3010x_8h.html#a0e0597f6bca8f6394ef4ac5ba880626b">MAX3010X_setPulseAmplitudeIR</a></div><div class="ttdeci">void MAX3010X_setPulseAmplitudeIR(uint8_t value)</div><div class="ttdef"><b>Definition</b> <a href="max3010x_8c_source.html#l00270">max3010x.c:270</a></div></div>
+<div class="ttc" id="amax3010x_8h_html_a0e7a0342c7cf44e17aabe430e8fdd3b7"><div class="ttname"><a href="max3010x_8h.html#a0e7a0342c7cf44e17aabe430e8fdd3b7">bitMask</a></div><div class="ttdeci">void bitMask(uint8_t reg, uint8_t mask, uint8_t thing)</div><div class="ttdef"><b>Definition</b> <a href="max3010x_8c_source.html#l00731">max3010x.c:731</a></div></div>
+<div class="ttc" id="amax3010x_8h_html_a192dbcaa97c95a0006b0a2d0bd81ebaa"><div class="ttname"><a href="max3010x_8h.html#a192dbcaa97c95a0006b0a2d0bd81ebaa">MAX3010X_getReadPointer</a></div><div class="ttdeci">uint8_t MAX3010X_getReadPointer(void)</div><div class="ttdef"><b>Definition</b> <a href="max3010x_8c_source.html#l00362">max3010x.c:362</a></div></div>
+<div class="ttc" id="amax3010x_8h_html_a1e47d02b72e306ada26eaad4ff12db1d"><div class="ttname"><a href="max3010x_8h.html#a1e47d02b72e306ada26eaad4ff12db1d">MAX3010X_disableDIETEMPRDY</a></div><div class="ttdeci">void MAX3010X_disableDIETEMPRDY(void)</div><div class="ttdef"><b>Definition</b> <a href="max3010x_8c_source.html#l00209">max3010x.c:209</a></div></div>
+<div class="ttc" id="amax3010x_8h_html_a2000f49e8fdcbbce71dea5f5d15b930b"><div class="ttname"><a href="max3010x_8h.html#a2000f49e8fdcbbce71dea5f5d15b930b">sense_struct</a></div><div class="ttdeci">struct Record sense_struct</div></div>
+<div class="ttc" id="amax3010x_8h_html_a286ed555baddfc6df05cbad1d1d32f30"><div class="ttname"><a href="max3010x_8h.html#a286ed555baddfc6df05cbad1d1d32f30">MAX3010X_setPulseWidth</a></div><div class="ttdeci">void MAX3010X_setPulseWidth(uint8_t pulseWidth)</div><div class="ttdef"><b>Definition</b> <a href="max3010x_8c_source.html#l00259">max3010x.c:259</a></div></div>
+<div class="ttc" id="amax3010x_8h_html_a2bca36e18f2eca31d31f0c3449b794e9"><div class="ttname"><a href="max3010x_8h.html#a2bca36e18f2eca31d31f0c3449b794e9">MAX3010X_setSampleRate</a></div><div class="ttdeci">void MAX3010X_setSampleRate(uint8_t sampleRate)</div><div class="ttdef"><b>Definition</b> <a href="max3010x_8c_source.html#l00254">max3010x.c:254</a></div></div>
+<div class="ttc" id="amax3010x_8h_html_a2c2082b2db9e222ae57966e209b36d79"><div class="ttname"><a href="max3010x_8h.html#a2c2082b2db9e222ae57966e209b36d79">MAX3010X_wakeUp</a></div><div class="ttdeci">void MAX3010X_wakeUp()</div><div class="ttdef"><b>Definition</b> <a href="max3010x_8c_source.html#l00238">max3010x.c:238</a></div></div>
+<div class="ttc" id="amax3010x_8h_html_a32b7b5df839848f2c7b212aa595b927a"><div class="ttname"><a href="max3010x_8h.html#a32b7b5df839848f2c7b212aa595b927a">MAX3010X_readRevisionID</a></div><div class="ttdeci">void MAX3010X_readRevisionID()</div><div class="ttdef"><b>Definition</b> <a href="max3010x_8c_source.html#l00424">max3010x.c:424</a></div></div>
+<div class="ttc" id="amax3010x_8h_html_a3de26f777ee424df832edb07c618e6d8"><div class="ttname"><a href="max3010x_8h.html#a3de26f777ee424df832edb07c618e6d8">MAX3010X_readPartID</a></div><div class="ttdeci">uint8_t MAX3010X_readPartID()</div><div class="ttdef"><b>Definition</b> <a href="max3010x_8c_source.html#l00420">max3010x.c:420</a></div></div>
+<div class="ttc" id="amax3010x_8h_html_a4558222ee9ecc75364a383c1a0448b7d"><div class="ttname"><a href="max3010x_8h.html#a4558222ee9ecc75364a383c1a0448b7d">MAX3010X_check</a></div><div class="ttdeci">uint16_t MAX3010X_check(void)</div><div class="ttdef"><b>Definition</b> <a href="max3010x_8c_source.html#l00596">max3010x.c:596</a></div></div>
+<div class="ttc" id="amax3010x_8h_html_a464dfe3a91e1439c6c07ce790e01885a"><div class="ttname"><a href="max3010x_8h.html#a464dfe3a91e1439c6c07ce790e01885a">MAX3010X_setLEDMode</a></div><div class="ttdeci">void MAX3010X_setLEDMode(uint8_t mode)</div><div class="ttdef"><b>Definition</b> <a href="max3010x_8c_source.html#l00243">max3010x.c:243</a></div></div>
+<div class="ttc" id="amax3010x_8h_html_a466ff5ee5a54301fda2dde3f296d1c21"><div class="ttname"><a href="max3010x_8h.html#a466ff5ee5a54301fda2dde3f296d1c21">MAX3010X_shutDown</a></div><div class="ttdeci">void MAX3010X_shutDown()</div><div class="ttdef"><b>Definition</b> <a href="max3010x_8c_source.html#l00231">max3010x.c:231</a></div></div>
+<div class="ttc" id="amax3010x_8h_html_a4c944a4e457d22f2867f7e12e5218189"><div class="ttname"><a href="max3010x_8h.html#a4c944a4e457d22f2867f7e12e5218189">MAX3010X_getIR</a></div><div class="ttdeci">uint32_t MAX3010X_getIR(void)</div><div class="ttdef"><b>Definition</b> <a href="max3010x_8c_source.html#l00545">max3010x.c:545</a></div></div>
+<div class="ttc" id="amax3010x_8h_html_a52d119dda3fc73da7515d8b666f4fa09"><div class="ttname"><a href="max3010x_8h.html#a52d119dda3fc73da7515d8b666f4fa09">MAX3010X_setPulseAmplitudeRed</a></div><div class="ttdeci">void MAX3010X_setPulseAmplitudeRed(uint8_t value)</div><div class="ttdef"><b>Definition</b> <a href="max3010x_8c_source.html#l00266">max3010x.c:266</a></div></div>
+<div class="ttc" id="amax3010x_8h_html_a585d5cb37ed73956e568b6a4c5798d33"><div class="ttname"><a href="max3010x_8h.html#a585d5cb37ed73956e568b6a4c5798d33">MAX3010X_getFIFOIR</a></div><div class="ttdeci">uint32_t MAX3010X_getFIFOIR(void)</div><div class="ttdef"><b>Definition</b> <a href="max3010x_8c_source.html#l00571">max3010x.c:571</a></div></div>
+<div class="ttc" id="amax3010x_8h_html_a5d282ad4bbdef6f7b2d4da8ccecb75e7"><div class="ttname"><a href="max3010x_8h.html#a5d282ad4bbdef6f7b2d4da8ccecb75e7">MAX3010X_disableFIFORollover</a></div><div class="ttdeci">void MAX3010X_disableFIFORollover()</div><div class="ttdef"><b>Definition</b> <a href="max3010x_8c_source.html#l00345">max3010x.c:345</a></div></div>
+<div class="ttc" id="amax3010x_8h_html_a73b964d134ce1944454a345d98bf7eb5"><div class="ttname"><a href="max3010x_8h.html#a73b964d134ce1944454a345d98bf7eb5">MAX3010X_enableFIFORollover</a></div><div class="ttdeci">void MAX3010X_enableFIFORollover()</div><div class="ttdef"><b>Definition</b> <a href="max3010x_8c_source.html#l00340">max3010x.c:340</a></div></div>
+<div class="ttc" id="amax3010x_8h_html_a743dd4bec2a54bf5f1ac589cc6f93155"><div class="ttname"><a href="max3010x_8h.html#a743dd4bec2a54bf5f1ac589cc6f93155">MAX3010X_getFIFORed</a></div><div class="ttdeci">uint32_t MAX3010X_getFIFORed(void)</div><div class="ttdef"><b>Definition</b> <a href="max3010x_8c_source.html#l00565">max3010x.c:565</a></div></div>
+<div class="ttc" id="amax3010x_8h_html_a75fe08dec5a0acf78bc259453d0802a2"><div class="ttname"><a href="max3010x_8h.html#a75fe08dec5a0acf78bc259453d0802a2">MAX3010X_disablePROXINT</a></div><div class="ttdeci">void MAX3010X_disablePROXINT(void)</div><div class="ttdef"><b>Definition</b> <a href="max3010x_8c_source.html#l00202">max3010x.c:202</a></div></div>
+<div class="ttc" id="amax3010x_8h_html_a76f1d1d04c23cea0162bce04ead1cbd1"><div class="ttname"><a href="max3010x_8h.html#a76f1d1d04c23cea0162bce04ead1cbd1">MAX3010X_setProximityThreshold</a></div><div class="ttdeci">void MAX3010X_setProximityThreshold(uint8_t threshMSB)</div><div class="ttdef"><b>Definition</b> <a href="max3010x_8c_source.html#l00282">max3010x.c:282</a></div></div>
+<div class="ttc" id="amax3010x_8h_html_a7ca206e02ae772e8aae03fc65b5a2ceb"><div class="ttname"><a href="max3010x_8h.html#a7ca206e02ae772e8aae03fc65b5a2ceb">MAX3010X_enablePROXINT</a></div><div class="ttdeci">void MAX3010X_enablePROXINT(void)</div><div class="ttdef"><b>Definition</b> <a href="max3010x_8c_source.html#l00199">max3010x.c:199</a></div></div>
+<div class="ttc" id="amax3010x_8h_html_a8061018a8acd7cce9315a71dbec8eaac"><div class="ttname"><a href="max3010x_8h.html#a8061018a8acd7cce9315a71dbec8eaac">readRegister8</a></div><div class="ttdeci">uint8_t readRegister8(uint8_t reg)</div><div class="ttdef"><b>Definition</b> <a href="max3010x_8c_source.html#l00746">max3010x.c:746</a></div></div>
+<div class="ttc" id="amax3010x_8h_html_a80847524dd49016138fd873b255f6b27"><div class="ttname"><a href="max3010x_8h.html#a80847524dd49016138fd873b255f6b27">MAX3010X_softReset</a></div><div class="ttdeci">void MAX3010X_softReset()</div><div class="ttdef"><b>Definition</b> <a href="max3010x_8c_source.html#l00215">max3010x.c:215</a></div></div>
+<div class="ttc" id="amax3010x_8h_html_a810938b66a38deb1986aa104b9024b5f"><div class="ttname"><a href="max3010x_8h.html#a810938b66a38deb1986aa104b9024b5f">MAX3010X_setup</a></div><div class="ttdeci">void MAX3010X_setup(uint8_t powerLevel, uint8_t sampleAverage, uint8_t ledMode, int sampleRate, int pulseWidth, int adcRange)</div><div class="ttdef"><b>Definition</b> <a href="max3010x_8c_source.html#l00440">max3010x.c:440</a></div></div>
+<div class="ttc" id="amax3010x_8h_html_a86b2d8dbaecb8db766526b25cef1ef64"><div class="ttname"><a href="max3010x_8h.html#a86b2d8dbaecb8db766526b25cef1ef64">MAX3010X_disableDATARDY</a></div><div class="ttdeci">void MAX3010X_disableDATARDY(void)</div><div class="ttdef"><b>Definition</b> <a href="max3010x_8c_source.html#l00188">max3010x.c:188</a></div></div>
+<div class="ttc" id="amax3010x_8h_html_a876fb0b0088af54570b2a99f1a7fe911"><div class="ttname"><a href="max3010x_8h.html#a876fb0b0088af54570b2a99f1a7fe911">writeRegister8</a></div><div class="ttdeci">void writeRegister8(uint8_t reg, uint8_t value)</div><div class="ttdef"><b>Definition</b> <a href="max3010x_8c_source.html#l00756">max3010x.c:756</a></div></div>
+<div class="ttc" id="amax3010x_8h_html_a8d6f782ffe53d87f0fd0327d4b09352c"><div class="ttname"><a href="max3010x_8h.html#a8d6f782ffe53d87f0fd0327d4b09352c">STORAGE_SIZE</a></div><div class="ttdeci">#define STORAGE_SIZE</div><div class="ttdef"><b>Definition</b> <a href="#l00131">max3010x.h:131</a></div></div>
+<div class="ttc" id="amax3010x_8h_html_a8e3d1ebcbaf380199e1fe34d96a5f300"><div class="ttname"><a href="max3010x_8h.html#a8e3d1ebcbaf380199e1fe34d96a5f300">MAX3010X_disableAFULL</a></div><div class="ttdeci">void MAX3010X_disableAFULL(void)</div><div class="ttdef"><b>Definition</b> <a href="max3010x_8c_source.html#l00181">max3010x.c:181</a></div></div>
+<div class="ttc" id="amax3010x_8h_html_a90d51ff789f8a60c1d37732affda93b4"><div class="ttname"><a href="max3010x_8h.html#a90d51ff789f8a60c1d37732affda93b4">MAX3010X_readTemperatureF</a></div><div class="ttdeci">float MAX3010X_readTemperatureF()</div><div class="ttdef"><b>Definition</b> <a href="max3010x_8c_source.html#l00403">max3010x.c:403</a></div></div>
+<div class="ttc" id="amax3010x_8h_html_a9215027c1930212055c4de492cda22a9"><div class="ttname"><a href="max3010x_8h.html#a9215027c1930212055c4de492cda22a9">MAX3010X_safeCheck</a></div><div class="ttdeci">bool MAX3010X_safeCheck(uint8_t maxTimeToCheck)</div><div class="ttdef"><b>Definition</b> <a href="max3010x_8c_source.html#l00715">max3010x.c:715</a></div></div>
+<div class="ttc" id="amax3010x_8h_html_a9aab81f7765d532a90b95e314acd29c4"><div class="ttname"><a href="max3010x_8h.html#a9aab81f7765d532a90b95e314acd29c4">MAX3010X_begin</a></div><div class="ttdeci">bool MAX3010X_begin(void)</div><div class="ttdef"><b>Definition</b> <a href="max3010x_8c_source.html#l00148">max3010x.c:148</a></div></div>
+<div class="ttc" id="amax3010x_8h_html_aa0a5edc420d1a89d033be0d2e0772d1b"><div class="ttname"><a href="max3010x_8h.html#aa0a5edc420d1a89d033be0d2e0772d1b">MAX3010X_enableALCOVF</a></div><div class="ttdeci">void MAX3010X_enableALCOVF(void)</div><div class="ttdef"><b>Definition</b> <a href="max3010x_8c_source.html#l00192">max3010x.c:192</a></div></div>
+<div class="ttc" id="amax3010x_8h_html_aa64ce295ffbdba116a76e3547e8955d9"><div class="ttname"><a href="max3010x_8h.html#aa64ce295ffbdba116a76e3547e8955d9">MAX3010X_getRevisionID</a></div><div class="ttdeci">uint8_t MAX3010X_getRevisionID()</div><div class="ttdef"><b>Definition</b> <a href="max3010x_8c_source.html#l00428">max3010x.c:428</a></div></div>
+<div class="ttc" id="amax3010x_8h_html_aa7b0e8671e6e46943619e2eed237137c"><div class="ttname"><a href="max3010x_8h.html#aa7b0e8671e6e46943619e2eed237137c">MAX3010X_setADCRange</a></div><div class="ttdeci">void MAX3010X_setADCRange(uint8_t adcRange)</div><div class="ttdef"><b>Definition</b> <a href="max3010x_8c_source.html#l00249">max3010x.c:249</a></div></div>
+<div class="ttc" id="amax3010x_8h_html_aa8e10ac90229e437cc2adb608d0199ff"><div class="ttname"><a href="max3010x_8h.html#aa8e10ac90229e437cc2adb608d0199ff">MAX3010X_getINT2</a></div><div class="ttdeci">uint8_t MAX3010X_getINT2(void)</div><div class="ttdef"><b>Definition</b> <a href="max3010x_8c_source.html#l00174">max3010x.c:174</a></div></div>
+<div class="ttc" id="amax3010x_8h_html_ab83d69391585b658ff328ef89fd5a995"><div class="ttname"><a href="max3010x_8h.html#ab83d69391585b658ff328ef89fd5a995">MAX3010X_setPulseAmplitudeGreen</a></div><div class="ttdeci">void MAX3010X_setPulseAmplitudeGreen(uint8_t value)</div><div class="ttdef"><b>Definition</b> <a href="max3010x_8c_source.html#l00274">max3010x.c:274</a></div></div>
+<div class="ttc" id="amax3010x_8h_html_ac3b47b79533483a47434c199b9425712"><div class="ttname"><a href="max3010x_8h.html#ac3b47b79533483a47434c199b9425712">MAX3010X_getFIFOGreen</a></div><div class="ttdeci">uint32_t MAX3010X_getFIFOGreen(void)</div><div class="ttdef"><b>Definition</b> <a href="max3010x_8c_source.html#l00577">max3010x.c:577</a></div></div>
+<div class="ttc" id="amax3010x_8h_html_ac6e98d8af25d0623de0bc6b5ecaef91f"><div class="ttname"><a href="max3010x_8h.html#ac6e98d8af25d0623de0bc6b5ecaef91f">MAX3010X_setFIFOAlmostFull</a></div><div class="ttdeci">void MAX3010X_setFIFOAlmostFull(uint8_t samples)</div><div class="ttdef"><b>Definition</b> <a href="max3010x_8c_source.html#l00352">max3010x.c:352</a></div></div>
+<div class="ttc" id="amax3010x_8h_html_ac70938cd57048c76b16cbffbc810ab6a"><div class="ttname"><a href="max3010x_8h.html#ac70938cd57048c76b16cbffbc810ab6a">MAX3010X_disableALCOVF</a></div><div class="ttdeci">void MAX3010X_disableALCOVF(void)</div><div class="ttdef"><b>Definition</b> <a href="max3010x_8c_source.html#l00195">max3010x.c:195</a></div></div>
+<div class="ttc" id="amax3010x_8h_html_ac87169587925e648fb47d74c17be7d68"><div class="ttname"><a href="max3010x_8h.html#ac87169587925e648fb47d74c17be7d68">MAX3010X_disableSlots</a></div><div class="ttdeci">void MAX3010X_disableSlots(void)</div><div class="ttdef"><b>Definition</b> <a href="max3010x_8c_source.html#l00317">max3010x.c:317</a></div></div>
+<div class="ttc" id="amax3010x_8h_html_acee21bd5781c1c190fe4e895c7c3efd1"><div class="ttname"><a href="max3010x_8h.html#acee21bd5781c1c190fe4e895c7c3efd1">MAX3010X_enableDATARDY</a></div><div class="ttdeci">void MAX3010X_enableDATARDY(void)</div><div class="ttdef"><b>Definition</b> <a href="max3010x_8c_source.html#l00185">max3010x.c:185</a></div></div>
+<div class="ttc" id="amax3010x_8h_html_acf3d4dd9fc543625cd2d9756c92581b9"><div class="ttname"><a href="max3010x_8h.html#acf3d4dd9fc543625cd2d9756c92581b9">MAX3010X_enableAFULL</a></div><div class="ttdeci">void MAX3010X_enableAFULL(void)</div><div class="ttdef"><b>Definition</b> <a href="max3010x_8c_source.html#l00178">max3010x.c:178</a></div></div>
+<div class="ttc" id="amax3010x_8h_html_ad511bdce8d26e32849b2be0e2ec8f349"><div class="ttname"><a href="max3010x_8h.html#ad511bdce8d26e32849b2be0e2ec8f349">MAX3010X_getWritePointer</a></div><div class="ttdeci">uint8_t MAX3010X_getWritePointer(void)</div><div class="ttdef"><b>Definition</b> <a href="max3010x_8c_source.html#l00357">max3010x.c:357</a></div></div>
+<div class="ttc" id="amax3010x_8h_html_ad8ac3c2fc255e619949e4169b49882dd"><div class="ttname"><a href="max3010x_8h.html#ad8ac3c2fc255e619949e4169b49882dd">MAX3010X_getINT1</a></div><div class="ttdeci">uint8_t MAX3010X_getINT1(void)</div><div class="ttdef"><b>Definition</b> <a href="max3010x_8c_source.html#l00171">max3010x.c:171</a></div></div>
+<div class="ttc" id="amax3010x_8h_html_ad94aafb6787510970bc34c6dc4068abf"><div class="ttname"><a href="max3010x_8h.html#ad94aafb6787510970bc34c6dc4068abf">MAX3010X_readTemperature</a></div><div class="ttdeci">float MAX3010X_readTemperature()</div><div class="ttdef"><b>Definition</b> <a href="max3010x_8c_source.html#l00369">max3010x.c:369</a></div></div>
+<div class="ttc" id="amax3010x_8h_html_ae0f57acc5b712aabd117ec2dbd33be30"><div class="ttname"><a href="max3010x_8h.html#ae0f57acc5b712aabd117ec2dbd33be30">MAX3010X_enableDIETEMPRDY</a></div><div class="ttdeci">void MAX3010X_enableDIETEMPRDY(void)</div><div class="ttdef"><b>Definition</b> <a href="max3010x_8c_source.html#l00206">max3010x.c:206</a></div></div>
+<div class="ttc" id="amax3010x_8h_html_ae71f70f9490a744e9851030def9dc4cc"><div class="ttname"><a href="max3010x_8h.html#ae71f70f9490a744e9851030def9dc4cc">MAX3010X_available</a></div><div class="ttdeci">uint8_t MAX3010X_available(void)</div><div class="ttdef"><b>Definition</b> <a href="max3010x_8c_source.html#l00526">max3010x.c:526</a></div></div>
+<div class="ttc" id="amax3010x_8h_html_ae8e253b0e5a46a7a2cfe92a62da81d4b"><div class="ttname"><a href="max3010x_8h.html#ae8e253b0e5a46a7a2cfe92a62da81d4b">MAX3010X_getGreen</a></div><div class="ttdeci">uint32_t MAX3010X_getGreen(void)</div><div class="ttdef"><b>Definition</b> <a href="max3010x_8c_source.html#l00555">max3010x.c:555</a></div></div>
+<div class="ttc" id="amax3010x_8h_html_aee7cfd7c2c415d8e264feba33840efbf"><div class="ttname"><a href="max3010x_8h.html#aee7cfd7c2c415d8e264feba33840efbf">MAX3010X_nextSample</a></div><div class="ttdeci">void MAX3010X_nextSample(void)</div><div class="ttdef"><b>Definition</b> <a href="max3010x_8c_source.html#l00583">max3010x.c:583</a></div></div>
+<div class="ttc" id="amax3010x_8h_html_aeec237d2b0574bdda373947e90ae37d6"><div class="ttname"><a href="max3010x_8h.html#aeec237d2b0574bdda373947e90ae37d6">MAX3010X_setPROXINTTHRESH</a></div><div class="ttdeci">void MAX3010X_setPROXINTTHRESH(uint8_t val)</div><div class="ttdef"><b>Definition</b> <a href="max3010x_8c_source.html#l00412">max3010x.c:412</a></div></div>
+<div class="ttc" id="amax3010x_8h_html_af10e5123ca0eb777e2dcd175bb28b636"><div class="ttname"><a href="max3010x_8h.html#af10e5123ca0eb777e2dcd175bb28b636">MAX3010X_setPulseAmplitudeProximity</a></div><div class="ttdeci">void MAX3010X_setPulseAmplitudeProximity(uint8_t value)</div><div class="ttdef"><b>Definition</b> <a href="max3010x_8c_source.html#l00278">max3010x.c:278</a></div></div>
+<div class="ttc" id="amax3010x_8h_html_af242d9dfc4bed6b1f3e35abb89f0ba28"><div class="ttname"><a href="max3010x_8h.html#af242d9dfc4bed6b1f3e35abb89f0ba28">MAX3010X_setFIFOAverage</a></div><div class="ttdeci">void MAX3010X_setFIFOAverage(uint8_t samples)</div><div class="ttdef"><b>Definition</b> <a href="max3010x_8c_source.html#l00327">max3010x.c:327</a></div></div>
+<div class="ttc" id="amax3010x_8h_html_af2bd5eaa729562edf7b0bde30d602da2"><div class="ttname"><a href="max3010x_8h.html#af2bd5eaa729562edf7b0bde30d602da2">MAX3010X_getRed</a></div><div class="ttdeci">uint32_t MAX3010X_getRed(void)</div><div class="ttdef"><b>Definition</b> <a href="max3010x_8c_source.html#l00535">max3010x.c:535</a></div></div>
+<div class="ttc" id="amax3010x_8h_html_af9b723a77725080806abc6568f9a07e3"><div class="ttname"><a href="max3010x_8h.html#af9b723a77725080806abc6568f9a07e3">MAX3010X_clearFIFO</a></div><div class="ttdeci">void MAX3010X_clearFIFO(void)</div><div class="ttdef"><b>Definition</b> <a href="max3010x_8c_source.html#l00333">max3010x.c:333</a></div></div>
+<div class="ttc" id="astruct_record_html"><div class="ttname"><a href="struct_record.html">Record</a></div><div class="ttdef"><b>Definition</b> <a href="#l00132">max3010x.h:133</a></div></div>
+<div class="ttc" id="astruct_record_html_a283f2011e4e0f3f561fd51f486e0e372"><div class="ttname"><a href="struct_record.html#a283f2011e4e0f3f561fd51f486e0e372">Record::green</a></div><div class="ttdeci">uint32_t green[STORAGE_SIZE]</div><div class="ttdef"><b>Definition</b> <a href="#l00136">max3010x.h:136</a></div></div>
+<div class="ttc" id="astruct_record_html_a8a757f720536d0e604f1c503bf7d4f59"><div class="ttname"><a href="struct_record.html#a8a757f720536d0e604f1c503bf7d4f59">Record::red</a></div><div class="ttdeci">uint32_t red[STORAGE_SIZE]</div><div class="ttdef"><b>Definition</b> <a href="#l00134">max3010x.h:134</a></div></div>
+<div class="ttc" id="astruct_record_html_a8db7f977b77e4e4d588ef0d3e04ada16"><div class="ttname"><a href="struct_record.html#a8db7f977b77e4e4d588ef0d3e04ada16">Record::tail</a></div><div class="ttdeci">uint8_t tail</div><div class="ttdef"><b>Definition</b> <a href="#l00138">max3010x.h:138</a></div></div>
+<div class="ttc" id="astruct_record_html_a91c5d49248572d5cdbc0aad0a230fedc"><div class="ttname"><a href="struct_record.html#a91c5d49248572d5cdbc0aad0a230fedc">Record::IR</a></div><div class="ttdeci">uint32_t IR[STORAGE_SIZE]</div><div class="ttdef"><b>Definition</b> <a href="#l00135">max3010x.h:135</a></div></div>
+<div class="ttc" id="astruct_record_html_a9794c0e61506b826b49b458708ae2489"><div class="ttname"><a href="struct_record.html#a9794c0e61506b826b49b458708ae2489">Record::head</a></div><div class="ttdeci">uint8_t head</div><div class="ttdef"><b>Definition</b> <a href="#l00137">max3010x.h:137</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+</div><!-- container -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a href="dir_d9edf6c004b4a7ff14fe9ae7a92214ee.html">firmware</a></li><li class="navelem"><a href="dir_4774754e228843183aac8de48667fdde.html">drivers</a></li><li class="navelem"><a href="dir_01f3b75bad316aed7476a5f4cbb25c84.html">devices</a></li><li class="navelem"><a href="dir_ec09302fb0adc1632f5eb1743ad0d2a7.html">inc</a></li><li class="navelem"><a href="max3010x_8h.html">max3010x.h</a></li>
+    <li class="footer">Generado por <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.14.0 </li>
+  </ul>
+</div>
+</body>
+</html>

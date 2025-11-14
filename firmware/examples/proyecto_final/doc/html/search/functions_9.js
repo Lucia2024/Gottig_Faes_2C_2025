@@ -14,5 +14,6 @@ var searchData=
   ['ledsinit_11',['LedsInit',['../group___l_e_d.html#gacba669c3e8f52e45d1bea50c2e63b250',1,'LedsInit(void):&#160;led.c'],['../group___l_e_d.html#gacba669c3e8f52e45d1bea50c2e63b250',1,'LedsInit(void):&#160;led.c']]],
   ['ledsmask_12',['LedsMask',['../group___l_e_d.html#gaf0920e222837036abc96894b17b93b34',1,'LedsMask(uint8_t mask):&#160;led.c'],['../group___l_e_d.html#gaf0920e222837036abc96894b17b93b34',1,'LedsMask(uint8_t mask):&#160;led.c']]],
   ['ledsoffall_13',['LedsOffAll',['../group___l_e_d.html#gafcc4fefa23689ea53feedb349c8a9eb6',1,'LedsOffAll(void):&#160;led.c'],['../group___l_e_d.html#gafcc4fefa23689ea53feedb349c8a9eb6',1,'LedsOffAll(void):&#160;led.c']]],
-  ['ledtoggle_14',['LedToggle',['../group___l_e_d.html#ga787ec5815e0eb2680bf1845562731beb',1,'LedToggle(led_t led):&#160;led.c'],['../group___l_e_d.html#ga787ec5815e0eb2680bf1845562731beb',1,'LedToggle(led_t led):&#160;led.c']]]
+  ['ledtoggle_14',['LedToggle',['../group___l_e_d.html#ga787ec5815e0eb2680bf1845562731beb',1,'LedToggle(led_t led):&#160;led.c'],['../group___l_e_d.html#ga787ec5815e0eb2680bf1845562731beb',1,'LedToggle(led_t led):&#160;led.c']]],
+  ['lowpassfirfilter_15',['lowPassFIRFilter',['../heart_rate_8h.html#a6cedece0bbb86fa19985f9ea4b3927f2',1,'lowPassFIRFilter(int16_t din):&#160;heartRate.c'],['../heart_rate_8c.html#a6cedece0bbb86fa19985f9ea4b3927f2',1,'lowPassFIRFilter(int16_t din):&#160;heartRate.c']]]
 ];

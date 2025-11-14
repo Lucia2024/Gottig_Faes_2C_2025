@@ -1,0 +1,500 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.14.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Proyecto integrador: Referencia del archivo C:/Repositorios/Gottig_Faes_2C_2025/firmware/drivers/devices/inc/spo2_algorithm.h</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+  $(function() { init_search(); });
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectlogo"><img alt="Logo" src="fiuner.png"/></td>
+  <td id="projectalign">
+   <div id="projectname">Proyecto integrador<span id="projectnumber">&#160;1.0</span>
+   </div>
+   <div id="projectbrief">Control automatico del nivel de agua</div>
+  </td>
+    <td>        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <span id="MSearchSelect" class="search-icon" onmouseover="return searchBox.OnSearchSelectShow()" onmouseout="return searchBox.OnSearchSelectHide()"><span class="search-icon-dropdown"></span></span>
+          <input type="text" id="MSearchField" value="" placeholder="Buscar" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><div id="MSearchCloseImg" class="close-icon"></div></a>
+          </span>
+        </div>
+</td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Generado por Doxygen 1.14.0 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+</script>
+<script type="text/javascript">
+$(function() { codefold.init(); });
+</script>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(function(){initNavTree('spo2__algorithm_8h.html','',''); });
+</script>
+<div id="container">
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Cargando...</div>
+<div class="SRStatus" id="Searching">Buscando...</div>
+<div class="SRStatus" id="NoMatches">Nada coincide</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">Referencia del archivo spo2_algorithm.h</div></div>
+</div><!--header-->
+<div class="contents">
+<div class="textblock"><code>#include &lt;stdint.h&gt;</code><br />
+<code>#include &quot;stdbool.h&quot;</code><br />
+</div>
+<p><a href="spo2__algorithm_8h_source.html">Ir al código fuente de este archivo.</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-define-members" class="groupheader"><a id="define-members" name="define-members"></a>
+defines</h2></td></tr>
+<tr class="memitem:adca2cb1d26de5624064c8906226413b0" id="r_adca2cb1d26de5624064c8906226413b0"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#adca2cb1d26de5624064c8906226413b0">FreqS</a>&#160;&#160;&#160;25</td></tr>
+<tr class="memitem:a6b20d41d6252e9871430c242cb1a56e7" id="r_a6b20d41d6252e9871430c242cb1a56e7"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a6b20d41d6252e9871430c242cb1a56e7">BUFFER_SIZE</a>&#160;&#160;&#160;(<a class="el" href="#adca2cb1d26de5624064c8906226413b0">FreqS</a> * 4)</td></tr>
+<tr class="memitem:af8c3cbac49a22022b17cc7b34d42cbae" id="r_af8c3cbac49a22022b17cc7b34d42cbae"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af8c3cbac49a22022b17cc7b34d42cbae">MA4_SIZE</a>&#160;&#160;&#160;4</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-func-members" class="groupheader"><a id="func-members" name="func-members"></a>
+Funciones</h2></td></tr>
+<tr class="memitem:a62050365673e666cd0d661a3664c26e6" id="r_a62050365673e666cd0d661a3664c26e6"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a62050365673e666cd0d661a3664c26e6">maxim_heart_rate_and_oxygen_saturation</a> (uint32_t *pun_ir_buffer, int32_t n_ir_buffer_length, uint32_t *pun_red_buffer, int32_t *pn_spo2, int8_t *pch_spo2_valid, int32_t *pn_heart_rate, int8_t *pch_hr_valid)</td></tr>
+<tr class="memdesc:a62050365673e666cd0d661a3664c26e6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Calculate the heart rate and SpO2 level.  <br /></td></tr>
+<tr class="memitem:ab0180596dbe4f711c2e5b6c637ca3549" id="r_ab0180596dbe4f711c2e5b6c637ca3549"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab0180596dbe4f711c2e5b6c637ca3549">maxim_find_peaks</a> (int32_t *pn_locs, int32_t *n_npks, int32_t *pn_x, int32_t n_size, int32_t n_min_height, int32_t n_min_distance, int32_t n_max_num)</td></tr>
+<tr class="memdesc:ab0180596dbe4f711c2e5b6c637ca3549"><td class="mdescLeft">&#160;</td><td class="mdescRight">Find peaks.  <br /></td></tr>
+<tr class="memitem:a1c5af43429e2848c106cb3080b72e837" id="r_a1c5af43429e2848c106cb3080b72e837"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a1c5af43429e2848c106cb3080b72e837">maxim_peaks_above_min_height</a> (int32_t *pn_locs, int32_t *n_npks, int32_t *pn_x, int32_t n_size, int32_t n_min_height)</td></tr>
+<tr class="memdesc:a1c5af43429e2848c106cb3080b72e837"><td class="mdescLeft">&#160;</td><td class="mdescRight">Find peaks above n_min_height.  <br /></td></tr>
+<tr class="memitem:adc6be68be81530d67a25c1a9905bec3a" id="r_adc6be68be81530d67a25c1a9905bec3a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#adc6be68be81530d67a25c1a9905bec3a">maxim_remove_close_peaks</a> (int32_t *pn_locs, int32_t *pn_npks, int32_t *pn_x, int32_t n_min_distance)</td></tr>
+<tr class="memdesc:adc6be68be81530d67a25c1a9905bec3a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Remove peaks.  <br /></td></tr>
+<tr class="memitem:a6cae46e51640b712afc2ebeefd2d51ff" id="r_a6cae46e51640b712afc2ebeefd2d51ff"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a6cae46e51640b712afc2ebeefd2d51ff">maxim_sort_ascend</a> (int32_t *pn_x, int32_t n_size)</td></tr>
+<tr class="memdesc:a6cae46e51640b712afc2ebeefd2d51ff"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sort array.  <br /></td></tr>
+<tr class="memitem:a44b6312f81810d4deb64071d12ab0060" id="r_a44b6312f81810d4deb64071d12ab0060"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a44b6312f81810d4deb64071d12ab0060">maxim_sort_indices_descend</a> (int32_t *pn_x, int32_t *pn_indx, int32_t n_size)</td></tr>
+<tr class="memdesc:a44b6312f81810d4deb64071d12ab0060"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sort indices.  <br /></td></tr>
+</table>
+<a name="doc-define-members" id="doc-define-members"></a><h2 id="header-doc-define-members" class="groupheader">Documentación de «define»</h2>
+<a id="a6b20d41d6252e9871430c242cb1a56e7" name="a6b20d41d6252e9871430c242cb1a56e7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6b20d41d6252e9871430c242cb1a56e7">&#9670;&#160;</a></span>BUFFER_SIZE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define BUFFER_SIZE&#160;&#160;&#160;(<a class="el" href="#adca2cb1d26de5624064c8906226413b0">FreqS</a> * 4)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="spo2__algorithm_8h_source.html#l00077">77</a> del archivo <a class="el" href="spo2__algorithm_8h_source.html">spo2_algorithm.h</a>.</p>
+
+</div>
+</div>
+<a id="adca2cb1d26de5624064c8906226413b0" name="adca2cb1d26de5624064c8906226413b0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adca2cb1d26de5624064c8906226413b0">&#9670;&#160;</a></span>FreqS</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define FreqS&#160;&#160;&#160;25</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="spo2__algorithm_8h_source.html#l00076">76</a> del archivo <a class="el" href="spo2__algorithm_8h_source.html">spo2_algorithm.h</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="spo2__algorithm_8c_source.html#l00075">maxim_heart_rate_and_oxygen_saturation()</a>.</p>
+
+</div>
+</div>
+<a id="af8c3cbac49a22022b17cc7b34d42cbae" name="af8c3cbac49a22022b17cc7b34d42cbae"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af8c3cbac49a22022b17cc7b34d42cbae">&#9670;&#160;</a></span>MA4_SIZE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define MA4_SIZE&#160;&#160;&#160;4</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="spo2__algorithm_8h_source.html#l00078">78</a> del archivo <a class="el" href="spo2__algorithm_8h_source.html">spo2_algorithm.h</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="spo2__algorithm_8c_source.html#l00075">maxim_heart_rate_and_oxygen_saturation()</a>.</p>
+
+</div>
+</div>
+<a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Documentación de funciones</h2>
+<a id="ab0180596dbe4f711c2e5b6c637ca3549" name="ab0180596dbe4f711c2e5b6c637ca3549"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab0180596dbe4f711c2e5b6c637ca3549">&#9670;&#160;</a></span>maxim_find_peaks()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void maxim_find_peaks </td>
+          <td>(</td>
+          <td class="paramtype">int32_t *</td>          <td class="paramname"><span class="paramname"><em>pn_locs</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int32_t *</td>          <td class="paramname"><span class="paramname"><em>n_npks</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int32_t *</td>          <td class="paramname"><span class="paramname"><em>pn_x</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int32_t</td>          <td class="paramname"><span class="paramname"><em>n_size</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int32_t</td>          <td class="paramname"><span class="paramname"><em>n_min_height</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int32_t</td>          <td class="paramname"><span class="paramname"><em>n_min_distance</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int32_t</td>          <td class="paramname"><span class="paramname"><em>n_max_num</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Find peaks. </p>
+<dl class="section user"><dt>Details</dt><dd>Find at most MAX_NUM peaks above MIN_HEIGHT separated by at least MIN_DISTANCE</dd></dl>
+<dl class="retval"><dt>Valores devueltos</dt><dd>
+  <table class="retval">
+    <tr><td class="paramname">None</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definición en la línea <a class="el" href="spo2__algorithm_8c_source.html#l00215">215</a> del archivo <a class="el" href="spo2__algorithm_8c_source.html">spo2_algorithm.c</a>.</p>
+
+<p class="reference">Hace referencia a <a class="el" href="spo2__algorithm_8c_source.html#l00229">maxim_peaks_above_min_height()</a>, <a class="el" href="spo2__algorithm_8c_source.html#l00259">maxim_remove_close_peaks()</a> y <a class="el" href="spo2__algorithm_8c_source.html#l00062">MIN</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="spo2__algorithm_8c_source.html#l00075">maxim_heart_rate_and_oxygen_saturation()</a>.</p>
+
+</div>
+</div>
+<a id="a62050365673e666cd0d661a3664c26e6" name="a62050365673e666cd0d661a3664c26e6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a62050365673e666cd0d661a3664c26e6">&#9670;&#160;</a></span>maxim_heart_rate_and_oxygen_saturation()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void maxim_heart_rate_and_oxygen_saturation </td>
+          <td>(</td>
+          <td class="paramtype">uint32_t *</td>          <td class="paramname"><span class="paramname"><em>pun_ir_buffer</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int32_t</td>          <td class="paramname"><span class="paramname"><em>n_ir_buffer_length</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint32_t *</td>          <td class="paramname"><span class="paramname"><em>pun_red_buffer</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int32_t *</td>          <td class="paramname"><span class="paramname"><em>pn_spo2</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int8_t *</td>          <td class="paramname"><span class="paramname"><em>pch_spo2_valid</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int32_t *</td>          <td class="paramname"><span class="paramname"><em>pn_heart_rate</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int8_t *</td>          <td class="paramname"><span class="paramname"><em>pch_hr_valid</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Calculate the heart rate and SpO2 level. </p>
+<dl class="section user"><dt>Details</dt><dd>By detecting peaks of PPG cycle and corresponding AC/DC of red/infra-red signal, the an_ratio for the SPO2 is computed. Since this algorithm is aiming for Arm M0/M3. formaula for SPO2 did not achieve the accuracy due to register overflow. Thus, accurate SPO2 is precalculated and save longo uch_spo2_table[] per each an_ratio.</dd></dl>
+<dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">*pun_ir_buffer</td><td>- IR sensor data buffer </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">n_ir_buffer_length</td><td>- IR sensor data buffer length </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">*pun_red_buffer</td><td>- Red sensor data buffer </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">*pn_spo2</td><td>- Calculated SpO2 value </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">*pch_spo2_valid</td><td>- 1 if the calculated SpO2 value is valid </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">*pn_heart_rate</td><td>- Calculated heart rate value </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">*pch_hr_valid</td><td>- 1 if the calculated heart rate value is valid</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="retval"><dt>Valores devueltos</dt><dd>
+  <table class="retval">
+    <tr><td class="paramname">None</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definición en la línea <a class="el" href="spo2__algorithm_8c_source.html#l00075">75</a> del archivo <a class="el" href="spo2__algorithm_8c_source.html">spo2_algorithm.c</a>.</p>
+
+<p class="reference">Hace referencia a <a class="el" href="_m_f_r_c522_8h_source.html#l00032">BUFFER_SIZE</a>, <a class="el" href="spo2__algorithm_8h_source.html#l00076">FreqS</a>, <a class="el" href="spo2__algorithm_8h_source.html#l00078">MA4_SIZE</a>, <a class="el" href="spo2__algorithm_8c_source.html#l00215">maxim_find_peaks()</a>, <a class="el" href="spo2__algorithm_8c_source.html#l00288">maxim_sort_ascend()</a> y <a class="el" href="spo2__algorithm_8c_source.html#l00064">uch_spo2_table</a>.</p>
+
+</div>
+</div>
+<a id="a1c5af43429e2848c106cb3080b72e837" name="a1c5af43429e2848c106cb3080b72e837"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1c5af43429e2848c106cb3080b72e837">&#9670;&#160;</a></span>maxim_peaks_above_min_height()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void maxim_peaks_above_min_height </td>
+          <td>(</td>
+          <td class="paramtype">int32_t *</td>          <td class="paramname"><span class="paramname"><em>pn_locs</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int32_t *</td>          <td class="paramname"><span class="paramname"><em>n_npks</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int32_t *</td>          <td class="paramname"><span class="paramname"><em>pn_x</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int32_t</td>          <td class="paramname"><span class="paramname"><em>n_size</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int32_t</td>          <td class="paramname"><span class="paramname"><em>n_min_height</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Find peaks above n_min_height. </p>
+<dl class="section user"><dt>Details</dt><dd>Find all peaks above MIN_HEIGHT</dd></dl>
+<dl class="retval"><dt>Valores devueltos</dt><dd>
+  <table class="retval">
+    <tr><td class="paramname">None</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definición en la línea <a class="el" href="spo2__algorithm_8c_source.html#l00229">229</a> del archivo <a class="el" href="spo2__algorithm_8c_source.html">spo2_algorithm.c</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="spo2__algorithm_8c_source.html#l00215">maxim_find_peaks()</a>.</p>
+
+</div>
+</div>
+<a id="adc6be68be81530d67a25c1a9905bec3a" name="adc6be68be81530d67a25c1a9905bec3a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adc6be68be81530d67a25c1a9905bec3a">&#9670;&#160;</a></span>maxim_remove_close_peaks()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void maxim_remove_close_peaks </td>
+          <td>(</td>
+          <td class="paramtype">int32_t *</td>          <td class="paramname"><span class="paramname"><em>pn_locs</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int32_t *</td>          <td class="paramname"><span class="paramname"><em>pn_npks</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int32_t *</td>          <td class="paramname"><span class="paramname"><em>pn_x</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int32_t</td>          <td class="paramname"><span class="paramname"><em>n_min_distance</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Remove peaks. </p>
+<dl class="section user"><dt>Details</dt><dd>Remove peaks separated by less than MIN_DISTANCE</dd></dl>
+<dl class="retval"><dt>Valores devueltos</dt><dd>
+  <table class="retval">
+    <tr><td class="paramname">None</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definición en la línea <a class="el" href="spo2__algorithm_8c_source.html#l00259">259</a> del archivo <a class="el" href="spo2__algorithm_8c_source.html">spo2_algorithm.c</a>.</p>
+
+<p class="reference">Hace referencia a <a class="el" href="spo2__algorithm_8c_source.html#l00288">maxim_sort_ascend()</a> y <a class="el" href="spo2__algorithm_8c_source.html#l00306">maxim_sort_indices_descend()</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="spo2__algorithm_8c_source.html#l00215">maxim_find_peaks()</a>.</p>
+
+</div>
+</div>
+<a id="a6cae46e51640b712afc2ebeefd2d51ff" name="a6cae46e51640b712afc2ebeefd2d51ff"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6cae46e51640b712afc2ebeefd2d51ff">&#9670;&#160;</a></span>maxim_sort_ascend()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void maxim_sort_ascend </td>
+          <td>(</td>
+          <td class="paramtype">int32_t *</td>          <td class="paramname"><span class="paramname"><em>pn_x</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int32_t</td>          <td class="paramname"><span class="paramname"><em>n_size</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Sort array. </p>
+<dl class="section user"><dt>Details</dt><dd>Sort array in ascending order (insertion sort algorithm)</dd></dl>
+<dl class="retval"><dt>Valores devueltos</dt><dd>
+  <table class="retval">
+    <tr><td class="paramname">None</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definición en la línea <a class="el" href="spo2__algorithm_8c_source.html#l00288">288</a> del archivo <a class="el" href="spo2__algorithm_8c_source.html">spo2_algorithm.c</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="spo2__algorithm_8c_source.html#l00075">maxim_heart_rate_and_oxygen_saturation()</a> y <a class="el" href="spo2__algorithm_8c_source.html#l00259">maxim_remove_close_peaks()</a>.</p>
+
+</div>
+</div>
+<a id="a44b6312f81810d4deb64071d12ab0060" name="a44b6312f81810d4deb64071d12ab0060"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a44b6312f81810d4deb64071d12ab0060">&#9670;&#160;</a></span>maxim_sort_indices_descend()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void maxim_sort_indices_descend </td>
+          <td>(</td>
+          <td class="paramtype">int32_t *</td>          <td class="paramname"><span class="paramname"><em>pn_x</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int32_t *</td>          <td class="paramname"><span class="paramname"><em>pn_indx</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int32_t</td>          <td class="paramname"><span class="paramname"><em>n_size</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Sort indices. </p>
+<dl class="section user"><dt>Details</dt><dd>Sort indices according to descending order (insertion sort algorithm)</dd></dl>
+<dl class="retval"><dt>Valores devueltos</dt><dd>
+  <table class="retval">
+    <tr><td class="paramname">None</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definición en la línea <a class="el" href="spo2__algorithm_8c_source.html#l00306">306</a> del archivo <a class="el" href="spo2__algorithm_8c_source.html">spo2_algorithm.c</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="spo2__algorithm_8c_source.html#l00259">maxim_remove_close_peaks()</a>.</p>
+
+</div>
+</div>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<div id="page-nav" class="page-nav-panel">
+<div id="page-nav-resize-handle"></div>
+<div id="page-nav-tree">
+<div id="page-nav-contents">
+</div><!-- page-nav-contents -->
+</div><!-- page-nav-tree -->
+</div><!-- page-nav -->
+</div><!-- container -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a href="dir_d9edf6c004b4a7ff14fe9ae7a92214ee.html">firmware</a></li><li class="navelem"><a href="dir_4774754e228843183aac8de48667fdde.html">drivers</a></li><li class="navelem"><a href="dir_01f3b75bad316aed7476a5f4cbb25c84.html">devices</a></li><li class="navelem"><a href="dir_ec09302fb0adc1632f5eb1743ad0d2a7.html">inc</a></li><li class="navelem"><a href="spo2__algorithm_8h.html">spo2_algorithm.h</a></li>
+    <li class="footer">Generado por <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.14.0 </li>
+  </ul>
+</div>
+</body>
+</html>

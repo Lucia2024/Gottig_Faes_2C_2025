@@ -1,0 +1,458 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.14.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Proyecto integrador: Referencia del archivo C:/Repositorios/Gottig_Faes_2C_2025/firmware/drivers/devices/src/heartRate.c</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+  $(function() { init_search(); });
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectlogo"><img alt="Logo" src="fiuner.png"/></td>
+  <td id="projectalign">
+   <div id="projectname">Proyecto integrador<span id="projectnumber">&#160;1.0</span>
+   </div>
+   <div id="projectbrief">Control automatico del nivel de agua</div>
+  </td>
+    <td>        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <span id="MSearchSelect" class="search-icon" onmouseover="return searchBox.OnSearchSelectShow()" onmouseout="return searchBox.OnSearchSelectHide()"><span class="search-icon-dropdown"></span></span>
+          <input type="text" id="MSearchField" value="" placeholder="Buscar" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><div id="MSearchCloseImg" class="close-icon"></div></a>
+          </span>
+        </div>
+</td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Generado por Doxygen 1.14.0 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+</script>
+<script type="text/javascript">
+$(function() { codefold.init(); });
+</script>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(function(){initNavTree('heart_rate_8c.html','',''); });
+</script>
+<div id="container">
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Cargando...</div>
+<div class="SRStatus" id="Searching">Buscando...</div>
+<div class="SRStatus" id="NoMatches">Nada coincide</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">Referencia del archivo heartRate.c</div></div>
+</div><!--header-->
+<div class="contents">
+<div class="textblock"><code>#include &quot;<a class="el" href="heart_rate_8h_source.html">heartRate.h</a>&quot;</code><br />
+</div>
+<p><a href="heart_rate_8c_source.html">Ir al código fuente de este archivo.</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-func-members" class="groupheader"><a id="func-members" name="func-members"></a>
+Funciones</h2></td></tr>
+<tr class="memitem:a83abdb9881ef7887abffdbf639539572" id="r_a83abdb9881ef7887abffdbf639539572"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a83abdb9881ef7887abffdbf639539572">checkForBeat</a> (int32_t sample)</td></tr>
+<tr class="memitem:af4f11545a05f97c55092e7f3f01b9f59" id="r_af4f11545a05f97c55092e7f3f01b9f59"><td class="memItemLeft" align="right" valign="top">int16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af4f11545a05f97c55092e7f3f01b9f59">averageDCEstimator</a> (int32_t *p, uint16_t x)</td></tr>
+<tr class="memitem:a6cedece0bbb86fa19985f9ea4b3927f2" id="r_a6cedece0bbb86fa19985f9ea4b3927f2"><td class="memItemLeft" align="right" valign="top">int16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a6cedece0bbb86fa19985f9ea4b3927f2">lowPassFIRFilter</a> (int16_t din)</td></tr>
+<tr class="memitem:a8088186de4a3d9d5650a2f0f4684c237" id="r_a8088186de4a3d9d5650a2f0f4684c237"><td class="memItemLeft" align="right" valign="top">int32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a8088186de4a3d9d5650a2f0f4684c237">mul16</a> (int16_t x, int16_t y)</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-var-members" class="groupheader"><a id="var-members" name="var-members"></a>
+Variables</h2></td></tr>
+<tr class="memitem:aadfffc9bb91c5f2212e1fe37fe176e31" id="r_aadfffc9bb91c5f2212e1fe37fe176e31"><td class="memItemLeft" align="right" valign="top">int16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aadfffc9bb91c5f2212e1fe37fe176e31">IR_AC_Max</a> = 20</td></tr>
+<tr class="memitem:ac82d44e5573ead57b41d8e6925c56efb" id="r_ac82d44e5573ead57b41d8e6925c56efb"><td class="memItemLeft" align="right" valign="top">int16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac82d44e5573ead57b41d8e6925c56efb">IR_AC_Min</a> = -20</td></tr>
+<tr class="memitem:a5d860360023be3563f5f3ca35b67dbd6" id="r_a5d860360023be3563f5f3ca35b67dbd6"><td class="memItemLeft" align="right" valign="top">int16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a5d860360023be3563f5f3ca35b67dbd6">IR_AC_Signal_Current</a> = 0</td></tr>
+<tr class="memitem:af155356f274277a989217647a74de491" id="r_af155356f274277a989217647a74de491"><td class="memItemLeft" align="right" valign="top">int16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af155356f274277a989217647a74de491">IR_AC_Signal_Previous</a></td></tr>
+<tr class="memitem:a029d86d9231d19e3575c594da4b8f3a6" id="r_a029d86d9231d19e3575c594da4b8f3a6"><td class="memItemLeft" align="right" valign="top">int16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a029d86d9231d19e3575c594da4b8f3a6">IR_AC_Signal_min</a> = 0</td></tr>
+<tr class="memitem:a1907ab3ae36a69998242237553c97c64" id="r_a1907ab3ae36a69998242237553c97c64"><td class="memItemLeft" align="right" valign="top">int16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a1907ab3ae36a69998242237553c97c64">IR_AC_Signal_max</a> = 0</td></tr>
+<tr class="memitem:aac37ff5ca7f870dbbe1153bb79a9b10b" id="r_aac37ff5ca7f870dbbe1153bb79a9b10b"><td class="memItemLeft" align="right" valign="top">int16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aac37ff5ca7f870dbbe1153bb79a9b10b">IR_Average_Estimated</a></td></tr>
+<tr class="memitem:a01ebe57fe63c9c91acb9a64a20c09317" id="r_a01ebe57fe63c9c91acb9a64a20c09317"><td class="memItemLeft" align="right" valign="top">int16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a01ebe57fe63c9c91acb9a64a20c09317">positiveEdge</a> = 0</td></tr>
+<tr class="memitem:a41c4b2a190425db8fdf501a78224cb39" id="r_a41c4b2a190425db8fdf501a78224cb39"><td class="memItemLeft" align="right" valign="top">int16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a41c4b2a190425db8fdf501a78224cb39">negativeEdge</a> = 0</td></tr>
+<tr class="memitem:a498ce9e787948fe7526ad99d76e5b76a" id="r_a498ce9e787948fe7526ad99d76e5b76a"><td class="memItemLeft" align="right" valign="top">int32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a498ce9e787948fe7526ad99d76e5b76a">ir_avg_reg</a> = 0</td></tr>
+<tr class="memitem:afd2f4a77835e9d1548951ec6ba21c334" id="r_afd2f4a77835e9d1548951ec6ba21c334"><td class="memItemLeft" align="right" valign="top">int16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#afd2f4a77835e9d1548951ec6ba21c334">cbuf</a> [32]</td></tr>
+<tr class="memitem:aa9fff43968831437a312428836cab362" id="r_aa9fff43968831437a312428836cab362"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa9fff43968831437a312428836cab362">offset</a> = 0</td></tr>
+</table>
+<a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Documentación de funciones</h2>
+<a id="af4f11545a05f97c55092e7f3f01b9f59" name="af4f11545a05f97c55092e7f3f01b9f59"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af4f11545a05f97c55092e7f3f01b9f59">&#9670;&#160;</a></span>averageDCEstimator()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int16_t averageDCEstimator </td>
+          <td>(</td>
+          <td class="paramtype">int32_t *</td>          <td class="paramname"><span class="paramname"><em>p</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint16_t</td>          <td class="paramname"><span class="paramname"><em>x</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="heart_rate_8c_source.html#l00135">135</a> del archivo <a class="el" href="heart_rate_8c_source.html">heartRate.c</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="heart_rate_8c_source.html#l00077">checkForBeat()</a>.</p>
+
+</div>
+</div>
+<a id="a83abdb9881ef7887abffdbf639539572" name="a83abdb9881ef7887abffdbf639539572"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a83abdb9881ef7887abffdbf639539572">&#9670;&#160;</a></span>checkForBeat()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool checkForBeat </td>
+          <td>(</td>
+          <td class="paramtype">int32_t</td>          <td class="paramname"><span class="paramname"><em>sample</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="heart_rate_8c_source.html#l00077">77</a> del archivo <a class="el" href="heart_rate_8c_source.html">heartRate.c</a>.</p>
+
+<p class="reference">Hace referencia a <a class="el" href="heart_rate_8c_source.html#l00135">averageDCEstimator()</a>, <a class="el" href="heart_rate_8c_source.html#l00056">IR_AC_Max</a>, <a class="el" href="heart_rate_8c_source.html#l00057">IR_AC_Min</a>, <a class="el" href="heart_rate_8c_source.html#l00059">IR_AC_Signal_Current</a>, <a class="el" href="heart_rate_8c_source.html#l00062">IR_AC_Signal_max</a>, <a class="el" href="heart_rate_8c_source.html#l00061">IR_AC_Signal_min</a>, <a class="el" href="heart_rate_8c_source.html#l00060">IR_AC_Signal_Previous</a>, <a class="el" href="heart_rate_8c_source.html#l00063">IR_Average_Estimated</a>, <a class="el" href="heart_rate_8c_source.html#l00067">ir_avg_reg</a>, <a class="el" href="heart_rate_8c_source.html#l00142">lowPassFIRFilter()</a>, <a class="el" href="heart_rate_8c_source.html#l00066">negativeEdge</a> y <a class="el" href="heart_rate_8c_source.html#l00065">positiveEdge</a>.</p>
+
+</div>
+</div>
+<a id="a6cedece0bbb86fa19985f9ea4b3927f2" name="a6cedece0bbb86fa19985f9ea4b3927f2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6cedece0bbb86fa19985f9ea4b3927f2">&#9670;&#160;</a></span>lowPassFIRFilter()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int16_t lowPassFIRFilter </td>
+          <td>(</td>
+          <td class="paramtype">int16_t</td>          <td class="paramname"><span class="paramname"><em>din</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="heart_rate_8c_source.html#l00142">142</a> del archivo <a class="el" href="heart_rate_8c_source.html">heartRate.c</a>.</p>
+
+<p class="reference">Hace referencia a <a class="el" href="heart_rate_8c_source.html#l00069">cbuf</a>, <a class="el" href="heart_rate_8c_source.html#l00160">mul16()</a> y <a class="el" href="heart_rate_8c_source.html#l00070">offset</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="heart_rate_8c_source.html#l00077">checkForBeat()</a>.</p>
+
+</div>
+</div>
+<a id="a8088186de4a3d9d5650a2f0f4684c237" name="a8088186de4a3d9d5650a2f0f4684c237"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8088186de4a3d9d5650a2f0f4684c237">&#9670;&#160;</a></span>mul16()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int32_t mul16 </td>
+          <td>(</td>
+          <td class="paramtype">int16_t</td>          <td class="paramname"><span class="paramname"><em>x</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int16_t</td>          <td class="paramname"><span class="paramname"><em>y</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="heart_rate_8c_source.html#l00160">160</a> del archivo <a class="el" href="heart_rate_8c_source.html">heartRate.c</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="heart_rate_8c_source.html#l00142">lowPassFIRFilter()</a>.</p>
+
+</div>
+</div>
+<a name="doc-var-members" id="doc-var-members"></a><h2 id="header-doc-var-members" class="groupheader">Documentación de variables</h2>
+<a id="afd2f4a77835e9d1548951ec6ba21c334" name="afd2f4a77835e9d1548951ec6ba21c334"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afd2f4a77835e9d1548951ec6ba21c334">&#9670;&#160;</a></span>cbuf</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int16_t cbuf[32]</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="heart_rate_8c_source.html#l00069">69</a> del archivo <a class="el" href="heart_rate_8c_source.html">heartRate.c</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="heart_rate_8c_source.html#l00142">lowPassFIRFilter()</a>.</p>
+
+</div>
+</div>
+<a id="aadfffc9bb91c5f2212e1fe37fe176e31" name="aadfffc9bb91c5f2212e1fe37fe176e31"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aadfffc9bb91c5f2212e1fe37fe176e31">&#9670;&#160;</a></span>IR_AC_Max</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int16_t IR_AC_Max = 20</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="heart_rate_8c_source.html#l00056">56</a> del archivo <a class="el" href="heart_rate_8c_source.html">heartRate.c</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="heart_rate_8c_source.html#l00077">checkForBeat()</a>.</p>
+
+</div>
+</div>
+<a id="ac82d44e5573ead57b41d8e6925c56efb" name="ac82d44e5573ead57b41d8e6925c56efb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac82d44e5573ead57b41d8e6925c56efb">&#9670;&#160;</a></span>IR_AC_Min</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int16_t IR_AC_Min = -20</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="heart_rate_8c_source.html#l00057">57</a> del archivo <a class="el" href="heart_rate_8c_source.html">heartRate.c</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="heart_rate_8c_source.html#l00077">checkForBeat()</a>.</p>
+
+</div>
+</div>
+<a id="a5d860360023be3563f5f3ca35b67dbd6" name="a5d860360023be3563f5f3ca35b67dbd6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5d860360023be3563f5f3ca35b67dbd6">&#9670;&#160;</a></span>IR_AC_Signal_Current</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int16_t IR_AC_Signal_Current = 0</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="heart_rate_8c_source.html#l00059">59</a> del archivo <a class="el" href="heart_rate_8c_source.html">heartRate.c</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="heart_rate_8c_source.html#l00077">checkForBeat()</a>.</p>
+
+</div>
+</div>
+<a id="a1907ab3ae36a69998242237553c97c64" name="a1907ab3ae36a69998242237553c97c64"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1907ab3ae36a69998242237553c97c64">&#9670;&#160;</a></span>IR_AC_Signal_max</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int16_t IR_AC_Signal_max = 0</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="heart_rate_8c_source.html#l00062">62</a> del archivo <a class="el" href="heart_rate_8c_source.html">heartRate.c</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="heart_rate_8c_source.html#l00077">checkForBeat()</a>.</p>
+
+</div>
+</div>
+<a id="a029d86d9231d19e3575c594da4b8f3a6" name="a029d86d9231d19e3575c594da4b8f3a6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a029d86d9231d19e3575c594da4b8f3a6">&#9670;&#160;</a></span>IR_AC_Signal_min</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int16_t IR_AC_Signal_min = 0</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="heart_rate_8c_source.html#l00061">61</a> del archivo <a class="el" href="heart_rate_8c_source.html">heartRate.c</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="heart_rate_8c_source.html#l00077">checkForBeat()</a>.</p>
+
+</div>
+</div>
+<a id="af155356f274277a989217647a74de491" name="af155356f274277a989217647a74de491"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af155356f274277a989217647a74de491">&#9670;&#160;</a></span>IR_AC_Signal_Previous</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int16_t IR_AC_Signal_Previous</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="heart_rate_8c_source.html#l00060">60</a> del archivo <a class="el" href="heart_rate_8c_source.html">heartRate.c</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="heart_rate_8c_source.html#l00077">checkForBeat()</a>.</p>
+
+</div>
+</div>
+<a id="aac37ff5ca7f870dbbe1153bb79a9b10b" name="aac37ff5ca7f870dbbe1153bb79a9b10b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aac37ff5ca7f870dbbe1153bb79a9b10b">&#9670;&#160;</a></span>IR_Average_Estimated</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int16_t IR_Average_Estimated</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="heart_rate_8c_source.html#l00063">63</a> del archivo <a class="el" href="heart_rate_8c_source.html">heartRate.c</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="heart_rate_8c_source.html#l00077">checkForBeat()</a>.</p>
+
+</div>
+</div>
+<a id="a498ce9e787948fe7526ad99d76e5b76a" name="a498ce9e787948fe7526ad99d76e5b76a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a498ce9e787948fe7526ad99d76e5b76a">&#9670;&#160;</a></span>ir_avg_reg</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int32_t ir_avg_reg = 0</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="heart_rate_8c_source.html#l00067">67</a> del archivo <a class="el" href="heart_rate_8c_source.html">heartRate.c</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="heart_rate_8c_source.html#l00077">checkForBeat()</a>.</p>
+
+</div>
+</div>
+<a id="a41c4b2a190425db8fdf501a78224cb39" name="a41c4b2a190425db8fdf501a78224cb39"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a41c4b2a190425db8fdf501a78224cb39">&#9670;&#160;</a></span>negativeEdge</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int16_t negativeEdge = 0</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="heart_rate_8c_source.html#l00066">66</a> del archivo <a class="el" href="heart_rate_8c_source.html">heartRate.c</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="heart_rate_8c_source.html#l00077">checkForBeat()</a>.</p>
+
+</div>
+</div>
+<a id="aa9fff43968831437a312428836cab362" name="aa9fff43968831437a312428836cab362"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa9fff43968831437a312428836cab362">&#9670;&#160;</a></span>offset</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint8_t offset = 0</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="heart_rate_8c_source.html#l00070">70</a> del archivo <a class="el" href="heart_rate_8c_source.html">heartRate.c</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="group___drivers___devices.html#ga04c53a9e98f8bef16ddc84b341f375cc">HX711_get_units()</a>, <a class="el" href="hx711_8c_source.html#l00154">HX711_setOffset()</a>, <a class="el" href="heart_rate_8c_source.html#l00142">lowPassFIRFilter()</a> y <a class="el" href="_m_f_r_c522_8c_source.html#l01974">PICC_DumpMifareUltralightToSerial()</a>.</p>
+
+</div>
+</div>
+<a id="a01ebe57fe63c9c91acb9a64a20c09317" name="a01ebe57fe63c9c91acb9a64a20c09317"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a01ebe57fe63c9c91acb9a64a20c09317">&#9670;&#160;</a></span>positiveEdge</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int16_t positiveEdge = 0</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="heart_rate_8c_source.html#l00065">65</a> del archivo <a class="el" href="heart_rate_8c_source.html">heartRate.c</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="heart_rate_8c_source.html#l00077">checkForBeat()</a>.</p>
+
+</div>
+</div>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<div id="page-nav" class="page-nav-panel">
+<div id="page-nav-resize-handle"></div>
+<div id="page-nav-tree">
+<div id="page-nav-contents">
+</div><!-- page-nav-contents -->
+</div><!-- page-nav-tree -->
+</div><!-- page-nav -->
+</div><!-- container -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a href="dir_d9edf6c004b4a7ff14fe9ae7a92214ee.html">firmware</a></li><li class="navelem"><a href="dir_4774754e228843183aac8de48667fdde.html">drivers</a></li><li class="navelem"><a href="dir_01f3b75bad316aed7476a5f4cbb25c84.html">devices</a></li><li class="navelem"><a href="dir_2602097dce81420f4880be8af28b7cd8.html">src</a></li><li class="navelem"><a href="heart_rate_8c.html">heartRate.c</a></li>
+    <li class="footer">Generado por <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.14.0 </li>
+  </ul>
+</div>
+</body>
+</html>

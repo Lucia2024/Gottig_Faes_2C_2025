@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['prf_5fchar_5fpres_5ffmt_0',['prf_char_pres_fmt',['../structprf__char__pres__fmt.html',1,'']]]
+  ['orientation_5fproperties_5ft_0',['orientation_properties_t',['../structorientation__properties__t.html',1,'']]]
 ];

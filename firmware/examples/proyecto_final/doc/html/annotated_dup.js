@@ -18,12 +18,18 @@ var annotated_dup =
     [ "hids_hid_info_t", "structhids__hid__info__t.html", "structhids__hid__info__t" ],
     [ "hids_report_ref_t", "structhids__report__ref__t.html", "structhids__report__ref__t" ],
     [ "icon_font_t", "structicon__font__t.html", "structicon__font__t" ],
+    [ "io_port_t", "structio__port__t.html", "structio__port__t" ],
     [ "lcd_cmd_t", "structlcd__cmd__t.html", "structlcd__cmd__t" ],
+    [ "MFRC522_T", "struct_m_f_r_c522___t.html", "struct_m_f_r_c522___t" ],
+    [ "MIFARE_Key", "struct_m_i_f_a_r_e___key.html", "struct_m_i_f_a_r_e___key" ],
     [ "orientation_properties_t", "structorientation__properties__t.html", "structorientation__properties__t" ],
     [ "prf_char_pres_fmt", "structprf__char__pres__fmt.html", "structprf__char__pres__fmt" ],
+    [ "Record", "struct_record.html", "struct_record" ],
     [ "rgb_led", "structrgb__led.html", "structrgb__led" ],
     [ "rtc_t", "structrtc__t.html", "structrtc__t" ],
     [ "serial_config_t", "structserial__config__t.html", "structserial__config__t" ],
+    [ "Si7007_config", "struct_si7007__config.html", "struct_si7007__config" ],
     [ "spi_mcu_config_t", "structspi__mcu__config__t.html", "structspi__mcu__config__t" ],
-    [ "timer_config_t", "structtimer__config__t.html", "structtimer__config__t" ]
+    [ "timer_config_t", "structtimer__config__t.html", "structtimer__config__t" ],
+    [ "Uid", "struct_uid.html", "struct_uid" ]
 ];

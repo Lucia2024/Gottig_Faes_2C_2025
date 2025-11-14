@@ -6,7 +6,6 @@
 <meta name="generator" content="Doxygen 1.14.0"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
 <title>Proyecto integrador: I2C</title>
-<link rel="icon" href="icon.ico" type="image/x-icon" />
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -140,6 +139,8 @@ Funciones</h2></td></tr>
 <tr class="memdesc:ga24241da9fe8968b78ecdff0d4700d5f1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Write multiple bytes to device.  <br /></td></tr>
 <tr class="memitem:ga3cc36e317364b108dc5c2614ddd6bb1a" id="r_ga3cc36e317364b108dc5c2614ddd6bb1a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga3cc36e317364b108dc5c2614ddd6bb1a">I2C_SelectRegister</a> (uint8_t <a class="el" href="mpu6050_8c.html#aef9d7f9ccfe8fcda63e76f9541f59700">devAddr</a>, uint8_t reg)</td></tr>
 <tr class="memdesc:ga3cc36e317364b108dc5c2614ddd6bb1a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Select a register.  <br /></td></tr>
+<tr class="memitem:ga1f7c9137015f1b63b267aac510616207" id="r_ga1f7c9137015f1b63b267aac510616207"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga1f7c9137015f1b63b267aac510616207">I2C_writeREG</a> (uint8_t <a class="el" href="mpu6050_8c.html#aef9d7f9ccfe8fcda63e76f9541f59700">devAddr</a>, uint8_t regAddr)</td></tr>
+<tr class="memitem:gae4af263a288d563e3cc3b0d581f3cd11" id="r_gae4af263a288d563e3cc3b0d581f3cd11"><td class="memItemLeft" align="right" valign="top">int8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gae4af263a288d563e3cc3b0d581f3cd11">I2C_requestBytes</a> (uint8_t <a class="el" href="mpu6050_8c.html#aef9d7f9ccfe8fcda63e76f9541f59700">devAddr</a>, uint8_t length, uint8_t *data, uint16_t timeout)</td></tr>
 </table>
 <a name="details" id="details"></a><h2 id="header-details" class="groupheader">Descripción detallada</h2>
 <a name="doc-define-members" id="doc-define-members"></a><h2 id="header-doc-define-members" class="groupheader">Documentación de «define»</h2>
@@ -343,6 +344,8 @@ Changelog</h1>
 
 <p class="reference">Hace referencia a <a class="el" href="i2c__mcu_8h_source.html#l00038">I2C_MASTER_NUM</a>, <a class="el" href="i2c__mcu_8h_source.html#l00041">I2C_MASTER_RX_BUF_DISABLE</a>, <a class="el" href="i2c__mcu_8h_source.html#l00036">I2C_MASTER_SCL_IO</a>, <a class="el" href="i2c__mcu_8h_source.html#l00037">I2C_MASTER_SDA_IO</a> y <a class="el" href="i2c__mcu_8h_source.html#l00040">I2C_MASTER_TX_BUF_DISABLE</a>.</p>
 
+<p class="reference">Referenciado por <a class="el" href="max3010x_8c_source.html#l00148">MAX3010X_begin()</a>.</p>
+
 </div>
 </div>
 <a id="ga4d624276af2a431d579bef9e4a28026f" name="ga4d624276af2a431d579bef9e4a28026f"></a>
@@ -539,7 +542,7 @@ Changelog</h1>
 
 <p class="reference">Hace referencia a <a class="el" href="mpu6050_8c_source.html#l00020">devAddr</a> y <a class="el" href="i2c__mcu_8c_source.html#l00126">I2C_readBytes()</a>.</p>
 
-<p class="reference">Referenciado por <a class="el" href="i2c__mcu_8c_source.html#l00073">I2C_readBit()</a>, <a class="el" href="i2c__mcu_8c_source.html#l00091">I2C_readBits()</a>, <a class="el" href="i2c__mcu_8c_source.html#l00172">I2C_writeBit()</a>, <a class="el" href="i2c__mcu_8c_source.html#l00187">I2C_writeBits()</a>, <a class="el" href="mpu6050_8c_source.html#l00247">MPU6050_getAccelXSelfTestFactoryTrim()</a>, <a class="el" href="mpu6050_8c_source.html#l00257">MPU6050_getAccelYSelfTestFactoryTrim()</a>, <a class="el" href="mpu6050_8c_source.html#l02011">MPU6050_getExternalSensorByte()</a>, <a class="el" href="mpu6050_8c_source.html#l02724">MPU6050_getFIFOByte()</a>, <a class="el" href="mpu6050_8c_source.html#l00472">MPU6050_getFreefallDetectionDuration()</a>, <a class="el" href="mpu6050_8c_source.html#l00440">MPU6050_getFreefallDetectionThreshold()</a>, <a class="el" href="mpu6050_8c_source.html#l00276">MPU6050_getGyroXSelfTestFactoryTrim()</a>, <a class="el" href="mpu6050_8c_source.html#l00285">MPU6050_getGyroYSelfTestFactoryTrim()</a>, <a class="el" href="mpu6050_8c_source.html#l00294">MPU6050_getGyroZSelfTestFactoryTrim()</a>, <a class="el" href="mpu6050_8c_source.html#l01530">MPU6050_getIntEnabled()</a>, <a class="el" href="mpu6050_8c_source.html#l01671">MPU6050_getIntStatus()</a>, <a class="el" href="mpu6050_8c_source.html#l00536">MPU6050_getMotionDetectionDuration()</a>, <a class="el" href="mpu6050_8c_source.html#l00506">MPU6050_getMotionDetectionThreshold()</a>, <a class="el" href="mpu6050_8c_source.html#l02040">MPU6050_getMotionStatus()</a>, <a class="el" href="mpu6050_8c_source.html#l00107">MPU6050_getRate()</a>, <a class="el" href="mpu6050_8c_source.html#l01251">MPU6050_getSlate4InputByte()</a>, <a class="el" href="mpu6050_8c_source.html#l01118">MPU6050_getSlave4Address()</a>, <a class="el" href="mpu6050_8c_source.html#l01137">MPU6050_getSlave4Register()</a>, <a class="el" href="mpu6050_8c_source.html#l00944">MPU6050_getSlaveAddress()</a>, <a class="el" href="mpu6050_8c_source.html#l00970">MPU6050_getSlaveRegister()</a>, <a class="el" href="mpu6050_8c_source.html#l00607">MPU6050_getZeroMotionDetectionDuration()</a> y <a class="el" href="mpu6050_8c_source.html#l00576">MPU6050_getZeroMotionDetectionThreshold()</a>.</p>
+<p class="reference">Referenciado por <a class="el" href="i2c__mcu_8c_source.html#l00073">I2C_readBit()</a>, <a class="el" href="i2c__mcu_8c_source.html#l00091">I2C_readBits()</a>, <a class="el" href="i2c__mcu_8c_source.html#l00198">I2C_writeBit()</a>, <a class="el" href="i2c__mcu_8c_source.html#l00213">I2C_writeBits()</a>, <a class="el" href="mpu6050_8c_source.html#l00247">MPU6050_getAccelXSelfTestFactoryTrim()</a>, <a class="el" href="mpu6050_8c_source.html#l00257">MPU6050_getAccelYSelfTestFactoryTrim()</a>, <a class="el" href="mpu6050_8c_source.html#l02011">MPU6050_getExternalSensorByte()</a>, <a class="el" href="mpu6050_8c_source.html#l02724">MPU6050_getFIFOByte()</a>, <a class="el" href="mpu6050_8c_source.html#l00472">MPU6050_getFreefallDetectionDuration()</a>, <a class="el" href="mpu6050_8c_source.html#l00440">MPU6050_getFreefallDetectionThreshold()</a>, <a class="el" href="mpu6050_8c_source.html#l00276">MPU6050_getGyroXSelfTestFactoryTrim()</a>, <a class="el" href="mpu6050_8c_source.html#l00285">MPU6050_getGyroYSelfTestFactoryTrim()</a>, <a class="el" href="mpu6050_8c_source.html#l00294">MPU6050_getGyroZSelfTestFactoryTrim()</a>, <a class="el" href="mpu6050_8c_source.html#l01530">MPU6050_getIntEnabled()</a>, <a class="el" href="mpu6050_8c_source.html#l01671">MPU6050_getIntStatus()</a>, <a class="el" href="mpu6050_8c_source.html#l00536">MPU6050_getMotionDetectionDuration()</a>, <a class="el" href="mpu6050_8c_source.html#l00506">MPU6050_getMotionDetectionThreshold()</a>, <a class="el" href="mpu6050_8c_source.html#l02040">MPU6050_getMotionStatus()</a>, <a class="el" href="mpu6050_8c_source.html#l00107">MPU6050_getRate()</a>, <a class="el" href="mpu6050_8c_source.html#l01251">MPU6050_getSlate4InputByte()</a>, <a class="el" href="mpu6050_8c_source.html#l01118">MPU6050_getSlave4Address()</a>, <a class="el" href="mpu6050_8c_source.html#l01137">MPU6050_getSlave4Register()</a>, <a class="el" href="mpu6050_8c_source.html#l00944">MPU6050_getSlaveAddress()</a>, <a class="el" href="mpu6050_8c_source.html#l00970">MPU6050_getSlaveRegister()</a>, <a class="el" href="mpu6050_8c_source.html#l00607">MPU6050_getZeroMotionDetectionDuration()</a>, <a class="el" href="mpu6050_8c_source.html#l00576">MPU6050_getZeroMotionDetectionThreshold()</a> y <a class="el" href="max3010x_8c_source.html#l00746">readRegister8()</a>.</p>
 
 </div>
 </div>
@@ -603,9 +606,9 @@ Changelog</h1>
 
 <p class="definition">Definición en la línea <a class="el" href="i2c__mcu_8c_source.html#l00126">126</a> del archivo <a class="el" href="i2c__mcu_8c_source.html">i2c_mcu.c</a>.</p>
 
-<p class="reference">Hace referencia a <a class="el" href="bootloader-cfgcmd_8txt_source.html#l00001">cmd</a>, <a class="el" href="mpu6050_8c_source.html#l00020">devAddr</a>, <a class="el" href="i2c__mcu_8c_source.html#l00024">ESP_ERROR_CHECK</a>, <a class="el" href="mpu6050_8c_source.html#l00017">I2C_NUM</a> y <a class="el" href="i2c__mcu_8c_source.html#l00153">I2C_SelectRegister()</a>.</p>
+<p class="reference">Hace referencia a <a class="el" href="bootloader-cfgcmd_8txt_source.html#l00001">cmd</a>, <a class="el" href="mpu6050_8c_source.html#l00020">devAddr</a>, <a class="el" href="i2c__mcu_8c_source.html#l00024">ESP_ERROR_CHECK</a>, <a class="el" href="mpu6050_8c_source.html#l00017">I2C_NUM</a> y <a class="el" href="i2c__mcu_8c_source.html#l00179">I2C_SelectRegister()</a>.</p>
 
-<p class="reference">Referenciado por <a class="el" href="i2c__mcu_8c_source.html#l00114">I2C_readByte()</a>, <a class="el" href="i2c__mcu_8c_source.html#l00260">I2C_readWord()</a>, <a class="el" href="mpu6050_8c_source.html#l01822">MPU6050_getAcceleration()</a>, <a class="el" href="mpu6050_8c_source.html#l01833">MPU6050_getAccelerationX()</a>, <a class="el" href="mpu6050_8c_source.html#l01842">MPU6050_getAccelerationY()</a>, <a class="el" href="mpu6050_8c_source.html#l01851">MPU6050_getAccelerationZ()</a>, <a class="el" href="mpu6050_8c_source.html#l00267">MPU6050_getAccelZSelfTestFactoryTrim()</a>, <a class="el" href="mpu6050_8c_source.html#l02029">MPU6050_getExternalSensorDWord()</a>, <a class="el" href="mpu6050_8c_source.html#l02020">MPU6050_getExternalSensorWord()</a>, <a class="el" href="mpu6050_8c_source.html#l02728">MPU6050_getFIFOBytes()</a>, <a class="el" href="mpu6050_8c_source.html#l02692">MPU6050_getFIFOCount()</a>, <a class="el" href="mpu6050_8c_source.html#l01777">MPU6050_getMotion6()</a>, <a class="el" href="mpu6050_8c_source.html#l01901">MPU6050_getRotation()</a>, <a class="el" href="mpu6050_8c_source.html#l01912">MPU6050_getRotationX()</a>, <a class="el" href="mpu6050_8c_source.html#l01921">MPU6050_getRotationY()</a>, <a class="el" href="mpu6050_8c_source.html#l01930">MPU6050_getRotationZ()</a> y <a class="el" href="mpu6050_8c_source.html#l01862">MPU6050_getTemperature()</a>.</p>
+<p class="reference">Referenciado por <a class="el" href="i2c__mcu_8c_source.html#l00114">I2C_readByte()</a>, <a class="el" href="i2c__mcu_8c_source.html#l00298">I2C_readWord()</a>, <a class="el" href="mpu6050_8c_source.html#l01822">MPU6050_getAcceleration()</a>, <a class="el" href="mpu6050_8c_source.html#l01833">MPU6050_getAccelerationX()</a>, <a class="el" href="mpu6050_8c_source.html#l01842">MPU6050_getAccelerationY()</a>, <a class="el" href="mpu6050_8c_source.html#l01851">MPU6050_getAccelerationZ()</a>, <a class="el" href="mpu6050_8c_source.html#l00267">MPU6050_getAccelZSelfTestFactoryTrim()</a>, <a class="el" href="mpu6050_8c_source.html#l02029">MPU6050_getExternalSensorDWord()</a>, <a class="el" href="mpu6050_8c_source.html#l02020">MPU6050_getExternalSensorWord()</a>, <a class="el" href="mpu6050_8c_source.html#l02728">MPU6050_getFIFOBytes()</a>, <a class="el" href="mpu6050_8c_source.html#l02692">MPU6050_getFIFOCount()</a>, <a class="el" href="mpu6050_8c_source.html#l01777">MPU6050_getMotion6()</a>, <a class="el" href="mpu6050_8c_source.html#l01901">MPU6050_getRotation()</a>, <a class="el" href="mpu6050_8c_source.html#l01912">MPU6050_getRotationX()</a>, <a class="el" href="mpu6050_8c_source.html#l01921">MPU6050_getRotationY()</a>, <a class="el" href="mpu6050_8c_source.html#l01930">MPU6050_getRotationZ()</a> y <a class="el" href="mpu6050_8c_source.html#l01862">MPU6050_getTemperature()</a>.</p>
 
 </div>
 </div>
@@ -660,9 +663,66 @@ Changelog</h1>
 </dl>
 <dl class="section return"><dt>Devuelve</dt><dd></dd></dl>
 
-<p class="definition">Definición en la línea <a class="el" href="i2c__mcu_8c_source.html#l00260">260</a> del archivo <a class="el" href="i2c__mcu_8c_source.html">i2c_mcu.c</a>.</p>
+<p class="definition">Definición en la línea <a class="el" href="i2c__mcu_8c_source.html#l00298">298</a> del archivo <a class="el" href="i2c__mcu_8c_source.html">i2c_mcu.c</a>.</p>
 
 <p class="reference">Hace referencia a <a class="el" href="mpu6050_8c_source.html#l00020">devAddr</a> y <a class="el" href="i2c__mcu_8c_source.html#l00126">I2C_readBytes()</a>.</p>
+
+</div>
+</div>
+<a id="gae4af263a288d563e3cc3b0d581f3cd11" name="gae4af263a288d563e3cc3b0d581f3cd11"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gae4af263a288d563e3cc3b0d581f3cd11">&#9670;&#160;</a></span>I2C_requestBytes()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">int8_t I2C_requestBytes </td>
+          <td>(</td>
+          <td class="paramtype">uint8_t</td>          <td class="paramname"><span class="paramname"><em>devAddr</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint8_t</td>          <td class="paramname"><span class="paramname"><em>length</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint8_t *</td>          <td class="paramname"><span class="paramname"><em>data</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint16_t</td>          <td class="paramname"><span class="paramname"><em>timeout</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">devAddr</td><td></td></tr>
+    <tr><td class="paramname">length</td><td></td></tr>
+    <tr><td class="paramname">data</td><td></td></tr>
+    <tr><td class="paramname">timeout</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Devuelve</dt><dd>int8_t</dd></dl>
+<p>Read multiple bytes from an 8-bit device register. </p><dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">devAddr</td><td>I2C slave device address </td></tr>
+    <tr><td class="paramname">length</td><td>Number of bytes to read </td></tr>
+    <tr><td class="paramname">data</td><td>Buffer to store read data in </td></tr>
+    <tr><td class="paramname">timeout</td><td>Optional read timeout in milliseconds (0 to disable, leave off to use default class value in I2C_readTimeout) </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Devuelve</dt><dd>I2C_TransferReturn_TypeDef <a href="http://downloads.energymicro.com/documentation/doxygen/group__I2C.html">http://downloads.energymicro.com/documentation/doxygen/group__I2C.html</a> </dd></dl>
+
+<p class="definition">Definición en la línea <a class="el" href="i2c__mcu_8c_source.html#l00153">153</a> del archivo <a class="el" href="i2c__mcu_8c_source.html">i2c_mcu.c</a>.</p>
+
+<p class="reference">Hace referencia a <a class="el" href="bootloader-cfgcmd_8txt_source.html#l00001">cmd</a>, <a class="el" href="mpu6050_8c_source.html#l00020">devAddr</a>, <a class="el" href="i2c__mcu_8c_source.html#l00024">ESP_ERROR_CHECK</a> y <a class="el" href="mpu6050_8c_source.html#l00017">I2C_NUM</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="max3010x_8c_source.html#l00596">MAX3010X_check()</a>.</p>
 
 </div>
 </div>
@@ -694,11 +754,11 @@ Changelog</h1>
   </dd>
 </dl>
 
-<p class="definition">Definición en la línea <a class="el" href="i2c__mcu_8c_source.html#l00153">153</a> del archivo <a class="el" href="i2c__mcu_8c_source.html">i2c_mcu.c</a>.</p>
+<p class="definition">Definición en la línea <a class="el" href="i2c__mcu_8c_source.html#l00179">179</a> del archivo <a class="el" href="i2c__mcu_8c_source.html">i2c_mcu.c</a>.</p>
 
 <p class="reference">Hace referencia a <a class="el" href="bootloader-cfgcmd_8txt_source.html#l00001">cmd</a>, <a class="el" href="mpu6050_8c_source.html#l00020">devAddr</a>, <a class="el" href="i2c__mcu_8c_source.html#l00024">ESP_ERROR_CHECK</a> y <a class="el" href="mpu6050_8c_source.html#l00017">I2C_NUM</a>.</p>
 
-<p class="reference">Referenciado por <a class="el" href="i2c__mcu_8c_source.html#l00126">I2C_readBytes()</a> y <a class="el" href="mpu6050_8c_source.html#l00025">MPU6050_ReadRegister()</a>.</p>
+<p class="reference">Referenciado por <a class="el" href="i2c__mcu_8c_source.html#l00126">I2C_readBytes()</a>, <a class="el" href="max3010x_8c_source.html#l00596">MAX3010X_check()</a> y <a class="el" href="mpu6050_8c_source.html#l00025">MPU6050_ReadRegister()</a>.</p>
 
 </div>
 </div>
@@ -753,9 +813,9 @@ Changelog</h1>
 </dl>
 <dl class="section return"><dt>Devuelve</dt><dd>Status of operation (true = success) </dd></dl>
 
-<p class="definition">Definición en la línea <a class="el" href="i2c__mcu_8c_source.html#l00172">172</a> del archivo <a class="el" href="i2c__mcu_8c_source.html">i2c_mcu.c</a>.</p>
+<p class="definition">Definición en la línea <a class="el" href="i2c__mcu_8c_source.html#l00198">198</a> del archivo <a class="el" href="i2c__mcu_8c_source.html">i2c_mcu.c</a>.</p>
 
-<p class="reference">Hace referencia a <a class="el" href="mpu6050_8c_source.html#l00020">devAddr</a>, <a class="el" href="i2c__mcu_8c_source.html#l00114">I2C_readByte()</a> y <a class="el" href="i2c__mcu_8c_source.html#l00214">I2C_writeByte()</a>.</p>
+<p class="reference">Hace referencia a <a class="el" href="mpu6050_8c_source.html#l00020">devAddr</a>, <a class="el" href="i2c__mcu_8c_source.html#l00114">I2C_readByte()</a> y <a class="el" href="i2c__mcu_8c_source.html#l00240">I2C_writeByte()</a>.</p>
 
 <p class="reference">Referenciado por <a class="el" href="mpu6050_8c_source.html#l02410">MPU6050_reset()</a>, <a class="el" href="mpu6050_8c_source.html#l02197">MPU6050_resetAccelerometerPath()</a>, <a class="el" href="mpu6050_8c_source.html#l02375">MPU6050_resetFIFO()</a>, <a class="el" href="mpu6050_8c_source.html#l02188">MPU6050_resetGyroscopePath()</a>, <a class="el" href="mpu6050_8c_source.html#l02384">MPU6050_resetI2CMaster()</a>, <a class="el" href="mpu6050_8c_source.html#l02399">MPU6050_resetSensors()</a>, <a class="el" href="mpu6050_8c_source.html#l02206">MPU6050_resetTemperaturePath()</a>, <a class="el" href="mpu6050_8c_source.html#l00710">MPU6050_setAccelFIFOEnabled()</a>, <a class="el" href="mpu6050_8c_source.html#l00313">MPU6050_setAccelXSelfTest()</a>, <a class="el" href="mpu6050_8c_source.html#l00328">MPU6050_setAccelYSelfTest()</a>, <a class="el" href="mpu6050_8c_source.html#l00343">MPU6050_setAccelZSelfTest()</a>, <a class="el" href="mpu6050_8c_source.html#l00081">MPU6050_setAuxVDDIOLevel()</a>, <a class="el" href="mpu6050_8c_source.html#l01517">MPU6050_setClockOutputEnabled()</a>, <a class="el" href="mpu6050_8c_source.html#l02143">MPU6050_setExternalShadowDelayEnabled()</a>, <a class="el" href="mpu6050_8c_source.html#l02335">MPU6050_setFIFOEnabled()</a>, <a class="el" href="mpu6050_8c_source.html#l01463">MPU6050_setFSyncInterruptEnabled()</a>, <a class="el" href="mpu6050_8c_source.html#l01444">MPU6050_setFSyncInterruptLevel()</a>, <a class="el" href="mpu6050_8c_source.html#l01492">MPU6050_setI2CBypassEnabled()</a>, <a class="el" href="mpu6050_8c_source.html#l02359">MPU6050_setI2CMasterModeEnabled()</a>, <a class="el" href="mpu6050_8c_source.html#l01658">MPU6050_setIntDataReadyEnabled()</a>, <a class="el" href="mpu6050_8c_source.html#l01387">MPU6050_setInterruptDrive()</a>, <a class="el" href="mpu6050_8c_source.html#l01406">MPU6050_setInterruptLatch()</a>, <a class="el" href="mpu6050_8c_source.html#l01425">MPU6050_setInterruptLatchClear()</a>, <a class="el" href="mpu6050_8c_source.html#l01368">MPU6050_setInterruptMode()</a>, <a class="el" href="mpu6050_8c_source.html#l01618">MPU6050_setIntFIFOBufferOverflowEnabled()</a>, <a class="el" href="mpu6050_8c_source.html#l01561">MPU6050_setIntFreefallEnabled()</a>, <a class="el" href="mpu6050_8c_source.html#l01638">MPU6050_setIntI2CMasterEnabled()</a>, <a class="el" href="mpu6050_8c_source.html#l01580">MPU6050_setIntMotionEnabled()</a>, <a class="el" href="mpu6050_8c_source.html#l01599">MPU6050_setIntZeroMotionEnabled()</a>, <a class="el" href="mpu6050_8c_source.html#l00794">MPU6050_setMultiMasterEnabled()</a>, <a class="el" href="mpu6050_8c_source.html#l00764">MPU6050_setSlave0FIFOEnabled()</a>, <a class="el" href="mpu6050_8c_source.html#l00746">MPU6050_setSlave1FIFOEnabled()</a>, <a class="el" href="mpu6050_8c_source.html#l00728">MPU6050_setSlave2FIFOEnabled()</a>, <a class="el" href="mpu6050_8c_source.html#l00835">MPU6050_setSlave3FIFOEnabled()</a>, <a class="el" href="mpu6050_8c_source.html#l01173">MPU6050_setSlave4Enabled()</a>, <a class="el" href="mpu6050_8c_source.html#l01194">MPU6050_setSlave4InterruptEnabled()</a>, <a class="el" href="mpu6050_8c_source.html#l01215">MPU6050_setSlave4WriteMode()</a>, <a class="el" href="mpu6050_8c_source.html#l02176">MPU6050_setSlaveDelayEnabled()</a>, <a class="el" href="mpu6050_8c_source.html#l01003">MPU6050_setSlaveEnabled()</a>, <a class="el" href="mpu6050_8c_source.html#l00857">MPU6050_setSlaveReadWriteTransitionEnabled()</a>, <a class="el" href="mpu6050_8c_source.html#l01029">MPU6050_setSlaveWordByteSwap()</a>, <a class="el" href="mpu6050_8c_source.html#l01080">MPU6050_setSlaveWordGroupOffset()</a>, <a class="el" href="mpu6050_8c_source.html#l01054">MPU6050_setSlaveWriteMode()</a>, <a class="el" href="mpu6050_8c_source.html#l02434">MPU6050_setSleepEnabled()</a>, <a class="el" href="mpu6050_8c_source.html#l02584">MPU6050_setStandbyXAccelEnabled()</a>, <a class="el" href="mpu6050_8c_source.html#l02641">MPU6050_setStandbyXGyroEnabled()</a>, <a class="el" href="mpu6050_8c_source.html#l02603">MPU6050_setStandbyYAccelEnabled()</a>, <a class="el" href="mpu6050_8c_source.html#l02660">MPU6050_setStandbyYGyroEnabled()</a>, <a class="el" href="mpu6050_8c_source.html#l02622">MPU6050_setStandbyZAccelEnabled()</a>, <a class="el" href="mpu6050_8c_source.html#l02679">MPU6050_setStandbyZGyroEnabled()</a>, <a class="el" href="mpu6050_8c_source.html#l00637">MPU6050_setTempFIFOEnabled()</a>, <a class="el" href="mpu6050_8c_source.html#l02483">MPU6050_setTempSensorEnabled()</a>, <a class="el" href="mpu6050_8c_source.html#l00817">MPU6050_setWaitForExternalSensorEnabled()</a>, <a class="el" href="mpu6050_8c_source.html#l02455">MPU6050_setWakeCycleEnabled()</a>, <a class="el" href="mpu6050_8c_source.html#l00655">MPU6050_setXGyroFIFOEnabled()</a>, <a class="el" href="mpu6050_8c_source.html#l00673">MPU6050_setYGyroFIFOEnabled()</a>, <a class="el" href="mpu6050_8c_source.html#l00691">MPU6050_setZGyroFIFOEnabled()</a> y <a class="el" href="mpu6050_8c_source.html#l02366">MPU6050_switchSPIEnabled()</a>.</p>
 
@@ -819,9 +879,9 @@ Changelog</h1>
 </dl>
 <dl class="section return"><dt>Devuelve</dt><dd>Status of operation (true = success) </dd></dl>
 
-<p class="definition">Definición en la línea <a class="el" href="i2c__mcu_8c_source.html#l00187">187</a> del archivo <a class="el" href="i2c__mcu_8c_source.html">i2c_mcu.c</a>.</p>
+<p class="definition">Definición en la línea <a class="el" href="i2c__mcu_8c_source.html#l00213">213</a> del archivo <a class="el" href="i2c__mcu_8c_source.html">i2c_mcu.c</a>.</p>
 
-<p class="reference">Hace referencia a <a class="el" href="mpu6050_8c_source.html#l00020">devAddr</a>, <a class="el" href="i2c__mcu_8c_source.html#l00114">I2C_readByte()</a> y <a class="el" href="i2c__mcu_8c_source.html#l00214">I2C_writeByte()</a>.</p>
+<p class="reference">Hace referencia a <a class="el" href="mpu6050_8c_source.html#l00020">devAddr</a>, <a class="el" href="i2c__mcu_8c_source.html#l00114">I2C_readByte()</a> y <a class="el" href="i2c__mcu_8c_source.html#l00240">I2C_writeByte()</a>.</p>
 
 <p class="reference">Referenciado por <a class="el" href="mpu6050_8c_source.html#l02236">MPU6050_setAccelerometerPowerOnDelay()</a>, <a class="el" href="mpu6050_8c_source.html#l02527">MPU6050_setClockSource()</a>, <a class="el" href="mpu6050_8c_source.html#l02765">MPU6050_setDeviceID()</a>, <a class="el" href="mpu6050_8c_source.html#l00419">MPU6050_setDHPFMode()</a>, <a class="el" href="mpu6050_8c_source.html#l00202">MPU6050_setDLPFMode()</a>, <a class="el" href="mpu6050_8c_source.html#l00159">MPU6050_setExternalFrameSync()</a>, <a class="el" href="mpu6050_8c_source.html#l02275">MPU6050_setFreefallDetectionCounterDecrement()</a>, <a class="el" href="mpu6050_8c_source.html#l00371">MPU6050_setFullScaleAccelRange()</a>, <a class="el" href="mpu6050_8c_source.html#l00237">MPU6050_setFullScaleGyroRange()</a>, <a class="el" href="mpu6050_8c_source.html#l00897">MPU6050_setMasterClockSpeed()</a>, <a class="el" href="mpu6050_8c_source.html#l02311">MPU6050_setMotionDetectionCounterDecrement()</a>, <a class="el" href="mpu6050_8c_source.html#l01242">MPU6050_setSlave4MasterDelay()</a>, <a class="el" href="mpu6050_8c_source.html#l01102">MPU6050_setSlaveDataLength()</a> y <a class="el" href="mpu6050_8c_source.html#l02564">MPU6050_setWakeFrequency()</a>.</p>
 
@@ -871,11 +931,11 @@ Changelog</h1>
 </dl>
 <dl class="section return"><dt>Devuelve</dt><dd>Status of operation (true = success) </dd></dl>
 
-<p class="definition">Definición en la línea <a class="el" href="i2c__mcu_8c_source.html#l00214">214</a> del archivo <a class="el" href="i2c__mcu_8c_source.html">i2c_mcu.c</a>.</p>
+<p class="definition">Definición en la línea <a class="el" href="i2c__mcu_8c_source.html#l00240">240</a> del archivo <a class="el" href="i2c__mcu_8c_source.html">i2c_mcu.c</a>.</p>
 
 <p class="reference">Hace referencia a <a class="el" href="bootloader-cfgcmd_8txt_source.html#l00001">cmd</a>, <a class="el" href="mpu6050_8c_source.html#l00020">devAddr</a>, <a class="el" href="i2c__mcu_8c_source.html#l00024">ESP_ERROR_CHECK</a> y <a class="el" href="mpu6050_8c_source.html#l00017">I2C_NUM</a>.</p>
 
-<p class="reference">Referenciado por <a class="el" href="i2c__mcu_8c_source.html#l00172">I2C_writeBit()</a>, <a class="el" href="i2c__mcu_8c_source.html#l00187">I2C_writeBits()</a>, <a class="el" href="mpu6050_8c_source.html#l02739">MPU6050_setFIFOByte()</a>, <a class="el" href="mpu6050_8c_source.html#l00481">MPU6050_setFreefallDetectionDuration()</a>, <a class="el" href="mpu6050_8c_source.html#l00449">MPU6050_setFreefallDetectionThreshold()</a>, <a class="el" href="mpu6050_8c_source.html#l01542">MPU6050_setIntEnabled()</a>, <a class="el" href="mpu6050_8c_source.html#l00545">MPU6050_setMotionDetectionDuration()</a>, <a class="el" href="mpu6050_8c_source.html#l00515">MPU6050_setMotionDetectionThreshold()</a>, <a class="el" href="mpu6050_8c_source.html#l00117">MPU6050_setRate()</a>, <a class="el" href="mpu6050_8c_source.html#l01127">MPU6050_setSlave4Address()</a>, <a class="el" href="mpu6050_8c_source.html#l01155">MPU6050_setSlave4OutputByte()</a>, <a class="el" href="mpu6050_8c_source.html#l01146">MPU6050_setSlave4Register()</a>, <a class="el" href="mpu6050_8c_source.html#l00955">MPU6050_setSlaveAddress()</a>, <a class="el" href="mpu6050_8c_source.html#l02118">MPU6050_setSlaveOutputByte()</a>, <a class="el" href="mpu6050_8c_source.html#l00981">MPU6050_setSlaveRegister()</a>, <a class="el" href="mpu6050_8c_source.html#l00616">MPU6050_setZeroMotionDetectionDuration()</a> y <a class="el" href="mpu6050_8c_source.html#l00585">MPU6050_setZeroMotionDetectionThreshold()</a>.</p>
+<p class="reference">Referenciado por <a class="el" href="i2c__mcu_8c_source.html#l00198">I2C_writeBit()</a>, <a class="el" href="i2c__mcu_8c_source.html#l00213">I2C_writeBits()</a>, <a class="el" href="mpu6050_8c_source.html#l02739">MPU6050_setFIFOByte()</a>, <a class="el" href="mpu6050_8c_source.html#l00481">MPU6050_setFreefallDetectionDuration()</a>, <a class="el" href="mpu6050_8c_source.html#l00449">MPU6050_setFreefallDetectionThreshold()</a>, <a class="el" href="mpu6050_8c_source.html#l01542">MPU6050_setIntEnabled()</a>, <a class="el" href="mpu6050_8c_source.html#l00545">MPU6050_setMotionDetectionDuration()</a>, <a class="el" href="mpu6050_8c_source.html#l00515">MPU6050_setMotionDetectionThreshold()</a>, <a class="el" href="mpu6050_8c_source.html#l00117">MPU6050_setRate()</a>, <a class="el" href="mpu6050_8c_source.html#l01127">MPU6050_setSlave4Address()</a>, <a class="el" href="mpu6050_8c_source.html#l01155">MPU6050_setSlave4OutputByte()</a>, <a class="el" href="mpu6050_8c_source.html#l01146">MPU6050_setSlave4Register()</a>, <a class="el" href="mpu6050_8c_source.html#l00955">MPU6050_setSlaveAddress()</a>, <a class="el" href="mpu6050_8c_source.html#l02118">MPU6050_setSlaveOutputByte()</a>, <a class="el" href="mpu6050_8c_source.html#l00981">MPU6050_setSlaveRegister()</a>, <a class="el" href="mpu6050_8c_source.html#l00616">MPU6050_setZeroMotionDetectionDuration()</a>, <a class="el" href="mpu6050_8c_source.html#l00585">MPU6050_setZeroMotionDetectionThreshold()</a> y <a class="el" href="max3010x_8c_source.html#l00756">writeRegister8()</a>.</p>
 
 </div>
 </div>
@@ -930,11 +990,46 @@ Changelog</h1>
 </dl>
 <dl class="section return"><dt>Devuelve</dt><dd>Status of operation (true = success) </dd></dl>
 
-<p class="definition">Definición en la línea <a class="el" href="i2c__mcu_8c_source.html#l00236">236</a> del archivo <a class="el" href="i2c__mcu_8c_source.html">i2c_mcu.c</a>.</p>
+<p class="definition">Definición en la línea <a class="el" href="i2c__mcu_8c_source.html#l00262">262</a> del archivo <a class="el" href="i2c__mcu_8c_source.html">i2c_mcu.c</a>.</p>
 
 <p class="reference">Hace referencia a <a class="el" href="bootloader-cfgcmd_8txt_source.html#l00001">cmd</a>, <a class="el" href="mpu6050_8c_source.html#l00020">devAddr</a>, <a class="el" href="i2c__mcu_8c_source.html#l00024">ESP_ERROR_CHECK</a> y <a class="el" href="mpu6050_8c_source.html#l00017">I2C_NUM</a>.</p>
 
-<p class="reference">Referenciado por <a class="el" href="i2c__mcu_8c_source.html#l00146">I2C_writeWord()</a>.</p>
+<p class="reference">Referenciado por <a class="el" href="i2c__mcu_8c_source.html#l00172">I2C_writeWord()</a>.</p>
+
+</div>
+</div>
+<a id="ga1f7c9137015f1b63b267aac510616207" name="ga1f7c9137015f1b63b267aac510616207"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga1f7c9137015f1b63b267aac510616207">&#9670;&#160;</a></span>I2C_writeREG()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool I2C_writeREG </td>
+          <td>(</td>
+          <td class="paramtype">uint8_t</td>          <td class="paramname"><span class="paramname"><em>devAddr</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint8_t</td>          <td class="paramname"><span class="paramname"><em>regAddr</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">devAddr</td><td></td></tr>
+    <tr><td class="paramname">regAddr</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Devuelve</dt><dd>true </dd>
+<dd>
+false </dd></dl>
+
+<p class="definition">Definición en la línea <a class="el" href="i2c__mcu_8c_source.html#l00277">277</a> del archivo <a class="el" href="i2c__mcu_8c_source.html">i2c_mcu.c</a>.</p>
+
+<p class="reference">Hace referencia a <a class="el" href="bootloader-cfgcmd_8txt_source.html#l00001">cmd</a>, <a class="el" href="mpu6050_8c_source.html#l00020">devAddr</a>, <a class="el" href="i2c__mcu_8c_source.html#l00024">ESP_ERROR_CHECK</a> y <a class="el" href="mpu6050_8c_source.html#l00017">I2C_NUM</a>.</p>
 
 </div>
 </div>
@@ -973,9 +1068,9 @@ Changelog</h1>
 </dl>
 <dl class="section return"><dt>Devuelve</dt><dd>Status of operation (true = success) </dd></dl>
 
-<p class="definition">Definición en la línea <a class="el" href="i2c__mcu_8c_source.html#l00146">146</a> del archivo <a class="el" href="i2c__mcu_8c_source.html">i2c_mcu.c</a>.</p>
+<p class="definition">Definición en la línea <a class="el" href="i2c__mcu_8c_source.html#l00172">172</a> del archivo <a class="el" href="i2c__mcu_8c_source.html">i2c_mcu.c</a>.</p>
 
-<p class="reference">Hace referencia a <a class="el" href="mpu6050_8c_source.html#l00020">devAddr</a> y <a class="el" href="i2c__mcu_8c_source.html#l00236">I2C_writeBytes()</a>.</p>
+<p class="reference">Hace referencia a <a class="el" href="mpu6050_8c_source.html#l00020">devAddr</a> y <a class="el" href="i2c__mcu_8c_source.html#l00262">I2C_writeBytes()</a>.</p>
 
 </div>
 </div>

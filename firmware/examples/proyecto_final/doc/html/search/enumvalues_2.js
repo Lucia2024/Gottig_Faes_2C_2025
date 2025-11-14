@@ -8,5 +8,13 @@ var searchData=
   ['cmd_5fbluetooth_5fconnect_5',['CMD_BLUETOOTH_CONNECT',['../ble__mcu_8c.html#a1f5993000dcac629765473232f3ca332a16315b66252c4ed9cb96edc99b813259',1,'ble_mcu.c']]],
   ['cmd_5fbluetooth_5fdata_6',['CMD_BLUETOOTH_DATA',['../ble__mcu_8c.html#a1f5993000dcac629765473232f3ca332a31ef6fd9876f6c3b1183a3058d6a5710',1,'ble_mcu.c']]],
   ['cmd_5fbluetooth_5fdisconnect_7',['CMD_BLUETOOTH_DISCONNECT',['../ble__mcu_8c.html#a1f5993000dcac629765473232f3ca332a2a96e055bfe7c58983219f7232db502a',1,'ble_mcu.c']]],
-  ['cmd_5fsend_5fdata_8',['CMD_SEND_DATA',['../ble__mcu_8c.html#a1f5993000dcac629765473232f3ca332a8edf41e28a36066b125d1d9c54585bf3',1,'ble_mcu.c']]]
+  ['cmd_5fsend_5fdata_8',['CMD_SEND_DATA',['../ble__mcu_8c.html#a1f5993000dcac629765473232f3ca332a8edf41e28a36066b125d1d9c54585bf3',1,'ble_mcu.c']]],
+  ['collreg_9',['CollReg',['../_m_f_r_c522_8h.html#a7380aa98144f0d378c6ec0c5af89203aa810a84a55c584d99949dbe26f19cdb62',1,'MFRC522.h']]],
+  ['comienreg_10',['ComIEnReg',['../_m_f_r_c522_8h.html#a7380aa98144f0d378c6ec0c5af89203aa506e05cdfebf3d6cc364346913e407ab',1,'MFRC522.h']]],
+  ['comirqreg_11',['ComIrqReg',['../_m_f_r_c522_8h.html#a7380aa98144f0d378c6ec0c5af89203aaee02ac5376aaf7c0ec7d6d42f01d947d',1,'MFRC522.h']]],
+  ['commandreg_12',['CommandReg',['../_m_f_r_c522_8h.html#a7380aa98144f0d378c6ec0c5af89203aadda3b12e0c86e916d4b6b29a5d555016',1,'MFRC522.h']]],
+  ['controlreg_13',['ControlReg',['../_m_f_r_c522_8h.html#a7380aa98144f0d378c6ec0c5af89203aa794a3f84717e8b4e7c8af89cbe9f7441',1,'MFRC522.h']]],
+  ['crcresultregh_14',['CRCResultRegH',['../_m_f_r_c522_8h.html#a7380aa98144f0d378c6ec0c5af89203aa48129bbe2af54ddf2c64f01eb8c788ee',1,'MFRC522.h']]],
+  ['crcresultregl_15',['CRCResultRegL',['../_m_f_r_c522_8h.html#a7380aa98144f0d378c6ec0c5af89203aa9b58509764a5ed0d77da0a506e463f5f',1,'MFRC522.h']]],
+  ['cwgspreg_16',['CWGsPReg',['../_m_f_r_c522_8h.html#a7380aa98144f0d378c6ec0c5af89203aa209b2fc5a1902c250a20b629bb141a62',1,'MFRC522.h']]]
 ];

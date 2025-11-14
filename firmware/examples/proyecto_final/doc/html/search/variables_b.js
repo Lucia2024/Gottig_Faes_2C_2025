@@ -1,11 +1,9 @@
 var searchData=
 [
-  ['mbedcrypto_0',['mbedcrypto',['../_gottig___faes__2_c__2025_2firmware_2examples_2proyecto__final_2build_2_c_make_cache_8txt.html#aa20c13ab01cc6336ca31bc7d2f275fad',1,'CMakeCache.txt']]],
-  ['mbedx509_1',['mbedx509',['../_gottig___faes__2_c__2025_2firmware_2examples_2proyecto__final_2build_2_c_make_cache_8txt.html#add345c8d08cad77aff0fe9a575d76a5b',1,'CMakeCache.txt']]],
-  ['mday_2',['mday',['../structrtc__t.html#a8f4f1d1a3991d8405faca08fd1c3ea9b',1,'rtc_t']]],
-  ['medir_5ftask_5fhandle_3',['medir_task_handle',['../proyecto__final_8c.html#a2b0cb40d7a31ce7e8b3f906fd55df312',1,'proyecto_final.c']]],
-  ['mem_5facc_5fctrl_4',['mem_acc_ctrl',['../ili9341_8c.html#a1aec16dc7650a4729f08ed5e4b529b42',1,'ili9341.c']]],
-  ['min_5',['min',['../structrtc__t.html#ac9b481208b43f7c37ed25e446bdec692',1,'rtc_t']]],
-  ['mode_6',['mode',['../structanalog__input__config__t.html#a56cce61871ae1c1c5317d84d747f87c1',1,'analog_input_config_t::mode'],['../structhid__report__map__t.html#a37e90f5e3bd99fac2021fb3a326607d4',1,'hid_report_map_t::mode'],['../structhid_rpt_map__t.html#a37e90f5e3bd99fac2021fb3a326607d4',1,'hidRptMap_t::mode'],['../structdigital__io__t.html#a23aeec8098631547d58a797b2ad857c1',1,'digital_io_t::mode']]],
-  ['month_7',['month',['../structrtc__t.html#a3e00faf7fbf9805e9ec4d2edd6339050',1,'rtc_t']]]
+  ['lcd_5finit_0',['lcd_init',['../ili9341_8c.html#a663c460e092a1eea379439ac9014b80c',1,'ili9341.c']]],
+  ['lcd_5fon_1',['lcd_on',['../ili9341_8c.html#a11fe1fd4be5bc0f028d673b9e3ea047b',1,'ili9341.c']]],
+  ['lcd_5freset_2',['lcd_reset',['../ili9341_8c.html#a33d60197da1424cb4c13eab6b01a0d39',1,'ili9341.c']]],
+  ['lcd_5fsleep_5fout_3',['lcd_sleep_out',['../ili9341_8c.html#a2bfe0d561287fb1d78f7f2fe50207ee1',1,'ili9341.c']]],
+  ['led_5fwrite_4',['led_write',['../unionesp__hidd__cb__param__t.html#a369ae8b85d34d957e6b4e05b9bfe42ee',1,'esp_hidd_cb_param_t']]],
+  ['length_5',['length',['../structesp__hidd__cb__param__t_1_1hidd__vendor__write__evt__param.html#a1892eba2086d12ac2b09005aeb09ea3b',1,'esp_hidd_cb_param_t::hidd_vendor_write_evt_param::length'],['../structesp__hidd__cb__param__t_1_1hidd__led__write__evt__param.html#ab2b3adeb2a67e656ff030b56727fd0ac',1,'esp_hidd_cb_param_t::hidd_led_write_evt_param::length'],['../struct_c_m_d__t.html#ae809d5359ac030c60a30a8f0b2294b82',1,'CMD_t::length']]]
 ];

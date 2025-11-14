@@ -1,0 +1,1524 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.14.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Proyecto integrador: Referencia del archivo C:/Repositorios/Gottig_Faes_2C_2025/firmware/drivers/devices/inc/max3010x.h</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+  $(function() { init_search(); });
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectlogo"><img alt="Logo" src="fiuner.png"/></td>
+  <td id="projectalign">
+   <div id="projectname">Proyecto integrador<span id="projectnumber">&#160;1.0</span>
+   </div>
+   <div id="projectbrief">Control automatico del nivel de agua</div>
+  </td>
+    <td>        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <span id="MSearchSelect" class="search-icon" onmouseover="return searchBox.OnSearchSelectShow()" onmouseout="return searchBox.OnSearchSelectHide()"><span class="search-icon-dropdown"></span></span>
+          <input type="text" id="MSearchField" value="" placeholder="Buscar" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><div id="MSearchCloseImg" class="close-icon"></div></a>
+          </span>
+        </div>
+</td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Generado por Doxygen 1.14.0 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+</script>
+<script type="text/javascript">
+$(function() { codefold.init(); });
+</script>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(function(){initNavTree('max3010x_8h.html','',''); });
+</script>
+<div id="container">
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Cargando...</div>
+<div class="SRStatus" id="Searching">Buscando...</div>
+<div class="SRStatus" id="NoMatches">Nada coincide</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">Referencia del archivo max3010x.h</div></div>
+</div><!--header-->
+<div class="contents">
+<div class="textblock"><code>#include &lt;stdbool.h&gt;</code><br />
+<code>#include &lt;stdint.h&gt;</code><br />
+</div>
+<p><a href="max3010x_8h_source.html">Ir al código fuente de este archivo.</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-nested-classes" class="groupheader"><a id="nested-classes" name="nested-classes"></a>
+Estructuras de datos</h2></td></tr>
+<tr class="memitem:Record" id="r_Record"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="struct_record.html">Record</a></td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-define-members" class="groupheader"><a id="define-members" name="define-members"></a>
+defines</h2></td></tr>
+<tr class="memitem:acb8783512e3bd21bdb6a294d026e6405" id="r_acb8783512e3bd21bdb6a294d026e6405"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#acb8783512e3bd21bdb6a294d026e6405">MAX30105_ADDRESS</a>&#160;&#160;&#160;0x57</td></tr>
+<tr class="memitem:a5ca8c5fbb2caa99ab0b7007ce2c11633" id="r_a5ca8c5fbb2caa99ab0b7007ce2c11633"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a5ca8c5fbb2caa99ab0b7007ce2c11633">I2C_SPEED_STANDARD</a>&#160;&#160;&#160;100000</td></tr>
+<tr class="memitem:aef9d097ed2b58676498a33f3cf76f38d" id="r_aef9d097ed2b58676498a33f3cf76f38d"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aef9d097ed2b58676498a33f3cf76f38d">I2C_SPEED_FAST</a>&#160;&#160;&#160;400000</td></tr>
+<tr class="memitem:aab040ced3ff06bdd71655d55a5f8db14" id="r_aab040ced3ff06bdd71655d55a5f8db14"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aab040ced3ff06bdd71655d55a5f8db14">I2C_BUFFER_LENGTH</a>&#160;&#160;&#160;32</td></tr>
+<tr class="memitem:a8d6f782ffe53d87f0fd0327d4b09352c" id="r_a8d6f782ffe53d87f0fd0327d4b09352c"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a8d6f782ffe53d87f0fd0327d4b09352c">STORAGE_SIZE</a>&#160;&#160;&#160;4</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-typedef-members" class="groupheader"><a id="typedef-members" name="typedef-members"></a>
+typedefs</h2></td></tr>
+<tr class="memitem:a2000f49e8fdcbbce71dea5f5d15b930b" id="r_a2000f49e8fdcbbce71dea5f5d15b930b"><td class="memItemLeft" align="right" valign="top">typedef struct <a class="el" href="struct_record.html">Record</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a2000f49e8fdcbbce71dea5f5d15b930b">sense_struct</a></td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-func-members" class="groupheader"><a id="func-members" name="func-members"></a>
+Funciones</h2></td></tr>
+<tr class="memitem:a9aab81f7765d532a90b95e314acd29c4" id="r_a9aab81f7765d532a90b95e314acd29c4"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a9aab81f7765d532a90b95e314acd29c4">MAX3010X_begin</a> (void)</td></tr>
+<tr class="memitem:af2bd5eaa729562edf7b0bde30d602da2" id="r_af2bd5eaa729562edf7b0bde30d602da2"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af2bd5eaa729562edf7b0bde30d602da2">MAX3010X_getRed</a> (void)</td></tr>
+<tr class="memitem:a4c944a4e457d22f2867f7e12e5218189" id="r_a4c944a4e457d22f2867f7e12e5218189"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a4c944a4e457d22f2867f7e12e5218189">MAX3010X_getIR</a> (void)</td></tr>
+<tr class="memitem:ae8e253b0e5a46a7a2cfe92a62da81d4b" id="r_ae8e253b0e5a46a7a2cfe92a62da81d4b"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae8e253b0e5a46a7a2cfe92a62da81d4b">MAX3010X_getGreen</a> (void)</td></tr>
+<tr class="memitem:a9215027c1930212055c4de492cda22a9" id="r_a9215027c1930212055c4de492cda22a9"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a9215027c1930212055c4de492cda22a9">MAX3010X_safeCheck</a> (uint8_t maxTimeToCheck)</td></tr>
+<tr class="memitem:a80847524dd49016138fd873b255f6b27" id="r_a80847524dd49016138fd873b255f6b27"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a80847524dd49016138fd873b255f6b27">MAX3010X_softReset</a> ()</td></tr>
+<tr class="memitem:a466ff5ee5a54301fda2dde3f296d1c21" id="r_a466ff5ee5a54301fda2dde3f296d1c21"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a466ff5ee5a54301fda2dde3f296d1c21">MAX3010X_shutDown</a> ()</td></tr>
+<tr class="memitem:a2c2082b2db9e222ae57966e209b36d79" id="r_a2c2082b2db9e222ae57966e209b36d79"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a2c2082b2db9e222ae57966e209b36d79">MAX3010X_wakeUp</a> ()</td></tr>
+<tr class="memitem:a464dfe3a91e1439c6c07ce790e01885a" id="r_a464dfe3a91e1439c6c07ce790e01885a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a464dfe3a91e1439c6c07ce790e01885a">MAX3010X_setLEDMode</a> (uint8_t mode)</td></tr>
+<tr class="memitem:aa7b0e8671e6e46943619e2eed237137c" id="r_aa7b0e8671e6e46943619e2eed237137c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa7b0e8671e6e46943619e2eed237137c">MAX3010X_setADCRange</a> (uint8_t adcRange)</td></tr>
+<tr class="memitem:a2bca36e18f2eca31d31f0c3449b794e9" id="r_a2bca36e18f2eca31d31f0c3449b794e9"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a2bca36e18f2eca31d31f0c3449b794e9">MAX3010X_setSampleRate</a> (uint8_t sampleRate)</td></tr>
+<tr class="memitem:a286ed555baddfc6df05cbad1d1d32f30" id="r_a286ed555baddfc6df05cbad1d1d32f30"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a286ed555baddfc6df05cbad1d1d32f30">MAX3010X_setPulseWidth</a> (uint8_t pulseWidth)</td></tr>
+<tr class="memitem:a52d119dda3fc73da7515d8b666f4fa09" id="r_a52d119dda3fc73da7515d8b666f4fa09"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a52d119dda3fc73da7515d8b666f4fa09">MAX3010X_setPulseAmplitudeRed</a> (uint8_t value)</td></tr>
+<tr class="memitem:a0e0597f6bca8f6394ef4ac5ba880626b" id="r_a0e0597f6bca8f6394ef4ac5ba880626b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a0e0597f6bca8f6394ef4ac5ba880626b">MAX3010X_setPulseAmplitudeIR</a> (uint8_t value)</td></tr>
+<tr class="memitem:ab83d69391585b658ff328ef89fd5a995" id="r_ab83d69391585b658ff328ef89fd5a995"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab83d69391585b658ff328ef89fd5a995">MAX3010X_setPulseAmplitudeGreen</a> (uint8_t value)</td></tr>
+<tr class="memitem:af10e5123ca0eb777e2dcd175bb28b636" id="r_af10e5123ca0eb777e2dcd175bb28b636"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af10e5123ca0eb777e2dcd175bb28b636">MAX3010X_setPulseAmplitudeProximity</a> (uint8_t value)</td></tr>
+<tr class="memitem:a76f1d1d04c23cea0162bce04ead1cbd1" id="r_a76f1d1d04c23cea0162bce04ead1cbd1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a76f1d1d04c23cea0162bce04ead1cbd1">MAX3010X_setProximityThreshold</a> (uint8_t threshMSB)</td></tr>
+<tr class="memitem:a0184a5c705122869241b6c0c6f1ccb5f" id="r_a0184a5c705122869241b6c0c6f1ccb5f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a0184a5c705122869241b6c0c6f1ccb5f">MAX3010X_enableSlot</a> (uint8_t slotNumber, uint8_t device)</td></tr>
+<tr class="memitem:ac87169587925e648fb47d74c17be7d68" id="r_ac87169587925e648fb47d74c17be7d68"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac87169587925e648fb47d74c17be7d68">MAX3010X_disableSlots</a> (void)</td></tr>
+<tr class="memitem:ad8ac3c2fc255e619949e4169b49882dd" id="r_ad8ac3c2fc255e619949e4169b49882dd"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad8ac3c2fc255e619949e4169b49882dd">MAX3010X_getINT1</a> (void)</td></tr>
+<tr class="memitem:aa8e10ac90229e437cc2adb608d0199ff" id="r_aa8e10ac90229e437cc2adb608d0199ff"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa8e10ac90229e437cc2adb608d0199ff">MAX3010X_getINT2</a> (void)</td></tr>
+<tr class="memitem:acf3d4dd9fc543625cd2d9756c92581b9" id="r_acf3d4dd9fc543625cd2d9756c92581b9"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#acf3d4dd9fc543625cd2d9756c92581b9">MAX3010X_enableAFULL</a> (void)</td></tr>
+<tr class="memitem:a8e3d1ebcbaf380199e1fe34d96a5f300" id="r_a8e3d1ebcbaf380199e1fe34d96a5f300"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a8e3d1ebcbaf380199e1fe34d96a5f300">MAX3010X_disableAFULL</a> (void)</td></tr>
+<tr class="memitem:acee21bd5781c1c190fe4e895c7c3efd1" id="r_acee21bd5781c1c190fe4e895c7c3efd1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#acee21bd5781c1c190fe4e895c7c3efd1">MAX3010X_enableDATARDY</a> (void)</td></tr>
+<tr class="memitem:a86b2d8dbaecb8db766526b25cef1ef64" id="r_a86b2d8dbaecb8db766526b25cef1ef64"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a86b2d8dbaecb8db766526b25cef1ef64">MAX3010X_disableDATARDY</a> (void)</td></tr>
+<tr class="memitem:aa0a5edc420d1a89d033be0d2e0772d1b" id="r_aa0a5edc420d1a89d033be0d2e0772d1b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa0a5edc420d1a89d033be0d2e0772d1b">MAX3010X_enableALCOVF</a> (void)</td></tr>
+<tr class="memitem:ac70938cd57048c76b16cbffbc810ab6a" id="r_ac70938cd57048c76b16cbffbc810ab6a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac70938cd57048c76b16cbffbc810ab6a">MAX3010X_disableALCOVF</a> (void)</td></tr>
+<tr class="memitem:a7ca206e02ae772e8aae03fc65b5a2ceb" id="r_a7ca206e02ae772e8aae03fc65b5a2ceb"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a7ca206e02ae772e8aae03fc65b5a2ceb">MAX3010X_enablePROXINT</a> (void)</td></tr>
+<tr class="memitem:a75fe08dec5a0acf78bc259453d0802a2" id="r_a75fe08dec5a0acf78bc259453d0802a2"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a75fe08dec5a0acf78bc259453d0802a2">MAX3010X_disablePROXINT</a> (void)</td></tr>
+<tr class="memitem:ae0f57acc5b712aabd117ec2dbd33be30" id="r_ae0f57acc5b712aabd117ec2dbd33be30"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae0f57acc5b712aabd117ec2dbd33be30">MAX3010X_enableDIETEMPRDY</a> (void)</td></tr>
+<tr class="memitem:a1e47d02b72e306ada26eaad4ff12db1d" id="r_a1e47d02b72e306ada26eaad4ff12db1d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a1e47d02b72e306ada26eaad4ff12db1d">MAX3010X_disableDIETEMPRDY</a> (void)</td></tr>
+<tr class="memitem:af242d9dfc4bed6b1f3e35abb89f0ba28" id="r_af242d9dfc4bed6b1f3e35abb89f0ba28"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af242d9dfc4bed6b1f3e35abb89f0ba28">MAX3010X_setFIFOAverage</a> (uint8_t samples)</td></tr>
+<tr class="memitem:a73b964d134ce1944454a345d98bf7eb5" id="r_a73b964d134ce1944454a345d98bf7eb5"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a73b964d134ce1944454a345d98bf7eb5">MAX3010X_enableFIFORollover</a> ()</td></tr>
+<tr class="memitem:a5d282ad4bbdef6f7b2d4da8ccecb75e7" id="r_a5d282ad4bbdef6f7b2d4da8ccecb75e7"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a5d282ad4bbdef6f7b2d4da8ccecb75e7">MAX3010X_disableFIFORollover</a> ()</td></tr>
+<tr class="memitem:ac6e98d8af25d0623de0bc6b5ecaef91f" id="r_ac6e98d8af25d0623de0bc6b5ecaef91f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac6e98d8af25d0623de0bc6b5ecaef91f">MAX3010X_setFIFOAlmostFull</a> (uint8_t samples)</td></tr>
+<tr class="memitem:a4558222ee9ecc75364a383c1a0448b7d" id="r_a4558222ee9ecc75364a383c1a0448b7d"><td class="memItemLeft" align="right" valign="top">uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a4558222ee9ecc75364a383c1a0448b7d">MAX3010X_check</a> (void)</td></tr>
+<tr class="memitem:ae71f70f9490a744e9851030def9dc4cc" id="r_ae71f70f9490a744e9851030def9dc4cc"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae71f70f9490a744e9851030def9dc4cc">MAX3010X_available</a> (void)</td></tr>
+<tr class="memitem:aee7cfd7c2c415d8e264feba33840efbf" id="r_aee7cfd7c2c415d8e264feba33840efbf"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aee7cfd7c2c415d8e264feba33840efbf">MAX3010X_nextSample</a> (void)</td></tr>
+<tr class="memitem:a743dd4bec2a54bf5f1ac589cc6f93155" id="r_a743dd4bec2a54bf5f1ac589cc6f93155"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a743dd4bec2a54bf5f1ac589cc6f93155">MAX3010X_getFIFORed</a> (void)</td></tr>
+<tr class="memitem:a585d5cb37ed73956e568b6a4c5798d33" id="r_a585d5cb37ed73956e568b6a4c5798d33"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a585d5cb37ed73956e568b6a4c5798d33">MAX3010X_getFIFOIR</a> (void)</td></tr>
+<tr class="memitem:ac3b47b79533483a47434c199b9425712" id="r_ac3b47b79533483a47434c199b9425712"><td class="memItemLeft" align="right" valign="top">uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac3b47b79533483a47434c199b9425712">MAX3010X_getFIFOGreen</a> (void)</td></tr>
+<tr class="memitem:ad511bdce8d26e32849b2be0e2ec8f349" id="r_ad511bdce8d26e32849b2be0e2ec8f349"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad511bdce8d26e32849b2be0e2ec8f349">MAX3010X_getWritePointer</a> (void)</td></tr>
+<tr class="memitem:a192dbcaa97c95a0006b0a2d0bd81ebaa" id="r_a192dbcaa97c95a0006b0a2d0bd81ebaa"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a192dbcaa97c95a0006b0a2d0bd81ebaa">MAX3010X_getReadPointer</a> (void)</td></tr>
+<tr class="memitem:af9b723a77725080806abc6568f9a07e3" id="r_af9b723a77725080806abc6568f9a07e3"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af9b723a77725080806abc6568f9a07e3">MAX3010X_clearFIFO</a> (void)</td></tr>
+<tr class="memitem:aeec237d2b0574bdda373947e90ae37d6" id="r_aeec237d2b0574bdda373947e90ae37d6"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aeec237d2b0574bdda373947e90ae37d6">MAX3010X_setPROXINTTHRESH</a> (uint8_t val)</td></tr>
+<tr class="memitem:ad94aafb6787510970bc34c6dc4068abf" id="r_ad94aafb6787510970bc34c6dc4068abf"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad94aafb6787510970bc34c6dc4068abf">MAX3010X_readTemperature</a> ()</td></tr>
+<tr class="memitem:a90d51ff789f8a60c1d37732affda93b4" id="r_a90d51ff789f8a60c1d37732affda93b4"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a90d51ff789f8a60c1d37732affda93b4">MAX3010X_readTemperatureF</a> ()</td></tr>
+<tr class="memitem:aa64ce295ffbdba116a76e3547e8955d9" id="r_aa64ce295ffbdba116a76e3547e8955d9"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa64ce295ffbdba116a76e3547e8955d9">MAX3010X_getRevisionID</a> ()</td></tr>
+<tr class="memitem:a3de26f777ee424df832edb07c618e6d8" id="r_a3de26f777ee424df832edb07c618e6d8"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a3de26f777ee424df832edb07c618e6d8">MAX3010X_readPartID</a> ()</td></tr>
+<tr class="memitem:a810938b66a38deb1986aa104b9024b5f" id="r_a810938b66a38deb1986aa104b9024b5f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a810938b66a38deb1986aa104b9024b5f">MAX3010X_setup</a> (uint8_t powerLevel, uint8_t sampleAverage, uint8_t ledMode, int sampleRate, int pulseWidth, int adcRange)</td></tr>
+<tr class="memitem:a8061018a8acd7cce9315a71dbec8eaac" id="r_a8061018a8acd7cce9315a71dbec8eaac"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a8061018a8acd7cce9315a71dbec8eaac">readRegister8</a> (uint8_t reg)</td></tr>
+<tr class="memitem:a876fb0b0088af54570b2a99f1a7fe911" id="r_a876fb0b0088af54570b2a99f1a7fe911"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a876fb0b0088af54570b2a99f1a7fe911">writeRegister8</a> (uint8_t reg, uint8_t value)</td></tr>
+<tr class="memitem:a32b7b5df839848f2c7b212aa595b927a" id="r_a32b7b5df839848f2c7b212aa595b927a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a32b7b5df839848f2c7b212aa595b927a">MAX3010X_readRevisionID</a> ()</td></tr>
+<tr class="memitem:a0e7a0342c7cf44e17aabe430e8fdd3b7" id="r_a0e7a0342c7cf44e17aabe430e8fdd3b7"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a0e7a0342c7cf44e17aabe430e8fdd3b7">bitMask</a> (uint8_t reg, uint8_t mask, uint8_t thing)</td></tr>
+</table>
+<a name="doc-define-members" id="doc-define-members"></a><h2 id="header-doc-define-members" class="groupheader">Documentación de «define»</h2>
+<a id="aab040ced3ff06bdd71655d55a5f8db14" name="aab040ced3ff06bdd71655d55a5f8db14"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aab040ced3ff06bdd71655d55a5f8db14">&#9670;&#160;</a></span>I2C_BUFFER_LENGTH</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define I2C_BUFFER_LENGTH&#160;&#160;&#160;32</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="max3010x_8h_source.html#l00037">37</a> del archivo <a class="el" href="max3010x_8h_source.html">max3010x.h</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="max3010x_8c_source.html#l00596">MAX3010X_check()</a>.</p>
+
+</div>
+</div>
+<a id="aef9d097ed2b58676498a33f3cf76f38d" name="aef9d097ed2b58676498a33f3cf76f38d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aef9d097ed2b58676498a33f3cf76f38d">&#9670;&#160;</a></span>I2C_SPEED_FAST</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define I2C_SPEED_FAST&#160;&#160;&#160;400000</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="max3010x_8h_source.html#l00021">21</a> del archivo <a class="el" href="max3010x_8h_source.html">max3010x.h</a>.</p>
+
+</div>
+</div>
+<a id="a5ca8c5fbb2caa99ab0b7007ce2c11633" name="a5ca8c5fbb2caa99ab0b7007ce2c11633"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5ca8c5fbb2caa99ab0b7007ce2c11633">&#9670;&#160;</a></span>I2C_SPEED_STANDARD</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define I2C_SPEED_STANDARD&#160;&#160;&#160;100000</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="max3010x_8h_source.html#l00020">20</a> del archivo <a class="el" href="max3010x_8h_source.html">max3010x.h</a>.</p>
+
+</div>
+</div>
+<a id="acb8783512e3bd21bdb6a294d026e6405" name="acb8783512e3bd21bdb6a294d026e6405"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acb8783512e3bd21bdb6a294d026e6405">&#9670;&#160;</a></span>MAX30105_ADDRESS</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define MAX30105_ADDRESS&#160;&#160;&#160;0x57</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="max3010x_8h_source.html#l00017">17</a> del archivo <a class="el" href="max3010x_8h_source.html">max3010x.h</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="max3010x_8c_source.html#l00596">MAX3010X_check()</a>, <a class="el" href="max3010x_8c_source.html#l00746">readRegister8()</a> y <a class="el" href="max3010x_8c_source.html#l00756">writeRegister8()</a>.</p>
+
+</div>
+</div>
+<a id="a8d6f782ffe53d87f0fd0327d4b09352c" name="a8d6f782ffe53d87f0fd0327d4b09352c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8d6f782ffe53d87f0fd0327d4b09352c">&#9670;&#160;</a></span>STORAGE_SIZE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define STORAGE_SIZE&#160;&#160;&#160;4</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="max3010x_8h_source.html#l00131">131</a> del archivo <a class="el" href="max3010x_8h_source.html">max3010x.h</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="max3010x_8c_source.html#l00526">MAX3010X_available()</a>, <a class="el" href="max3010x_8c_source.html#l00596">MAX3010X_check()</a> y <a class="el" href="max3010x_8c_source.html#l00583">MAX3010X_nextSample()</a>.</p>
+
+</div>
+</div>
+<a name="doc-typedef-members" id="doc-typedef-members"></a><h2 id="header-doc-typedef-members" class="groupheader">Documentación de «typedef»</h2>
+<a id="a2000f49e8fdcbbce71dea5f5d15b930b" name="a2000f49e8fdcbbce71dea5f5d15b930b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2000f49e8fdcbbce71dea5f5d15b930b">&#9670;&#160;</a></span>sense_struct</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">typedef struct <a class="el" href="struct_record.html">Record</a> <a class="el" href="#a2000f49e8fdcbbce71dea5f5d15b930b">sense_struct</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Documentación de funciones</h2>
+<a id="a0e7a0342c7cf44e17aabe430e8fdd3b7" name="a0e7a0342c7cf44e17aabe430e8fdd3b7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0e7a0342c7cf44e17aabe430e8fdd3b7">&#9670;&#160;</a></span>bitMask()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void bitMask </td>
+          <td>(</td>
+          <td class="paramtype">uint8_t</td>          <td class="paramname"><span class="paramname"><em>reg</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint8_t</td>          <td class="paramname"><span class="paramname"><em>mask</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint8_t</td>          <td class="paramname"><span class="paramname"><em>thing</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="max3010x_8c_source.html#l00731">731</a> del archivo <a class="el" href="max3010x_8c_source.html">max3010x.c</a>.</p>
+
+<p class="reference">Hace referencia a <a class="el" href="max3010x_8c_source.html#l00746">readRegister8()</a> y <a class="el" href="max3010x_8c_source.html#l00756">writeRegister8()</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="max3010x_8c_source.html#l00181">MAX3010X_disableAFULL()</a>, <a class="el" href="max3010x_8c_source.html#l00195">MAX3010X_disableALCOVF()</a>, <a class="el" href="max3010x_8c_source.html#l00188">MAX3010X_disableDATARDY()</a>, <a class="el" href="max3010x_8c_source.html#l00209">MAX3010X_disableDIETEMPRDY()</a>, <a class="el" href="max3010x_8c_source.html#l00345">MAX3010X_disableFIFORollover()</a>, <a class="el" href="max3010x_8c_source.html#l00202">MAX3010X_disablePROXINT()</a>, <a class="el" href="max3010x_8c_source.html#l00178">MAX3010X_enableAFULL()</a>, <a class="el" href="max3010x_8c_source.html#l00192">MAX3010X_enableALCOVF()</a>, <a class="el" href="max3010x_8c_source.html#l00185">MAX3010X_enableDATARDY()</a>, <a class="el" href="max3010x_8c_source.html#l00206">MAX3010X_enableDIETEMPRDY()</a>, <a class="el" href="max3010x_8c_source.html#l00340">MAX3010X_enableFIFORollover()</a>, <a class="el" href="max3010x_8c_source.html#l00199">MAX3010X_enablePROXINT()</a>, <a class="el" href="max3010x_8c_source.html#l00293">MAX3010X_enableSlot()</a>, <a class="el" href="max3010x_8c_source.html#l00249">MAX3010X_setADCRange()</a>, <a class="el" href="max3010x_8c_source.html#l00352">MAX3010X_setFIFOAlmostFull()</a>, <a class="el" href="max3010x_8c_source.html#l00327">MAX3010X_setFIFOAverage()</a>, <a class="el" href="max3010x_8c_source.html#l00243">MAX3010X_setLEDMode()</a>, <a class="el" href="max3010x_8c_source.html#l00259">MAX3010X_setPulseWidth()</a>, <a class="el" href="max3010x_8c_source.html#l00254">MAX3010X_setSampleRate()</a>, <a class="el" href="max3010x_8c_source.html#l00231">MAX3010X_shutDown()</a>, <a class="el" href="max3010x_8c_source.html#l00215">MAX3010X_softReset()</a> y <a class="el" href="max3010x_8c_source.html#l00238">MAX3010X_wakeUp()</a>.</p>
+
+</div>
+</div>
+<a id="ae71f70f9490a744e9851030def9dc4cc" name="ae71f70f9490a744e9851030def9dc4cc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae71f70f9490a744e9851030def9dc4cc">&#9670;&#160;</a></span>MAX3010X_available()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint8_t MAX3010X_available </td>
+          <td>(</td>
+          <td class="paramtype">void</td>          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="max3010x_8c_source.html#l00526">526</a> del archivo <a class="el" href="max3010x_8c_source.html">max3010x.c</a>.</p>
+
+<p class="reference">Hace referencia a <a class="el" href="max3010x_8c_source.html#l00020">sense</a> y <a class="el" href="max3010x_8h_source.html#l00131">STORAGE_SIZE</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="max3010x_8c_source.html#l00583">MAX3010X_nextSample()</a>.</p>
+
+</div>
+</div>
+<a id="a9aab81f7765d532a90b95e314acd29c4" name="a9aab81f7765d532a90b95e314acd29c4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9aab81f7765d532a90b95e314acd29c4">&#9670;&#160;</a></span>MAX3010X_begin()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool MAX3010X_begin </td>
+          <td>(</td>
+          <td class="paramtype">void</td>          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="max3010x_8c_source.html#l00148">148</a> del archivo <a class="el" href="max3010x_8c_source.html">max3010x.c</a>.</p>
+
+<p class="reference">Hace referencia a <a class="el" href="i2c__mcu_8c_source.html#l00034">I2C_initialize()</a>, <a class="el" href="max3010x_8c_source.html#l00420">MAX3010X_readPartID()</a> y <a class="el" href="max3010x_8c_source.html#l00424">MAX3010X_readRevisionID()</a>.</p>
+
+</div>
+</div>
+<a id="a4558222ee9ecc75364a383c1a0448b7d" name="a4558222ee9ecc75364a383c1a0448b7d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4558222ee9ecc75364a383c1a0448b7d">&#9670;&#160;</a></span>MAX3010X_check()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint16_t MAX3010X_check </td>
+          <td>(</td>
+          <td class="paramtype">void</td>          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="max3010x_8c_source.html#l00596">596</a> del archivo <a class="el" href="max3010x_8c_source.html">max3010x.c</a>.</p>
+
+<p class="reference">Hace referencia a <a class="el" href="max3010x_8c_source.html#l00016">activeLEDs</a>, <a class="el" href="max3010x_8h_source.html#l00037">I2C_BUFFER_LENGTH</a>, <a class="el" href="i2c__mcu_8c_source.html#l00153">I2C_requestBytes()</a>, <a class="el" href="i2c__mcu_8c_source.html#l00179">I2C_SelectRegister()</a>, <a class="el" href="max3010x_8h_source.html#l00017">MAX30105_ADDRESS</a>, <a class="el" href="max3010x_8c_source.html#l00362">MAX3010X_getReadPointer()</a>, <a class="el" href="max3010x_8c_source.html#l00357">MAX3010X_getWritePointer()</a>, <a class="el" href="max3010x_8c_source.html#l00020">sense</a> y <a class="el" href="max3010x_8h_source.html#l00131">STORAGE_SIZE</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="max3010x_8c_source.html#l00715">MAX3010X_safeCheck()</a>.</p>
+
+</div>
+</div>
+<a id="af9b723a77725080806abc6568f9a07e3" name="af9b723a77725080806abc6568f9a07e3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af9b723a77725080806abc6568f9a07e3">&#9670;&#160;</a></span>MAX3010X_clearFIFO()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void MAX3010X_clearFIFO </td>
+          <td>(</td>
+          <td class="paramtype">void</td>          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="max3010x_8c_source.html#l00333">333</a> del archivo <a class="el" href="max3010x_8c_source.html">max3010x.c</a>.</p>
+
+<p class="reference">Hace referencia a <a class="el" href="max3010x_8c_source.html#l00756">writeRegister8()</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="max3010x_8c_source.html#l00440">MAX3010X_setup()</a>.</p>
+
+</div>
+</div>
+<a id="a8e3d1ebcbaf380199e1fe34d96a5f300" name="a8e3d1ebcbaf380199e1fe34d96a5f300"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8e3d1ebcbaf380199e1fe34d96a5f300">&#9670;&#160;</a></span>MAX3010X_disableAFULL()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void MAX3010X_disableAFULL </td>
+          <td>(</td>
+          <td class="paramtype">void</td>          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="max3010x_8c_source.html#l00181">181</a> del archivo <a class="el" href="max3010x_8c_source.html">max3010x.c</a>.</p>
+
+<p class="reference">Hace referencia a <a class="el" href="max3010x_8c_source.html#l00731">bitMask()</a>.</p>
+
+</div>
+</div>
+<a id="ac70938cd57048c76b16cbffbc810ab6a" name="ac70938cd57048c76b16cbffbc810ab6a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac70938cd57048c76b16cbffbc810ab6a">&#9670;&#160;</a></span>MAX3010X_disableALCOVF()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void MAX3010X_disableALCOVF </td>
+          <td>(</td>
+          <td class="paramtype">void</td>          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="max3010x_8c_source.html#l00195">195</a> del archivo <a class="el" href="max3010x_8c_source.html">max3010x.c</a>.</p>
+
+<p class="reference">Hace referencia a <a class="el" href="max3010x_8c_source.html#l00731">bitMask()</a>.</p>
+
+</div>
+</div>
+<a id="a86b2d8dbaecb8db766526b25cef1ef64" name="a86b2d8dbaecb8db766526b25cef1ef64"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a86b2d8dbaecb8db766526b25cef1ef64">&#9670;&#160;</a></span>MAX3010X_disableDATARDY()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void MAX3010X_disableDATARDY </td>
+          <td>(</td>
+          <td class="paramtype">void</td>          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="max3010x_8c_source.html#l00188">188</a> del archivo <a class="el" href="max3010x_8c_source.html">max3010x.c</a>.</p>
+
+<p class="reference">Hace referencia a <a class="el" href="max3010x_8c_source.html#l00731">bitMask()</a>.</p>
+
+</div>
+</div>
+<a id="a1e47d02b72e306ada26eaad4ff12db1d" name="a1e47d02b72e306ada26eaad4ff12db1d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1e47d02b72e306ada26eaad4ff12db1d">&#9670;&#160;</a></span>MAX3010X_disableDIETEMPRDY()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void MAX3010X_disableDIETEMPRDY </td>
+          <td>(</td>
+          <td class="paramtype">void</td>          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="max3010x_8c_source.html#l00209">209</a> del archivo <a class="el" href="max3010x_8c_source.html">max3010x.c</a>.</p>
+
+<p class="reference">Hace referencia a <a class="el" href="max3010x_8c_source.html#l00731">bitMask()</a>.</p>
+
+</div>
+</div>
+<a id="a5d282ad4bbdef6f7b2d4da8ccecb75e7" name="a5d282ad4bbdef6f7b2d4da8ccecb75e7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5d282ad4bbdef6f7b2d4da8ccecb75e7">&#9670;&#160;</a></span>MAX3010X_disableFIFORollover()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void MAX3010X_disableFIFORollover </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="max3010x_8c_source.html#l00345">345</a> del archivo <a class="el" href="max3010x_8c_source.html">max3010x.c</a>.</p>
+
+<p class="reference">Hace referencia a <a class="el" href="max3010x_8c_source.html#l00731">bitMask()</a>.</p>
+
+</div>
+</div>
+<a id="a75fe08dec5a0acf78bc259453d0802a2" name="a75fe08dec5a0acf78bc259453d0802a2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a75fe08dec5a0acf78bc259453d0802a2">&#9670;&#160;</a></span>MAX3010X_disablePROXINT()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void MAX3010X_disablePROXINT </td>
+          <td>(</td>
+          <td class="paramtype">void</td>          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="max3010x_8c_source.html#l00202">202</a> del archivo <a class="el" href="max3010x_8c_source.html">max3010x.c</a>.</p>
+
+<p class="reference">Hace referencia a <a class="el" href="max3010x_8c_source.html#l00731">bitMask()</a>.</p>
+
+</div>
+</div>
+<a id="ac87169587925e648fb47d74c17be7d68" name="ac87169587925e648fb47d74c17be7d68"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac87169587925e648fb47d74c17be7d68">&#9670;&#160;</a></span>MAX3010X_disableSlots()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void MAX3010X_disableSlots </td>
+          <td>(</td>
+          <td class="paramtype">void</td>          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="max3010x_8c_source.html#l00317">317</a> del archivo <a class="el" href="max3010x_8c_source.html">max3010x.c</a>.</p>
+
+<p class="reference">Hace referencia a <a class="el" href="max3010x_8c_source.html#l00756">writeRegister8()</a>.</p>
+
+</div>
+</div>
+<a id="acf3d4dd9fc543625cd2d9756c92581b9" name="acf3d4dd9fc543625cd2d9756c92581b9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acf3d4dd9fc543625cd2d9756c92581b9">&#9670;&#160;</a></span>MAX3010X_enableAFULL()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void MAX3010X_enableAFULL </td>
+          <td>(</td>
+          <td class="paramtype">void</td>          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="max3010x_8c_source.html#l00178">178</a> del archivo <a class="el" href="max3010x_8c_source.html">max3010x.c</a>.</p>
+
+<p class="reference">Hace referencia a <a class="el" href="max3010x_8c_source.html#l00731">bitMask()</a>.</p>
+
+</div>
+</div>
+<a id="aa0a5edc420d1a89d033be0d2e0772d1b" name="aa0a5edc420d1a89d033be0d2e0772d1b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa0a5edc420d1a89d033be0d2e0772d1b">&#9670;&#160;</a></span>MAX3010X_enableALCOVF()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void MAX3010X_enableALCOVF </td>
+          <td>(</td>
+          <td class="paramtype">void</td>          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="max3010x_8c_source.html#l00192">192</a> del archivo <a class="el" href="max3010x_8c_source.html">max3010x.c</a>.</p>
+
+<p class="reference">Hace referencia a <a class="el" href="max3010x_8c_source.html#l00731">bitMask()</a>.</p>
+
+</div>
+</div>
+<a id="acee21bd5781c1c190fe4e895c7c3efd1" name="acee21bd5781c1c190fe4e895c7c3efd1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acee21bd5781c1c190fe4e895c7c3efd1">&#9670;&#160;</a></span>MAX3010X_enableDATARDY()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void MAX3010X_enableDATARDY </td>
+          <td>(</td>
+          <td class="paramtype">void</td>          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="max3010x_8c_source.html#l00185">185</a> del archivo <a class="el" href="max3010x_8c_source.html">max3010x.c</a>.</p>
+
+<p class="reference">Hace referencia a <a class="el" href="max3010x_8c_source.html#l00731">bitMask()</a>.</p>
+
+</div>
+</div>
+<a id="ae0f57acc5b712aabd117ec2dbd33be30" name="ae0f57acc5b712aabd117ec2dbd33be30"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae0f57acc5b712aabd117ec2dbd33be30">&#9670;&#160;</a></span>MAX3010X_enableDIETEMPRDY()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void MAX3010X_enableDIETEMPRDY </td>
+          <td>(</td>
+          <td class="paramtype">void</td>          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="max3010x_8c_source.html#l00206">206</a> del archivo <a class="el" href="max3010x_8c_source.html">max3010x.c</a>.</p>
+
+<p class="reference">Hace referencia a <a class="el" href="max3010x_8c_source.html#l00731">bitMask()</a>.</p>
+
+</div>
+</div>
+<a id="a73b964d134ce1944454a345d98bf7eb5" name="a73b964d134ce1944454a345d98bf7eb5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a73b964d134ce1944454a345d98bf7eb5">&#9670;&#160;</a></span>MAX3010X_enableFIFORollover()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void MAX3010X_enableFIFORollover </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="max3010x_8c_source.html#l00340">340</a> del archivo <a class="el" href="max3010x_8c_source.html">max3010x.c</a>.</p>
+
+<p class="reference">Hace referencia a <a class="el" href="max3010x_8c_source.html#l00731">bitMask()</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="max3010x_8c_source.html#l00440">MAX3010X_setup()</a>.</p>
+
+</div>
+</div>
+<a id="a7ca206e02ae772e8aae03fc65b5a2ceb" name="a7ca206e02ae772e8aae03fc65b5a2ceb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7ca206e02ae772e8aae03fc65b5a2ceb">&#9670;&#160;</a></span>MAX3010X_enablePROXINT()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void MAX3010X_enablePROXINT </td>
+          <td>(</td>
+          <td class="paramtype">void</td>          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="max3010x_8c_source.html#l00199">199</a> del archivo <a class="el" href="max3010x_8c_source.html">max3010x.c</a>.</p>
+
+<p class="reference">Hace referencia a <a class="el" href="max3010x_8c_source.html#l00731">bitMask()</a>.</p>
+
+</div>
+</div>
+<a id="a0184a5c705122869241b6c0c6f1ccb5f" name="a0184a5c705122869241b6c0c6f1ccb5f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0184a5c705122869241b6c0c6f1ccb5f">&#9670;&#160;</a></span>MAX3010X_enableSlot()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void MAX3010X_enableSlot </td>
+          <td>(</td>
+          <td class="paramtype">uint8_t</td>          <td class="paramname"><span class="paramname"><em>slotNumber</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint8_t</td>          <td class="paramname"><span class="paramname"><em>device</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="max3010x_8c_source.html#l00293">293</a> del archivo <a class="el" href="max3010x_8c_source.html">max3010x.c</a>.</p>
+
+<p class="reference">Hace referencia a <a class="el" href="max3010x_8c_source.html#l00731">bitMask()</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="max3010x_8c_source.html#l00440">MAX3010X_setup()</a>.</p>
+
+</div>
+</div>
+<a id="ac3b47b79533483a47434c199b9425712" name="ac3b47b79533483a47434c199b9425712"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac3b47b79533483a47434c199b9425712">&#9670;&#160;</a></span>MAX3010X_getFIFOGreen()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint32_t MAX3010X_getFIFOGreen </td>
+          <td>(</td>
+          <td class="paramtype">void</td>          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="max3010x_8c_source.html#l00577">577</a> del archivo <a class="el" href="max3010x_8c_source.html">max3010x.c</a>.</p>
+
+<p class="reference">Hace referencia a <a class="el" href="max3010x_8c_source.html#l00020">sense</a>.</p>
+
+</div>
+</div>
+<a id="a585d5cb37ed73956e568b6a4c5798d33" name="a585d5cb37ed73956e568b6a4c5798d33"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a585d5cb37ed73956e568b6a4c5798d33">&#9670;&#160;</a></span>MAX3010X_getFIFOIR()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint32_t MAX3010X_getFIFOIR </td>
+          <td>(</td>
+          <td class="paramtype">void</td>          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="max3010x_8c_source.html#l00571">571</a> del archivo <a class="el" href="max3010x_8c_source.html">max3010x.c</a>.</p>
+
+<p class="reference">Hace referencia a <a class="el" href="max3010x_8c_source.html#l00020">sense</a>.</p>
+
+</div>
+</div>
+<a id="a743dd4bec2a54bf5f1ac589cc6f93155" name="a743dd4bec2a54bf5f1ac589cc6f93155"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a743dd4bec2a54bf5f1ac589cc6f93155">&#9670;&#160;</a></span>MAX3010X_getFIFORed()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint32_t MAX3010X_getFIFORed </td>
+          <td>(</td>
+          <td class="paramtype">void</td>          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="max3010x_8c_source.html#l00565">565</a> del archivo <a class="el" href="max3010x_8c_source.html">max3010x.c</a>.</p>
+
+<p class="reference">Hace referencia a <a class="el" href="max3010x_8c_source.html#l00020">sense</a>.</p>
+
+</div>
+</div>
+<a id="ae8e253b0e5a46a7a2cfe92a62da81d4b" name="ae8e253b0e5a46a7a2cfe92a62da81d4b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae8e253b0e5a46a7a2cfe92a62da81d4b">&#9670;&#160;</a></span>MAX3010X_getGreen()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint32_t MAX3010X_getGreen </td>
+          <td>(</td>
+          <td class="paramtype">void</td>          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="max3010x_8c_source.html#l00555">555</a> del archivo <a class="el" href="max3010x_8c_source.html">max3010x.c</a>.</p>
+
+<p class="reference">Hace referencia a <a class="el" href="max3010x_8c_source.html#l00715">MAX3010X_safeCheck()</a> y <a class="el" href="max3010x_8c_source.html#l00020">sense</a>.</p>
+
+</div>
+</div>
+<a id="ad8ac3c2fc255e619949e4169b49882dd" name="ad8ac3c2fc255e619949e4169b49882dd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad8ac3c2fc255e619949e4169b49882dd">&#9670;&#160;</a></span>MAX3010X_getINT1()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint8_t MAX3010X_getINT1 </td>
+          <td>(</td>
+          <td class="paramtype">void</td>          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="max3010x_8c_source.html#l00171">171</a> del archivo <a class="el" href="max3010x_8c_source.html">max3010x.c</a>.</p>
+
+<p class="reference">Hace referencia a <a class="el" href="max3010x_8c_source.html#l00746">readRegister8()</a>.</p>
+
+</div>
+</div>
+<a id="aa8e10ac90229e437cc2adb608d0199ff" name="aa8e10ac90229e437cc2adb608d0199ff"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa8e10ac90229e437cc2adb608d0199ff">&#9670;&#160;</a></span>MAX3010X_getINT2()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint8_t MAX3010X_getINT2 </td>
+          <td>(</td>
+          <td class="paramtype">void</td>          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="max3010x_8c_source.html#l00174">174</a> del archivo <a class="el" href="max3010x_8c_source.html">max3010x.c</a>.</p>
+
+<p class="reference">Hace referencia a <a class="el" href="max3010x_8c_source.html#l00746">readRegister8()</a>.</p>
+
+</div>
+</div>
+<a id="a4c944a4e457d22f2867f7e12e5218189" name="a4c944a4e457d22f2867f7e12e5218189"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4c944a4e457d22f2867f7e12e5218189">&#9670;&#160;</a></span>MAX3010X_getIR()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint32_t MAX3010X_getIR </td>
+          <td>(</td>
+          <td class="paramtype">void</td>          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="max3010x_8c_source.html#l00545">545</a> del archivo <a class="el" href="max3010x_8c_source.html">max3010x.c</a>.</p>
+
+<p class="reference">Hace referencia a <a class="el" href="max3010x_8c_source.html#l00715">MAX3010X_safeCheck()</a> y <a class="el" href="max3010x_8c_source.html#l00020">sense</a>.</p>
+
+</div>
+</div>
+<a id="a192dbcaa97c95a0006b0a2d0bd81ebaa" name="a192dbcaa97c95a0006b0a2d0bd81ebaa"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a192dbcaa97c95a0006b0a2d0bd81ebaa">&#9670;&#160;</a></span>MAX3010X_getReadPointer()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint8_t MAX3010X_getReadPointer </td>
+          <td>(</td>
+          <td class="paramtype">void</td>          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="max3010x_8c_source.html#l00362">362</a> del archivo <a class="el" href="max3010x_8c_source.html">max3010x.c</a>.</p>
+
+<p class="reference">Hace referencia a <a class="el" href="max3010x_8c_source.html#l00746">readRegister8()</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="max3010x_8c_source.html#l00596">MAX3010X_check()</a>.</p>
+
+</div>
+</div>
+<a id="af2bd5eaa729562edf7b0bde30d602da2" name="af2bd5eaa729562edf7b0bde30d602da2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af2bd5eaa729562edf7b0bde30d602da2">&#9670;&#160;</a></span>MAX3010X_getRed()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint32_t MAX3010X_getRed </td>
+          <td>(</td>
+          <td class="paramtype">void</td>          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="max3010x_8c_source.html#l00535">535</a> del archivo <a class="el" href="max3010x_8c_source.html">max3010x.c</a>.</p>
+
+<p class="reference">Hace referencia a <a class="el" href="max3010x_8c_source.html#l00715">MAX3010X_safeCheck()</a> y <a class="el" href="max3010x_8c_source.html#l00020">sense</a>.</p>
+
+</div>
+</div>
+<a id="aa64ce295ffbdba116a76e3547e8955d9" name="aa64ce295ffbdba116a76e3547e8955d9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa64ce295ffbdba116a76e3547e8955d9">&#9670;&#160;</a></span>MAX3010X_getRevisionID()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint8_t MAX3010X_getRevisionID </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="max3010x_8c_source.html#l00428">428</a> del archivo <a class="el" href="max3010x_8c_source.html">max3010x.c</a>.</p>
+
+<p class="reference">Hace referencia a <a class="el" href="max3010x_8c_source.html#l00018">revisionID</a>.</p>
+
+</div>
+</div>
+<a id="ad511bdce8d26e32849b2be0e2ec8f349" name="ad511bdce8d26e32849b2be0e2ec8f349"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad511bdce8d26e32849b2be0e2ec8f349">&#9670;&#160;</a></span>MAX3010X_getWritePointer()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint8_t MAX3010X_getWritePointer </td>
+          <td>(</td>
+          <td class="paramtype">void</td>          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="max3010x_8c_source.html#l00357">357</a> del archivo <a class="el" href="max3010x_8c_source.html">max3010x.c</a>.</p>
+
+<p class="reference">Hace referencia a <a class="el" href="max3010x_8c_source.html#l00746">readRegister8()</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="max3010x_8c_source.html#l00596">MAX3010X_check()</a>.</p>
+
+</div>
+</div>
+<a id="aee7cfd7c2c415d8e264feba33840efbf" name="aee7cfd7c2c415d8e264feba33840efbf"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aee7cfd7c2c415d8e264feba33840efbf">&#9670;&#160;</a></span>MAX3010X_nextSample()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void MAX3010X_nextSample </td>
+          <td>(</td>
+          <td class="paramtype">void</td>          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="max3010x_8c_source.html#l00583">583</a> del archivo <a class="el" href="max3010x_8c_source.html">max3010x.c</a>.</p>
+
+<p class="reference">Hace referencia a <a class="el" href="max3010x_8c_source.html#l00526">MAX3010X_available()</a>, <a class="el" href="max3010x_8c_source.html#l00020">sense</a> y <a class="el" href="max3010x_8h_source.html#l00131">STORAGE_SIZE</a>.</p>
+
+</div>
+</div>
+<a id="a3de26f777ee424df832edb07c618e6d8" name="a3de26f777ee424df832edb07c618e6d8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3de26f777ee424df832edb07c618e6d8">&#9670;&#160;</a></span>MAX3010X_readPartID()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint8_t MAX3010X_readPartID </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="max3010x_8c_source.html#l00420">420</a> del archivo <a class="el" href="max3010x_8c_source.html">max3010x.c</a>.</p>
+
+<p class="reference">Hace referencia a <a class="el" href="max3010x_8c_source.html#l00746">readRegister8()</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="max3010x_8c_source.html#l00148">MAX3010X_begin()</a>.</p>
+
+</div>
+</div>
+<a id="a32b7b5df839848f2c7b212aa595b927a" name="a32b7b5df839848f2c7b212aa595b927a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a32b7b5df839848f2c7b212aa595b927a">&#9670;&#160;</a></span>MAX3010X_readRevisionID()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void MAX3010X_readRevisionID </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="max3010x_8c_source.html#l00424">424</a> del archivo <a class="el" href="max3010x_8c_source.html">max3010x.c</a>.</p>
+
+<p class="reference">Hace referencia a <a class="el" href="max3010x_8c_source.html#l00746">readRegister8()</a> y <a class="el" href="max3010x_8c_source.html#l00018">revisionID</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="max3010x_8c_source.html#l00148">MAX3010X_begin()</a>.</p>
+
+</div>
+</div>
+<a id="ad94aafb6787510970bc34c6dc4068abf" name="ad94aafb6787510970bc34c6dc4068abf"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad94aafb6787510970bc34c6dc4068abf">&#9670;&#160;</a></span>MAX3010X_readTemperature()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">float MAX3010X_readTemperature </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="max3010x_8c_source.html#l00369">369</a> del archivo <a class="el" href="max3010x_8c_source.html">max3010x.c</a>.</p>
+
+<p class="reference">Hace referencia a <a class="el" href="delay__mcu_8c_source.html#l00045">DelayMs()</a>, <a class="el" href="max3010x_8c_source.html#l00746">readRegister8()</a> y <a class="el" href="max3010x_8c_source.html#l00756">writeRegister8()</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="max3010x_8c_source.html#l00403">MAX3010X_readTemperatureF()</a>.</p>
+
+</div>
+</div>
+<a id="a90d51ff789f8a60c1d37732affda93b4" name="a90d51ff789f8a60c1d37732affda93b4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a90d51ff789f8a60c1d37732affda93b4">&#9670;&#160;</a></span>MAX3010X_readTemperatureF()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">float MAX3010X_readTemperatureF </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="max3010x_8c_source.html#l00403">403</a> del archivo <a class="el" href="max3010x_8c_source.html">max3010x.c</a>.</p>
+
+<p class="reference">Hace referencia a <a class="el" href="max3010x_8c_source.html#l00369">MAX3010X_readTemperature()</a>.</p>
+
+</div>
+</div>
+<a id="a9215027c1930212055c4de492cda22a9" name="a9215027c1930212055c4de492cda22a9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9215027c1930212055c4de492cda22a9">&#9670;&#160;</a></span>MAX3010X_safeCheck()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool MAX3010X_safeCheck </td>
+          <td>(</td>
+          <td class="paramtype">uint8_t</td>          <td class="paramname"><span class="paramname"><em>maxTimeToCheck</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="max3010x_8c_source.html#l00715">715</a> del archivo <a class="el" href="max3010x_8c_source.html">max3010x.c</a>.</p>
+
+<p class="reference">Hace referencia a <a class="el" href="delay__mcu_8c_source.html#l00045">DelayMs()</a> y <a class="el" href="max3010x_8c_source.html#l00596">MAX3010X_check()</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="max3010x_8c_source.html#l00555">MAX3010X_getGreen()</a>, <a class="el" href="max3010x_8c_source.html#l00545">MAX3010X_getIR()</a> y <a class="el" href="max3010x_8c_source.html#l00535">MAX3010X_getRed()</a>.</p>
+
+</div>
+</div>
+<a id="aa7b0e8671e6e46943619e2eed237137c" name="aa7b0e8671e6e46943619e2eed237137c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa7b0e8671e6e46943619e2eed237137c">&#9670;&#160;</a></span>MAX3010X_setADCRange()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void MAX3010X_setADCRange </td>
+          <td>(</td>
+          <td class="paramtype">uint8_t</td>          <td class="paramname"><span class="paramname"><em>adcRange</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="max3010x_8c_source.html#l00249">249</a> del archivo <a class="el" href="max3010x_8c_source.html">max3010x.c</a>.</p>
+
+<p class="reference">Hace referencia a <a class="el" href="max3010x_8c_source.html#l00731">bitMask()</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="max3010x_8c_source.html#l00440">MAX3010X_setup()</a>.</p>
+
+</div>
+</div>
+<a id="ac6e98d8af25d0623de0bc6b5ecaef91f" name="ac6e98d8af25d0623de0bc6b5ecaef91f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac6e98d8af25d0623de0bc6b5ecaef91f">&#9670;&#160;</a></span>MAX3010X_setFIFOAlmostFull()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void MAX3010X_setFIFOAlmostFull </td>
+          <td>(</td>
+          <td class="paramtype">uint8_t</td>          <td class="paramname"><span class="paramname"><em>samples</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="max3010x_8c_source.html#l00352">352</a> del archivo <a class="el" href="max3010x_8c_source.html">max3010x.c</a>.</p>
+
+<p class="reference">Hace referencia a <a class="el" href="max3010x_8c_source.html#l00731">bitMask()</a>.</p>
+
+</div>
+</div>
+<a id="af242d9dfc4bed6b1f3e35abb89f0ba28" name="af242d9dfc4bed6b1f3e35abb89f0ba28"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af242d9dfc4bed6b1f3e35abb89f0ba28">&#9670;&#160;</a></span>MAX3010X_setFIFOAverage()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void MAX3010X_setFIFOAverage </td>
+          <td>(</td>
+          <td class="paramtype">uint8_t</td>          <td class="paramname"><span class="paramname"><em>samples</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="max3010x_8c_source.html#l00327">327</a> del archivo <a class="el" href="max3010x_8c_source.html">max3010x.c</a>.</p>
+
+<p class="reference">Hace referencia a <a class="el" href="max3010x_8c_source.html#l00731">bitMask()</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="max3010x_8c_source.html#l00440">MAX3010X_setup()</a>.</p>
+
+</div>
+</div>
+<a id="a464dfe3a91e1439c6c07ce790e01885a" name="a464dfe3a91e1439c6c07ce790e01885a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a464dfe3a91e1439c6c07ce790e01885a">&#9670;&#160;</a></span>MAX3010X_setLEDMode()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void MAX3010X_setLEDMode </td>
+          <td>(</td>
+          <td class="paramtype">uint8_t</td>          <td class="paramname"><span class="paramname"><em>mode</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="max3010x_8c_source.html#l00243">243</a> del archivo <a class="el" href="max3010x_8c_source.html">max3010x.c</a>.</p>
+
+<p class="reference">Hace referencia a <a class="el" href="max3010x_8c_source.html#l00731">bitMask()</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="max3010x_8c_source.html#l00440">MAX3010X_setup()</a>.</p>
+
+</div>
+</div>
+<a id="a76f1d1d04c23cea0162bce04ead1cbd1" name="a76f1d1d04c23cea0162bce04ead1cbd1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a76f1d1d04c23cea0162bce04ead1cbd1">&#9670;&#160;</a></span>MAX3010X_setProximityThreshold()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void MAX3010X_setProximityThreshold </td>
+          <td>(</td>
+          <td class="paramtype">uint8_t</td>          <td class="paramname"><span class="paramname"><em>threshMSB</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="max3010x_8c_source.html#l00282">282</a> del archivo <a class="el" href="max3010x_8c_source.html">max3010x.c</a>.</p>
+
+<p class="reference">Hace referencia a <a class="el" href="max3010x_8c_source.html#l00756">writeRegister8()</a>.</p>
+
+</div>
+</div>
+<a id="aeec237d2b0574bdda373947e90ae37d6" name="aeec237d2b0574bdda373947e90ae37d6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aeec237d2b0574bdda373947e90ae37d6">&#9670;&#160;</a></span>MAX3010X_setPROXINTTHRESH()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void MAX3010X_setPROXINTTHRESH </td>
+          <td>(</td>
+          <td class="paramtype">uint8_t</td>          <td class="paramname"><span class="paramname"><em>val</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="max3010x_8c_source.html#l00412">412</a> del archivo <a class="el" href="max3010x_8c_source.html">max3010x.c</a>.</p>
+
+<p class="reference">Hace referencia a <a class="el" href="max3010x_8c_source.html#l00756">writeRegister8()</a>.</p>
+
+</div>
+</div>
+<a id="ab83d69391585b658ff328ef89fd5a995" name="ab83d69391585b658ff328ef89fd5a995"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab83d69391585b658ff328ef89fd5a995">&#9670;&#160;</a></span>MAX3010X_setPulseAmplitudeGreen()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void MAX3010X_setPulseAmplitudeGreen </td>
+          <td>(</td>
+          <td class="paramtype">uint8_t</td>          <td class="paramname"><span class="paramname"><em>value</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="max3010x_8c_source.html#l00274">274</a> del archivo <a class="el" href="max3010x_8c_source.html">max3010x.c</a>.</p>
+
+<p class="reference">Hace referencia a <a class="el" href="max3010x_8c_source.html#l00756">writeRegister8()</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="max3010x_8c_source.html#l00440">MAX3010X_setup()</a>.</p>
+
+</div>
+</div>
+<a id="a0e0597f6bca8f6394ef4ac5ba880626b" name="a0e0597f6bca8f6394ef4ac5ba880626b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0e0597f6bca8f6394ef4ac5ba880626b">&#9670;&#160;</a></span>MAX3010X_setPulseAmplitudeIR()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void MAX3010X_setPulseAmplitudeIR </td>
+          <td>(</td>
+          <td class="paramtype">uint8_t</td>          <td class="paramname"><span class="paramname"><em>value</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="max3010x_8c_source.html#l00270">270</a> del archivo <a class="el" href="max3010x_8c_source.html">max3010x.c</a>.</p>
+
+<p class="reference">Hace referencia a <a class="el" href="max3010x_8c_source.html#l00756">writeRegister8()</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="max3010x_8c_source.html#l00440">MAX3010X_setup()</a>.</p>
+
+</div>
+</div>
+<a id="af10e5123ca0eb777e2dcd175bb28b636" name="af10e5123ca0eb777e2dcd175bb28b636"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af10e5123ca0eb777e2dcd175bb28b636">&#9670;&#160;</a></span>MAX3010X_setPulseAmplitudeProximity()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void MAX3010X_setPulseAmplitudeProximity </td>
+          <td>(</td>
+          <td class="paramtype">uint8_t</td>          <td class="paramname"><span class="paramname"><em>value</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="max3010x_8c_source.html#l00278">278</a> del archivo <a class="el" href="max3010x_8c_source.html">max3010x.c</a>.</p>
+
+<p class="reference">Hace referencia a <a class="el" href="max3010x_8c_source.html#l00756">writeRegister8()</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="max3010x_8c_source.html#l00440">MAX3010X_setup()</a>.</p>
+
+</div>
+</div>
+<a id="a52d119dda3fc73da7515d8b666f4fa09" name="a52d119dda3fc73da7515d8b666f4fa09"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a52d119dda3fc73da7515d8b666f4fa09">&#9670;&#160;</a></span>MAX3010X_setPulseAmplitudeRed()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void MAX3010X_setPulseAmplitudeRed </td>
+          <td>(</td>
+          <td class="paramtype">uint8_t</td>          <td class="paramname"><span class="paramname"><em>value</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="max3010x_8c_source.html#l00266">266</a> del archivo <a class="el" href="max3010x_8c_source.html">max3010x.c</a>.</p>
+
+<p class="reference">Hace referencia a <a class="el" href="max3010x_8c_source.html#l00756">writeRegister8()</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="max3010x_8c_source.html#l00440">MAX3010X_setup()</a>.</p>
+
+</div>
+</div>
+<a id="a286ed555baddfc6df05cbad1d1d32f30" name="a286ed555baddfc6df05cbad1d1d32f30"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a286ed555baddfc6df05cbad1d1d32f30">&#9670;&#160;</a></span>MAX3010X_setPulseWidth()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void MAX3010X_setPulseWidth </td>
+          <td>(</td>
+          <td class="paramtype">uint8_t</td>          <td class="paramname"><span class="paramname"><em>pulseWidth</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="max3010x_8c_source.html#l00259">259</a> del archivo <a class="el" href="max3010x_8c_source.html">max3010x.c</a>.</p>
+
+<p class="reference">Hace referencia a <a class="el" href="max3010x_8c_source.html#l00731">bitMask()</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="max3010x_8c_source.html#l00440">MAX3010X_setup()</a>.</p>
+
+</div>
+</div>
+<a id="a2bca36e18f2eca31d31f0c3449b794e9" name="a2bca36e18f2eca31d31f0c3449b794e9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2bca36e18f2eca31d31f0c3449b794e9">&#9670;&#160;</a></span>MAX3010X_setSampleRate()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void MAX3010X_setSampleRate </td>
+          <td>(</td>
+          <td class="paramtype">uint8_t</td>          <td class="paramname"><span class="paramname"><em>sampleRate</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="max3010x_8c_source.html#l00254">254</a> del archivo <a class="el" href="max3010x_8c_source.html">max3010x.c</a>.</p>
+
+<p class="reference">Hace referencia a <a class="el" href="max3010x_8c_source.html#l00731">bitMask()</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="max3010x_8c_source.html#l00440">MAX3010X_setup()</a>.</p>
+
+</div>
+</div>
+<a id="a810938b66a38deb1986aa104b9024b5f" name="a810938b66a38deb1986aa104b9024b5f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a810938b66a38deb1986aa104b9024b5f">&#9670;&#160;</a></span>MAX3010X_setup()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void MAX3010X_setup </td>
+          <td>(</td>
+          <td class="paramtype">uint8_t</td>          <td class="paramname"><span class="paramname"><em>powerLevel</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint8_t</td>          <td class="paramname"><span class="paramname"><em>sampleAverage</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint8_t</td>          <td class="paramname"><span class="paramname"><em>ledMode</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>sampleRate</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>pulseWidth</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>adcRange</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="max3010x_8c_source.html#l00440">440</a> del archivo <a class="el" href="max3010x_8c_source.html">max3010x.c</a>.</p>
+
+<p class="reference">Hace referencia a <a class="el" href="max3010x_8c_source.html#l00016">activeLEDs</a>, <a class="el" href="max3010x_8c_source.html#l00333">MAX3010X_clearFIFO()</a>, <a class="el" href="max3010x_8c_source.html#l00340">MAX3010X_enableFIFORollover()</a>, <a class="el" href="max3010x_8c_source.html#l00293">MAX3010X_enableSlot()</a>, <a class="el" href="max3010x_8c_source.html#l00249">MAX3010X_setADCRange()</a>, <a class="el" href="max3010x_8c_source.html#l00327">MAX3010X_setFIFOAverage()</a>, <a class="el" href="max3010x_8c_source.html#l00243">MAX3010X_setLEDMode()</a>, <a class="el" href="max3010x_8c_source.html#l00274">MAX3010X_setPulseAmplitudeGreen()</a>, <a class="el" href="max3010x_8c_source.html#l00270">MAX3010X_setPulseAmplitudeIR()</a>, <a class="el" href="max3010x_8c_source.html#l00278">MAX3010X_setPulseAmplitudeProximity()</a>, <a class="el" href="max3010x_8c_source.html#l00266">MAX3010X_setPulseAmplitudeRed()</a>, <a class="el" href="max3010x_8c_source.html#l00259">MAX3010X_setPulseWidth()</a>, <a class="el" href="max3010x_8c_source.html#l00254">MAX3010X_setSampleRate()</a>, <a class="el" href="max3010x_8c_source.html#l00215">MAX3010X_softReset()</a>, <a class="el" href="max3010x_8c_source.html#l00138">SLOT_GREEN_LED</a>, <a class="el" href="max3010x_8c_source.html#l00137">SLOT_IR_LED</a> y <a class="el" href="max3010x_8c_source.html#l00136">SLOT_RED_LED</a>.</p>
+
+</div>
+</div>
+<a id="a466ff5ee5a54301fda2dde3f296d1c21" name="a466ff5ee5a54301fda2dde3f296d1c21"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a466ff5ee5a54301fda2dde3f296d1c21">&#9670;&#160;</a></span>MAX3010X_shutDown()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void MAX3010X_shutDown </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="max3010x_8c_source.html#l00231">231</a> del archivo <a class="el" href="max3010x_8c_source.html">max3010x.c</a>.</p>
+
+<p class="reference">Hace referencia a <a class="el" href="max3010x_8c_source.html#l00731">bitMask()</a>.</p>
+
+</div>
+</div>
+<a id="a80847524dd49016138fd873b255f6b27" name="a80847524dd49016138fd873b255f6b27"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a80847524dd49016138fd873b255f6b27">&#9670;&#160;</a></span>MAX3010X_softReset()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void MAX3010X_softReset </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="max3010x_8c_source.html#l00215">215</a> del archivo <a class="el" href="max3010x_8c_source.html">max3010x.c</a>.</p>
+
+<p class="reference">Hace referencia a <a class="el" href="max3010x_8c_source.html#l00731">bitMask()</a>, <a class="el" href="delay__mcu_8c_source.html#l00045">DelayMs()</a> y <a class="el" href="max3010x_8c_source.html#l00746">readRegister8()</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="max3010x_8c_source.html#l00440">MAX3010X_setup()</a>.</p>
+
+</div>
+</div>
+<a id="a2c2082b2db9e222ae57966e209b36d79" name="a2c2082b2db9e222ae57966e209b36d79"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2c2082b2db9e222ae57966e209b36d79">&#9670;&#160;</a></span>MAX3010X_wakeUp()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void MAX3010X_wakeUp </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="max3010x_8c_source.html#l00238">238</a> del archivo <a class="el" href="max3010x_8c_source.html">max3010x.c</a>.</p>
+
+<p class="reference">Hace referencia a <a class="el" href="max3010x_8c_source.html#l00731">bitMask()</a>.</p>
+
+</div>
+</div>
+<a id="a8061018a8acd7cce9315a71dbec8eaac" name="a8061018a8acd7cce9315a71dbec8eaac"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8061018a8acd7cce9315a71dbec8eaac">&#9670;&#160;</a></span>readRegister8()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint8_t readRegister8 </td>
+          <td>(</td>
+          <td class="paramtype">uint8_t</td>          <td class="paramname"><span class="paramname"><em>reg</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="max3010x_8c_source.html#l00746">746</a> del archivo <a class="el" href="max3010x_8c_source.html">max3010x.c</a>.</p>
+
+<p class="reference">Hace referencia a <a class="el" href="i2c__mcu_8c_source.html#l00114">I2C_readByte()</a> y <a class="el" href="max3010x_8h_source.html#l00017">MAX30105_ADDRESS</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="max3010x_8c_source.html#l00731">bitMask()</a>, <a class="el" href="max3010x_8c_source.html#l00171">MAX3010X_getINT1()</a>, <a class="el" href="max3010x_8c_source.html#l00174">MAX3010X_getINT2()</a>, <a class="el" href="max3010x_8c_source.html#l00362">MAX3010X_getReadPointer()</a>, <a class="el" href="max3010x_8c_source.html#l00357">MAX3010X_getWritePointer()</a>, <a class="el" href="max3010x_8c_source.html#l00420">MAX3010X_readPartID()</a>, <a class="el" href="max3010x_8c_source.html#l00424">MAX3010X_readRevisionID()</a>, <a class="el" href="max3010x_8c_source.html#l00369">MAX3010X_readTemperature()</a> y <a class="el" href="max3010x_8c_source.html#l00215">MAX3010X_softReset()</a>.</p>
+
+</div>
+</div>
+<a id="a876fb0b0088af54570b2a99f1a7fe911" name="a876fb0b0088af54570b2a99f1a7fe911"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a876fb0b0088af54570b2a99f1a7fe911">&#9670;&#160;</a></span>writeRegister8()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void writeRegister8 </td>
+          <td>(</td>
+          <td class="paramtype">uint8_t</td>          <td class="paramname"><span class="paramname"><em>reg</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">uint8_t</td>          <td class="paramname"><span class="paramname"><em>value</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="max3010x_8c_source.html#l00756">756</a> del archivo <a class="el" href="max3010x_8c_source.html">max3010x.c</a>.</p>
+
+<p class="reference">Hace referencia a <a class="el" href="i2c__mcu_8c_source.html#l00240">I2C_writeByte()</a> y <a class="el" href="max3010x_8h_source.html#l00017">MAX30105_ADDRESS</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="max3010x_8c_source.html#l00731">bitMask()</a>, <a class="el" href="max3010x_8c_source.html#l00333">MAX3010X_clearFIFO()</a>, <a class="el" href="max3010x_8c_source.html#l00317">MAX3010X_disableSlots()</a>, <a class="el" href="max3010x_8c_source.html#l00369">MAX3010X_readTemperature()</a>, <a class="el" href="max3010x_8c_source.html#l00282">MAX3010X_setProximityThreshold()</a>, <a class="el" href="max3010x_8c_source.html#l00412">MAX3010X_setPROXINTTHRESH()</a>, <a class="el" href="max3010x_8c_source.html#l00274">MAX3010X_setPulseAmplitudeGreen()</a>, <a class="el" href="max3010x_8c_source.html#l00270">MAX3010X_setPulseAmplitudeIR()</a>, <a class="el" href="max3010x_8c_source.html#l00278">MAX3010X_setPulseAmplitudeProximity()</a> y <a class="el" href="max3010x_8c_source.html#l00266">MAX3010X_setPulseAmplitudeRed()</a>.</p>
+
+</div>
+</div>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<div id="page-nav" class="page-nav-panel">
+<div id="page-nav-resize-handle"></div>
+<div id="page-nav-tree">
+<div id="page-nav-contents">
+</div><!-- page-nav-contents -->
+</div><!-- page-nav-tree -->
+</div><!-- page-nav -->
+</div><!-- container -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a href="dir_d9edf6c004b4a7ff14fe9ae7a92214ee.html">firmware</a></li><li class="navelem"><a href="dir_4774754e228843183aac8de48667fdde.html">drivers</a></li><li class="navelem"><a href="dir_01f3b75bad316aed7476a5f4cbb25c84.html">devices</a></li><li class="navelem"><a href="dir_ec09302fb0adc1632f5eb1743ad0d2a7.html">inc</a></li><li class="navelem"><a href="max3010x_8h.html">max3010x.h</a></li>
+    <li class="footer">Generado por <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.14.0 </li>
+  </ul>
+</div>
+</body>
+</html>

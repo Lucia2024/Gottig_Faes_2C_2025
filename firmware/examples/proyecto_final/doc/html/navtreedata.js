@@ -52,21 +52,23 @@ var NAVTREE =
 
 var NAVTREEINDEX =
 [
-"_f_a_e_s___c2__2025_2firmware_2drivers_2build_2_c_make_files_23_830_82_2_compiler_id_c_2_c_make_c_compiler_id_8c.html",
-"ble__mcu_8c.html#a1f5993000dcac629765473232f3ca332a8edf41e28a36066b125d1d9c54585bf3",
-"bootloader_2config_2sdkconfig_8h.html#a6d3ed865993155a56e917b1c5b7a9040",
-"bootloader_2config_2sdkconfig_8h.html#ae9c5aea03d43f09b943bed772fd757a4",
-"config_2sdkconfig_8h.html#a3173e4e7266c829a50d40463c25d3406",
-"config_2sdkconfig_8h.html#a713ca1384fec1823bf798c5cf5fbbe6c",
-"config_2sdkconfig_8h.html#aaf70d3caa29b330d3bf05e555f372d79",
-"config_2sdkconfig_8h.html#aeaad74425f34ddbcad9dbdd083e784d1",
-"globals_vars.html",
-"group___b_u_z_z_e_r.html#ga8086c9cb19cdacd01d2f0ffde5885f8b",
-"group___i_l_i9341.html#ga46360a506ec04c0ca618ee229bdad248",
-"group___m_p_u6050.html#ga50961409221f6d3716342de8be7bc392",
-"group___m_p_u6050.html#gac1940478f064230ee503daba0ba2f181",
-"hc__sr04_8c_source.html",
-"struct_font__t.html#af23dace797a41b40ec0e97b24c7feae9"
+"_a_d_x_l335_8c.html",
+"_si7007_8c.html#a78bd16b40e563713bb92b7a7d0f10b98",
+"bootloader_2config_2sdkconfig_8h.html#a354f2e1d2b78d1dfe1afdd842e5a3420",
+"bootloader_2config_2sdkconfig_8h.html#aa66d4cfcadfb2798e7e06afb00a741c2",
+"config_2sdkconfig_8h.html#a142f57010ee55912a22580d9931ba5be",
+"config_2sdkconfig_8h.html#a50377d1a633a356e58b7ba5fdbd338eb",
+"config_2sdkconfig_8h.html#a8fbee7c60cee309f7ccdc7db141df943",
+"config_2sdkconfig_8h.html#acb65624ffc6ef5708e4849a5a4894486",
+"dir_9994736eb9fad2bba169d1de5fc0d728.html",
+"globals_r.html",
+"group___b_u_z_z_e_r.html#ga4a673e851d3b7e3b56a7cd83fba56cc3",
+"group___i_c_o_n_s.html#gga945c9cb2ded81b38da222e91d09df40bae29c45e373c9c4078456c060a11eceed",
+"group___m_p_u6050.html#ga48ebc61e42fb37e13be19869c7391e7a",
+"group___m_p_u6050.html#gab7c183cb70ea24f3a8ebb8f8e561b0c2",
+"group___u_a_r_t.html#ga00c7e785d2874c52bab6e4dba88a5e23",
+"max3010x_8c.html#af6bfe9c1163c6aa21d3a5abb679ca1e6",
+"structesp__hidd__cb__param__t_1_1hidd__connect__evt__param.html#a71a8a39270ae1bf01ad381dca0e95c1b"
 ];
 
 var SYNCONMSG = 'pulsar para deshabilitar sincronización';

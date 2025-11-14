@@ -1,0 +1,257 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.14.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Proyecto integrador: Archivo de código fuente C:/Repositorios/Gottig_Faes_2C_2025/firmware/drivers/devices/src/ADXL335.c</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+  $(function() { init_search(); });
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectlogo"><img alt="Logo" src="fiuner.png"/></td>
+  <td id="projectalign">
+   <div id="projectname">Proyecto integrador<span id="projectnumber">&#160;1.0</span>
+   </div>
+   <div id="projectbrief">Control automatico del nivel de agua</div>
+  </td>
+    <td>        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <span id="MSearchSelect" class="search-icon" onmouseover="return searchBox.OnSearchSelectShow()" onmouseout="return searchBox.OnSearchSelectHide()"><span class="search-icon-dropdown"></span></span>
+          <input type="text" id="MSearchField" value="" placeholder="Buscar" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><div id="MSearchCloseImg" class="close-icon"></div></a>
+          </span>
+        </div>
+</td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Generado por Doxygen 1.14.0 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+</script>
+<script type="text/javascript">
+$(function() { codefold.init(); });
+</script>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(function(){initNavTree('_a_d_x_l335_8c_source.html','',''); });
+</script>
+<div id="container">
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Cargando...</div>
+<div class="SRStatus" id="Searching">Buscando...</div>
+<div class="SRStatus" id="NoMatches">Nada coincide</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">ADXL335.c</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="_a_d_x_l335_8c.html">Ir a la documentación de este archivo.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span></div>
+<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span> </div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="comment">/*</span></div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="comment"> * Initials     Name</span></div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="comment"> * ---------------------------</span></div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="comment"> *</span></div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="comment"> */</span></div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span> </div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="comment">/*</span></div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="comment"> * modification history (new versions first)</span></div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="comment"> * -----------------------------------------------------------</span></div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="comment"> * 20210609 v0.0.1 initials initial version</span></div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="comment"> */</span></div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span> </div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span><span class="comment">/*==================[inclusions]=============================================*/</span></div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span><span class="preprocessor">#include &quot;<a class="code" href="_a_d_x_l335_8h.html">ADXL335.h</a>&quot;</span></div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span> </div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span><span class="comment">/*==================[macros and definitions]=================================*/</span></div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno"><a class="line" href="_a_d_x_l335_8c.html#a0637861f9419cef73e2e7e6210280e4e">   24</a></span><span class="preprocessor">#define MAX_VOLTAGE 3300</span><span class="preprocessor"></span></div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno"><a class="line" href="_a_d_x_l335_8c.html#a4ce3e2af80a76d816ab7f8567ec4a65a">   28</a></span><span class="preprocessor">#define MAX_VALUE 1024</span><span class="preprocessor"></span></div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno"><a class="line" href="_a_d_x_l335_8c.html#a21005f9f4e2ce7597c5eb4351816d7e2">   32</a></span><span class="preprocessor">#define OFFSET 3300.0/2.0</span><span class="preprocessor"></span></div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno"><a class="line" href="_a_d_x_l335_8c.html#aa6ac8087ed34271031291f59014fe310">   36</a></span><span class="preprocessor">#define SENSITIVITY 300.0</span></div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span> </div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span><span class="comment">/*==================[internal data declaration]==============================*/</span></div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span> </div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno"><a class="line" href="_a_d_x_l335_8c.html#a7fbb6f80b04507a51d3dcb3283913db6">   40</a></span><span class="keywordtype">bool</span> <a class="code hl_variable" href="_a_d_x_l335_8c.html#a7fbb6f80b04507a51d3dcb3283913db6">conversion</a>; </div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno"><a class="line" href="_a_d_x_l335_8c.html#a6555bc6e0e12aed1d6d19dcd2128e508">   41</a></span>uint16_t <a class="code hl_variable" href="_a_d_x_l335_8c.html#a6555bc6e0e12aed1d6d19dcd2128e508">valor</a>; </div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno"><a class="line" href="_a_d_x_l335_8c.html#a5825c2ddd7aa9484e989c4e864d2ac95">   42</a></span>uint8_t <a class="code hl_variable" href="_a_d_x_l335_8c.html#a5825c2ddd7aa9484e989c4e864d2ac95">canal</a>; </div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span> </div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span><span class="comment">/*==================[internal functions declaration]=========================*/</span></div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span></div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span><span class="keywordtype">float</span> <a class="code hl_function" href="_a_d_x_l335_8c.html#a3512d44496e0aea11d08f85c219b4074">UnitConvert</a>(uint16_t value);</div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span> </div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span><span class="comment">/*==================[internal data definition]===============================*/</span></div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span> </div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span> </div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span> </div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span><span class="comment">/*==================[external data definition]===============================*/</span></div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span> </div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno"><a class="line" href="_a_d_x_l335_8c.html#a209669fbff866b238040eb14df41501d">   58</a></span><a class="code hl_struct" href="structanalog__input__config__t.html">analog_input_config_t</a> <a class="code hl_variable" href="_a_d_x_l335_8c.html#a209669fbff866b238040eb14df41501d">my_ad_x</a> = {<a class="code hl_enumvalue" href="group___analog___i_o.html#gga4ebdf50515e5d73c58c24fd1491770dca703cf81b7a9530ba8650e0ee2f29d68e">CH1</a>,<a class="code hl_enumvalue" href="group___analog___i_o.html#gga51acd785c14953090a3507d4fa8e5939a3b0a8cf9a7759ea8b7c9494eb7fb3dd4">ADC_SINGLE</a>}; </div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno"><a class="line" href="_a_d_x_l335_8c.html#afd2d040077c6ce377b2bb89ce5720d5e">   59</a></span><a class="code hl_struct" href="structanalog__input__config__t.html">analog_input_config_t</a> <a class="code hl_variable" href="_a_d_x_l335_8c.html#afd2d040077c6ce377b2bb89ce5720d5e">my_ad_y</a> = {<a class="code hl_enumvalue" href="group___analog___i_o.html#gga4ebdf50515e5d73c58c24fd1491770dcae574b39c34bd88c27ea641014831e53a">CH2</a>,<a class="code hl_enumvalue" href="group___analog___i_o.html#gga51acd785c14953090a3507d4fa8e5939a3b0a8cf9a7759ea8b7c9494eb7fb3dd4">ADC_SINGLE</a>}; </div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno"><a class="line" href="_a_d_x_l335_8c.html#a6778905988ec70236d52d30564c6c767">   60</a></span><a class="code hl_struct" href="structanalog__input__config__t.html">analog_input_config_t</a> <a class="code hl_variable" href="_a_d_x_l335_8c.html#a6778905988ec70236d52d30564c6c767">my_ad_z</a> = {<a class="code hl_enumvalue" href="group___analog___i_o.html#gga4ebdf50515e5d73c58c24fd1491770dcaaee6d12bf63ae430250764aa97e9e429">CH3</a>,<a class="code hl_enumvalue" href="group___analog___i_o.html#gga51acd785c14953090a3507d4fa8e5939a3b0a8cf9a7759ea8b7c9494eb7fb3dd4">ADC_SINGLE</a>}; </div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span> </div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span><span class="comment">/*==================[internal functions definition]==========================*/</span></div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span> </div>
+<div class="foldopen" id="foldopen00064" data-start="{" data-end="}">
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno"><a class="line" href="_a_d_x_l335_8c.html#a3512d44496e0aea11d08f85c219b4074">   64</a></span><span class="keywordtype">float</span> <a class="code hl_function" href="_a_d_x_l335_8c.html#a3512d44496e0aea11d08f85c219b4074">UnitConvert</a>(uint16_t value){</div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span> </div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span>    <span class="keywordtype">float</span> new_value;</div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span> </div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>    new_value = value - <a class="code hl_define" href="_a_d_x_l335_8c.html#a21005f9f4e2ce7597c5eb4351816d7e2">OFFSET</a>;</div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>    new_value = new_value/<a class="code hl_define" href="_a_d_x_l335_8c.html#aa6ac8087ed34271031291f59014fe310">SENSITIVITY</a>;</div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span> </div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>    <span class="keywordflow">return</span> new_value;</div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>}</div>
+</div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span> </div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span><span class="comment">/*==================[external functions definition]==========================*/</span></div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span> </div>
+<div class="foldopen" id="foldopen00076" data-start="{" data-end="}">
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno"><a class="line" href="group___a_d_x_l335.html#ga211e2099d68d50da5c6e2aa1e3bc958a">   76</a></span><span class="keywordtype">bool</span> <a class="code hl_function" href="group___a_d_x_l335.html#ga211e2099d68d50da5c6e2aa1e3bc958a">ADXL335Init</a>(){</div>
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span>    <a class="code hl_function" href="group___analog___i_o.html#ga24ce5556aa4682468220b982f151cdfe">AnalogInputInit</a>(&amp;<a class="code hl_variable" href="_a_d_x_l335_8c.html#a209669fbff866b238040eb14df41501d">my_ad_x</a>);</div>
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>    <a class="code hl_function" href="group___analog___i_o.html#ga24ce5556aa4682468220b982f151cdfe">AnalogInputInit</a>(&amp;<a class="code hl_variable" href="_a_d_x_l335_8c.html#afd2d040077c6ce377b2bb89ce5720d5e">my_ad_y</a>);</div>
+<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span>    <a class="code hl_function" href="group___analog___i_o.html#ga24ce5556aa4682468220b982f151cdfe">AnalogInputInit</a>(&amp;<a class="code hl_variable" href="_a_d_x_l335_8c.html#a6778905988ec70236d52d30564c6c767">my_ad_z</a>);</div>
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>    <span class="keywordflow">return</span> 1;</div>
+<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span>}</div>
+</div>
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span> </div>
+<div class="foldopen" id="foldopen00083" data-start="{" data-end="}">
+<div class="line"><a id="l00083" name="l00083"></a><span class="lineno"><a class="line" href="group___a_d_x_l335.html#ga49f0de5ca002527c9e5b84c5bc8ef4ab">   83</a></span><span class="keywordtype">int</span> <a class="code hl_function" href="group___a_d_x_l335.html#ga49f0de5ca002527c9e5b84c5bc8ef4ab">ReadXValueInt</a>(){</div>
+<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span>    <a class="code hl_function" href="group___analog___i_o.html#gab5ae00a35744f407072230979e593fd9">AnalogInputReadSingle</a>(<a class="code hl_variable" href="_a_d_x_l335_8c.html#a209669fbff866b238040eb14df41501d">my_ad_x</a>.input, &amp;<a class="code hl_variable" href="_a_d_x_l335_8c.html#a6555bc6e0e12aed1d6d19dcd2128e508">valor</a>);</div>
+<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span>    <span class="keywordflow">return</span> <a class="code hl_variable" href="_a_d_x_l335_8c.html#a6555bc6e0e12aed1d6d19dcd2128e508">valor</a>;</div>
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>}</div>
+</div>
+<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span> </div>
+<div class="foldopen" id="foldopen00088" data-start="{" data-end="}">
+<div class="line"><a id="l00088" name="l00088"></a><span class="lineno"><a class="line" href="group___a_d_x_l335.html#gac62564c41a96ceca5b38d6b73ef4c6f9">   88</a></span><span class="keywordtype">float</span> <a class="code hl_function" href="group___a_d_x_l335.html#gac62564c41a96ceca5b38d6b73ef4c6f9">ReadXValue</a>(){</div>
+<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span>    <a class="code hl_function" href="group___analog___i_o.html#gab5ae00a35744f407072230979e593fd9">AnalogInputReadSingle</a>(<a class="code hl_variable" href="_a_d_x_l335_8c.html#a209669fbff866b238040eb14df41501d">my_ad_x</a>.input, &amp;<a class="code hl_variable" href="_a_d_x_l335_8c.html#a6555bc6e0e12aed1d6d19dcd2128e508">valor</a>);</div>
+<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span>    <span class="keywordflow">return</span> <a class="code hl_function" href="_a_d_x_l335_8c.html#a3512d44496e0aea11d08f85c219b4074">UnitConvert</a>(<a class="code hl_variable" href="_a_d_x_l335_8c.html#a6555bc6e0e12aed1d6d19dcd2128e508">valor</a>);</div>
+<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span>}</div>
+</div>
+<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span> </div>
+<div class="foldopen" id="foldopen00093" data-start="{" data-end="}">
+<div class="line"><a id="l00093" name="l00093"></a><span class="lineno"><a class="line" href="group___a_d_x_l335.html#ga6a3b0bb40402200bd34edb61487d38f4">   93</a></span><span class="keywordtype">int</span> <a class="code hl_function" href="group___a_d_x_l335.html#ga6a3b0bb40402200bd34edb61487d38f4">ReadYValueInt</a>(){</div>
+<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span>    <a class="code hl_function" href="group___analog___i_o.html#gab5ae00a35744f407072230979e593fd9">AnalogInputReadSingle</a>(<a class="code hl_variable" href="_a_d_x_l335_8c.html#afd2d040077c6ce377b2bb89ce5720d5e">my_ad_y</a>.input, &amp;<a class="code hl_variable" href="_a_d_x_l335_8c.html#a6555bc6e0e12aed1d6d19dcd2128e508">valor</a>);</div>
+<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span>    <span class="keywordflow">return</span> <a class="code hl_variable" href="_a_d_x_l335_8c.html#a6555bc6e0e12aed1d6d19dcd2128e508">valor</a>;</div>
+<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span>}</div>
+</div>
+<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span> </div>
+<div class="foldopen" id="foldopen00098" data-start="{" data-end="}">
+<div class="line"><a id="l00098" name="l00098"></a><span class="lineno"><a class="line" href="group___a_d_x_l335.html#ga25995f82b10255c8466cbb01308ae375">   98</a></span><span class="keywordtype">float</span> <a class="code hl_function" href="group___a_d_x_l335.html#ga25995f82b10255c8466cbb01308ae375">ReadYValue</a>(){</div>
+<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span>    <a class="code hl_function" href="group___analog___i_o.html#gab5ae00a35744f407072230979e593fd9">AnalogInputReadSingle</a>(<a class="code hl_variable" href="_a_d_x_l335_8c.html#afd2d040077c6ce377b2bb89ce5720d5e">my_ad_y</a>.input, &amp;<a class="code hl_variable" href="_a_d_x_l335_8c.html#a6555bc6e0e12aed1d6d19dcd2128e508">valor</a>);</div>
+<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span>    <span class="keywordflow">return</span> <a class="code hl_function" href="_a_d_x_l335_8c.html#a3512d44496e0aea11d08f85c219b4074">UnitConvert</a>(<a class="code hl_variable" href="_a_d_x_l335_8c.html#a6555bc6e0e12aed1d6d19dcd2128e508">valor</a>);</div>
+<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span>}</div>
+</div>
+<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span> </div>
+<div class="foldopen" id="foldopen00103" data-start="{" data-end="}">
+<div class="line"><a id="l00103" name="l00103"></a><span class="lineno"><a class="line" href="group___a_d_x_l335.html#ga86201b6c6a037fa4d755d924221db52f">  103</a></span><span class="keywordtype">int</span> <a class="code hl_function" href="group___a_d_x_l335.html#ga86201b6c6a037fa4d755d924221db52f">ReadZValueInt</a>(){</div>
+<div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span>    <a class="code hl_function" href="group___analog___i_o.html#gab5ae00a35744f407072230979e593fd9">AnalogInputReadSingle</a>(<a class="code hl_variable" href="_a_d_x_l335_8c.html#a6778905988ec70236d52d30564c6c767">my_ad_z</a>.input, &amp;<a class="code hl_variable" href="_a_d_x_l335_8c.html#a6555bc6e0e12aed1d6d19dcd2128e508">valor</a>);</div>
+<div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span>    <span class="keywordflow">return</span> <a class="code hl_variable" href="_a_d_x_l335_8c.html#a6555bc6e0e12aed1d6d19dcd2128e508">valor</a>*4; <span class="comment">/* Resistor divider for HCSR-04 */</span></div>
+<div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span>}</div>
+</div>
+<div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span> </div>
+<div class="foldopen" id="foldopen00108" data-start="{" data-end="}">
+<div class="line"><a id="l00108" name="l00108"></a><span class="lineno"><a class="line" href="group___a_d_x_l335.html#gace645c520fdd92b45b72c711e26fe9e0">  108</a></span><span class="keywordtype">float</span> <a class="code hl_function" href="group___a_d_x_l335.html#gace645c520fdd92b45b72c711e26fe9e0">ReadZValue</a>(){</div>
+<div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span>    <a class="code hl_function" href="group___analog___i_o.html#gab5ae00a35744f407072230979e593fd9">AnalogInputReadSingle</a>(<a class="code hl_variable" href="_a_d_x_l335_8c.html#a6778905988ec70236d52d30564c6c767">my_ad_z</a>.input, &amp;<a class="code hl_variable" href="_a_d_x_l335_8c.html#a6555bc6e0e12aed1d6d19dcd2128e508">valor</a>);</div>
+<div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span>    <span class="keywordflow">return</span> <a class="code hl_function" href="_a_d_x_l335_8c.html#a3512d44496e0aea11d08f85c219b4074">UnitConvert</a>(<a class="code hl_variable" href="_a_d_x_l335_8c.html#a6555bc6e0e12aed1d6d19dcd2128e508">valor</a>*4); <span class="comment">/* Resistor divider for HCSR-04 */</span></div>
+<div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span>}</div>
+</div>
+<div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span> </div>
+<div class="foldopen" id="foldopen00113" data-start="{" data-end="}">
+<div class="line"><a id="l00113" name="l00113"></a><span class="lineno"><a class="line" href="_a_d_x_l335_8c.html#a4aa223bf8916fae4a03467cd4a65458e">  113</a></span><span class="keywordtype">bool</span> <a class="code hl_function" href="_a_d_x_l335_8c.html#a4aa223bf8916fae4a03467cd4a65458e">ADXL335DeInit</a>(<a class="code hl_typedef" href="group___g_i_o_p.html#gac6f7bd4f7ee306a4519f04641cbf2d67">gpio_t</a> gSelect1, <a class="code hl_typedef" href="group___g_i_o_p.html#gac6f7bd4f7ee306a4519f04641cbf2d67">gpio_t</a> gSelect2){</div>
+<div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span> </div>
+<div class="line"><a id="l00115" name="l00115"></a><span class="lineno">  115</span>    <span class="keywordflow">return</span> 1;</div>
+<div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span>}</div>
+</div>
+<div class="line"><a id="l00117" name="l00117"></a><span class="lineno">  117</span></div>
+<div class="line"><a id="l00120" name="l00120"></a><span class="lineno">  120</span><span class="comment">/*==================[end of file]============================================*/</span></div>
+<div class="ttc" id="a_a_d_x_l335_8c_html_a209669fbff866b238040eb14df41501d"><div class="ttname"><a href="_a_d_x_l335_8c.html#a209669fbff866b238040eb14df41501d">my_ad_x</a></div><div class="ttdeci">analog_input_config_t my_ad_x</div><div class="ttdef"><b>Definition</b> <a href="#l00058">ADXL335.c:58</a></div></div>
+<div class="ttc" id="a_a_d_x_l335_8c_html_a21005f9f4e2ce7597c5eb4351816d7e2"><div class="ttname"><a href="_a_d_x_l335_8c.html#a21005f9f4e2ce7597c5eb4351816d7e2">OFFSET</a></div><div class="ttdeci">#define OFFSET</div><div class="ttdoc">Mitad del valor máximo de voltaje correspondiente en bits.</div><div class="ttdef"><b>Definition</b> <a href="#l00032">ADXL335.c:32</a></div></div>
+<div class="ttc" id="a_a_d_x_l335_8c_html_a3512d44496e0aea11d08f85c219b4074"><div class="ttname"><a href="_a_d_x_l335_8c.html#a3512d44496e0aea11d08f85c219b4074">UnitConvert</a></div><div class="ttdeci">float UnitConvert(uint16_t value)</div><div class="ttdoc">Función que convierte el valor leído en unidades de gravedad.</div><div class="ttdef"><b>Definition</b> <a href="#l00064">ADXL335.c:64</a></div></div>
+<div class="ttc" id="a_a_d_x_l335_8c_html_a4aa223bf8916fae4a03467cd4a65458e"><div class="ttname"><a href="_a_d_x_l335_8c.html#a4aa223bf8916fae4a03467cd4a65458e">ADXL335DeInit</a></div><div class="ttdeci">bool ADXL335DeInit(gpio_t gSelect1, gpio_t gSelect2)</div><div class="ttdef"><b>Definition</b> <a href="#l00113">ADXL335.c:113</a></div></div>
+<div class="ttc" id="a_a_d_x_l335_8c_html_a5825c2ddd7aa9484e989c4e864d2ac95"><div class="ttname"><a href="_a_d_x_l335_8c.html#a5825c2ddd7aa9484e989c4e864d2ac95">canal</a></div><div class="ttdeci">uint8_t canal</div><div class="ttdef"><b>Definition</b> <a href="#l00042">ADXL335.c:42</a></div></div>
+<div class="ttc" id="a_a_d_x_l335_8c_html_a6555bc6e0e12aed1d6d19dcd2128e508"><div class="ttname"><a href="_a_d_x_l335_8c.html#a6555bc6e0e12aed1d6d19dcd2128e508">valor</a></div><div class="ttdeci">uint16_t valor</div><div class="ttdef"><b>Definition</b> <a href="#l00041">ADXL335.c:41</a></div></div>
+<div class="ttc" id="a_a_d_x_l335_8c_html_a6778905988ec70236d52d30564c6c767"><div class="ttname"><a href="_a_d_x_l335_8c.html#a6778905988ec70236d52d30564c6c767">my_ad_z</a></div><div class="ttdeci">analog_input_config_t my_ad_z</div><div class="ttdef"><b>Definition</b> <a href="#l00060">ADXL335.c:60</a></div></div>
+<div class="ttc" id="a_a_d_x_l335_8c_html_a7fbb6f80b04507a51d3dcb3283913db6"><div class="ttname"><a href="_a_d_x_l335_8c.html#a7fbb6f80b04507a51d3dcb3283913db6">conversion</a></div><div class="ttdeci">bool conversion</div><div class="ttdef"><b>Definition</b> <a href="#l00040">ADXL335.c:40</a></div></div>
+<div class="ttc" id="a_a_d_x_l335_8c_html_aa6ac8087ed34271031291f59014fe310"><div class="ttname"><a href="_a_d_x_l335_8c.html#aa6ac8087ed34271031291f59014fe310">SENSITIVITY</a></div><div class="ttdeci">#define SENSITIVITY</div><div class="ttdoc">Valor de la sensibilidad dado por el driver.</div><div class="ttdef"><b>Definition</b> <a href="#l00036">ADXL335.c:36</a></div></div>
+<div class="ttc" id="a_a_d_x_l335_8c_html_afd2d040077c6ce377b2bb89ce5720d5e"><div class="ttname"><a href="_a_d_x_l335_8c.html#afd2d040077c6ce377b2bb89ce5720d5e">my_ad_y</a></div><div class="ttdeci">analog_input_config_t my_ad_y</div><div class="ttdef"><b>Definition</b> <a href="#l00059">ADXL335.c:59</a></div></div>
+<div class="ttc" id="a_a_d_x_l335_8h_html"><div class="ttname"><a href="_a_d_x_l335_8h.html">ADXL335.h</a></div></div>
+<div class="ttc" id="agroup___a_d_x_l335_html_ga211e2099d68d50da5c6e2aa1e3bc958a"><div class="ttname"><a href="group___a_d_x_l335.html#ga211e2099d68d50da5c6e2aa1e3bc958a">ADXL335Init</a></div><div class="ttdeci">bool ADXL335Init()</div><div class="ttdoc">driver que maneja la lectura de datos obtenida a partir de un acelerómetro.</div><div class="ttdef"><b>Definition</b> <a href="#l00076">ADXL335.c:76</a></div></div>
+<div class="ttc" id="agroup___a_d_x_l335_html_ga25995f82b10255c8466cbb01308ae375"><div class="ttname"><a href="group___a_d_x_l335.html#ga25995f82b10255c8466cbb01308ae375">ReadYValue</a></div><div class="ttdeci">float ReadYValue()</div><div class="ttdoc">Función que lee el pin y del driver y devuelve el valor convertido de analógico a digital en unidades...</div><div class="ttdef"><b>Definition</b> <a href="#l00098">ADXL335.c:98</a></div></div>
+<div class="ttc" id="agroup___a_d_x_l335_html_ga49f0de5ca002527c9e5b84c5bc8ef4ab"><div class="ttname"><a href="group___a_d_x_l335.html#ga49f0de5ca002527c9e5b84c5bc8ef4ab">ReadXValueInt</a></div><div class="ttdeci">int ReadXValueInt()</div><div class="ttdef"><b>Definition</b> <a href="#l00083">ADXL335.c:83</a></div></div>
+<div class="ttc" id="agroup___a_d_x_l335_html_ga6a3b0bb40402200bd34edb61487d38f4"><div class="ttname"><a href="group___a_d_x_l335.html#ga6a3b0bb40402200bd34edb61487d38f4">ReadYValueInt</a></div><div class="ttdeci">int ReadYValueInt()</div><div class="ttdef"><b>Definition</b> <a href="#l00093">ADXL335.c:93</a></div></div>
+<div class="ttc" id="agroup___a_d_x_l335_html_ga86201b6c6a037fa4d755d924221db52f"><div class="ttname"><a href="group___a_d_x_l335.html#ga86201b6c6a037fa4d755d924221db52f">ReadZValueInt</a></div><div class="ttdeci">int ReadZValueInt()</div><div class="ttdef"><b>Definition</b> <a href="#l00103">ADXL335.c:103</a></div></div>
+<div class="ttc" id="agroup___a_d_x_l335_html_gac62564c41a96ceca5b38d6b73ef4c6f9"><div class="ttname"><a href="group___a_d_x_l335.html#gac62564c41a96ceca5b38d6b73ef4c6f9">ReadXValue</a></div><div class="ttdeci">float ReadXValue()</div><div class="ttdoc">Función que lee el pin x del driver y devuelve el valor convertido de analógico a digital en unidades...</div><div class="ttdef"><b>Definition</b> <a href="#l00088">ADXL335.c:88</a></div></div>
+<div class="ttc" id="agroup___a_d_x_l335_html_gace645c520fdd92b45b72c711e26fe9e0"><div class="ttname"><a href="group___a_d_x_l335.html#gace645c520fdd92b45b72c711e26fe9e0">ReadZValue</a></div><div class="ttdeci">float ReadZValue()</div><div class="ttdoc">Función que lee el pin z del driver y devuelve el valor convertido de analógico a digital en unidades...</div><div class="ttdef"><b>Definition</b> <a href="#l00108">ADXL335.c:108</a></div></div>
+<div class="ttc" id="agroup___analog___i_o_html_ga24ce5556aa4682468220b982f151cdfe"><div class="ttname"><a href="group___analog___i_o.html#ga24ce5556aa4682468220b982f151cdfe">AnalogInputInit</a></div><div class="ttdeci">void AnalogInputInit(analog_input_config_t *config)</div><div class="ttdoc">Analog input initialization.</div><div class="ttdef"><b>Definition</b> <a href="analog__io__mcu_8c_source.html#l00045">analog_io_mcu.c:45</a></div></div>
+<div class="ttc" id="agroup___analog___i_o_html_gab5ae00a35744f407072230979e593fd9"><div class="ttname"><a href="group___analog___i_o.html#gab5ae00a35744f407072230979e593fd9">AnalogInputReadSingle</a></div><div class="ttdeci">void AnalogInputReadSingle(adc_ch_t channel, uint16_t *value)</div><div class="ttdoc">Read single channel.</div><div class="ttdef"><b>Definition</b> <a href="analog__io__mcu_8c_source.html#l00130">analog_io_mcu.c:130</a></div></div>
+<div class="ttc" id="agroup___analog___i_o_html_gga4ebdf50515e5d73c58c24fd1491770dca703cf81b7a9530ba8650e0ee2f29d68e"><div class="ttname"><a href="group___analog___i_o.html#gga4ebdf50515e5d73c58c24fd1491770dca703cf81b7a9530ba8650e0ee2f29d68e">CH1</a></div><div class="ttdeci">@ CH1</div><div class="ttdef"><b>Definition</b> <a href="analog__io__mcu_8h_source.html#l00032">analog_io_mcu.h:32</a></div></div>
+<div class="ttc" id="agroup___analog___i_o_html_gga4ebdf50515e5d73c58c24fd1491770dcaaee6d12bf63ae430250764aa97e9e429"><div class="ttname"><a href="group___analog___i_o.html#gga4ebdf50515e5d73c58c24fd1491770dcaaee6d12bf63ae430250764aa97e9e429">CH3</a></div><div class="ttdeci">@ CH3</div><div class="ttdef"><b>Definition</b> <a href="analog__io__mcu_8h_source.html#l00034">analog_io_mcu.h:34</a></div></div>
+<div class="ttc" id="agroup___analog___i_o_html_gga4ebdf50515e5d73c58c24fd1491770dcae574b39c34bd88c27ea641014831e53a"><div class="ttname"><a href="group___analog___i_o.html#gga4ebdf50515e5d73c58c24fd1491770dcae574b39c34bd88c27ea641014831e53a">CH2</a></div><div class="ttdeci">@ CH2</div><div class="ttdef"><b>Definition</b> <a href="analog__io__mcu_8h_source.html#l00033">analog_io_mcu.h:33</a></div></div>
+<div class="ttc" id="agroup___analog___i_o_html_gga51acd785c14953090a3507d4fa8e5939a3b0a8cf9a7759ea8b7c9494eb7fb3dd4"><div class="ttname"><a href="group___analog___i_o.html#gga51acd785c14953090a3507d4fa8e5939a3b0a8cf9a7759ea8b7c9494eb7fb3dd4">ADC_SINGLE</a></div><div class="ttdeci">@ ADC_SINGLE</div><div class="ttdef"><b>Definition</b> <a href="analog__io__mcu_8h_source.html#l00038">analog_io_mcu.h:38</a></div></div>
+<div class="ttc" id="agroup___g_i_o_p_html_gac6f7bd4f7ee306a4519f04641cbf2d67"><div class="ttname"><a href="group___g_i_o_p.html#gac6f7bd4f7ee306a4519f04641cbf2d67">gpio_t</a></div><div class="ttdeci">enum gpio_list gpio_t</div><div class="ttdoc">ESP32-C6 available GPIOs (not all of them are available in ESP-EDU)</div></div>
+<div class="ttc" id="astructanalog__input__config__t_html"><div class="ttname"><a href="structanalog__input__config__t.html">analog_input_config_t</a></div><div class="ttdoc">Analog inputs config structure.</div><div class="ttdef"><b>Definition</b> <a href="analog__io__mcu_8h_source.html#l00048">analog_io_mcu.h:48</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+</div><!-- container -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a href="dir_d9edf6c004b4a7ff14fe9ae7a92214ee.html">firmware</a></li><li class="navelem"><a href="dir_4774754e228843183aac8de48667fdde.html">drivers</a></li><li class="navelem"><a href="dir_01f3b75bad316aed7476a5f4cbb25c84.html">devices</a></li><li class="navelem"><a href="dir_2602097dce81420f4880be8af28b7cd8.html">src</a></li><li class="navelem"><a href="_a_d_x_l335_8c.html">ADXL335.c</a></li>
+    <li class="footer">Generado por <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.14.0 </li>
+  </ul>
+</div>
+</body>
+</html>

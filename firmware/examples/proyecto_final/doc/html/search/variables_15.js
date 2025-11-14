@@ -1,6 +1,5 @@
 var searchData=
 [
-  ['xdelaysemaphore_0',['xDelaySemaphore',['../delay__mcu_8c.html#a8cbb624f29c386c226aaca57a2cfd539',1,'delay_mcu.c']]],
-  ['xqueueevents_1',['xQueueEvents',['../ble__mcu_8c.html#ad0d8433b87f1fb35a8f2288f68802f99',1,'ble_mcu.c']]],
-  ['xqueueread_2',['xQueueRead',['../ble__mcu_8c.html#a53afd88993a442ebd031bb8525c6a8c1',1,'ble_mcu.c']]]
+  ['wday_0',['wday',['../structrtc__t.html#acf7d2d98117c452b351c130883b70eba',1,'rtc_t']]],
+  ['width_1',['width',['../structchar__info__t.html#a09a2a45f731b02946ff6d3cd15c1a476',1,'char_info_t::width'],['../structicon__font__t.html#a09a2a45f731b02946ff6d3cd15c1a476',1,'icon_font_t::width'],['../structorientation__properties__t.html#ad0eab1042455a2067c812ab8071d5376',1,'orientation_properties_t::width']]]
 ];

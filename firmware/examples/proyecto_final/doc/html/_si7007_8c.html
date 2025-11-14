@@ -1,0 +1,224 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.14.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Proyecto integrador: Referencia del archivo C:/Repositorios/Gottig_Faes_2C_2025/firmware/drivers/devices/src/Si7007.c</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+  $(function() { init_search(); });
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectlogo"><img alt="Logo" src="fiuner.png"/></td>
+  <td id="projectalign">
+   <div id="projectname">Proyecto integrador<span id="projectnumber">&#160;1.0</span>
+   </div>
+   <div id="projectbrief">Control automatico del nivel de agua</div>
+  </td>
+    <td>        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <span id="MSearchSelect" class="search-icon" onmouseover="return searchBox.OnSearchSelectShow()" onmouseout="return searchBox.OnSearchSelectHide()"><span class="search-icon-dropdown"></span></span>
+          <input type="text" id="MSearchField" value="" placeholder="Buscar" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><div id="MSearchCloseImg" class="close-icon"></div></a>
+          </span>
+        </div>
+</td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Generado por Doxygen 1.14.0 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+</script>
+<script type="text/javascript">
+$(function() { codefold.init(); });
+</script>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(function(){initNavTree('_si7007_8c.html','',''); });
+</script>
+<div id="container">
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Cargando...</div>
+<div class="SRStatus" id="Searching">Buscando...</div>
+<div class="SRStatus" id="NoMatches">Nada coincide</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">Referencia del archivo Si7007.c</div></div>
+</div><!--header-->
+<div class="contents">
+<div class="textblock"><code>#include &quot;<a class="el" href="_si7007_8h_source.html">Si7007.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="gpio__mcu_8h_source.html">gpio_mcu.h</a>&quot;</code><br />
+<code>#include &lt;stdio.h&gt;</code><br />
+<code>#include &lt;stdint.h&gt;</code><br />
+</div>
+<p><a href="_si7007_8c_source.html">Ir al código fuente de este archivo.</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-define-members" class="groupheader"><a id="define-members" name="define-members"></a>
+defines</h2></td></tr>
+<tr class="memitem:a78bd16b40e563713bb92b7a7d0f10b98" id="r_a78bd16b40e563713bb92b7a7d0f10b98"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a78bd16b40e563713bb92b7a7d0f10b98">V_REF</a>&#160;&#160;&#160;3.3</td></tr>
+<tr class="memdesc:a78bd16b40e563713bb92b7a7d0f10b98"><td class="mdescLeft">&#160;</td><td class="mdescRight">Driver for SI7007 H/T sensor.  <br /></td></tr>
+<tr class="memitem:a32f09dc6ffd60fee4ba2e4aef1564505" id="r_a32f09dc6ffd60fee4ba2e4aef1564505"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a32f09dc6ffd60fee4ba2e4aef1564505">TOTAL_BITS</a>&#160;&#160;&#160;1024</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-func-members" class="groupheader"><a id="func-members" name="func-members"></a>
+Funciones</h2></td></tr>
+<tr class="memitem:ga8692b210349b0b2b7fd2ef2ccc4c526a" id="r_ga8692b210349b0b2b7fd2ef2ccc4c526a"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___sensor___ty_h.html#ga8692b210349b0b2b7fd2ef2ccc4c526a">Si7007Init</a> (<a class="el" href="struct_si7007__config.html">Si7007_config</a> *pins)</td></tr>
+<tr class="memdesc:ga8692b210349b0b2b7fd2ef2ccc4c526a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Initialization function of Si7007.  <br /></td></tr>
+<tr class="memitem:gaf9633c44a37586283e7630ff73977403" id="r_gaf9633c44a37586283e7630ff73977403"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___sensor___ty_h.html#gaf9633c44a37586283e7630ff73977403">Si7007MeasureTemperature</a> (void)</td></tr>
+<tr class="memdesc:gaf9633c44a37586283e7630ff73977403"><td class="mdescLeft">&#160;</td><td class="mdescRight">Measures the current temperature.  <br /></td></tr>
+<tr class="memitem:ga408546f0da31f8f7513276786cf0c615" id="r_ga408546f0da31f8f7513276786cf0c615"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___sensor___ty_h.html#ga408546f0da31f8f7513276786cf0c615">Si7007MeasureHumidity</a> (void)</td></tr>
+<tr class="memdesc:ga408546f0da31f8f7513276786cf0c615"><td class="mdescLeft">&#160;</td><td class="mdescRight">Measures the current relative humidity.  <br /></td></tr>
+<tr class="memitem:gadea4f1714669ec6892709c21fd62cae6" id="r_gadea4f1714669ec6892709c21fd62cae6"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group___sensor___ty_h.html#gadea4f1714669ec6892709c21fd62cae6">Si7007Deinit</a> (<a class="el" href="struct_si7007__config.html">Si7007_config</a> *pins)</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-var-members" class="groupheader"><a id="var-members" name="var-members"></a>
+Variables</h2></td></tr>
+<tr class="memitem:a686c98b1bf6adde51e96cc0c3910060b" id="r_a686c98b1bf6adde51e96cc0c3910060b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structanalog__input__config__t.html">analog_input_config_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a686c98b1bf6adde51e96cc0c3910060b">temp_config</a></td></tr>
+<tr class="memitem:abc0ae5c416dacc9d8d4d4a114e95421c" id="r_abc0ae5c416dacc9d8d4d4a114e95421c"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structanalog__input__config__t.html">analog_input_config_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#abc0ae5c416dacc9d8d4d4a114e95421c">hum_config</a></td></tr>
+</table>
+<a name="doc-define-members" id="doc-define-members"></a><h2 id="header-doc-define-members" class="groupheader">Documentación de «define»</h2>
+<a id="a32f09dc6ffd60fee4ba2e4aef1564505" name="a32f09dc6ffd60fee4ba2e4aef1564505"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a32f09dc6ffd60fee4ba2e4aef1564505">&#9670;&#160;</a></span>TOTAL_BITS</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define TOTAL_BITS&#160;&#160;&#160;1024</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>Cantidad total de bits </p>
+
+<p class="definition">Definición en la línea <a class="el" href="_si7007_8c_source.html#l00065">65</a> del archivo <a class="el" href="_si7007_8c_source.html">Si7007.c</a>.</p>
+
+</div>
+</div>
+<a id="a78bd16b40e563713bb92b7a7d0f10b98" name="a78bd16b40e563713bb92b7a7d0f10b98"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a78bd16b40e563713bb92b7a7d0f10b98">&#9670;&#160;</a></span>V_REF</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define V_REF&#160;&#160;&#160;3.3</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Driver for SI7007 H/T sensor. </p>
+<p>Tensión de referencia </p>
+
+<p class="definition">Definición en la línea <a class="el" href="_si7007_8c_source.html#l00064">64</a> del archivo <a class="el" href="_si7007_8c_source.html">Si7007.c</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="_si7007_8c_source.html#l00112">Si7007MeasureHumidity()</a> y <a class="el" href="_si7007_8c_source.html#l00099">Si7007MeasureTemperature()</a>.</p>
+
+</div>
+</div>
+<a name="doc-var-members" id="doc-var-members"></a><h2 id="header-doc-var-members" class="groupheader">Documentación de variables</h2>
+<a id="abc0ae5c416dacc9d8d4d4a114e95421c" name="abc0ae5c416dacc9d8d4d4a114e95421c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abc0ae5c416dacc9d8d4d4a114e95421c">&#9670;&#160;</a></span>hum_config</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structanalog__input__config__t.html">analog_input_config_t</a> hum_config</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="_si7007_8c_source.html#l00070">70</a> del archivo <a class="el" href="_si7007_8c_source.html">Si7007.c</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="_si7007_8c_source.html#l00082">Si7007Init()</a> y <a class="el" href="_si7007_8c_source.html#l00112">Si7007MeasureHumidity()</a>.</p>
+
+</div>
+</div>
+<a id="a686c98b1bf6adde51e96cc0c3910060b" name="a686c98b1bf6adde51e96cc0c3910060b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a686c98b1bf6adde51e96cc0c3910060b">&#9670;&#160;</a></span>temp_config</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structanalog__input__config__t.html">analog_input_config_t</a> temp_config</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="_si7007_8c_source.html#l00069">69</a> del archivo <a class="el" href="_si7007_8c_source.html">Si7007.c</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="_si7007_8c_source.html#l00082">Si7007Init()</a> y <a class="el" href="_si7007_8c_source.html#l00099">Si7007MeasureTemperature()</a>.</p>
+
+</div>
+</div>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<div id="page-nav" class="page-nav-panel">
+<div id="page-nav-resize-handle"></div>
+<div id="page-nav-tree">
+<div id="page-nav-contents">
+</div><!-- page-nav-contents -->
+</div><!-- page-nav-tree -->
+</div><!-- page-nav -->
+</div><!-- container -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a href="dir_d9edf6c004b4a7ff14fe9ae7a92214ee.html">firmware</a></li><li class="navelem"><a href="dir_4774754e228843183aac8de48667fdde.html">drivers</a></li><li class="navelem"><a href="dir_01f3b75bad316aed7476a5f4cbb25c84.html">devices</a></li><li class="navelem"><a href="dir_2602097dce81420f4880be8af28b7cd8.html">src</a></li><li class="navelem"><a href="_si7007_8c.html">Si7007.c</a></li>
+    <li class="footer">Generado por <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.14.0 </li>
+  </ul>
+</div>
+</body>
+</html>

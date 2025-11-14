@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['orientation_5fproperties_5ft_0',['orientation_properties_t',['../structorientation__properties__t.html',1,'']]]
+  ['mfrc522_5ft_0',['MFRC522_T',['../struct_m_f_r_c522___t.html',1,'']]],
+  ['mifare_5fkey_1',['MIFARE_Key',['../struct_m_i_f_a_r_e___key.html',1,'']]]
 ];

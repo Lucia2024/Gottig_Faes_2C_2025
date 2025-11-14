@@ -1,0 +1,24 @@
+var _gottig___faes__2_c__2025_2firmware_2examples_2proyecto__final_2build_2bootloader_2_c_make_filese04d968f64630ce4c3dd0502ea04c4a7 =
+[
+    [ "__has_include", "_gottig___faes__2_c__2025_2firmware_2examples_2proyecto__final_2build_2bootloader_2_c_make_filese04d968f64630ce4c3dd0502ea04c4a7.html#ae5510d82e4946f1656f4969911c54736", null ],
+    [ "ARCHITECTURE_ID", "_gottig___faes__2_c__2025_2firmware_2examples_2proyecto__final_2build_2bootloader_2_c_make_filese04d968f64630ce4c3dd0502ea04c4a7.html#aba35d0d200deaeb06aee95ca297acb28", null ],
+    [ "COMPILER_ID", "_gottig___faes__2_c__2025_2firmware_2examples_2proyecto__final_2build_2bootloader_2_c_make_filese04d968f64630ce4c3dd0502ea04c4a7.html#a81dee0709ded976b2e0319239f72d174", null ],
+    [ "CXX_STD", "_gottig___faes__2_c__2025_2firmware_2examples_2proyecto__final_2build_2bootloader_2_c_make_filese04d968f64630ce4c3dd0502ea04c4a7.html#a34cc889e576a1ae6c84ae9e0a851ba21", null ],
+    [ "CXX_STD_11", "_gottig___faes__2_c__2025_2firmware_2examples_2proyecto__final_2build_2bootloader_2_c_make_filese04d968f64630ce4c3dd0502ea04c4a7.html#a2c21af1889e9ca5cda36069184cc3234", null ],
+    [ "CXX_STD_14", "_gottig___faes__2_c__2025_2firmware_2examples_2proyecto__final_2build_2bootloader_2_c_make_filese04d968f64630ce4c3dd0502ea04c4a7.html#a39fb4789a452bfb5df17d40f640dd720", null ],
+    [ "CXX_STD_17", "_gottig___faes__2_c__2025_2firmware_2examples_2proyecto__final_2build_2bootloader_2_c_make_filese04d968f64630ce4c3dd0502ea04c4a7.html#ae17f1ae0bf56cf631eadff4f73e96ff9", null ],
+    [ "CXX_STD_20", "_gottig___faes__2_c__2025_2firmware_2examples_2proyecto__final_2build_2bootloader_2_c_make_filese04d968f64630ce4c3dd0502ea04c4a7.html#aa52ec6104623a66734cc5d5d28733bed", null ],
+    [ "CXX_STD_23", "_gottig___faes__2_c__2025_2firmware_2examples_2proyecto__final_2build_2bootloader_2_c_make_filese04d968f64630ce4c3dd0502ea04c4a7.html#ae5e2d955d2884c65b7de2e1ad29a4f1d", null ],
+    [ "CXX_STD_98", "_gottig___faes__2_c__2025_2firmware_2examples_2proyecto__final_2build_2bootloader_2_c_make_filese04d968f64630ce4c3dd0502ea04c4a7.html#a2454727f55dd7af9210ab341ca8be2c8", null ],
+    [ "DEC", "_gottig___faes__2_c__2025_2firmware_2examples_2proyecto__final_2build_2bootloader_2_c_make_filese04d968f64630ce4c3dd0502ea04c4a7.html#ad1280362da42492bbc11aa78cbf776ad", null ],
+    [ "HEX", "_gottig___faes__2_c__2025_2firmware_2examples_2proyecto__final_2build_2bootloader_2_c_make_filese04d968f64630ce4c3dd0502ea04c4a7.html#a46d5d95daa1bef867bd0179594310ed5", null ],
+    [ "PLATFORM_ID", "_gottig___faes__2_c__2025_2firmware_2examples_2proyecto__final_2build_2bootloader_2_c_make_filese04d968f64630ce4c3dd0502ea04c4a7.html#adbc5372f40838899018fadbc89bd588b", null ],
+    [ "STRINGIFY", "_gottig___faes__2_c__2025_2firmware_2examples_2proyecto__final_2build_2bootloader_2_c_make_filese04d968f64630ce4c3dd0502ea04c4a7.html#a43e1cad902b6477bec893cb6430bd6c8", null ],
+    [ "STRINGIFY_HELPER", "_gottig___faes__2_c__2025_2firmware_2examples_2proyecto__final_2build_2bootloader_2_c_make_filese04d968f64630ce4c3dd0502ea04c4a7.html#a2ae9b72bb13abaabfcf2ee0ba7d3fa1d", null ],
+    [ "main", "_gottig___faes__2_c__2025_2firmware_2examples_2proyecto__final_2build_2bootloader_2_c_make_filese04d968f64630ce4c3dd0502ea04c4a7.html#a0ddf1224851353fc92bfbff6f499fa97", null ],
+    [ "info_arch", "_gottig___faes__2_c__2025_2firmware_2examples_2proyecto__final_2build_2bootloader_2_c_make_filese04d968f64630ce4c3dd0502ea04c4a7.html#a59647e99d304ed33b15cb284c27ed391", null ],
+    [ "info_compiler", "_gottig___faes__2_c__2025_2firmware_2examples_2proyecto__final_2build_2bootloader_2_c_make_filese04d968f64630ce4c3dd0502ea04c4a7.html#a4b0efeb7a5d59313986b3a0390f050f6", null ],
+    [ "info_language_extensions_default", "_gottig___faes__2_c__2025_2firmware_2examples_2proyecto__final_2build_2bootloader_2_c_make_filese04d968f64630ce4c3dd0502ea04c4a7.html#a0f46a8a39e09d9b803c4766904fd7e99", null ],
+    [ "info_language_standard_default", "_gottig___faes__2_c__2025_2firmware_2examples_2proyecto__final_2build_2bootloader_2_c_make_filese04d968f64630ce4c3dd0502ea04c4a7.html#a4607cccf070750927b458473ca82c090", null ],
+    [ "info_platform", "_gottig___faes__2_c__2025_2firmware_2examples_2proyecto__final_2build_2bootloader_2_c_make_filese04d968f64630ce4c3dd0502ea04c4a7.html#a2321403dee54ee23f0c2fa849c60f7d4", null ]
+];

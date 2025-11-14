@@ -1,0 +1,647 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.14.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Proyecto integrador: Referencia del archivo C:/Repositorios/Gottig_Faes_2C_2025/firmware/examples/proyecto_final/main/proyecto_final.c</title>
+<link rel="icon" href="icon.ico" type="image/x-icon" />
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+  $(function() { init_search(); });
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectlogo"><img alt="Logo" src="fiuner.png"/></td>
+  <td id="projectalign">
+   <div id="projectname">Proyecto integrador<span id="projectnumber">&#160;1.0</span>
+   </div>
+   <div id="projectbrief">Control automatico del nivel de agua</div>
+  </td>
+    <td>        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <span id="MSearchSelect" class="search-icon" onmouseover="return searchBox.OnSearchSelectShow()" onmouseout="return searchBox.OnSearchSelectHide()"><span class="search-icon-dropdown"></span></span>
+          <input type="text" id="MSearchField" value="" placeholder="Buscar" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><div id="MSearchCloseImg" class="close-icon"></div></a>
+          </span>
+        </div>
+</td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Generado por Doxygen 1.14.0 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+</script>
+<script type="text/javascript">
+$(function() { codefold.init(); });
+</script>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(function(){initNavTree('proyecto__final_8c.html','',''); });
+</script>
+<div id="container">
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Cargando...</div>
+<div class="SRStatus" id="Searching">Buscando...</div>
+<div class="SRStatus" id="NoMatches">Nada coincide</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">Referencia del archivo proyecto_final.c</div></div>
+</div><!--header-->
+<div class="contents">
+<div class="textblock"><code>#include &lt;stdio.h&gt;</code><br />
+<code>#include &lt;stdint.h&gt;</code><br />
+<code>#include &lt;stdbool.h&gt;</code><br />
+<code>#include &quot;freertos/FreeRTOS.h&quot;</code><br />
+<code>#include &quot;freertos/task.h&quot;</code><br />
+<code>#include &quot;<a class="el" href="timer__mcu_8h_source.html">timer_mcu.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="hc__sr04_8h_source.html">hc_sr04.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="uart__mcu_8h_source.html">uart_mcu.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="gpio__mcu_8h_source.html">gpio_mcu.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="led_8h_source.html">led.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="lcditse0803_8h_source.html">lcditse0803.h</a>&quot;</code><br />
+<code>#include &lt;string.h&gt;</code><br />
+<code>#include &quot;<a class="el" href="switch_8h_source.html">switch.h</a>&quot;</code><br />
+</div>
+<p><a href="proyecto__final_8c_source.html">Ir al código fuente de este archivo.</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-define-members" class="groupheader"><a id="define-members" name="define-members"></a>
+defines</h2></td></tr>
+<tr class="memitem:af4c918287dd704ce82f8c4b50dee0d48" id="r_af4c918287dd704ce82f8c4b50dee0d48"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af4c918287dd704ce82f8c4b50dee0d48">ALTURA_TANQUE_CM</a>&#160;&#160;&#160;17</td></tr>
+<tr class="memitem:a1d65a82648b922a2f3d1093bec2aa5ef" id="r_a1d65a82648b922a2f3d1093bec2aa5ef"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a1d65a82648b922a2f3d1093bec2aa5ef">REFRESH_PERIOD_US</a>&#160;&#160;&#160;100000</td></tr>
+<tr class="memitem:a2c7ed0283bd6f2f9d791860d6254ef4f" id="r_a2c7ed0283bd6f2f9d791860d6254ef4f"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a2c7ed0283bd6f2f9d791860d6254ef4f">UART_BAUDRATE</a>&#160;&#160;&#160;115200</td></tr>
+<tr class="memitem:a6d23df12b1d85416f53df83630efced1" id="r_a6d23df12b1d85416f53df83630efced1"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a6d23df12b1d85416f53df83630efced1">CONTROL_PERIOD_US</a>&#160;&#160;&#160;500000</td></tr>
+<tr class="memitem:a28cab849e3771090fc1e272c08d602da" id="r_a28cab849e3771090fc1e272c08d602da"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a28cab849e3771090fc1e272c08d602da">NIVEL_MIN_CM</a>&#160;&#160;&#160;11</td></tr>
+<tr class="memitem:ac4a503cd1cd54b8c03b2d8df8dea2133" id="r_ac4a503cd1cd54b8c03b2d8df8dea2133"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac4a503cd1cd54b8c03b2d8df8dea2133">NIVEL_MAX_CM</a>&#160;&#160;&#160;13</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-enum-members" class="groupheader"><a id="enum-members" name="enum-members"></a>
+Enumeraciones</h2></td></tr>
+<tr class="memitem:a99b9d51e8b8d21dba06fa74c4257bcc8" id="r_a99b9d51e8b8d21dba06fa74c4257bcc8"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a99b9d51e8b8d21dba06fa74c4257bcc8">estado_tanque_t</a> { <a class="el" href="#a99b9d51e8b8d21dba06fa74c4257bcc8aad4181ad976d54294aaa87303325d9fb">NIVEL_BAJO</a>
+, <a class="el" href="#a99b9d51e8b8d21dba06fa74c4257bcc8a6e36cefd5b796fd71ed58f70a8c2d7bf">NIVEL_ESTABLE</a>
+, <a class="el" href="#a99b9d51e8b8d21dba06fa74c4257bcc8a8bc5e31b6a00b6bbbe326edf364840b0">TANQUE_LLENO</a>
+ }</td></tr>
+<tr class="memdesc:a99b9d51e8b8d21dba06fa74c4257bcc8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Estructura que contiene los tres estados posibles del tanque.  <a href="#a99b9d51e8b8d21dba06fa74c4257bcc8">Más...</a><br /></td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-func-members" class="groupheader"><a id="func-members" name="func-members"></a>
+Funciones</h2></td></tr>
+<tr class="memitem:a3816592c4b2d28b5175e1060978f649b" id="r_a3816592c4b2d28b5175e1060978f649b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a3816592c4b2d28b5175e1060978f649b">TimerNivelHandler</a> (void *param)</td></tr>
+<tr class="memdesc:a3816592c4b2d28b5175e1060978f649b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Callback del timer que notifica a la tarea de medición del nivel.  <br /></td></tr>
+<tr class="memitem:a03ec07968ef8eb78955609a1953feba7" id="r_a03ec07968ef8eb78955609a1953feba7"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a03ec07968ef8eb78955609a1953feba7">MedirNivelTask</a> (void *pvParameter)</td></tr>
+<tr class="memdesc:a03ec07968ef8eb78955609a1953feba7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Tarea encargada de leer el sensor ultrasónico, actualizar el nivel y enviarlo por UART, LCD y serial-plotter.  <br /></td></tr>
+<tr class="memitem:a32ee8d6a54485de5d798a537403e2912" id="r_a32ee8d6a54485de5d798a537403e2912"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a32ee8d6a54485de5d798a537403e2912">TimerControlHandler</a> (void *param)</td></tr>
+<tr class="memdesc:a32ee8d6a54485de5d798a537403e2912"><td class="mdescLeft">&#160;</td><td class="mdescRight">Callback del timer que activa la tarea de control automático de nivel.  <br /></td></tr>
+<tr class="memitem:a65cc2c6b183b42412d7637b496320239" id="r_a65cc2c6b183b42412d7637b496320239"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a65cc2c6b183b42412d7637b496320239">ControlNivelTask</a> (void *pvParameter)</td></tr>
+<tr class="memdesc:a65cc2c6b183b42412d7637b496320239"><td class="mdescLeft">&#160;</td><td class="mdescRight">Tarea que controla la bomba según el nivel de agua medido y lo envía por UART.  <br /></td></tr>
+<tr class="memitem:a19ee266bd9015898539274cacfd5281e" id="r_a19ee266bd9015898539274cacfd5281e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a19ee266bd9015898539274cacfd5281e">ControlManualTask</a> (void *pvParameter)</td></tr>
+<tr class="memdesc:a19ee266bd9015898539274cacfd5281e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Tarea que permite el control manual mediante pulsadores físicos. Verifica si el pulsador está presionado, y si lo está, detiene la bomba y muestra un mensaje por UART.  <br /></td></tr>
+<tr class="memitem:a630544a7f0a2cc40d8a7fefab7e2fe70" id="r_a630544a7f0a2cc40d8a7fefab7e2fe70"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a630544a7f0a2cc40d8a7fefab7e2fe70">app_main</a> (void)</td></tr>
+<tr class="memdesc:a630544a7f0a2cc40d8a7fefab7e2fe70"><td class="mdescLeft">&#160;</td><td class="mdescRight">Función principal del sistema.  <br /></td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 id="header-var-members" class="groupheader"><a id="var-members" name="var-members"></a>
+Variables</h2></td></tr>
+<tr class="memitem:a2b0cb40d7a31ce7e8b3f906fd55df312" id="r_a2b0cb40d7a31ce7e8b3f906fd55df312"><td class="memItemLeft" align="right" valign="top">TaskHandle_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a2b0cb40d7a31ce7e8b3f906fd55df312">medir_task_handle</a> = <a class="el" href="ili9341_8c.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a></td></tr>
+<tr class="memdesc:a2b0cb40d7a31ce7e8b3f906fd55df312"><td class="mdescLeft">&#160;</td><td class="mdescRight">Handler de la tarea de medición del nivel de agua.  <br /></td></tr>
+<tr class="memitem:a4296f470448e6e08338eed9851e31fab" id="r_a4296f470448e6e08338eed9851e31fab"><td class="memItemLeft" align="right" valign="top">TaskHandle_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a4296f470448e6e08338eed9851e31fab">control_task_handle</a> = <a class="el" href="ili9341_8c.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a></td></tr>
+<tr class="memdesc:a4296f470448e6e08338eed9851e31fab"><td class="mdescLeft">&#160;</td><td class="mdescRight">Handler de la tarea que controla el estado de la bomba según el nivel.  <br /></td></tr>
+<tr class="memitem:a5940b577e5a0f7675ed7f72ec64ff2a8" id="r_a5940b577e5a0f7675ed7f72ec64ff2a8"><td class="memItemLeft" align="right" valign="top">TaskHandle_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a5940b577e5a0f7675ed7f72ec64ff2a8">control_manual_task_handle</a> = <a class="el" href="ili9341_8c.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a></td></tr>
+<tr class="memdesc:a5940b577e5a0f7675ed7f72ec64ff2a8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Handler de la tarea de control manual mediante pulsadores.  <br /></td></tr>
+<tr class="memitem:afef5223292985f21dde6eaeffcf34377" id="r_afef5223292985f21dde6eaeffcf34377"><td class="memItemLeft" align="right" valign="top">uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#afef5223292985f21dde6eaeffcf34377">nivel_agua_cm</a> = 0</td></tr>
+<tr class="memdesc:afef5223292985f21dde6eaeffcf34377"><td class="mdescLeft">&#160;</td><td class="mdescRight">Última medición del nivel de agua, expresada en centímetros.  <br /></td></tr>
+<tr class="memitem:aa38fd4a8d0224ba5078063c3a32594f5" id="r_aa38fd4a8d0224ba5078063c3a32594f5"><td class="memItemLeft" align="right" valign="top">volatile <a class="el" href="#a99b9d51e8b8d21dba06fa74c4257bcc8">estado_tanque_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa38fd4a8d0224ba5078063c3a32594f5">estado_tanque</a> = <a class="el" href="#a99b9d51e8b8d21dba06fa74c4257bcc8a8bc5e31b6a00b6bbbe326edf364840b0">TANQUE_LLENO</a></td></tr>
+<tr class="memdesc:aa38fd4a8d0224ba5078063c3a32594f5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Estado actual del tanque de agua (bajo, estable o lleno).  <br /></td></tr>
+<tr class="memitem:a8e8d4ab2b7e4e7472dd971626d3808f2" id="r_a8e8d4ab2b7e4e7472dd971626d3808f2"><td class="memItemLeft" align="right" valign="top">volatile bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a8e8d4ab2b7e4e7472dd971626d3808f2">control_manual_activo</a> = false</td></tr>
+<tr class="memdesc:a8e8d4ab2b7e4e7472dd971626d3808f2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Bandera que indica si el control manual está activo.  <br /></td></tr>
+<tr class="memitem:ab3674a3f8cb28b589294ccae5c8bbb4d" id="r_ab3674a3f8cb28b589294ccae5c8bbb4d"><td class="memItemLeft" align="right" valign="top">volatile bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab3674a3f8cb28b589294ccae5c8bbb4d">control_valvula_manual</a> = false</td></tr>
+<tr class="memdesc:ab3674a3f8cb28b589294ccae5c8bbb4d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Bandera de control manual de la válvula de desagote.  <br /></td></tr>
+</table>
+<a name="doc-define-members" id="doc-define-members"></a><h2 id="header-doc-define-members" class="groupheader">Documentación de «define»</h2>
+<a id="af4c918287dd704ce82f8c4b50dee0d48" name="af4c918287dd704ce82f8c4b50dee0d48"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af4c918287dd704ce82f8c4b50dee0d48">&#9670;&#160;</a></span>ALTURA_TANQUE_CM</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define ALTURA_TANQUE_CM&#160;&#160;&#160;17</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="proyecto__final_8c_source.html#l00041">41</a> del archivo <a class="el" href="proyecto__final_8c_source.html">proyecto_final.c</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="proyecto__final_8c_source.html#l00172">MedirNivelTask()</a>.</p>
+
+</div>
+</div>
+<a id="a6d23df12b1d85416f53df83630efced1" name="a6d23df12b1d85416f53df83630efced1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6d23df12b1d85416f53df83630efced1">&#9670;&#160;</a></span>CONTROL_PERIOD_US</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define CONTROL_PERIOD_US&#160;&#160;&#160;500000</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="proyecto__final_8c_source.html#l00044">44</a> del archivo <a class="el" href="proyecto__final_8c_source.html">proyecto_final.c</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="proyecto__final_8c_source.html#l00273">app_main()</a>.</p>
+
+</div>
+</div>
+<a id="ac4a503cd1cd54b8c03b2d8df8dea2133" name="ac4a503cd1cd54b8c03b2d8df8dea2133"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac4a503cd1cd54b8c03b2d8df8dea2133">&#9670;&#160;</a></span>NIVEL_MAX_CM</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define NIVEL_MAX_CM&#160;&#160;&#160;13</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="proyecto__final_8c_source.html#l00046">46</a> del archivo <a class="el" href="proyecto__final_8c_source.html">proyecto_final.c</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="proyecto__final_8c_source.html#l00122">ControlNivelTask()</a>.</p>
+
+</div>
+</div>
+<a id="a28cab849e3771090fc1e272c08d602da" name="a28cab849e3771090fc1e272c08d602da"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a28cab849e3771090fc1e272c08d602da">&#9670;&#160;</a></span>NIVEL_MIN_CM</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define NIVEL_MIN_CM&#160;&#160;&#160;11</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="proyecto__final_8c_source.html#l00045">45</a> del archivo <a class="el" href="proyecto__final_8c_source.html">proyecto_final.c</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="proyecto__final_8c_source.html#l00122">ControlNivelTask()</a>.</p>
+
+</div>
+</div>
+<a id="a1d65a82648b922a2f3d1093bec2aa5ef" name="a1d65a82648b922a2f3d1093bec2aa5ef"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1d65a82648b922a2f3d1093bec2aa5ef">&#9670;&#160;</a></span>REFRESH_PERIOD_US</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define REFRESH_PERIOD_US&#160;&#160;&#160;100000</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="proyecto__final_8c_source.html#l00042">42</a> del archivo <a class="el" href="proyecto__final_8c_source.html">proyecto_final.c</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="proyecto__final_8c_source.html#l00273">app_main()</a>.</p>
+
+</div>
+</div>
+<a id="a2c7ed0283bd6f2f9d791860d6254ef4f" name="a2c7ed0283bd6f2f9d791860d6254ef4f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2c7ed0283bd6f2f9d791860d6254ef4f">&#9670;&#160;</a></span>UART_BAUDRATE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define UART_BAUDRATE&#160;&#160;&#160;115200</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definición en la línea <a class="el" href="proyecto__final_8c_source.html#l00043">43</a> del archivo <a class="el" href="proyecto__final_8c_source.html">proyecto_final.c</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="proyecto__final_8c_source.html#l00273">app_main()</a>.</p>
+
+</div>
+</div>
+<a name="doc-enum-members" id="doc-enum-members"></a><h2 id="header-doc-enum-members" class="groupheader">Documentación de enumeraciones</h2>
+<a id="a99b9d51e8b8d21dba06fa74c4257bcc8" name="a99b9d51e8b8d21dba06fa74c4257bcc8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a99b9d51e8b8d21dba06fa74c4257bcc8">&#9670;&#160;</a></span>estado_tanque_t</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum <a class="el" href="#a99b9d51e8b8d21dba06fa74c4257bcc8">estado_tanque_t</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Estructura que contiene los tres estados posibles del tanque. </p>
+<table class="fieldtable">
+<tr><th colspan="2">Valores de enumeraciones</th></tr><tr><td class="fieldname"><a id="a99b9d51e8b8d21dba06fa74c4257bcc8aad4181ad976d54294aaa87303325d9fb" name="a99b9d51e8b8d21dba06fa74c4257bcc8aad4181ad976d54294aaa87303325d9fb"></a>NIVEL_BAJO&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a99b9d51e8b8d21dba06fa74c4257bcc8a6e36cefd5b796fd71ed58f70a8c2d7bf" name="a99b9d51e8b8d21dba06fa74c4257bcc8a6e36cefd5b796fd71ed58f70a8c2d7bf"></a>NIVEL_ESTABLE&#160;</td><td class="fielddoc"></td></tr>
+<tr><td class="fieldname"><a id="a99b9d51e8b8d21dba06fa74c4257bcc8a8bc5e31b6a00b6bbbe326edf364840b0" name="a99b9d51e8b8d21dba06fa74c4257bcc8a8bc5e31b6a00b6bbbe326edf364840b0"></a>TANQUE_LLENO&#160;</td><td class="fielddoc"></td></tr>
+</table>
+
+<p class="definition">Definición en la línea <a class="el" href="proyecto__final_8c_source.html#l00072">72</a> del archivo <a class="el" href="proyecto__final_8c_source.html">proyecto_final.c</a>.</p>
+
+</div>
+</div>
+<a name="doc-func-members" id="doc-func-members"></a><h2 id="header-doc-func-members" class="groupheader">Documentación de funciones</h2>
+<a id="a630544a7f0a2cc40d8a7fefab7e2fe70" name="a630544a7f0a2cc40d8a7fefab7e2fe70"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a630544a7f0a2cc40d8a7fefab7e2fe70">&#9670;&#160;</a></span>app_main()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void app_main </td>
+          <td>(</td>
+          <td class="paramtype">void</td>          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Función principal del sistema. </p>
+<p>Inicializa todos los periféricos y dispositivos (sensor ultrasónico, display LCD, GPIOs, UART, <a class="el" href="group___l_e_d.html#gab6831a7d06c0a2bc69f9b024f6445a80" title="LED driver for the ESP-EDU Board.">LEDs</a> y switches), configura los timers y crea las tareas del sistema:</p>
+<ul>
+<li><code>MedirNivelTask:</code> mide el nivel de agua y actualiza la pantalla LCD.</li>
+<li><code>ControlNivelTask:</code> controla la bomba según los umbrales configurados.</li>
+<li><code>ControlManualTask:</code> permite la intervención manual del usuario.</li>
+</ul>
+<p>Finalmente, se inician los timers para comenzar el funcionamiento periódico. </p>
+
+<p class="definition">Definición en la línea <a class="el" href="proyecto__final_8c_source.html#l00273">273</a> del archivo <a class="el" href="proyecto__final_8c_source.html">proyecto_final.c</a>.</p>
+
+<p class="reference">Hace referencia a <a class="el" href="proyecto__final_8c_source.html#l00062">control_manual_task_handle</a>, <a class="el" href="proyecto__final_8c_source.html#l00044">CONTROL_PERIOD_US</a>, <a class="el" href="proyecto__final_8c_source.html#l00057">control_task_handle</a>, <a class="el" href="proyecto__final_8c_source.html#l00217">ControlManualTask()</a>, <a class="el" href="proyecto__final_8c_source.html#l00122">ControlNivelTask()</a>, <a class="el" href="gpio__mcu_8h_source.html#l00054">GPIO_2</a>, <a class="el" href="gpio__mcu_8h_source.html#l00055">GPIO_3</a>, <a class="el" href="gpio__mcu_8h_source.html#l00058">GPIO_6</a>, <a class="el" href="gpio__mcu_8h_source.html#l00059">GPIO_7</a>, <a class="el" href="gpio__mcu_8h_source.html#l00044">GPIO_OUTPUT</a>, <a class="el" href="gpio__mcu_8c_source.html#l00067">GPIOInit()</a>, <a class="el" href="gpio__mcu_8c_source.html#l00081">GPIOOn()</a>, <a class="el" href="hc__sr04_8c_source.html#l00034">HcSr04Init()</a>, <a class="el" href="lcditse0803_8c_source.html#l00037">LcdItsE0803Init()</a>, <a class="el" href="led_8c_source.html#l00031">LedsInit()</a>, <a class="el" href="proyecto__final_8c_source.html#l00052">medir_task_handle</a>, <a class="el" href="proyecto__final_8c_source.html#l00172">MedirNivelTask()</a>, <a class="el" href="ili9341_8c_source.html#l00019">NULL</a>, <a class="el" href="proyecto__final_8c_source.html#l00042">REFRESH_PERIOD_US</a>, <a class="el" href="switch_8c_source.html#l00029">SwitchesInit()</a>, <a class="el" href="timer__mcu_8h_source.html#l00040">timer_config_t::timer</a>, <a class="el" href="timer__mcu_8h_source.html#l00032">TIMER_A</a>, <a class="el" href="timer__mcu_8h_source.html#l00034">TIMER_C</a>, <a class="el" href="proyecto__final_8c_source.html#l00114">TimerControlHandler()</a>, <a class="el" href="timer__mcu_8c_source.html#l00067">TimerInit()</a>, <a class="el" href="proyecto__final_8c_source.html#l00106">TimerNivelHandler()</a>, <a class="el" href="timer__mcu_8c_source.html#l00116">TimerStart()</a>, <a class="el" href="proyecto__final_8c_source.html#l00043">UART_BAUDRATE</a>, <a class="el" href="uart__mcu_8h_source.html#l00032">UART_PC</a> y <a class="el" href="uart__mcu_8c_source.html#l00107">UartInit()</a>.</p>
+
+</div>
+</div>
+<a id="a19ee266bd9015898539274cacfd5281e" name="a19ee266bd9015898539274cacfd5281e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a19ee266bd9015898539274cacfd5281e">&#9670;&#160;</a></span>ControlManualTask()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ControlManualTask </td>
+          <td>(</td>
+          <td class="paramtype">void *</td>          <td class="paramname"><span class="paramname"><em>pvParameter</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Tarea que permite el control manual mediante pulsadores físicos. Verifica si el pulsador está presionado, y si lo está, detiene la bomba y muestra un mensaje por UART. </p>
+<dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">pvParameter</td><td>Parámetro de tarea (no usado). </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definición en la línea <a class="el" href="proyecto__final_8c_source.html#l00217">217</a> del archivo <a class="el" href="proyecto__final_8c_source.html">proyecto_final.c</a>.</p>
+
+<p class="reference">Hace referencia a <a class="el" href="proyecto__final_8c_source.html#l00088">control_manual_activo</a>, <a class="el" href="proyecto__final_8c_source.html#l00093">control_valvula_manual</a>, <a class="el" href="gpio__mcu_8h_source.html#l00058">GPIO_6</a>, <a class="el" href="gpio__mcu_8h_source.html#l00059">GPIO_7</a>, <a class="el" href="gpio__mcu_8c_source.html#l00086">GPIOOff()</a>, <a class="el" href="gpio__mcu_8c_source.html#l00081">GPIOOn()</a>, <a class="el" href="led_8h_source.html#l00034">LED_1</a>, <a class="el" href="led_8h_source.html#l00033">LED_2</a>, <a class="el" href="led_8c_source.html#l00065">LedOff()</a>, <a class="el" href="led_8c_source.html#l00046">LedOn()</a>, <a class="el" href="switch_8h_source.html#l00032">SWITCH_1</a>, <a class="el" href="switch_8h_source.html#l00033">SWITCH_2</a>, <a class="el" href="switch_8c_source.html#l00040">SwitchesRead()</a>, <a class="el" href="uart__mcu_8h_source.html#l00032">UART_PC</a> y <a class="el" href="uart__mcu_8c_source.html#l00193">UartSendString()</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="proyecto__final_8c_source.html#l00273">app_main()</a>.</p>
+
+</div>
+</div>
+<a id="a65cc2c6b183b42412d7637b496320239" name="a65cc2c6b183b42412d7637b496320239"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a65cc2c6b183b42412d7637b496320239">&#9670;&#160;</a></span>ControlNivelTask()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ControlNivelTask </td>
+          <td>(</td>
+          <td class="paramtype">void *</td>          <td class="paramname"><span class="paramname"><em>pvParameter</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Tarea que controla la bomba según el nivel de agua medido y lo envía por UART. </p>
+<dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">pvParameter</td><td>Parámetro de tarea (no usado). </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definición en la línea <a class="el" href="proyecto__final_8c_source.html#l00122">122</a> del archivo <a class="el" href="proyecto__final_8c_source.html">proyecto_final.c</a>.</p>
+
+<p class="reference">Hace referencia a <a class="el" href="proyecto__final_8c_source.html#l00088">control_manual_activo</a>, <a class="el" href="proyecto__final_8c_source.html#l00081">estado_tanque</a>, <a class="el" href="gpio__mcu_8h_source.html#l00058">GPIO_6</a>, <a class="el" href="gpio__mcu_8c_source.html#l00086">GPIOOff()</a>, <a class="el" href="gpio__mcu_8c_source.html#l00081">GPIOOn()</a>, <a class="el" href="proyecto__final_8c_source.html#l00067">nivel_agua_cm</a>, <a class="el" href="proyecto__final_8c_source.html#l00073">NIVEL_BAJO</a>, <a class="el" href="proyecto__final_8c_source.html#l00074">NIVEL_ESTABLE</a>, <a class="el" href="proyecto__final_8c_source.html#l00046">NIVEL_MAX_CM</a>, <a class="el" href="proyecto__final_8c_source.html#l00045">NIVEL_MIN_CM</a>, <a class="el" href="proyecto__final_8c_source.html#l00075">TANQUE_LLENO</a>, <a class="el" href="uart__mcu_8h_source.html#l00032">UART_PC</a> y <a class="el" href="uart__mcu_8c_source.html#l00193">UartSendString()</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="proyecto__final_8c_source.html#l00273">app_main()</a>.</p>
+
+</div>
+</div>
+<a id="a03ec07968ef8eb78955609a1953feba7" name="a03ec07968ef8eb78955609a1953feba7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a03ec07968ef8eb78955609a1953feba7">&#9670;&#160;</a></span>MedirNivelTask()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void MedirNivelTask </td>
+          <td>(</td>
+          <td class="paramtype">void *</td>          <td class="paramname"><span class="paramname"><em>pvParameter</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Tarea encargada de leer el sensor ultrasónico, actualizar el nivel y enviarlo por UART, LCD y serial-plotter. </p>
+<dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">pvParameter</td><td>Parámetro de tarea (no usado). </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definición en la línea <a class="el" href="proyecto__final_8c_source.html#l00172">172</a> del archivo <a class="el" href="proyecto__final_8c_source.html">proyecto_final.c</a>.</p>
+
+<p class="reference">Hace referencia a <a class="el" href="proyecto__final_8c_source.html#l00041">ALTURA_TANQUE_CM</a>, <a class="el" href="hc__sr04_8c_source.html#l00045">HcSr04ReadDistanceInCentimeters()</a>, <a class="el" href="lcditse0803_8c_source.html#l00054">LcdItsE0803Write()</a>, <a class="el" href="proyecto__final_8c_source.html#l00067">nivel_agua_cm</a>, <a class="el" href="uart__mcu_8h_source.html#l00032">UART_PC</a>, <a class="el" href="uart__mcu_8c_source.html#l00222">UartItoa()</a> y <a class="el" href="uart__mcu_8c_source.html#l00193">UartSendString()</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="proyecto__final_8c_source.html#l00273">app_main()</a>.</p>
+
+</div>
+</div>
+<a id="a32ee8d6a54485de5d798a537403e2912" name="a32ee8d6a54485de5d798a537403e2912"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a32ee8d6a54485de5d798a537403e2912">&#9670;&#160;</a></span>TimerControlHandler()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void TimerControlHandler </td>
+          <td>(</td>
+          <td class="paramtype">void *</td>          <td class="paramname"><span class="paramname"><em>param</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Callback del timer que activa la tarea de control automático de nivel. </p>
+<dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">param</td><td>Puntero a parámetros (no usado). </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definición en la línea <a class="el" href="proyecto__final_8c_source.html#l00114">114</a> del archivo <a class="el" href="proyecto__final_8c_source.html">proyecto_final.c</a>.</p>
+
+<p class="reference">Hace referencia a <a class="el" href="proyecto__final_8c_source.html#l00057">control_task_handle</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="proyecto__final_8c_source.html#l00273">app_main()</a>.</p>
+
+</div>
+</div>
+<a id="a3816592c4b2d28b5175e1060978f649b" name="a3816592c4b2d28b5175e1060978f649b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3816592c4b2d28b5175e1060978f649b">&#9670;&#160;</a></span>TimerNivelHandler()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void TimerNivelHandler </td>
+          <td>(</td>
+          <td class="paramtype">void *</td>          <td class="paramname"><span class="paramname"><em>param</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Callback del timer que notifica a la tarea de medición del nivel. </p>
+<dl class="params"><dt>Parámetros</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">param</td><td>Puntero a parámetros (no usado). </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p class="definition">Definición en la línea <a class="el" href="proyecto__final_8c_source.html#l00106">106</a> del archivo <a class="el" href="proyecto__final_8c_source.html">proyecto_final.c</a>.</p>
+
+<p class="reference">Hace referencia a <a class="el" href="proyecto__final_8c_source.html#l00052">medir_task_handle</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="proyecto__final_8c_source.html#l00273">app_main()</a>.</p>
+
+</div>
+</div>
+<a name="doc-var-members" id="doc-var-members"></a><h2 id="header-doc-var-members" class="groupheader">Documentación de variables</h2>
+<a id="a8e8d4ab2b7e4e7472dd971626d3808f2" name="a8e8d4ab2b7e4e7472dd971626d3808f2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8e8d4ab2b7e4e7472dd971626d3808f2">&#9670;&#160;</a></span>control_manual_activo</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">volatile bool control_manual_activo = false</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Bandera que indica si el control manual está activo. </p>
+<p>Si es true, el control automático de la bomba se deshabilita y la bomba se maneja manualmente. </p>
+
+<p class="definition">Definición en la línea <a class="el" href="proyecto__final_8c_source.html#l00088">88</a> del archivo <a class="el" href="proyecto__final_8c_source.html">proyecto_final.c</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="proyecto__final_8c_source.html#l00217">ControlManualTask()</a> y <a class="el" href="proyecto__final_8c_source.html#l00122">ControlNivelTask()</a>.</p>
+
+</div>
+</div>
+<a id="a5940b577e5a0f7675ed7f72ec64ff2a8" name="a5940b577e5a0f7675ed7f72ec64ff2a8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5940b577e5a0f7675ed7f72ec64ff2a8">&#9670;&#160;</a></span>control_manual_task_handle</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">TaskHandle_t control_manual_task_handle = <a class="el" href="ili9341_8c.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Handler de la tarea de control manual mediante pulsadores. </p>
+
+<p class="definition">Definición en la línea <a class="el" href="proyecto__final_8c_source.html#l00062">62</a> del archivo <a class="el" href="proyecto__final_8c_source.html">proyecto_final.c</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="proyecto__final_8c_source.html#l00273">app_main()</a>.</p>
+
+</div>
+</div>
+<a id="a4296f470448e6e08338eed9851e31fab" name="a4296f470448e6e08338eed9851e31fab"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4296f470448e6e08338eed9851e31fab">&#9670;&#160;</a></span>control_task_handle</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">TaskHandle_t control_task_handle = <a class="el" href="ili9341_8c.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Handler de la tarea que controla el estado de la bomba según el nivel. </p>
+
+<p class="definition">Definición en la línea <a class="el" href="proyecto__final_8c_source.html#l00057">57</a> del archivo <a class="el" href="proyecto__final_8c_source.html">proyecto_final.c</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="proyecto__final_8c_source.html#l00273">app_main()</a> y <a class="el" href="proyecto__final_8c_source.html#l00114">TimerControlHandler()</a>.</p>
+
+</div>
+</div>
+<a id="ab3674a3f8cb28b589294ccae5c8bbb4d" name="ab3674a3f8cb28b589294ccae5c8bbb4d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab3674a3f8cb28b589294ccae5c8bbb4d">&#9670;&#160;</a></span>control_valvula_manual</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">volatile bool control_valvula_manual = false</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Bandera de control manual de la válvula de desagote. </p>
+
+<p class="definition">Definición en la línea <a class="el" href="proyecto__final_8c_source.html#l00093">93</a> del archivo <a class="el" href="proyecto__final_8c_source.html">proyecto_final.c</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="proyecto__final_8c_source.html#l00217">ControlManualTask()</a>.</p>
+
+</div>
+</div>
+<a id="aa38fd4a8d0224ba5078063c3a32594f5" name="aa38fd4a8d0224ba5078063c3a32594f5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa38fd4a8d0224ba5078063c3a32594f5">&#9670;&#160;</a></span>estado_tanque</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">volatile <a class="el" href="#a99b9d51e8b8d21dba06fa74c4257bcc8">estado_tanque_t</a> estado_tanque = <a class="el" href="#a99b9d51e8b8d21dba06fa74c4257bcc8a8bc5e31b6a00b6bbbe326edf364840b0">TANQUE_LLENO</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Estado actual del tanque de agua (bajo, estable o lleno). </p>
+
+<p class="definition">Definición en la línea <a class="el" href="proyecto__final_8c_source.html#l00081">81</a> del archivo <a class="el" href="proyecto__final_8c_source.html">proyecto_final.c</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="proyecto__final_8c_source.html#l00122">ControlNivelTask()</a>.</p>
+
+</div>
+</div>
+<a id="a2b0cb40d7a31ce7e8b3f906fd55df312" name="a2b0cb40d7a31ce7e8b3f906fd55df312"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2b0cb40d7a31ce7e8b3f906fd55df312">&#9670;&#160;</a></span>medir_task_handle</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">TaskHandle_t medir_task_handle = <a class="el" href="ili9341_8c.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Handler de la tarea de medición del nivel de agua. </p>
+
+<p class="definition">Definición en la línea <a class="el" href="proyecto__final_8c_source.html#l00052">52</a> del archivo <a class="el" href="proyecto__final_8c_source.html">proyecto_final.c</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="proyecto__final_8c_source.html#l00273">app_main()</a> y <a class="el" href="proyecto__final_8c_source.html#l00106">TimerNivelHandler()</a>.</p>
+
+</div>
+</div>
+<a id="afef5223292985f21dde6eaeffcf34377" name="afef5223292985f21dde6eaeffcf34377"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afef5223292985f21dde6eaeffcf34377">&#9670;&#160;</a></span>nivel_agua_cm</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint8_t nivel_agua_cm = 0</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Última medición del nivel de agua, expresada en centímetros. </p>
+
+<p class="definition">Definición en la línea <a class="el" href="proyecto__final_8c_source.html#l00067">67</a> del archivo <a class="el" href="proyecto__final_8c_source.html">proyecto_final.c</a>.</p>
+
+<p class="reference">Referenciado por <a class="el" href="proyecto__final_8c_source.html#l00122">ControlNivelTask()</a> y <a class="el" href="proyecto__final_8c_source.html#l00172">MedirNivelTask()</a>.</p>
+
+</div>
+</div>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<div id="page-nav" class="page-nav-panel">
+<div id="page-nav-resize-handle"></div>
+<div id="page-nav-tree">
+<div id="page-nav-contents">
+</div><!-- page-nav-contents -->
+</div><!-- page-nav-tree -->
+</div><!-- page-nav -->
+</div><!-- container -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a href="dir_55bb0630de9a3fdeef27fa7eac03cf1e.html">Gottig_Faes_2C_2025</a></li><li class="navelem"><a href="dir_335e0e5c4dae3f5a62baad8e300f284c.html">firmware</a></li><li class="navelem"><a href="dir_9d7f4a4b7b1cac800d7c52c72ebde874.html">examples</a></li><li class="navelem"><a href="dir_c8588b19012989f1b69f9f3a1bee6328.html">proyecto_final</a></li><li class="navelem"><a href="dir_a1137a831f7edb527c43aaadb4304d0b.html">main</a></li><li class="navelem"><a href="proyecto__final_8c.html">proyecto_final.c</a></li>
+    <li class="footer">Generado por <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.14.0 </li>
+  </ul>
+</div>
+</body>
+</html>

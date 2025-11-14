@@ -1,0 +1,22 @@
+var _gottig___faes__2_c__2025_2firmware_2examples_2proyecto__final_2build_2_c_make_files_23_830_82_29dce2e6e663b21812015a9ac7f000f1b =
+[
+    [ "__has_include", "_gottig___faes__2_c__2025_2firmware_2examples_2proyecto__final_2build_2_c_make_files_23_830_82_29dce2e6e663b21812015a9ac7f000f1b.html#ae5510d82e4946f1656f4969911c54736", null ],
+    [ "ARCHITECTURE_ID", "_gottig___faes__2_c__2025_2firmware_2examples_2proyecto__final_2build_2_c_make_files_23_830_82_29dce2e6e663b21812015a9ac7f000f1b.html#aba35d0d200deaeb06aee95ca297acb28", null ],
+    [ "C_STD_11", "_gottig___faes__2_c__2025_2firmware_2examples_2proyecto__final_2build_2_c_make_files_23_830_82_29dce2e6e663b21812015a9ac7f000f1b.html#a7c35af7e67642a2c62eb27dd81be11b2", null ],
+    [ "C_STD_17", "_gottig___faes__2_c__2025_2firmware_2examples_2proyecto__final_2build_2_c_make_files_23_830_82_29dce2e6e663b21812015a9ac7f000f1b.html#aa8cd9c2c76dde36abac0bd7698090693", null ],
+    [ "C_STD_23", "_gottig___faes__2_c__2025_2firmware_2examples_2proyecto__final_2build_2_c_make_files_23_830_82_29dce2e6e663b21812015a9ac7f000f1b.html#a81af617e8f7b5417689ca478ce9f4d69", null ],
+    [ "C_STD_99", "_gottig___faes__2_c__2025_2firmware_2examples_2proyecto__final_2build_2_c_make_files_23_830_82_29dce2e6e663b21812015a9ac7f000f1b.html#af6079dc519dac099ee85a1df6ae5e5e8", null ],
+    [ "C_VERSION", "_gottig___faes__2_c__2025_2firmware_2examples_2proyecto__final_2build_2_c_make_files_23_830_82_29dce2e6e663b21812015a9ac7f000f1b.html#adaee3ee7c5a7a22451ea25e762e1d7d5", null ],
+    [ "COMPILER_ID", "_gottig___faes__2_c__2025_2firmware_2examples_2proyecto__final_2build_2_c_make_files_23_830_82_29dce2e6e663b21812015a9ac7f000f1b.html#a81dee0709ded976b2e0319239f72d174", null ],
+    [ "DEC", "_gottig___faes__2_c__2025_2firmware_2examples_2proyecto__final_2build_2_c_make_files_23_830_82_29dce2e6e663b21812015a9ac7f000f1b.html#ad1280362da42492bbc11aa78cbf776ad", null ],
+    [ "HEX", "_gottig___faes__2_c__2025_2firmware_2examples_2proyecto__final_2build_2_c_make_files_23_830_82_29dce2e6e663b21812015a9ac7f000f1b.html#a46d5d95daa1bef867bd0179594310ed5", null ],
+    [ "PLATFORM_ID", "_gottig___faes__2_c__2025_2firmware_2examples_2proyecto__final_2build_2_c_make_files_23_830_82_29dce2e6e663b21812015a9ac7f000f1b.html#adbc5372f40838899018fadbc89bd588b", null ],
+    [ "STRINGIFY", "_gottig___faes__2_c__2025_2firmware_2examples_2proyecto__final_2build_2_c_make_files_23_830_82_29dce2e6e663b21812015a9ac7f000f1b.html#a43e1cad902b6477bec893cb6430bd6c8", null ],
+    [ "STRINGIFY_HELPER", "_gottig___faes__2_c__2025_2firmware_2examples_2proyecto__final_2build_2_c_make_files_23_830_82_29dce2e6e663b21812015a9ac7f000f1b.html#a2ae9b72bb13abaabfcf2ee0ba7d3fa1d", null ],
+    [ "main", "_gottig___faes__2_c__2025_2firmware_2examples_2proyecto__final_2build_2_c_make_files_23_830_82_29dce2e6e663b21812015a9ac7f000f1b.html#a0ddf1224851353fc92bfbff6f499fa97", null ],
+    [ "info_arch", "_gottig___faes__2_c__2025_2firmware_2examples_2proyecto__final_2build_2_c_make_files_23_830_82_29dce2e6e663b21812015a9ac7f000f1b.html#a59647e99d304ed33b15cb284c27ed391", null ],
+    [ "info_compiler", "_gottig___faes__2_c__2025_2firmware_2examples_2proyecto__final_2build_2_c_make_files_23_830_82_29dce2e6e663b21812015a9ac7f000f1b.html#a4b0efeb7a5d59313986b3a0390f050f6", null ],
+    [ "info_language_extensions_default", "_gottig___faes__2_c__2025_2firmware_2examples_2proyecto__final_2build_2_c_make_files_23_830_82_29dce2e6e663b21812015a9ac7f000f1b.html#a0f46a8a39e09d9b803c4766904fd7e99", null ],
+    [ "info_language_standard_default", "_gottig___faes__2_c__2025_2firmware_2examples_2proyecto__final_2build_2_c_make_files_23_830_82_29dce2e6e663b21812015a9ac7f000f1b.html#a4607cccf070750927b458473ca82c090", null ],
+    [ "info_platform", "_gottig___faes__2_c__2025_2firmware_2examples_2proyecto__final_2build_2_c_make_files_23_830_82_29dce2e6e663b21812015a9ac7f000f1b.html#a2321403dee54ee23f0c2fa849c60f7d4", null ]
+];

@@ -41,28 +41,56 @@
 #define ALTURA_TANQUE_CM   17      // altura total del tanque (cm)
 #define REFRESH_PERIOD_US  100000   // 100 ms
 #define UART_BAUDRATE      115200
-#define CONTROL_PERIOD_US  500000 
+#define CONTROL_PERIOD_US  500000 //500ms
 #define NIVEL_MIN_CM      11
 #define NIVEL_MAX_CM      13
 
 /*==================[internal data definition]===============================*/
+/**
+ * @brief Handler de la tarea de medición del nivel de agua.
+ */
 TaskHandle_t medir_task_handle = NULL;
+
+/**
+ * @brief Handler de la tarea que controla el estado de la bomba según el nivel.
+ */
 TaskHandle_t control_task_handle = NULL;
+
+/**
+ * @brief Handler de la tarea de control manual mediante pulsadores.
+ */
 TaskHandle_t control_manual_task_handle = NULL;
 
-uint8_t nivel_agua_cm = 0;   // última medición del nivel (cm)
-/*--- Nuevo: estado del tanque ---*/
+/**
+ * @brief Última medición del nivel de agua, expresada en centímetros.
+ */
+uint8_t nivel_agua_cm = 0;  
+
+/**
+ * @brief Estructura que contiene los tres estados posibles del tanque.
+ */
 typedef enum {
     NIVEL_BAJO,
     NIVEL_ESTABLE,
     TANQUE_LLENO
 } estado_tanque_t;
 
-volatile estado_tanque_t estado_tanque = TANQUE_LLENO;  // estado inicial
+/**
+ * @brief Estado actual del tanque de agua (bajo, estable o lleno).
+ */
+volatile estado_tanque_t estado_tanque = TANQUE_LLENO;  
+
+/**
+ * @brief Bandera que indica si el control manual está activo.
+ * 
+ * Si es true, el control automático de la bomba se deshabilita y la bomba se maneja manualmente.
+ */
 volatile bool control_manual_activo = false;
+
+/**
+ * @brief Bandera de control manual de la válvula de desagote.
+ */
 volatile bool control_valvula_manual = false;
-
-
 /*==================[internal functions declaration]=========================*/
 void TimerNivelHandler(void *param);
 void MedirNivelTask(void *pvParameter);
@@ -72,19 +100,24 @@ void ControlNivelTask(void *pvParameter);
 /*==================[internal functions definition]==========================*/
 
 /**
- * @brief Callback del timer: despierta la tarea cada 1 s
+ * @brief Callback del timer que notifica a la tarea de medición del nivel.
+ * @param param Puntero a parámetros (no usado).
  */
 void TimerNivelHandler(void *param) {
     vTaskNotifyGiveFromISR(medir_task_handle, pdFALSE);
 }
 
+/**
+ * @brief Callback del timer que activa la tarea de control automático de nivel.
+ * @param param Puntero a parámetros (no usado).
+ */
 void TimerControlHandler(void *param) {
     vTaskNotifyGiveFromISR(control_task_handle, pdFALSE);
 }
 
-
 /**
- * @brief Tarea que controla el estado del tanque/bomba y lo envía por UART
+ * @brief Tarea que controla la bomba según el nivel de agua medido y lo envía por UART.
+ * @param pvParameter Parámetro de tarea (no usado).
  */
 void ControlNivelTask(void *pvParameter) {
     bool bomba_activada = false;
@@ -102,14 +135,12 @@ void ControlNivelTask(void *pvParameter) {
             // Activar bomba (rele y LED)
             GPIOOff(GPIO_6);   // ejemplo: relé en GPIO_6
             //LedOn(LED_1);      // LED indica bomba activa
-            bomba_activada = true;
             estado_tanque = NIVEL_BAJO;
 
         } else if (nivel_agua_cm > NIVEL_MAX_CM) {
             // Apagar bomba (rele y LED)
             GPIOOn(GPIO_6);
             //LedOff(LED_1);
-            bomba_activada = false;
             estado_tanque = TANQUE_LLENO;
 
         } else {
@@ -135,7 +166,8 @@ void ControlNivelTask(void *pvParameter) {
 }
 
 /**
- * @brief Tarea que mide el nivel de agua y lo envía por UART
+ * @brief Tarea encargada de leer el sensor ultrasónico, actualizar el nivel y enviarlo por UART, LCD y serial-plotter.
+ * @param pvParameter Parámetro de tarea (no usado).
  */
 void MedirNivelTask(void *pvParameter) {
     uint16_t distancia_cm;
@@ -178,11 +210,10 @@ void MedirNivelTask(void *pvParameter) {
 }
 
 /**
- * @brief Tarea de control manual.
- * Verifica si el pulsador está presionado, y si lo está,
- * detiene la bomba y muestra un mensaje por UART.
+ * @brief Tarea que permite el control manual mediante pulsadores físicos.
+ * Verifica si el pulsador está presionado, y si lo está, detiene la bomba y muestra un mensaje por UART.
+ * @param pvParameter Parámetro de tarea (no usado).
  */
-
 void ControlManualTask(void *pvParameter) {
 
 while (1) {
@@ -227,6 +258,18 @@ while (1) {
 
 
 /*==================[external functions definition]==========================*/
+/**
+ * @brief Función principal del sistema.
+ * 
+ * Inicializa todos los periféricos y dispositivos (sensor ultrasónico, display LCD, GPIOs, UART, LEDs y switches),
+ * configura los timers y crea las tareas del sistema:
+ * 
+ * - @c MedirNivelTask: mide el nivel de agua y actualiza la pantalla LCD.
+ * - @c ControlNivelTask: controla la bomba según los umbrales configurados.
+ * - @c ControlManualTask: permite la intervención manual del usuario.
+ * 
+ * Finalmente, se inician los timers para comenzar el funcionamiento periódico.
+ */
 void app_main(void) {
     LedsInit();
     HcSr04Init(GPIO_3, GPIO_2); 
@@ -239,7 +282,7 @@ void app_main(void) {
     GPIOInit(GPIO_7, GPIO_OUTPUT);
     GPIOOn(GPIO_7);
 
-
+    /* Configuración dela uart */
     serial_config_t uart_cfg = {
         .port      = UART_PC,
         .baud_rate = UART_BAUDRATE,
@@ -248,7 +291,7 @@ void app_main(void) {
     };
     UartInit(&uart_cfg);
 
-    /* Configuración del timer: 100 ms */
+    /* Configuración del timer para medicion: 100 ms */
     timer_config_t timer_nivel = {
         .timer   = TIMER_A,
         .period  = REFRESH_PERIOD_US,

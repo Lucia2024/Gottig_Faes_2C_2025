@@ -1,0 +1,433 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.14.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Proyecto integrador: Archivo de código fuente C:/Repositorios/Gottig_Faes_2C_2025/firmware/examples/proyecto_final/main/proyecto_final.c</title>
+<link rel="icon" href="icon.ico" type="image/x-icon" />
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<script type="text/javascript" src="clipboard.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+  $(function() { init_search(); });
+</script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectlogo"><img alt="Logo" src="fiuner.png"/></td>
+  <td id="projectalign">
+   <div id="projectname">Proyecto integrador<span id="projectnumber">&#160;1.0</span>
+   </div>
+   <div id="projectbrief">Control automatico del nivel de agua</div>
+  </td>
+    <td>        <div id="MSearchBox" class="MSearchBoxInactive">
+        <span class="left">
+          <span id="MSearchSelect" class="search-icon" onmouseover="return searchBox.OnSearchSelectShow()" onmouseout="return searchBox.OnSearchSelectHide()"><span class="search-icon-dropdown"></span></span>
+          <input type="text" id="MSearchField" value="" placeholder="Buscar" accesskey="S"
+               onfocus="searchBox.OnSearchFieldFocus(true)" 
+               onblur="searchBox.OnSearchFieldFocus(false)" 
+               onkeyup="searchBox.OnSearchFieldChange(event)"/>
+          </span><span class="right">
+            <a id="MSearchClose" href="javascript:searchBox.CloseResultsWindow()"><div id="MSearchCloseImg" class="close-icon"></div></a>
+          </span>
+        </div>
+</td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Generado por Doxygen 1.14.0 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+</script>
+<script type="text/javascript">
+$(function() { codefold.init(); });
+</script>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(function(){initNavTree('proyecto__final_8c_source.html','',''); });
+</script>
+<div id="container">
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Cargando...</div>
+<div class="SRStatus" id="Searching">Buscando...</div>
+<div class="SRStatus" id="NoMatches">Nada coincide</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">proyecto_final.c</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="proyecto__final_8c.html">Ir a la documentación de este archivo.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span></div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span> </div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span><span class="comment">/*==================[inclusions]=============================================*/</span></div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span><span class="preprocessor">#include &lt;stdio.h&gt;</span></div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span><span class="preprocessor">#include &lt;stdint.h&gt;</span></div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span><span class="preprocessor">#include &lt;stdbool.h&gt;</span></div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span><span class="preprocessor">#include &quot;freertos/FreeRTOS.h&quot;</span></div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span><span class="preprocessor">#include &quot;freertos/task.h&quot;</span></div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span><span class="preprocessor">#include &quot;<a class="code" href="timer__mcu_8h.html">timer_mcu.h</a>&quot;</span></div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span><span class="preprocessor">#include &quot;<a class="code" href="hc__sr04_8h.html">hc_sr04.h</a>&quot;</span></div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span><span class="preprocessor">#include &quot;<a class="code" href="uart__mcu_8h.html">uart_mcu.h</a>&quot;</span></div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span><span class="preprocessor">#include &quot;<a class="code" href="gpio__mcu_8h.html">gpio_mcu.h</a>&quot;</span></div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span><span class="preprocessor">#include &quot;<a class="code" href="led_8h.html">led.h</a>&quot;</span></div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span><span class="preprocessor">#include &quot;<a class="code" href="lcditse0803_8h.html">lcditse0803.h</a>&quot;</span></div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span><span class="preprocessor">#include &lt;string.h&gt;</span></div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span><span class="preprocessor">#include &quot;<a class="code" href="switch_8h.html">switch.h</a>&quot;</span></div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span><span class="comment">/*==================[macros and definitions]=================================*/</span></div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno"><a class="line" href="proyecto__final_8c.html#af4c918287dd704ce82f8c4b50dee0d48">   41</a></span><span class="preprocessor">#define ALTURA_TANQUE_CM   17      </span><span class="comment">// altura total del tanque (cm)</span></div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno"><a class="line" href="proyecto__final_8c.html#a1d65a82648b922a2f3d1093bec2aa5ef">   42</a></span><span class="preprocessor">#define REFRESH_PERIOD_US  100000   </span><span class="comment">// 100 ms</span></div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno"><a class="line" href="proyecto__final_8c.html#a2c7ed0283bd6f2f9d791860d6254ef4f">   43</a></span><span class="preprocessor">#define UART_BAUDRATE      115200</span></div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno"><a class="line" href="proyecto__final_8c.html#a6d23df12b1d85416f53df83630efced1">   44</a></span><span class="preprocessor">#define CONTROL_PERIOD_US  500000 </span><span class="comment">//500ms</span></div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno"><a class="line" href="proyecto__final_8c.html#a28cab849e3771090fc1e272c08d602da">   45</a></span><span class="preprocessor">#define NIVEL_MIN_CM      11</span></div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno"><a class="line" href="proyecto__final_8c.html#ac4a503cd1cd54b8c03b2d8df8dea2133">   46</a></span><span class="preprocessor">#define NIVEL_MAX_CM      13</span></div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span> </div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span><span class="comment">/*==================[internal data definition]===============================*/</span></div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno"><a class="line" href="proyecto__final_8c.html#a2b0cb40d7a31ce7e8b3f906fd55df312">   52</a></span>TaskHandle_t <a class="code hl_variable" href="proyecto__final_8c.html#a2b0cb40d7a31ce7e8b3f906fd55df312">medir_task_handle</a> = <a class="code hl_define" href="ili9341_8c.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>;</div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span></div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno"><a class="line" href="proyecto__final_8c.html#a4296f470448e6e08338eed9851e31fab">   57</a></span>TaskHandle_t <a class="code hl_variable" href="proyecto__final_8c.html#a4296f470448e6e08338eed9851e31fab">control_task_handle</a> = <a class="code hl_define" href="ili9341_8c.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>;</div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span></div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno"><a class="line" href="proyecto__final_8c.html#a5940b577e5a0f7675ed7f72ec64ff2a8">   62</a></span>TaskHandle_t <a class="code hl_variable" href="proyecto__final_8c.html#a5940b577e5a0f7675ed7f72ec64ff2a8">control_manual_task_handle</a> = <a class="code hl_define" href="ili9341_8c.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>;</div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span></div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno"><a class="line" href="proyecto__final_8c.html#afef5223292985f21dde6eaeffcf34377">   67</a></span>uint8_t <a class="code hl_variable" href="proyecto__final_8c.html#afef5223292985f21dde6eaeffcf34377">nivel_agua_cm</a> = 0;  </div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span></div>
+<div class="foldopen" id="foldopen00072" data-start="{" data-end="};">
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno"><a class="line" href="proyecto__final_8c.html#a99b9d51e8b8d21dba06fa74c4257bcc8">   72</a></span><span class="keyword">typedef</span> <span class="keyword">enum</span> {</div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno"><a class="line" href="proyecto__final_8c.html#a99b9d51e8b8d21dba06fa74c4257bcc8aad4181ad976d54294aaa87303325d9fb">   73</a></span>    <a class="code hl_enumvalue" href="proyecto__final_8c.html#a99b9d51e8b8d21dba06fa74c4257bcc8aad4181ad976d54294aaa87303325d9fb">NIVEL_BAJO</a>,</div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno"><a class="line" href="proyecto__final_8c.html#a99b9d51e8b8d21dba06fa74c4257bcc8a6e36cefd5b796fd71ed58f70a8c2d7bf">   74</a></span>    <a class="code hl_enumvalue" href="proyecto__final_8c.html#a99b9d51e8b8d21dba06fa74c4257bcc8a6e36cefd5b796fd71ed58f70a8c2d7bf">NIVEL_ESTABLE</a>,</div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno"><a class="line" href="proyecto__final_8c.html#a99b9d51e8b8d21dba06fa74c4257bcc8a8bc5e31b6a00b6bbbe326edf364840b0">   75</a></span>    <a class="code hl_enumvalue" href="proyecto__final_8c.html#a99b9d51e8b8d21dba06fa74c4257bcc8a8bc5e31b6a00b6bbbe326edf364840b0">TANQUE_LLENO</a></div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>} <a class="code hl_enumeration" href="proyecto__final_8c.html#a99b9d51e8b8d21dba06fa74c4257bcc8">estado_tanque_t</a>;</div>
+</div>
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span></div>
+<div class="line"><a id="l00081" name="l00081"></a><span class="lineno"><a class="line" href="proyecto__final_8c.html#aa38fd4a8d0224ba5078063c3a32594f5">   81</a></span><span class="keyword">volatile</span> <a class="code hl_enumeration" href="proyecto__final_8c.html#a99b9d51e8b8d21dba06fa74c4257bcc8">estado_tanque_t</a> <a class="code hl_variable" href="proyecto__final_8c.html#aa38fd4a8d0224ba5078063c3a32594f5">estado_tanque</a> = <a class="code hl_enumvalue" href="proyecto__final_8c.html#a99b9d51e8b8d21dba06fa74c4257bcc8a8bc5e31b6a00b6bbbe326edf364840b0">TANQUE_LLENO</a>;  </div>
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span></div>
+<div class="line"><a id="l00088" name="l00088"></a><span class="lineno"><a class="line" href="proyecto__final_8c.html#a8e8d4ab2b7e4e7472dd971626d3808f2">   88</a></span><span class="keyword">volatile</span> <span class="keywordtype">bool</span> <a class="code hl_variable" href="proyecto__final_8c.html#a8e8d4ab2b7e4e7472dd971626d3808f2">control_manual_activo</a> = <span class="keyword">false</span>;</div>
+<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span></div>
+<div class="line"><a id="l00093" name="l00093"></a><span class="lineno"><a class="line" href="proyecto__final_8c.html#ab3674a3f8cb28b589294ccae5c8bbb4d">   93</a></span><span class="keyword">volatile</span> <span class="keywordtype">bool</span> <a class="code hl_variable" href="proyecto__final_8c.html#ab3674a3f8cb28b589294ccae5c8bbb4d">control_valvula_manual</a> = <span class="keyword">false</span>;</div>
+<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span><span class="comment">/*==================[internal functions declaration]=========================*/</span></div>
+<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span><span class="keywordtype">void</span> <a class="code hl_function" href="proyecto__final_8c.html#a3816592c4b2d28b5175e1060978f649b">TimerNivelHandler</a>(<span class="keywordtype">void</span> *param);</div>
+<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span><span class="keywordtype">void</span> <a class="code hl_function" href="proyecto__final_8c.html#a03ec07968ef8eb78955609a1953feba7">MedirNivelTask</a>(<span class="keywordtype">void</span> *pvParameter);</div>
+<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span><span class="keywordtype">void</span> <a class="code hl_function" href="proyecto__final_8c.html#a32ee8d6a54485de5d798a537403e2912">TimerControlHandler</a>(<span class="keywordtype">void</span> *param);</div>
+<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span><span class="keywordtype">void</span> <a class="code hl_function" href="proyecto__final_8c.html#a65cc2c6b183b42412d7637b496320239">ControlNivelTask</a>(<span class="keywordtype">void</span> *pvParameter);</div>
+<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span> </div>
+<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span><span class="comment">/*==================[internal functions definition]==========================*/</span></div>
+<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span></div>
+<div class="foldopen" id="foldopen00106" data-start="{" data-end="}">
+<div class="line"><a id="l00106" name="l00106"></a><span class="lineno"><a class="line" href="proyecto__final_8c.html#a3816592c4b2d28b5175e1060978f649b">  106</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="proyecto__final_8c.html#a3816592c4b2d28b5175e1060978f649b">TimerNivelHandler</a>(<span class="keywordtype">void</span> *param) {</div>
+<div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span>    vTaskNotifyGiveFromISR(<a class="code hl_variable" href="proyecto__final_8c.html#a2b0cb40d7a31ce7e8b3f906fd55df312">medir_task_handle</a>, pdFALSE);</div>
+<div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span>}</div>
+</div>
+<div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span></div>
+<div class="foldopen" id="foldopen00114" data-start="{" data-end="}">
+<div class="line"><a id="l00114" name="l00114"></a><span class="lineno"><a class="line" href="proyecto__final_8c.html#a32ee8d6a54485de5d798a537403e2912">  114</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="proyecto__final_8c.html#a32ee8d6a54485de5d798a537403e2912">TimerControlHandler</a>(<span class="keywordtype">void</span> *param) {</div>
+<div class="line"><a id="l00115" name="l00115"></a><span class="lineno">  115</span>    vTaskNotifyGiveFromISR(<a class="code hl_variable" href="proyecto__final_8c.html#a4296f470448e6e08338eed9851e31fab">control_task_handle</a>, pdFALSE);</div>
+<div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span>}</div>
+</div>
+<div class="line"><a id="l00117" name="l00117"></a><span class="lineno">  117</span></div>
+<div class="foldopen" id="foldopen00122" data-start="{" data-end="}">
+<div class="line"><a id="l00122" name="l00122"></a><span class="lineno"><a class="line" href="proyecto__final_8c.html#a65cc2c6b183b42412d7637b496320239">  122</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="proyecto__final_8c.html#a65cc2c6b183b42412d7637b496320239">ControlNivelTask</a>(<span class="keywordtype">void</span> *pvParameter) {</div>
+<div class="line"><a id="l00123" name="l00123"></a><span class="lineno">  123</span>    <span class="keywordtype">bool</span> bomba_activada = <span class="keyword">false</span>;</div>
+<div class="line"><a id="l00124" name="l00124"></a><span class="lineno">  124</span>    </div>
+<div class="line"><a id="l00125" name="l00125"></a><span class="lineno">  125</span>    <span class="keywordflow">while</span> (<span class="keyword">true</span>) {</div>
+<div class="line"><a id="l00126" name="l00126"></a><span class="lineno">  126</span>        <span class="comment">/* Esperar notificación del timer */</span></div>
+<div class="line"><a id="l00127" name="l00127"></a><span class="lineno">  127</span>        ulTaskNotifyTake(pdTRUE, portMAX_DELAY);</div>
+<div class="line"><a id="l00128" name="l00128"></a><span class="lineno">  128</span> </div>
+<div class="line"><a id="l00129" name="l00129"></a><span class="lineno">  129</span>        <span class="comment">// Si está activo el control manual, salteamos el control automático</span></div>
+<div class="line"><a id="l00130" name="l00130"></a><span class="lineno">  130</span>        <span class="keywordflow">if</span> (<a class="code hl_variable" href="proyecto__final_8c.html#a8e8d4ab2b7e4e7472dd971626d3808f2">control_manual_activo</a>) {</div>
+<div class="line"><a id="l00131" name="l00131"></a><span class="lineno">  131</span>            <span class="keywordflow">continue</span>;</div>
+<div class="line"><a id="l00132" name="l00132"></a><span class="lineno">  132</span>        }</div>
+<div class="line"><a id="l00133" name="l00133"></a><span class="lineno">  133</span> </div>
+<div class="line"><a id="l00134" name="l00134"></a><span class="lineno">  134</span>        <span class="keywordflow">if</span> (<a class="code hl_variable" href="proyecto__final_8c.html#afef5223292985f21dde6eaeffcf34377">nivel_agua_cm</a> &lt; <a class="code hl_define" href="proyecto__final_8c.html#a28cab849e3771090fc1e272c08d602da">NIVEL_MIN_CM</a>) {</div>
+<div class="line"><a id="l00135" name="l00135"></a><span class="lineno">  135</span>            <span class="comment">// Activar bomba (rele y LED)</span></div>
+<div class="line"><a id="l00136" name="l00136"></a><span class="lineno">  136</span>            <a class="code hl_function" href="group___g_i_o_p.html#ga30ed9d97406129b9b6390154a7479d70">GPIOOff</a>(<a class="code hl_enumvalue" href="group___g_i_o_p.html#ggaf65604147d0244c9b13cfdc865ad5393a1b3ef28b8ae924f5f3fdfbb0ed7e6f7c">GPIO_6</a>);   <span class="comment">// ejemplo: relé en GPIO_6</span></div>
+<div class="line"><a id="l00137" name="l00137"></a><span class="lineno">  137</span>            <span class="comment">//LedOn(LED_1);      // LED indica bomba activa</span></div>
+<div class="line"><a id="l00138" name="l00138"></a><span class="lineno">  138</span>            <a class="code hl_variable" href="proyecto__final_8c.html#aa38fd4a8d0224ba5078063c3a32594f5">estado_tanque</a> = <a class="code hl_enumvalue" href="proyecto__final_8c.html#a99b9d51e8b8d21dba06fa74c4257bcc8aad4181ad976d54294aaa87303325d9fb">NIVEL_BAJO</a>;</div>
+<div class="line"><a id="l00139" name="l00139"></a><span class="lineno">  139</span> </div>
+<div class="line"><a id="l00140" name="l00140"></a><span class="lineno">  140</span>        } <span class="keywordflow">else</span> <span class="keywordflow">if</span> (<a class="code hl_variable" href="proyecto__final_8c.html#afef5223292985f21dde6eaeffcf34377">nivel_agua_cm</a> &gt; <a class="code hl_define" href="proyecto__final_8c.html#ac4a503cd1cd54b8c03b2d8df8dea2133">NIVEL_MAX_CM</a>) {</div>
+<div class="line"><a id="l00141" name="l00141"></a><span class="lineno">  141</span>            <span class="comment">// Apagar bomba (rele y LED)</span></div>
+<div class="line"><a id="l00142" name="l00142"></a><span class="lineno">  142</span>            <a class="code hl_function" href="group___g_i_o_p.html#gaba62250f2b0e73a98b6f35fb6078fdb1">GPIOOn</a>(<a class="code hl_enumvalue" href="group___g_i_o_p.html#ggaf65604147d0244c9b13cfdc865ad5393a1b3ef28b8ae924f5f3fdfbb0ed7e6f7c">GPIO_6</a>);</div>
+<div class="line"><a id="l00143" name="l00143"></a><span class="lineno">  143</span>            <span class="comment">//LedOff(LED_1);</span></div>
+<div class="line"><a id="l00144" name="l00144"></a><span class="lineno">  144</span>            <a class="code hl_variable" href="proyecto__final_8c.html#aa38fd4a8d0224ba5078063c3a32594f5">estado_tanque</a> = <a class="code hl_enumvalue" href="proyecto__final_8c.html#a99b9d51e8b8d21dba06fa74c4257bcc8a8bc5e31b6a00b6bbbe326edf364840b0">TANQUE_LLENO</a>;</div>
+<div class="line"><a id="l00145" name="l00145"></a><span class="lineno">  145</span> </div>
+<div class="line"><a id="l00146" name="l00146"></a><span class="lineno">  146</span>        } <span class="keywordflow">else</span> {</div>
+<div class="line"><a id="l00147" name="l00147"></a><span class="lineno">  147</span>            <a class="code hl_variable" href="proyecto__final_8c.html#aa38fd4a8d0224ba5078063c3a32594f5">estado_tanque</a> = <a class="code hl_enumvalue" href="proyecto__final_8c.html#a99b9d51e8b8d21dba06fa74c4257bcc8a6e36cefd5b796fd71ed58f70a8c2d7bf">NIVEL_ESTABLE</a>;</div>
+<div class="line"><a id="l00148" name="l00148"></a><span class="lineno">  148</span>        }</div>
+<div class="line"><a id="l00149" name="l00149"></a><span class="lineno">  149</span> </div>
+<div class="line"><a id="l00150" name="l00150"></a><span class="lineno">  150</span>        <a class="code hl_function" href="group___u_a_r_t.html#ga60db217694ea24ad75fcedda3336a3a8">UartSendString</a>(<a class="code hl_enumvalue" href="group___u_a_r_t.html#gga6e1a445bae87c4cfd26710dbd4657b77af81669fbb473eedf3d1789fcf08d9056">UART_PC</a>, <span class="stringliteral">&quot;Estado: &quot;</span>);</div>
+<div class="line"><a id="l00151" name="l00151"></a><span class="lineno">  151</span> </div>
+<div class="line"><a id="l00152" name="l00152"></a><span class="lineno">  152</span>         <span class="keywordflow">switch</span> (<a class="code hl_variable" href="proyecto__final_8c.html#aa38fd4a8d0224ba5078063c3a32594f5">estado_tanque</a>) {</div>
+<div class="line"><a id="l00153" name="l00153"></a><span class="lineno">  153</span>            <span class="keywordflow">case</span> <a class="code hl_enumvalue" href="proyecto__final_8c.html#a99b9d51e8b8d21dba06fa74c4257bcc8aad4181ad976d54294aaa87303325d9fb">NIVEL_BAJO</a>:</div>
+<div class="line"><a id="l00154" name="l00154"></a><span class="lineno">  154</span>                <a class="code hl_function" href="group___u_a_r_t.html#ga60db217694ea24ad75fcedda3336a3a8">UartSendString</a>(<a class="code hl_enumvalue" href="group___u_a_r_t.html#gga6e1a445bae87c4cfd26710dbd4657b77af81669fbb473eedf3d1789fcf08d9056">UART_PC</a>, <span class="stringliteral">&quot;Nivel bajo, activando bomba\r\n&quot;</span>);</div>
+<div class="line"><a id="l00155" name="l00155"></a><span class="lineno">  155</span>                <span class="keywordflow">break</span>;</div>
+<div class="line"><a id="l00156" name="l00156"></a><span class="lineno">  156</span>            <span class="keywordflow">case</span> <a class="code hl_enumvalue" href="proyecto__final_8c.html#a99b9d51e8b8d21dba06fa74c4257bcc8a6e36cefd5b796fd71ed58f70a8c2d7bf">NIVEL_ESTABLE</a>:</div>
+<div class="line"><a id="l00157" name="l00157"></a><span class="lineno">  157</span>                <a class="code hl_function" href="group___u_a_r_t.html#ga60db217694ea24ad75fcedda3336a3a8">UartSendString</a>(<a class="code hl_enumvalue" href="group___u_a_r_t.html#gga6e1a445bae87c4cfd26710dbd4657b77af81669fbb473eedf3d1789fcf08d9056">UART_PC</a>, <span class="stringliteral">&quot;Nivel estable\r\n&quot;</span>);</div>
+<div class="line"><a id="l00158" name="l00158"></a><span class="lineno">  158</span>                <span class="keywordflow">break</span>;</div>
+<div class="line"><a id="l00159" name="l00159"></a><span class="lineno">  159</span>            <span class="keywordflow">case</span> <a class="code hl_enumvalue" href="proyecto__final_8c.html#a99b9d51e8b8d21dba06fa74c4257bcc8a8bc5e31b6a00b6bbbe326edf364840b0">TANQUE_LLENO</a>:</div>
+<div class="line"><a id="l00160" name="l00160"></a><span class="lineno">  160</span>                <a class="code hl_function" href="group___u_a_r_t.html#ga60db217694ea24ad75fcedda3336a3a8">UartSendString</a>(<a class="code hl_enumvalue" href="group___u_a_r_t.html#gga6e1a445bae87c4cfd26710dbd4657b77af81669fbb473eedf3d1789fcf08d9056">UART_PC</a>, <span class="stringliteral">&quot;Tanque lleno, desactivando bomba\r\n&quot;</span>);</div>
+<div class="line"><a id="l00161" name="l00161"></a><span class="lineno">  161</span>                <span class="keywordflow">break</span>;</div>
+<div class="line"><a id="l00162" name="l00162"></a><span class="lineno">  162</span>        }</div>
+<div class="line"><a id="l00163" name="l00163"></a><span class="lineno">  163</span> </div>
+<div class="line"><a id="l00164" name="l00164"></a><span class="lineno">  164</span>        vTaskDelay(pdMS_TO_TICKS(50)); <span class="comment">// pequeña pausa</span></div>
+<div class="line"><a id="l00165" name="l00165"></a><span class="lineno">  165</span>    }</div>
+<div class="line"><a id="l00166" name="l00166"></a><span class="lineno">  166</span>}</div>
+</div>
+<div class="line"><a id="l00167" name="l00167"></a><span class="lineno">  167</span></div>
+<div class="foldopen" id="foldopen00172" data-start="{" data-end="}">
+<div class="line"><a id="l00172" name="l00172"></a><span class="lineno"><a class="line" href="proyecto__final_8c.html#a03ec07968ef8eb78955609a1953feba7">  172</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="proyecto__final_8c.html#a03ec07968ef8eb78955609a1953feba7">MedirNivelTask</a>(<span class="keywordtype">void</span> *pvParameter) {</div>
+<div class="line"><a id="l00173" name="l00173"></a><span class="lineno">  173</span>    uint16_t distancia_cm;</div>
+<div class="line"><a id="l00174" name="l00174"></a><span class="lineno">  174</span>    uint16_t nivel_cm;</div>
+<div class="line"><a id="l00175" name="l00175"></a><span class="lineno">  175</span> </div>
+<div class="line"><a id="l00176" name="l00176"></a><span class="lineno">  176</span>    <span class="keywordflow">while</span> (<span class="keyword">true</span>) {</div>
+<div class="line"><a id="l00177" name="l00177"></a><span class="lineno">  177</span>        <span class="comment">/* Espera la notificación del timer */</span></div>
+<div class="line"><a id="l00178" name="l00178"></a><span class="lineno">  178</span>        ulTaskNotifyTake(pdTRUE, portMAX_DELAY);</div>
+<div class="line"><a id="l00179" name="l00179"></a><span class="lineno">  179</span> </div>
+<div class="line"><a id="l00180" name="l00180"></a><span class="lineno">  180</span>        <span class="comment">/* Leer distancia del sensor (cm) */</span></div>
+<div class="line"><a id="l00181" name="l00181"></a><span class="lineno">  181</span>        distancia_cm = <a class="code hl_function" href="group___h_c___s_r04.html#ga73a5aaa2183e55d104d4e0c2c435e251">HcSr04ReadDistanceInCentimeters</a>();</div>
+<div class="line"><a id="l00182" name="l00182"></a><span class="lineno">  182</span> </div>
+<div class="line"><a id="l00183" name="l00183"></a><span class="lineno">  183</span>        <span class="comment">/* Calcular nivel (altura - distancia) */</span></div>
+<div class="line"><a id="l00184" name="l00184"></a><span class="lineno">  184</span>        <span class="keywordflow">if</span> (distancia_cm &gt;= <a class="code hl_define" href="proyecto__final_8c.html#af4c918287dd704ce82f8c4b50dee0d48">ALTURA_TANQUE_CM</a>)</div>
+<div class="line"><a id="l00185" name="l00185"></a><span class="lineno">  185</span>            nivel_cm = 0;</div>
+<div class="line"><a id="l00186" name="l00186"></a><span class="lineno">  186</span>        <span class="keywordflow">else</span></div>
+<div class="line"><a id="l00187" name="l00187"></a><span class="lineno">  187</span>            nivel_cm = <a class="code hl_define" href="proyecto__final_8c.html#af4c918287dd704ce82f8c4b50dee0d48">ALTURA_TANQUE_CM</a> - distancia_cm;</div>
+<div class="line"><a id="l00188" name="l00188"></a><span class="lineno">  188</span> </div>
+<div class="line"><a id="l00189" name="l00189"></a><span class="lineno">  189</span>        <span class="comment">/* Guardar el valor global */</span></div>
+<div class="line"><a id="l00190" name="l00190"></a><span class="lineno">  190</span>        <a class="code hl_variable" href="proyecto__final_8c.html#afef5223292985f21dde6eaeffcf34377">nivel_agua_cm</a> = nivel_cm;</div>
+<div class="line"><a id="l00191" name="l00191"></a><span class="lineno">  191</span>        <span class="comment">/* Enviar por UART */</span></div>
+<div class="line"><a id="l00192" name="l00192"></a><span class="lineno">  192</span>        <a class="code hl_function" href="group___u_a_r_t.html#ga60db217694ea24ad75fcedda3336a3a8">UartSendString</a>(<a class="code hl_enumvalue" href="group___u_a_r_t.html#gga6e1a445bae87c4cfd26710dbd4657b77af81669fbb473eedf3d1789fcf08d9056">UART_PC</a>, <span class="stringliteral">&quot;Nivel de agua: &quot;</span>);</div>
+<div class="line"><a id="l00193" name="l00193"></a><span class="lineno">  193</span>        <a class="code hl_function" href="group___u_a_r_t.html#ga60db217694ea24ad75fcedda3336a3a8">UartSendString</a>(<a class="code hl_enumvalue" href="group___u_a_r_t.html#gga6e1a445bae87c4cfd26710dbd4657b77af81669fbb473eedf3d1789fcf08d9056">UART_PC</a>, (<span class="keywordtype">char</span> *)<a class="code hl_function" href="group___u_a_r_t.html#ga00c7e785d2874c52bab6e4dba88a5e23">UartItoa</a>((uint32_t)<a class="code hl_variable" href="proyecto__final_8c.html#afef5223292985f21dde6eaeffcf34377">nivel_agua_cm</a>, 10));</div>
+<div class="line"><a id="l00194" name="l00194"></a><span class="lineno">  194</span>        <a class="code hl_function" href="group___u_a_r_t.html#ga60db217694ea24ad75fcedda3336a3a8">UartSendString</a>(<a class="code hl_enumvalue" href="group___u_a_r_t.html#gga6e1a445bae87c4cfd26710dbd4657b77af81669fbb473eedf3d1789fcf08d9056">UART_PC</a>, <span class="stringliteral">&quot; cm\r\n&quot;</span>);</div>
+<div class="line"><a id="l00195" name="l00195"></a><span class="lineno">  195</span>        </div>
+<div class="line"><a id="l00196" name="l00196"></a><span class="lineno">  196</span>        <span class="comment">//Muestra el nivel en el display LCD</span></div>
+<div class="line"><a id="l00197" name="l00197"></a><span class="lineno">  197</span>        <a class="code hl_function" href="group___l_c_d___i_t_s_e0803.html#ga77a9887ee733d3212c3e4996c47f1b9d">LcdItsE0803Write</a>(<a class="code hl_variable" href="proyecto__final_8c.html#afef5223292985f21dde6eaeffcf34377">nivel_agua_cm</a>);</div>
+<div class="line"><a id="l00198" name="l00198"></a><span class="lineno">  198</span> </div>
+<div class="line"><a id="l00199" name="l00199"></a><span class="lineno">  199</span>        <span class="comment">// ---------- Envío para el Serial Plotter ----------</span></div>
+<div class="line"><a id="l00200" name="l00200"></a><span class="lineno">  200</span>        <span class="keywordtype">char</span> mensaje[30];</div>
+<div class="line"><a id="l00201" name="l00201"></a><span class="lineno">  201</span>        <span class="keywordtype">char</span> *valor_str = (<span class="keywordtype">char</span> *)<a class="code hl_function" href="group___u_a_r_t.html#ga00c7e785d2874c52bab6e4dba88a5e23">UartItoa</a>((uint32_t)<a class="code hl_variable" href="proyecto__final_8c.html#afef5223292985f21dde6eaeffcf34377">nivel_agua_cm</a>, 10);</div>
+<div class="line"><a id="l00202" name="l00202"></a><span class="lineno">  202</span>        strcpy(mensaje, <span class="stringliteral">&quot;&gt;brightness:&quot;</span>);</div>
+<div class="line"><a id="l00203" name="l00203"></a><span class="lineno">  203</span>        strcat(mensaje, valor_str);</div>
+<div class="line"><a id="l00204" name="l00204"></a><span class="lineno">  204</span>        strcat(mensaje, <span class="stringliteral">&quot;\r\n&quot;</span>);</div>
+<div class="line"><a id="l00205" name="l00205"></a><span class="lineno">  205</span>        <a class="code hl_function" href="group___u_a_r_t.html#ga60db217694ea24ad75fcedda3336a3a8">UartSendString</a>(<a class="code hl_enumvalue" href="group___u_a_r_t.html#gga6e1a445bae87c4cfd26710dbd4657b77af81669fbb473eedf3d1789fcf08d9056">UART_PC</a>, mensaje);</div>
+<div class="line"><a id="l00206" name="l00206"></a><span class="lineno">  206</span> </div>
+<div class="line"><a id="l00207" name="l00207"></a><span class="lineno">  207</span> </div>
+<div class="line"><a id="l00208" name="l00208"></a><span class="lineno">  208</span> </div>
+<div class="line"><a id="l00209" name="l00209"></a><span class="lineno">  209</span>    }</div>
+<div class="line"><a id="l00210" name="l00210"></a><span class="lineno">  210</span>}</div>
+</div>
+<div class="line"><a id="l00211" name="l00211"></a><span class="lineno">  211</span></div>
+<div class="foldopen" id="foldopen00217" data-start="{" data-end="}">
+<div class="line"><a id="l00217" name="l00217"></a><span class="lineno"><a class="line" href="proyecto__final_8c.html#a19ee266bd9015898539274cacfd5281e">  217</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="proyecto__final_8c.html#a19ee266bd9015898539274cacfd5281e">ControlManualTask</a>(<span class="keywordtype">void</span> *pvParameter) {</div>
+<div class="line"><a id="l00218" name="l00218"></a><span class="lineno">  218</span> </div>
+<div class="line"><a id="l00219" name="l00219"></a><span class="lineno">  219</span><span class="keywordflow">while</span> (1) {</div>
+<div class="line"><a id="l00220" name="l00220"></a><span class="lineno">  220</span>    int8_t estado_switch = <a class="code hl_function" href="group___switch.html#gae2e64bab117e3f8ffc08ecae51f5e262">SwitchesRead</a>();</div>
+<div class="line"><a id="l00221" name="l00221"></a><span class="lineno">  221</span> </div>
+<div class="line"><a id="l00222" name="l00222"></a><span class="lineno">  222</span>    <span class="comment">/* Si el usuario presiona el SWITCH_1, alterna entre modo manual y automático */</span></div>
+<div class="line"><a id="l00223" name="l00223"></a><span class="lineno">  223</span>    <span class="keywordflow">if</span> (estado_switch == <a class="code hl_enumvalue" href="group___switch.html#gga8caa2df6d25fea5a14eb4533df1d5cfaa24caa46485c5fec2211b3ebd8a1eee77">SWITCH_1</a>) {</div>
+<div class="line"><a id="l00224" name="l00224"></a><span class="lineno">  224</span>        <span class="keywordflow">if</span> (<a class="code hl_variable" href="proyecto__final_8c.html#a8e8d4ab2b7e4e7472dd971626d3808f2">control_manual_activo</a>) {</div>
+<div class="line"><a id="l00225" name="l00225"></a><span class="lineno">  225</span>            <span class="comment">// Si ya estaba en modo manual → volver a automático</span></div>
+<div class="line"><a id="l00226" name="l00226"></a><span class="lineno">  226</span>            <a class="code hl_function" href="group___l_e_d.html#ga4fd07c9f7fab15d0d07389a38f4a39d8">LedOff</a>(<a class="code hl_enumvalue" href="group___l_e_d.html#ggab6831a7d06c0a2bc69f9b024f6445a80a11a9adb9054de1fe01d6a6750075f57b">LED_1</a>);</div>
+<div class="line"><a id="l00227" name="l00227"></a><span class="lineno">  227</span>            <a class="code hl_variable" href="proyecto__final_8c.html#a8e8d4ab2b7e4e7472dd971626d3808f2">control_manual_activo</a> = <span class="keyword">false</span>;</div>
+<div class="line"><a id="l00228" name="l00228"></a><span class="lineno">  228</span>            <a class="code hl_function" href="group___u_a_r_t.html#ga60db217694ea24ad75fcedda3336a3a8">UartSendString</a>(<a class="code hl_enumvalue" href="group___u_a_r_t.html#gga6e1a445bae87c4cfd26710dbd4657b77af81669fbb473eedf3d1789fcf08d9056">UART_PC</a>, <span class="stringliteral">&quot;\r\n[CONTROL MANUAL] Desactivado, vuelve a control automático\r\n&quot;</span>);</div>
+<div class="line"><a id="l00229" name="l00229"></a><span class="lineno">  229</span> </div>
+<div class="line"><a id="l00230" name="l00230"></a><span class="lineno">  230</span>        } <span class="keywordflow">else</span> {</div>
+<div class="line"><a id="l00231" name="l00231"></a><span class="lineno">  231</span>            <span class="comment">// Si estaba en automático → pasar a manual y apagar bomba</span></div>
+<div class="line"><a id="l00232" name="l00232"></a><span class="lineno">  232</span>            <a class="code hl_function" href="group___g_i_o_p.html#gaba62250f2b0e73a98b6f35fb6078fdb1">GPIOOn</a>(<a class="code hl_enumvalue" href="group___g_i_o_p.html#ggaf65604147d0244c9b13cfdc865ad5393a1b3ef28b8ae924f5f3fdfbb0ed7e6f7c">GPIO_6</a>);   <span class="comment">// apagar bomba</span></div>
+<div class="line"><a id="l00233" name="l00233"></a><span class="lineno">  233</span>            <a class="code hl_function" href="group___l_e_d.html#ga883021aaef65f080a52b1852172ecbc3">LedOn</a>(<a class="code hl_enumvalue" href="group___l_e_d.html#ggab6831a7d06c0a2bc69f9b024f6445a80a11a9adb9054de1fe01d6a6750075f57b">LED_1</a>);</div>
+<div class="line"><a id="l00234" name="l00234"></a><span class="lineno">  234</span>            <a class="code hl_variable" href="proyecto__final_8c.html#a8e8d4ab2b7e4e7472dd971626d3808f2">control_manual_activo</a> = <span class="keyword">true</span>;</div>
+<div class="line"><a id="l00235" name="l00235"></a><span class="lineno">  235</span>            <a class="code hl_function" href="group___u_a_r_t.html#ga60db217694ea24ad75fcedda3336a3a8">UartSendString</a>(<a class="code hl_enumvalue" href="group___u_a_r_t.html#gga6e1a445bae87c4cfd26710dbd4657b77af81669fbb473eedf3d1789fcf08d9056">UART_PC</a>, <span class="stringliteral">&quot;\r\n[CONTROL MANUAL] Activado: bomba detenida manualmente\r\n&quot;</span>);</div>
+<div class="line"><a id="l00236" name="l00236"></a><span class="lineno">  236</span>        }</div>
+<div class="line"><a id="l00237" name="l00237"></a><span class="lineno">  237</span>    }</div>
+<div class="line"><a id="l00238" name="l00238"></a><span class="lineno">  238</span> </div>
+<div class="line"><a id="l00239" name="l00239"></a><span class="lineno">  239</span>   <span class="comment">/* SWITCH_2: alterna modo manual de válvula */</span></div>
+<div class="line"><a id="l00240" name="l00240"></a><span class="lineno">  240</span>    <span class="keywordflow">else</span> <span class="keywordflow">if</span> (estado_switch == <a class="code hl_enumvalue" href="group___switch.html#gga8caa2df6d25fea5a14eb4533df1d5cfaa73fda67835d5d51aa9251fee781a7434">SWITCH_2</a>) {</div>
+<div class="line"><a id="l00241" name="l00241"></a><span class="lineno">  241</span>        <span class="keywordflow">if</span> (<a class="code hl_variable" href="proyecto__final_8c.html#ab3674a3f8cb28b589294ccae5c8bbb4d">control_valvula_manual</a>) {</div>
+<div class="line"><a id="l00242" name="l00242"></a><span class="lineno">  242</span>            <span class="comment">// Estaba activada manualmente → apagar válvula</span></div>
+<div class="line"><a id="l00243" name="l00243"></a><span class="lineno">  243</span>            <a class="code hl_variable" href="proyecto__final_8c.html#ab3674a3f8cb28b589294ccae5c8bbb4d">control_valvula_manual</a> = <span class="keyword">false</span>;</div>
+<div class="line"><a id="l00244" name="l00244"></a><span class="lineno">  244</span>            <a class="code hl_function" href="group___g_i_o_p.html#gaba62250f2b0e73a98b6f35fb6078fdb1">GPIOOn</a>(<a class="code hl_enumvalue" href="group___g_i_o_p.html#ggaf65604147d0244c9b13cfdc865ad5393a4bae0816af6049c68cf772f0e01ea0e5">GPIO_7</a>);   <span class="comment">// cerrar válvula</span></div>
+<div class="line"><a id="l00245" name="l00245"></a><span class="lineno">  245</span>            <a class="code hl_function" href="group___l_e_d.html#ga4fd07c9f7fab15d0d07389a38f4a39d8">LedOff</a>(<a class="code hl_enumvalue" href="group___l_e_d.html#ggab6831a7d06c0a2bc69f9b024f6445a80a00af6b2437d9982f1f125d2cc2537c41">LED_2</a>);</div>
+<div class="line"><a id="l00246" name="l00246"></a><span class="lineno">  246</span>            <a class="code hl_function" href="group___u_a_r_t.html#ga60db217694ea24ad75fcedda3336a3a8">UartSendString</a>(<a class="code hl_enumvalue" href="group___u_a_r_t.html#gga6e1a445bae87c4cfd26710dbd4657b77af81669fbb473eedf3d1789fcf08d9056">UART_PC</a>, <span class="stringliteral">&quot;\r\n[CONTROL MANUAL] Válvula cerrada\r\n&quot;</span>);</div>
+<div class="line"><a id="l00247" name="l00247"></a><span class="lineno">  247</span>        } <span class="keywordflow">else</span> {</div>
+<div class="line"><a id="l00248" name="l00248"></a><span class="lineno">  248</span>            <span class="comment">// Estaba apagada → activar manualmente</span></div>
+<div class="line"><a id="l00249" name="l00249"></a><span class="lineno">  249</span>            <a class="code hl_variable" href="proyecto__final_8c.html#ab3674a3f8cb28b589294ccae5c8bbb4d">control_valvula_manual</a> = <span class="keyword">true</span>;</div>
+<div class="line"><a id="l00250" name="l00250"></a><span class="lineno">  250</span>            <a class="code hl_function" href="group___g_i_o_p.html#ga30ed9d97406129b9b6390154a7479d70">GPIOOff</a>(<a class="code hl_enumvalue" href="group___g_i_o_p.html#ggaf65604147d0244c9b13cfdc865ad5393a4bae0816af6049c68cf772f0e01ea0e5">GPIO_7</a>);  <span class="comment">// abrir válvula</span></div>
+<div class="line"><a id="l00251" name="l00251"></a><span class="lineno">  251</span>            <a class="code hl_function" href="group___l_e_d.html#ga883021aaef65f080a52b1852172ecbc3">LedOn</a>(<a class="code hl_enumvalue" href="group___l_e_d.html#ggab6831a7d06c0a2bc69f9b024f6445a80a00af6b2437d9982f1f125d2cc2537c41">LED_2</a>);</div>
+<div class="line"><a id="l00252" name="l00252"></a><span class="lineno">  252</span>            <a class="code hl_function" href="group___u_a_r_t.html#ga60db217694ea24ad75fcedda3336a3a8">UartSendString</a>(<a class="code hl_enumvalue" href="group___u_a_r_t.html#gga6e1a445bae87c4cfd26710dbd4657b77af81669fbb473eedf3d1789fcf08d9056">UART_PC</a>, <span class="stringliteral">&quot;\r\n[CONTROL MANUAL] Válvula en desagote manual\r\n&quot;</span>);</div>
+<div class="line"><a id="l00253" name="l00253"></a><span class="lineno">  253</span>        }</div>
+<div class="line"><a id="l00254" name="l00254"></a><span class="lineno">  254</span>    }</div>
+<div class="line"><a id="l00255" name="l00255"></a><span class="lineno">  255</span>    vTaskDelay(pdMS_TO_TICKS(100)); <span class="comment">// pequeño retardo para evitar rebotes</span></div>
+<div class="line"><a id="l00256" name="l00256"></a><span class="lineno">  256</span>}</div>
+<div class="line"><a id="l00257" name="l00257"></a><span class="lineno">  257</span>}</div>
+</div>
+<div class="line"><a id="l00258" name="l00258"></a><span class="lineno">  258</span> </div>
+<div class="line"><a id="l00259" name="l00259"></a><span class="lineno">  259</span> </div>
+<div class="line"><a id="l00260" name="l00260"></a><span class="lineno">  260</span><span class="comment">/*==================[external functions definition]==========================*/</span></div>
+<div class="foldopen" id="foldopen00273" data-start="{" data-end="}">
+<div class="line"><a id="l00273" name="l00273"></a><span class="lineno"><a class="line" href="proyecto__final_8c.html#a630544a7f0a2cc40d8a7fefab7e2fe70">  273</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="proyecto__final_8c.html#a630544a7f0a2cc40d8a7fefab7e2fe70">app_main</a>(<span class="keywordtype">void</span>) {</div>
+<div class="line"><a id="l00274" name="l00274"></a><span class="lineno">  274</span>    <a class="code hl_function" href="group___l_e_d.html#gacba669c3e8f52e45d1bea50c2e63b250">LedsInit</a>();</div>
+<div class="line"><a id="l00275" name="l00275"></a><span class="lineno">  275</span>    <a class="code hl_function" href="group___h_c___s_r04.html#ga9d26cc017fe45c607d08231ebffb46c4">HcSr04Init</a>(<a class="code hl_enumvalue" href="group___g_i_o_p.html#ggaf65604147d0244c9b13cfdc865ad5393a426d08ab85ab3aebbb53eed1a32dfb71">GPIO_3</a>, <a class="code hl_enumvalue" href="group___g_i_o_p.html#ggaf65604147d0244c9b13cfdc865ad5393abbea21b656f1917800d9d279b685f38e">GPIO_2</a>); </div>
+<div class="line"><a id="l00276" name="l00276"></a><span class="lineno">  276</span>    <a class="code hl_function" href="group___l_c_d___i_t_s_e0803.html#ga1c08a1458380c8f0a02a3763d14c8bf3">LcdItsE0803Init</a>();</div>
+<div class="line"><a id="l00277" name="l00277"></a><span class="lineno">  277</span>    <a class="code hl_function" href="group___switch.html#ga8eb2865a73bf2d2b9fd6760958a0cc3c">SwitchesInit</a>();</div>
+<div class="line"><a id="l00278" name="l00278"></a><span class="lineno">  278</span>    <span class="comment">//BOMBA</span></div>
+<div class="line"><a id="l00279" name="l00279"></a><span class="lineno">  279</span>    <a class="code hl_function" href="group___g_i_o_p.html#ga10240d283f64bd1b09fca664fda27964">GPIOInit</a>(<a class="code hl_enumvalue" href="group___g_i_o_p.html#ggaf65604147d0244c9b13cfdc865ad5393a1b3ef28b8ae924f5f3fdfbb0ed7e6f7c">GPIO_6</a>, <a class="code hl_enumvalue" href="group___g_i_o_p.html#gga423620ef7d69894833f70cfc395caaa9aa248e73c1faee9c6f072fd91569cf516">GPIO_OUTPUT</a>);</div>
+<div class="line"><a id="l00280" name="l00280"></a><span class="lineno">  280</span>    <a class="code hl_function" href="group___g_i_o_p.html#gaba62250f2b0e73a98b6f35fb6078fdb1">GPIOOn</a>(<a class="code hl_enumvalue" href="group___g_i_o_p.html#ggaf65604147d0244c9b13cfdc865ad5393a1b3ef28b8ae924f5f3fdfbb0ed7e6f7c">GPIO_6</a>);</div>
+<div class="line"><a id="l00281" name="l00281"></a><span class="lineno">  281</span>    <span class="comment">//VALVULA</span></div>
+<div class="line"><a id="l00282" name="l00282"></a><span class="lineno">  282</span>    <a class="code hl_function" href="group___g_i_o_p.html#ga10240d283f64bd1b09fca664fda27964">GPIOInit</a>(<a class="code hl_enumvalue" href="group___g_i_o_p.html#ggaf65604147d0244c9b13cfdc865ad5393a4bae0816af6049c68cf772f0e01ea0e5">GPIO_7</a>, <a class="code hl_enumvalue" href="group___g_i_o_p.html#gga423620ef7d69894833f70cfc395caaa9aa248e73c1faee9c6f072fd91569cf516">GPIO_OUTPUT</a>);</div>
+<div class="line"><a id="l00283" name="l00283"></a><span class="lineno">  283</span>    <a class="code hl_function" href="group___g_i_o_p.html#gaba62250f2b0e73a98b6f35fb6078fdb1">GPIOOn</a>(<a class="code hl_enumvalue" href="group___g_i_o_p.html#ggaf65604147d0244c9b13cfdc865ad5393a4bae0816af6049c68cf772f0e01ea0e5">GPIO_7</a>);</div>
+<div class="line"><a id="l00284" name="l00284"></a><span class="lineno">  284</span> </div>
+<div class="line"><a id="l00285" name="l00285"></a><span class="lineno">  285</span>    <span class="comment">/* Configuración dela uart */</span></div>
+<div class="line"><a id="l00286" name="l00286"></a><span class="lineno">  286</span>    <a class="code hl_struct" href="structserial__config__t.html">serial_config_t</a> uart_cfg = {</div>
+<div class="line"><a id="l00287" name="l00287"></a><span class="lineno">  287</span>        .port      = <a class="code hl_enumvalue" href="group___u_a_r_t.html#gga6e1a445bae87c4cfd26710dbd4657b77af81669fbb473eedf3d1789fcf08d9056">UART_PC</a>,</div>
+<div class="line"><a id="l00288" name="l00288"></a><span class="lineno">  288</span>        .baud_rate = <a class="code hl_define" href="proyecto__final_8c.html#a2c7ed0283bd6f2f9d791860d6254ef4f">UART_BAUDRATE</a>,</div>
+<div class="line"><a id="l00289" name="l00289"></a><span class="lineno">  289</span>        .func_p    = <a class="code hl_define" href="ili9341_8c.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>,     <span class="comment">// sin interrupciones de RX por ahora</span></div>
+<div class="line"><a id="l00290" name="l00290"></a><span class="lineno">  290</span>        .param_p   = <a class="code hl_define" href="ili9341_8c.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a></div>
+<div class="line"><a id="l00291" name="l00291"></a><span class="lineno">  291</span>    };</div>
+<div class="line"><a id="l00292" name="l00292"></a><span class="lineno">  292</span>    <a class="code hl_function" href="group___u_a_r_t.html#ga440f6a03dfd8b310f5fdf42c3bf20c42">UartInit</a>(&amp;uart_cfg);</div>
+<div class="line"><a id="l00293" name="l00293"></a><span class="lineno">  293</span> </div>
+<div class="line"><a id="l00294" name="l00294"></a><span class="lineno">  294</span>    <span class="comment">/* Configuración del timer para medicion: 100 ms */</span></div>
+<div class="line"><a id="l00295" name="l00295"></a><span class="lineno">  295</span>    <a class="code hl_struct" href="structtimer__config__t.html">timer_config_t</a> timer_nivel = {</div>
+<div class="line"><a id="l00296" name="l00296"></a><span class="lineno">  296</span>        .timer   = <a class="code hl_enumvalue" href="group___timer.html#ggacc4e64394d03a6e790f8e52c674534d9a179b1231f027eba52fa4ef94ec174598">TIMER_A</a>,</div>
+<div class="line"><a id="l00297" name="l00297"></a><span class="lineno">  297</span>        .period  = <a class="code hl_define" href="proyecto__final_8c.html#a1d65a82648b922a2f3d1093bec2aa5ef">REFRESH_PERIOD_US</a>,</div>
+<div class="line"><a id="l00298" name="l00298"></a><span class="lineno">  298</span>        .func_p  = <a class="code hl_function" href="proyecto__final_8c.html#a3816592c4b2d28b5175e1060978f649b">TimerNivelHandler</a>,</div>
+<div class="line"><a id="l00299" name="l00299"></a><span class="lineno">  299</span>        .param_p = <a class="code hl_define" href="ili9341_8c.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a></div>
+<div class="line"><a id="l00300" name="l00300"></a><span class="lineno">  300</span>    };</div>
+<div class="line"><a id="l00301" name="l00301"></a><span class="lineno">  301</span>    <a class="code hl_function" href="group___timer.html#gae8617c0d176463a60441464ad26563f6">TimerInit</a>(&amp;timer_nivel);</div>
+<div class="line"><a id="l00302" name="l00302"></a><span class="lineno">  302</span> </div>
+<div class="line"><a id="l00303" name="l00303"></a><span class="lineno">  303</span>    <span class="comment">/* Configurar timer para control de nivel (cada 0,5 s) */</span></div>
+<div class="line"><a id="l00304" name="l00304"></a><span class="lineno">  304</span>    <a class="code hl_struct" href="structtimer__config__t.html">timer_config_t</a> timer_control = {</div>
+<div class="line"><a id="l00305" name="l00305"></a><span class="lineno">  305</span>        .timer   = <a class="code hl_enumvalue" href="group___timer.html#ggacc4e64394d03a6e790f8e52c674534d9a77982cc924eb33d3ea2f8f541f757f9d">TIMER_C</a>,</div>
+<div class="line"><a id="l00306" name="l00306"></a><span class="lineno">  306</span>        .period  = <a class="code hl_define" href="proyecto__final_8c.html#a6d23df12b1d85416f53df83630efced1">CONTROL_PERIOD_US</a>,</div>
+<div class="line"><a id="l00307" name="l00307"></a><span class="lineno">  307</span>        .func_p  = <a class="code hl_function" href="proyecto__final_8c.html#a32ee8d6a54485de5d798a537403e2912">TimerControlHandler</a>,</div>
+<div class="line"><a id="l00308" name="l00308"></a><span class="lineno">  308</span>        .param_p = <a class="code hl_define" href="ili9341_8c.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a></div>
+<div class="line"><a id="l00309" name="l00309"></a><span class="lineno">  309</span>    };</div>
+<div class="line"><a id="l00310" name="l00310"></a><span class="lineno">  310</span>    <a class="code hl_function" href="group___timer.html#gae8617c0d176463a60441464ad26563f6">TimerInit</a>(&amp;timer_control);</div>
+<div class="line"><a id="l00311" name="l00311"></a><span class="lineno">  311</span> </div>
+<div class="line"><a id="l00312" name="l00312"></a><span class="lineno">  312</span> </div>
+<div class="line"><a id="l00313" name="l00313"></a><span class="lineno">  313</span>   <span class="comment">/* Crear tareas */</span></div>
+<div class="line"><a id="l00314" name="l00314"></a><span class="lineno">  314</span>    xTaskCreate(&amp;<a class="code hl_function" href="proyecto__final_8c.html#a03ec07968ef8eb78955609a1953feba7">MedirNivelTask</a>, <span class="stringliteral">&quot;NivelTask&quot;</span>, 512, <a class="code hl_define" href="ili9341_8c.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>, 5, &amp;<a class="code hl_variable" href="proyecto__final_8c.html#a2b0cb40d7a31ce7e8b3f906fd55df312">medir_task_handle</a>);</div>
+<div class="line"><a id="l00315" name="l00315"></a><span class="lineno">  315</span>    xTaskCreate(&amp;<a class="code hl_function" href="proyecto__final_8c.html#a65cc2c6b183b42412d7637b496320239">ControlNivelTask</a>, <span class="stringliteral">&quot;ControlTask&quot;</span>, 512, <a class="code hl_define" href="ili9341_8c.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>, 5, &amp;<a class="code hl_variable" href="proyecto__final_8c.html#a4296f470448e6e08338eed9851e31fab">control_task_handle</a>);</div>
+<div class="line"><a id="l00316" name="l00316"></a><span class="lineno">  316</span>    xTaskCreate(&amp;<a class="code hl_function" href="proyecto__final_8c.html#a19ee266bd9015898539274cacfd5281e">ControlManualTask</a>, <span class="stringliteral">&quot;ControlManualTask&quot;</span>, 512, <a class="code hl_define" href="ili9341_8c.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a>, 5, &amp;<a class="code hl_variable" href="proyecto__final_8c.html#a5940b577e5a0f7675ed7f72ec64ff2a8">control_manual_task_handle</a>);</div>
+<div class="line"><a id="l00317" name="l00317"></a><span class="lineno">  317</span> </div>
+<div class="line"><a id="l00318" name="l00318"></a><span class="lineno">  318</span>   </div>
+<div class="line"><a id="l00319" name="l00319"></a><span class="lineno">  319</span>    <span class="comment">/* Iniciar timer */</span></div>
+<div class="line"><a id="l00320" name="l00320"></a><span class="lineno">  320</span>    <a class="code hl_function" href="group___timer.html#ga0b1779c5b8f91cc83c8bfd127071ea2f">TimerStart</a>(timer_nivel.<a class="code hl_variable" href="structtimer__config__t.html#ab83043b8038c5e630f6a2a05ea007e49">timer</a>);</div>
+<div class="line"><a id="l00321" name="l00321"></a><span class="lineno">  321</span>    <a class="code hl_function" href="group___timer.html#ga0b1779c5b8f91cc83c8bfd127071ea2f">TimerStart</a>(timer_control.<a class="code hl_variable" href="structtimer__config__t.html#ab83043b8038c5e630f6a2a05ea007e49">timer</a>);</div>
+<div class="line"><a id="l00322" name="l00322"></a><span class="lineno">  322</span>}</div>
+</div>
+<div class="line"><a id="l00323" name="l00323"></a><span class="lineno">  323</span> </div>
+<div class="line"><a id="l00324" name="l00324"></a><span class="lineno">  324</span><span class="comment">/*==================[end of file]============================================*/</span></div>
+<div class="ttc" id="agpio__mcu_8h_html"><div class="ttname"><a href="gpio__mcu_8h.html">gpio_mcu.h</a></div></div>
+<div class="ttc" id="agroup___g_i_o_p_html_ga10240d283f64bd1b09fca664fda27964"><div class="ttname"><a href="group___g_i_o_p.html#ga10240d283f64bd1b09fca664fda27964">GPIOInit</a></div><div class="ttdeci">void GPIOInit(gpio_t pin, io_t io)</div><div class="ttdoc">GPIO initialization.</div><div class="ttdef"><b>Definition</b> <a href="gpio__mcu_8c_source.html#l00067">gpio_mcu.c:67</a></div></div>
+<div class="ttc" id="agroup___g_i_o_p_html_ga30ed9d97406129b9b6390154a7479d70"><div class="ttname"><a href="group___g_i_o_p.html#ga30ed9d97406129b9b6390154a7479d70">GPIOOff</a></div><div class="ttdeci">void GPIOOff(gpio_t pin)</div><div class="ttdoc">Change GPIO state to low.</div><div class="ttdef"><b>Definition</b> <a href="gpio__mcu_8c_source.html#l00086">gpio_mcu.c:86</a></div></div>
+<div class="ttc" id="agroup___g_i_o_p_html_gaba62250f2b0e73a98b6f35fb6078fdb1"><div class="ttname"><a href="group___g_i_o_p.html#gaba62250f2b0e73a98b6f35fb6078fdb1">GPIOOn</a></div><div class="ttdeci">void GPIOOn(gpio_t pin)</div><div class="ttdoc">Change GPIO state to high.</div><div class="ttdef"><b>Definition</b> <a href="gpio__mcu_8c_source.html#l00081">gpio_mcu.c:81</a></div></div>
+<div class="ttc" id="agroup___g_i_o_p_html_gga423620ef7d69894833f70cfc395caaa9aa248e73c1faee9c6f072fd91569cf516"><div class="ttname"><a href="group___g_i_o_p.html#gga423620ef7d69894833f70cfc395caaa9aa248e73c1faee9c6f072fd91569cf516">GPIO_OUTPUT</a></div><div class="ttdeci">@ GPIO_OUTPUT</div><div class="ttdef"><b>Definition</b> <a href="gpio__mcu_8h_source.html#l00044">gpio_mcu.h:44</a></div></div>
+<div class="ttc" id="agroup___g_i_o_p_html_ggaf65604147d0244c9b13cfdc865ad5393a1b3ef28b8ae924f5f3fdfbb0ed7e6f7c"><div class="ttname"><a href="group___g_i_o_p.html#ggaf65604147d0244c9b13cfdc865ad5393a1b3ef28b8ae924f5f3fdfbb0ed7e6f7c">GPIO_6</a></div><div class="ttdeci">@ GPIO_6</div><div class="ttdef"><b>Definition</b> <a href="gpio__mcu_8h_source.html#l00058">gpio_mcu.h:58</a></div></div>
+<div class="ttc" id="agroup___g_i_o_p_html_ggaf65604147d0244c9b13cfdc865ad5393a426d08ab85ab3aebbb53eed1a32dfb71"><div class="ttname"><a href="group___g_i_o_p.html#ggaf65604147d0244c9b13cfdc865ad5393a426d08ab85ab3aebbb53eed1a32dfb71">GPIO_3</a></div><div class="ttdeci">@ GPIO_3</div><div class="ttdef"><b>Definition</b> <a href="gpio__mcu_8h_source.html#l00055">gpio_mcu.h:55</a></div></div>
+<div class="ttc" id="agroup___g_i_o_p_html_ggaf65604147d0244c9b13cfdc865ad5393a4bae0816af6049c68cf772f0e01ea0e5"><div class="ttname"><a href="group___g_i_o_p.html#ggaf65604147d0244c9b13cfdc865ad5393a4bae0816af6049c68cf772f0e01ea0e5">GPIO_7</a></div><div class="ttdeci">@ GPIO_7</div><div class="ttdef"><b>Definition</b> <a href="gpio__mcu_8h_source.html#l00059">gpio_mcu.h:59</a></div></div>
+<div class="ttc" id="agroup___g_i_o_p_html_ggaf65604147d0244c9b13cfdc865ad5393abbea21b656f1917800d9d279b685f38e"><div class="ttname"><a href="group___g_i_o_p.html#ggaf65604147d0244c9b13cfdc865ad5393abbea21b656f1917800d9d279b685f38e">GPIO_2</a></div><div class="ttdeci">@ GPIO_2</div><div class="ttdef"><b>Definition</b> <a href="gpio__mcu_8h_source.html#l00054">gpio_mcu.h:54</a></div></div>
+<div class="ttc" id="agroup___h_c___s_r04_html_ga73a5aaa2183e55d104d4e0c2c435e251"><div class="ttname"><a href="group___h_c___s_r04.html#ga73a5aaa2183e55d104d4e0c2c435e251">HcSr04ReadDistanceInCentimeters</a></div><div class="ttdeci">uint16_t HcSr04ReadDistanceInCentimeters(void)</div><div class="ttdoc">Read distance.</div><div class="ttdef"><b>Definition</b> <a href="hc__sr04_8c_source.html#l00045">hc_sr04.c:45</a></div></div>
+<div class="ttc" id="agroup___h_c___s_r04_html_ga9d26cc017fe45c607d08231ebffb46c4"><div class="ttname"><a href="group___h_c___s_r04.html#ga9d26cc017fe45c607d08231ebffb46c4">HcSr04Init</a></div><div class="ttdeci">bool HcSr04Init(gpio_t echo, gpio_t trigger)</div><div class="ttdoc">Driver for reading distance with HC-SR04 module.</div><div class="ttdef"><b>Definition</b> <a href="hc__sr04_8c_source.html#l00034">hc_sr04.c:34</a></div></div>
+<div class="ttc" id="agroup___l_c_d___i_t_s_e0803_html_ga1c08a1458380c8f0a02a3763d14c8bf3"><div class="ttname"><a href="group___l_c_d___i_t_s_e0803.html#ga1c08a1458380c8f0a02a3763d14c8bf3">LcdItsE0803Init</a></div><div class="ttdeci">bool LcdItsE0803Init(void)</div><div class="ttdoc">Driver for using the 3 digits numeric display in ESP-EDU.</div><div class="ttdef"><b>Definition</b> <a href="lcditse0803_8c_source.html#l00037">lcditse0803.c:37</a></div></div>
+<div class="ttc" id="agroup___l_c_d___i_t_s_e0803_html_ga77a9887ee733d3212c3e4996c47f1b9d"><div class="ttname"><a href="group___l_c_d___i_t_s_e0803.html#ga77a9887ee733d3212c3e4996c47f1b9d">LcdItsE0803Write</a></div><div class="ttdeci">bool LcdItsE0803Write(uint16_t value)</div><div class="ttdoc">Function to display value a LCD Module for EDU-CIAA.</div><div class="ttdef"><b>Definition</b> <a href="lcditse0803_8c_source.html#l00054">lcditse0803.c:54</a></div></div>
+<div class="ttc" id="agroup___l_e_d_html_ga4fd07c9f7fab15d0d07389a38f4a39d8"><div class="ttname"><a href="group___l_e_d.html#ga4fd07c9f7fab15d0d07389a38f4a39d8">LedOff</a></div><div class="ttdeci">uint8_t LedOff(led_t led)</div><div class="ttdoc">Turn off a specific LED.</div><div class="ttdef"><b>Definition</b> <a href="led_8c_source.html#l00065">led.c:65</a></div></div>
+<div class="ttc" id="agroup___l_e_d_html_ga883021aaef65f080a52b1852172ecbc3"><div class="ttname"><a href="group___l_e_d.html#ga883021aaef65f080a52b1852172ecbc3">LedOn</a></div><div class="ttdeci">uint8_t LedOn(led_t led)</div><div class="ttdoc">Turn on a specific LED.</div><div class="ttdef"><b>Definition</b> <a href="led_8c_source.html#l00046">led.c:46</a></div></div>
+<div class="ttc" id="agroup___l_e_d_html_gacba669c3e8f52e45d1bea50c2e63b250"><div class="ttname"><a href="group___l_e_d.html#gacba669c3e8f52e45d1bea50c2e63b250">LedsInit</a></div><div class="ttdeci">uint8_t LedsInit(void)</div><div class="ttdoc">ESP-EDU LEDs initialization.</div><div class="ttdef"><b>Definition</b> <a href="led_8c_source.html#l00031">led.c:31</a></div></div>
+<div class="ttc" id="agroup___l_e_d_html_ggab6831a7d06c0a2bc69f9b024f6445a80a00af6b2437d9982f1f125d2cc2537c41"><div class="ttname"><a href="group___l_e_d.html#ggab6831a7d06c0a2bc69f9b024f6445a80a00af6b2437d9982f1f125d2cc2537c41">LED_2</a></div><div class="ttdeci">@ LED_2</div><div class="ttdef"><b>Definition</b> <a href="led_8h_source.html#l00033">led.h:33</a></div></div>
+<div class="ttc" id="agroup___l_e_d_html_ggab6831a7d06c0a2bc69f9b024f6445a80a11a9adb9054de1fe01d6a6750075f57b"><div class="ttname"><a href="group___l_e_d.html#ggab6831a7d06c0a2bc69f9b024f6445a80a11a9adb9054de1fe01d6a6750075f57b">LED_1</a></div><div class="ttdeci">@ LED_1</div><div class="ttdef"><b>Definition</b> <a href="led_8h_source.html#l00034">led.h:34</a></div></div>
+<div class="ttc" id="agroup___switch_html_ga8eb2865a73bf2d2b9fd6760958a0cc3c"><div class="ttname"><a href="group___switch.html#ga8eb2865a73bf2d2b9fd6760958a0cc3c">SwitchesInit</a></div><div class="ttdeci">int8_t SwitchesInit(void)</div><div class="ttdoc">ESP-EDU switches initialization.</div><div class="ttdef"><b>Definition</b> <a href="switch_8c_source.html#l00029">switch.c:29</a></div></div>
+<div class="ttc" id="agroup___switch_html_gae2e64bab117e3f8ffc08ecae51f5e262"><div class="ttname"><a href="group___switch.html#gae2e64bab117e3f8ffc08ecae51f5e262">SwitchesRead</a></div><div class="ttdeci">int8_t SwitchesRead(void)</div><div class="ttdoc">Read all the switches state.</div><div class="ttdef"><b>Definition</b> <a href="switch_8c_source.html#l00040">switch.c:40</a></div></div>
+<div class="ttc" id="agroup___switch_html_gga8caa2df6d25fea5a14eb4533df1d5cfaa24caa46485c5fec2211b3ebd8a1eee77"><div class="ttname"><a href="group___switch.html#gga8caa2df6d25fea5a14eb4533df1d5cfaa24caa46485c5fec2211b3ebd8a1eee77">SWITCH_1</a></div><div class="ttdeci">@ SWITCH_1</div><div class="ttdef"><b>Definition</b> <a href="switch_8h_source.html#l00032">switch.h:32</a></div></div>
+<div class="ttc" id="agroup___switch_html_gga8caa2df6d25fea5a14eb4533df1d5cfaa73fda67835d5d51aa9251fee781a7434"><div class="ttname"><a href="group___switch.html#gga8caa2df6d25fea5a14eb4533df1d5cfaa73fda67835d5d51aa9251fee781a7434">SWITCH_2</a></div><div class="ttdeci">@ SWITCH_2</div><div class="ttdef"><b>Definition</b> <a href="switch_8h_source.html#l00033">switch.h:33</a></div></div>
+<div class="ttc" id="agroup___timer_html_ga0b1779c5b8f91cc83c8bfd127071ea2f"><div class="ttname"><a href="group___timer.html#ga0b1779c5b8f91cc83c8bfd127071ea2f">TimerStart</a></div><div class="ttdeci">void TimerStart(timer_mcu_t timer)</div><div class="ttdoc">Start timer count.</div><div class="ttdef"><b>Definition</b> <a href="timer__mcu_8c_source.html#l00116">timer_mcu.c:116</a></div></div>
+<div class="ttc" id="agroup___timer_html_gae8617c0d176463a60441464ad26563f6"><div class="ttname"><a href="group___timer.html#gae8617c0d176463a60441464ad26563f6">TimerInit</a></div><div class="ttdeci">void TimerInit(timer_config_t *timer_ini)</div><div class="ttdoc">Timer initialization.</div><div class="ttdef"><b>Definition</b> <a href="timer__mcu_8c_source.html#l00067">timer_mcu.c:67</a></div></div>
+<div class="ttc" id="agroup___timer_html_ggacc4e64394d03a6e790f8e52c674534d9a179b1231f027eba52fa4ef94ec174598"><div class="ttname"><a href="group___timer.html#ggacc4e64394d03a6e790f8e52c674534d9a179b1231f027eba52fa4ef94ec174598">TIMER_A</a></div><div class="ttdeci">@ TIMER_A</div><div class="ttdef"><b>Definition</b> <a href="timer__mcu_8h_source.html#l00032">timer_mcu.h:32</a></div></div>
+<div class="ttc" id="agroup___timer_html_ggacc4e64394d03a6e790f8e52c674534d9a77982cc924eb33d3ea2f8f541f757f9d"><div class="ttname"><a href="group___timer.html#ggacc4e64394d03a6e790f8e52c674534d9a77982cc924eb33d3ea2f8f541f757f9d">TIMER_C</a></div><div class="ttdeci">@ TIMER_C</div><div class="ttdef"><b>Definition</b> <a href="timer__mcu_8h_source.html#l00034">timer_mcu.h:34</a></div></div>
+<div class="ttc" id="agroup___u_a_r_t_html_ga00c7e785d2874c52bab6e4dba88a5e23"><div class="ttname"><a href="group___u_a_r_t.html#ga00c7e785d2874c52bab6e4dba88a5e23">UartItoa</a></div><div class="ttdeci">uint8_t * UartItoa(uint32_t val, uint8_t base)</div><div class="ttdoc">Convert a number to a String (char array ended with &#39;\0&#39;)</div><div class="ttdef"><b>Definition</b> <a href="uart__mcu_8c_source.html#l00222">uart_mcu.c:222</a></div></div>
+<div class="ttc" id="agroup___u_a_r_t_html_ga440f6a03dfd8b310f5fdf42c3bf20c42"><div class="ttname"><a href="group___u_a_r_t.html#ga440f6a03dfd8b310f5fdf42c3bf20c42">UartInit</a></div><div class="ttdeci">void UartInit(serial_config_t *port_config)</div><div class="ttdoc">Serial port initialization.</div><div class="ttdef"><b>Definition</b> <a href="uart__mcu_8c_source.html#l00107">uart_mcu.c:107</a></div></div>
+<div class="ttc" id="agroup___u_a_r_t_html_ga60db217694ea24ad75fcedda3336a3a8"><div class="ttname"><a href="group___u_a_r_t.html#ga60db217694ea24ad75fcedda3336a3a8">UartSendString</a></div><div class="ttdeci">void UartSendString(uart_mcu_port_t port, const char *msg)</div><div class="ttdoc">Send a String trough serial port.</div><div class="ttdef"><b>Definition</b> <a href="uart__mcu_8c_source.html#l00193">uart_mcu.c:193</a></div></div>
+<div class="ttc" id="agroup___u_a_r_t_html_gga6e1a445bae87c4cfd26710dbd4657b77af81669fbb473eedf3d1789fcf08d9056"><div class="ttname"><a href="group___u_a_r_t.html#gga6e1a445bae87c4cfd26710dbd4657b77af81669fbb473eedf3d1789fcf08d9056">UART_PC</a></div><div class="ttdeci">@ UART_PC</div><div class="ttdef"><b>Definition</b> <a href="uart__mcu_8h_source.html#l00032">uart_mcu.h:32</a></div></div>
+<div class="ttc" id="ahc__sr04_8h_html"><div class="ttname"><a href="hc__sr04_8h.html">hc_sr04.h</a></div></div>
+<div class="ttc" id="aili9341_8c_html_a070d2ce7b6bb7e5c05602aa8c308d0c4"><div class="ttname"><a href="ili9341_8c.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a></div><div class="ttdeci">#define NULL</div><div class="ttdef"><b>Definition</b> <a href="ili9341_8c_source.html#l00019">ili9341.c:19</a></div></div>
+<div class="ttc" id="alcditse0803_8h_html"><div class="ttname"><a href="lcditse0803_8h.html">lcditse0803.h</a></div></div>
+<div class="ttc" id="aled_8h_html"><div class="ttname"><a href="led_8h.html">led.h</a></div></div>
+<div class="ttc" id="aproyecto__final_8c_html_a03ec07968ef8eb78955609a1953feba7"><div class="ttname"><a href="proyecto__final_8c.html#a03ec07968ef8eb78955609a1953feba7">MedirNivelTask</a></div><div class="ttdeci">void MedirNivelTask(void *pvParameter)</div><div class="ttdoc">Tarea encargada de leer el sensor ultrasónico, actualizar el nivel y enviarlo por UART,...</div><div class="ttdef"><b>Definition</b> <a href="#l00172">proyecto_final.c:172</a></div></div>
+<div class="ttc" id="aproyecto__final_8c_html_a19ee266bd9015898539274cacfd5281e"><div class="ttname"><a href="proyecto__final_8c.html#a19ee266bd9015898539274cacfd5281e">ControlManualTask</a></div><div class="ttdeci">void ControlManualTask(void *pvParameter)</div><div class="ttdoc">Tarea que permite el control manual mediante pulsadores físicos. Verifica si el pulsador está presion...</div><div class="ttdef"><b>Definition</b> <a href="#l00217">proyecto_final.c:217</a></div></div>
+<div class="ttc" id="aproyecto__final_8c_html_a1d65a82648b922a2f3d1093bec2aa5ef"><div class="ttname"><a href="proyecto__final_8c.html#a1d65a82648b922a2f3d1093bec2aa5ef">REFRESH_PERIOD_US</a></div><div class="ttdeci">#define REFRESH_PERIOD_US</div><div class="ttdef"><b>Definition</b> <a href="#l00042">proyecto_final.c:42</a></div></div>
+<div class="ttc" id="aproyecto__final_8c_html_a28cab849e3771090fc1e272c08d602da"><div class="ttname"><a href="proyecto__final_8c.html#a28cab849e3771090fc1e272c08d602da">NIVEL_MIN_CM</a></div><div class="ttdeci">#define NIVEL_MIN_CM</div><div class="ttdef"><b>Definition</b> <a href="#l00045">proyecto_final.c:45</a></div></div>
+<div class="ttc" id="aproyecto__final_8c_html_a2b0cb40d7a31ce7e8b3f906fd55df312"><div class="ttname"><a href="proyecto__final_8c.html#a2b0cb40d7a31ce7e8b3f906fd55df312">medir_task_handle</a></div><div class="ttdeci">TaskHandle_t medir_task_handle</div><div class="ttdoc">Handler de la tarea de medición del nivel de agua.</div><div class="ttdef"><b>Definition</b> <a href="#l00052">proyecto_final.c:52</a></div></div>
+<div class="ttc" id="aproyecto__final_8c_html_a2c7ed0283bd6f2f9d791860d6254ef4f"><div class="ttname"><a href="proyecto__final_8c.html#a2c7ed0283bd6f2f9d791860d6254ef4f">UART_BAUDRATE</a></div><div class="ttdeci">#define UART_BAUDRATE</div><div class="ttdef"><b>Definition</b> <a href="#l00043">proyecto_final.c:43</a></div></div>
+<div class="ttc" id="aproyecto__final_8c_html_a32ee8d6a54485de5d798a537403e2912"><div class="ttname"><a href="proyecto__final_8c.html#a32ee8d6a54485de5d798a537403e2912">TimerControlHandler</a></div><div class="ttdeci">void TimerControlHandler(void *param)</div><div class="ttdoc">Callback del timer que activa la tarea de control automático de nivel.</div><div class="ttdef"><b>Definition</b> <a href="#l00114">proyecto_final.c:114</a></div></div>
+<div class="ttc" id="aproyecto__final_8c_html_a3816592c4b2d28b5175e1060978f649b"><div class="ttname"><a href="proyecto__final_8c.html#a3816592c4b2d28b5175e1060978f649b">TimerNivelHandler</a></div><div class="ttdeci">void TimerNivelHandler(void *param)</div><div class="ttdoc">Callback del timer que notifica a la tarea de medición del nivel.</div><div class="ttdef"><b>Definition</b> <a href="#l00106">proyecto_final.c:106</a></div></div>
+<div class="ttc" id="aproyecto__final_8c_html_a4296f470448e6e08338eed9851e31fab"><div class="ttname"><a href="proyecto__final_8c.html#a4296f470448e6e08338eed9851e31fab">control_task_handle</a></div><div class="ttdeci">TaskHandle_t control_task_handle</div><div class="ttdoc">Handler de la tarea que controla el estado de la bomba según el nivel.</div><div class="ttdef"><b>Definition</b> <a href="#l00057">proyecto_final.c:57</a></div></div>
+<div class="ttc" id="aproyecto__final_8c_html_a5940b577e5a0f7675ed7f72ec64ff2a8"><div class="ttname"><a href="proyecto__final_8c.html#a5940b577e5a0f7675ed7f72ec64ff2a8">control_manual_task_handle</a></div><div class="ttdeci">TaskHandle_t control_manual_task_handle</div><div class="ttdoc">Handler de la tarea de control manual mediante pulsadores.</div><div class="ttdef"><b>Definition</b> <a href="#l00062">proyecto_final.c:62</a></div></div>
+<div class="ttc" id="aproyecto__final_8c_html_a630544a7f0a2cc40d8a7fefab7e2fe70"><div class="ttname"><a href="proyecto__final_8c.html#a630544a7f0a2cc40d8a7fefab7e2fe70">app_main</a></div><div class="ttdeci">void app_main(void)</div><div class="ttdoc">Función principal del sistema.</div><div class="ttdef"><b>Definition</b> <a href="#l00273">proyecto_final.c:273</a></div></div>
+<div class="ttc" id="aproyecto__final_8c_html_a65cc2c6b183b42412d7637b496320239"><div class="ttname"><a href="proyecto__final_8c.html#a65cc2c6b183b42412d7637b496320239">ControlNivelTask</a></div><div class="ttdeci">void ControlNivelTask(void *pvParameter)</div><div class="ttdoc">Tarea que controla la bomba según el nivel de agua medido y lo envía por UART.</div><div class="ttdef"><b>Definition</b> <a href="#l00122">proyecto_final.c:122</a></div></div>
+<div class="ttc" id="aproyecto__final_8c_html_a6d23df12b1d85416f53df83630efced1"><div class="ttname"><a href="proyecto__final_8c.html#a6d23df12b1d85416f53df83630efced1">CONTROL_PERIOD_US</a></div><div class="ttdeci">#define CONTROL_PERIOD_US</div><div class="ttdef"><b>Definition</b> <a href="#l00044">proyecto_final.c:44</a></div></div>
+<div class="ttc" id="aproyecto__final_8c_html_a8e8d4ab2b7e4e7472dd971626d3808f2"><div class="ttname"><a href="proyecto__final_8c.html#a8e8d4ab2b7e4e7472dd971626d3808f2">control_manual_activo</a></div><div class="ttdeci">volatile bool control_manual_activo</div><div class="ttdoc">Bandera que indica si el control manual está activo.</div><div class="ttdef"><b>Definition</b> <a href="#l00088">proyecto_final.c:88</a></div></div>
+<div class="ttc" id="aproyecto__final_8c_html_a99b9d51e8b8d21dba06fa74c4257bcc8"><div class="ttname"><a href="proyecto__final_8c.html#a99b9d51e8b8d21dba06fa74c4257bcc8">estado_tanque_t</a></div><div class="ttdeci">estado_tanque_t</div><div class="ttdoc">Estructura que contiene los tres estados posibles del tanque.</div><div class="ttdef"><b>Definition</b> <a href="#l00072">proyecto_final.c:72</a></div></div>
+<div class="ttc" id="aproyecto__final_8c_html_a99b9d51e8b8d21dba06fa74c4257bcc8a6e36cefd5b796fd71ed58f70a8c2d7bf"><div class="ttname"><a href="proyecto__final_8c.html#a99b9d51e8b8d21dba06fa74c4257bcc8a6e36cefd5b796fd71ed58f70a8c2d7bf">NIVEL_ESTABLE</a></div><div class="ttdeci">@ NIVEL_ESTABLE</div><div class="ttdef"><b>Definition</b> <a href="#l00074">proyecto_final.c:74</a></div></div>
+<div class="ttc" id="aproyecto__final_8c_html_a99b9d51e8b8d21dba06fa74c4257bcc8a8bc5e31b6a00b6bbbe326edf364840b0"><div class="ttname"><a href="proyecto__final_8c.html#a99b9d51e8b8d21dba06fa74c4257bcc8a8bc5e31b6a00b6bbbe326edf364840b0">TANQUE_LLENO</a></div><div class="ttdeci">@ TANQUE_LLENO</div><div class="ttdef"><b>Definition</b> <a href="#l00075">proyecto_final.c:75</a></div></div>
+<div class="ttc" id="aproyecto__final_8c_html_a99b9d51e8b8d21dba06fa74c4257bcc8aad4181ad976d54294aaa87303325d9fb"><div class="ttname"><a href="proyecto__final_8c.html#a99b9d51e8b8d21dba06fa74c4257bcc8aad4181ad976d54294aaa87303325d9fb">NIVEL_BAJO</a></div><div class="ttdeci">@ NIVEL_BAJO</div><div class="ttdef"><b>Definition</b> <a href="#l00073">proyecto_final.c:73</a></div></div>
+<div class="ttc" id="aproyecto__final_8c_html_aa38fd4a8d0224ba5078063c3a32594f5"><div class="ttname"><a href="proyecto__final_8c.html#aa38fd4a8d0224ba5078063c3a32594f5">estado_tanque</a></div><div class="ttdeci">volatile estado_tanque_t estado_tanque</div><div class="ttdoc">Estado actual del tanque de agua (bajo, estable o lleno).</div><div class="ttdef"><b>Definition</b> <a href="#l00081">proyecto_final.c:81</a></div></div>
+<div class="ttc" id="aproyecto__final_8c_html_ab3674a3f8cb28b589294ccae5c8bbb4d"><div class="ttname"><a href="proyecto__final_8c.html#ab3674a3f8cb28b589294ccae5c8bbb4d">control_valvula_manual</a></div><div class="ttdeci">volatile bool control_valvula_manual</div><div class="ttdoc">Bandera de control manual de la válvula de desagote.</div><div class="ttdef"><b>Definition</b> <a href="#l00093">proyecto_final.c:93</a></div></div>
+<div class="ttc" id="aproyecto__final_8c_html_ac4a503cd1cd54b8c03b2d8df8dea2133"><div class="ttname"><a href="proyecto__final_8c.html#ac4a503cd1cd54b8c03b2d8df8dea2133">NIVEL_MAX_CM</a></div><div class="ttdeci">#define NIVEL_MAX_CM</div><div class="ttdef"><b>Definition</b> <a href="#l00046">proyecto_final.c:46</a></div></div>
+<div class="ttc" id="aproyecto__final_8c_html_af4c918287dd704ce82f8c4b50dee0d48"><div class="ttname"><a href="proyecto__final_8c.html#af4c918287dd704ce82f8c4b50dee0d48">ALTURA_TANQUE_CM</a></div><div class="ttdeci">#define ALTURA_TANQUE_CM</div><div class="ttdef"><b>Definition</b> <a href="#l00041">proyecto_final.c:41</a></div></div>
+<div class="ttc" id="aproyecto__final_8c_html_afef5223292985f21dde6eaeffcf34377"><div class="ttname"><a href="proyecto__final_8c.html#afef5223292985f21dde6eaeffcf34377">nivel_agua_cm</a></div><div class="ttdeci">uint8_t nivel_agua_cm</div><div class="ttdoc">Última medición del nivel de agua, expresada en centímetros.</div><div class="ttdef"><b>Definition</b> <a href="#l00067">proyecto_final.c:67</a></div></div>
+<div class="ttc" id="astructserial__config__t_html"><div class="ttname"><a href="structserial__config__t.html">serial_config_t</a></div><div class="ttdoc">Serial port configuration struct.</div><div class="ttdef"><b>Definition</b> <a href="uart__mcu_8h_source.html#l00038">uart_mcu.h:38</a></div></div>
+<div class="ttc" id="astructtimer__config__t_html"><div class="ttname"><a href="structtimer__config__t.html">timer_config_t</a></div><div class="ttdoc">Timer configuration struct.</div><div class="ttdef"><b>Definition</b> <a href="timer__mcu_8h_source.html#l00039">timer_mcu.h:39</a></div></div>
+<div class="ttc" id="astructtimer__config__t_html_ab83043b8038c5e630f6a2a05ea007e49"><div class="ttname"><a href="structtimer__config__t.html#ab83043b8038c5e630f6a2a05ea007e49">timer_config_t::timer</a></div><div class="ttdeci">timer_mcu_t timer</div><div class="ttdef"><b>Definition</b> <a href="timer__mcu_8h_source.html#l00040">timer_mcu.h:40</a></div></div>
+<div class="ttc" id="aswitch_8h_html"><div class="ttname"><a href="switch_8h.html">switch.h</a></div></div>
+<div class="ttc" id="atimer__mcu_8h_html"><div class="ttname"><a href="timer__mcu_8h.html">timer_mcu.h</a></div></div>
+<div class="ttc" id="auart__mcu_8h_html"><div class="ttname"><a href="uart__mcu_8h.html">uart_mcu.h</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+</div><!-- container -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a href="dir_55bb0630de9a3fdeef27fa7eac03cf1e.html">Gottig_Faes_2C_2025</a></li><li class="navelem"><a href="dir_335e0e5c4dae3f5a62baad8e300f284c.html">firmware</a></li><li class="navelem"><a href="dir_9d7f4a4b7b1cac800d7c52c72ebde874.html">examples</a></li><li class="navelem"><a href="dir_c8588b19012989f1b69f9f3a1bee6328.html">proyecto_final</a></li><li class="navelem"><a href="dir_a1137a831f7edb527c43aaadb4304d0b.html">main</a></li><li class="navelem"><a href="proyecto__final_8c.html">proyecto_final.c</a></li>
+    <li class="footer">Generado por <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.14.0 </li>
+  </ul>
+</div>
+</body>
+</html>
